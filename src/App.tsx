@@ -28,23 +28,49 @@ export const App: React.FC = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/* Homepage */}
           <Route index element={<Home />} />
-          <Route path="rajagiri" element={<Rajagiri />} />
+          <Route path="home" element={<Home />} />
           
-          {/* Support both legacy snake_case and modern clean URLs */}
+          {/* About / Rajagiri Host Institution */}
+          <Route path="rajagiri" element={<Rajagiri />} />
+          <Route path="about" element={<Rajagiri />} />
+          
+          {/* Call for Papers & Submissions */}
           <Route path="call_for_papers" element={<CallForPapers />} />
           <Route path="call-for-papers" element={<CallForPapers />} />
+          <Route path="callforpapers" element={<CallForPapers />} />
+          <Route path="cfp" element={<CallForPapers />} />
           
+          {/* Accommodation & Delegate Stay */}
           <Route path="accomodation" element={<Accommodation />} />
           <Route path="accommodation" element={<Accommodation />} />
+          <Route path="hotels" element={<Accommodation />} />
+          <Route path="stay" element={<Accommodation />} />
           
+          {/* Attractions / Sights */}
           <Route path="attractions" element={<Attractions />} />
-          <Route path="travel" element={<Travel />} />
-          <Route path="gallery" element={<Gallery />} />
+          <Route path="kochi" element={<Attractions />} />
+          <Route path="sights" element={<Attractions />} />
+          <Route path="explore" element={<Attractions />} />
           
+          {/* Travel & Venue Directions */}
+          <Route path="travel" element={<Travel />} />
+          <Route path="venue" element={<Travel />} />
+          <Route path="directions" element={<Travel />} />
+          <Route path="location" element={<Travel />} />
+          
+          {/* Gallery / Archive */}
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="photos" element={<Gallery />} />
+          <Route path="archive" element={<Gallery />} />
+          
+          {/* Contact Secretariat */}
           <Route path="contactus" element={<Contact />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="secretariat" element={<Contact />} />
           
+          {/* 404 Catch-All */}
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
