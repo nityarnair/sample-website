@@ -30,7 +30,7 @@ export const PartnersSection: React.FC = () => {
 
   return (
     <section
-      className="py-20 sm:py-24 bg-[#F8F8F6] text-[#101828] border-b border-[#D9DEE5]"
+      className="py-20 sm:py-24 bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5]"
       aria-label="Institutional Accreditations and Partners"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -44,7 +44,7 @@ export const PartnersSection: React.FC = () => {
           {partners.map((partner, idx) => (
             <div
               key={idx}
-              className="p-6 bg-white border border-[#D9DEE5] rounded-xl flex flex-col items-center justify-center text-center shadow-subtle hover:border-[#12345B]/40 transition-colors"
+              className="p-6 bg-white border border-[#D9DEE5] rounded-[18px] flex flex-col items-center justify-center text-center shadow-subtle hover:border-[#12345B]/40 transition-colors"
             >
               <div className="text-[#071A33] mb-3 opacity-80">
                 {partner.icon}
@@ -60,7 +60,7 @@ export const PartnersSection: React.FC = () => {
         </div>
 
         {/* Global Partner Universities from dyuti.in */}
-        <div className="rounded-container p-8 sm:p-12 bg-white border border-[#D9DEE5] shadow-subtle text-center">
+        <div className="rounded-[24px] p-8 sm:p-12 bg-white border border-[#D9DEE5] shadow-editorial text-center">
           <span className="text-xs font-sans uppercase tracking-[0.18em] text-[#2563EB] font-bold block mb-2">
             Rajagiri International Exchange Programme
           </span>

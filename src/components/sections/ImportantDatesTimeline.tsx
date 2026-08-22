@@ -38,14 +38,14 @@ export const ImportantDatesTimeline: React.FC = () => {
   return (
     <section
       id="important-dates"
-      className="py-24 sm:py-32 lg:py-36 bg-[#F8F8F6] text-[#101828] border-b border-[#D9DEE5] relative"
+      className="py-24 sm:py-32 lg:py-36 bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] relative"
       aria-labelledby="dates-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-between pb-4 mb-14 sm:mb-20 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-[0.18em] text-[#667085]">
           <div className="flex items-center gap-3">
-            <span className="text-[#2563EB] font-mono font-bold">05</span>
+            <span className="text-[#2563EB] font-mono font-bold">06</span>
             <span className="w-8 h-px bg-[#D9DEE5]" />
             <span className="text-[#071A33] font-semibold">IMPORTANT DATES</span>
           </div>
@@ -59,7 +59,7 @@ export const ImportantDatesTimeline: React.FC = () => {
           </span>
           <h2
             id="dates-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.15] m-0"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.12] m-0"
           >
             Chronology of Submissions &amp; Deadlines
           </h2>
@@ -68,13 +68,13 @@ export const ImportantDatesTimeline: React.FC = () => {
         {/* Horizontal Editorial Timeline */}
         <div className="relative">
           {/* Subtle navy connecting line across desktop */}
-          <div className="hidden lg:block absolute top-14 left-0 right-0 h-px bg-[#12345B]/20 -z-0" />
+          <div className="hidden lg:block absolute top-14 left-0 right-0 h-px bg-[#12345B]/15 -z-0" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4 relative z-10">
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-[#D9DEE5] hover:border-[#12345B]/40 rounded-xl p-7 shadow-subtle hover:shadow-editorial transition-all flex flex-col justify-between"
+                className="bg-white border border-[#D9DEE5] hover:border-[#12345B]/40 rounded-[20px] p-7 shadow-subtle hover:shadow-editorial transition-all flex flex-col justify-between"
               >
                 <div>
                   {/* Step Number & Icon */}
@@ -87,7 +87,7 @@ export const ImportantDatesTimeline: React.FC = () => {
                     </div>
                   </div>
 
-                  <h3 className="font-serif text-xl text-[#071A33] mb-2 leading-snug">
+                  <h3 className="font-serif text-2xl text-[#071A33] mb-2 leading-snug font-normal">
                     {step.title}
                   </h3>
 
@@ -95,7 +95,7 @@ export const ImportantDatesTimeline: React.FC = () => {
                     {step.date}
                   </div>
 
-                  <p className="text-xs text-[#667085] font-sans font-normal leading-relaxed m-0">
+                  <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal leading-relaxed m-0">
                     {step.desc}
                   </p>
                 </div>

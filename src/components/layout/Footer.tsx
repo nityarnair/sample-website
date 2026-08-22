@@ -6,7 +6,7 @@ import { CONFERENCE_DATA } from '@/data/conference';
 export const Footer: React.FC = () => {
   return (
     <footer
-      className="bg-[#071A33] text-white pt-20 pb-12 border-t border-white/10"
+      className="bg-[#071A33] text-white pt-24 pb-14 border-t border-white/10"
       aria-label="Footer Navigation and Secretariat Contacts"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -18,13 +18,13 @@ export const Footer: React.FC = () => {
               <img
                 src="https://dyuti.in/assets/images/dyutilogoog.jpg"
                 alt="DYUTI Emblem"
-                className="h-10 w-auto object-contain rounded-xs border border-white/20"
+                className="h-10 w-auto object-contain rounded-full border border-white/20"
               />
               <div>
-                <span className="font-serif text-2xl text-white block leading-none">
+                <span className="font-serif text-3xl text-white block leading-none font-normal">
                   DYUTI 2027
                 </span>
-                <span className="text-[10px] text-white/60 tracking-wider uppercase font-sans mt-0.5 block">
+                <span className="text-[10px] text-white/60 tracking-wider uppercase font-sans mt-1 block">
                   International Academic Conference
                 </span>
               </div>
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
                 href={CONFERENCE_DATA.links.registrationForm}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white text-[#071A33] hover:bg-[#EFF6FF] text-xs font-sans uppercase tracking-[0.14em] font-semibold transition-all shadow-pill"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#071A33] hover:bg-[#EEF3F8] text-xs font-sans uppercase tracking-[0.14em] font-semibold transition-all shadow-pill"
               >
                 <span>Register for Conference</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-sans uppercase tracking-[0.16em] text-[#93C5FD] font-bold">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-xs text-white/75 font-sans">
+            <ul className="space-y-3 text-xs text-white/75 font-sans">
               <li>
                 <Link to="/rajagiri" className="hover:text-white transition-colors">About RCSS</Link>
               </li>
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-sans uppercase tracking-[0.16em] text-[#93C5FD] font-bold">
               Delegate Hub
             </h4>
-            <ul className="space-y-2.5 text-xs text-white/75 font-sans">
+            <ul className="space-y-3 text-xs text-white/75 font-sans">
               <li>
                 <Link to="/accomodation" className="hover:text-white transition-colors">Hotels &amp; Stay</Link>
               </li>
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#93C5FD] shrink-0" />
-                <span>+91 484 291 1111 / 255 5564</span>
+                <span>+91 484-2911 346 / 2911 321</span>
               </div>
               <div className="pt-2">
                 <a

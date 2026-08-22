@@ -14,7 +14,7 @@ export const InstitutionSection: React.FC = () => {
         <div className="flex items-center justify-between pb-4 mb-14 sm:mb-20 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-[0.18em] text-[#667085]">
           <div className="flex items-center gap-3">
             <span className="text-[#2563EB] font-mono font-bold">08</span>
-            <span className="w-6 h-px bg-[#D9DEE5]" />
+            <span className="w-8 h-px bg-[#D9DEE5]" />
             <span className="text-[#071A33] font-semibold">THE HOST INSTITUTION</span>
           </div>
           <span>Autonomous &bull; Established 1955</span>
@@ -22,9 +22,9 @@ export const InstitutionSection: React.FC = () => {
 
         {/* Asymmetric 12-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* LEFT: Large Campus Image */}
+          {/* LEFT: Large Campus Image (Rounded 18px) */}
           <div className="lg:col-span-6">
-            <div className="relative border border-[#D9DEE5] bg-[#F8F8F6] overflow-hidden rounded-img shadow-editorial">
+            <div className="relative border border-[#D9DEE5] bg-[#F7F7F4] overflow-hidden rounded-[18px] shadow-editorial">
               <img
                 src="https://dyuti.in/assets/images/1.jpg"
                 alt="Rajagiri College Valley Campus"
@@ -47,7 +47,7 @@ export const InstitutionSection: React.FC = () => {
 
               <h2
                 id="institution-heading"
-                className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.15] mb-6"
+                className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.12] mb-6"
               >
                 Rajagiri College of Social Sciences (Autonomous)
               </h2>
@@ -57,17 +57,17 @@ export const InstitutionSection: React.FC = () => {
               </p>
 
               {/* Metric Highlights */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-8 border-y border-[#D9DEE5] mb-10 text-xs font-sans">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 py-8 border-y border-[#D9DEE5] mb-10 text-xs font-sans">
                 <div>
-                  <div className="font-serif text-3xl sm:text-4xl text-[#071A33] mb-1">#12</div>
+                  <div className="font-serif text-3xl sm:text-4xl text-[#071A33] mb-1 font-normal">#12</div>
                   <span className="text-[#667085]">NIRF India 2025</span>
                 </div>
                 <div>
-                  <div className="font-serif text-3xl sm:text-4xl text-[#2563EB] mb-1">#1</div>
+                  <div className="font-serif text-3xl sm:text-4xl text-[#2563EB] mb-1 font-normal">#1</div>
                   <span className="text-[#667085]">KIRF Kerala 2025</span>
                 </div>
                 <div>
-                  <div className="font-serif text-3xl sm:text-4xl text-[#071A33] mb-1">60+</div>
+                  <div className="font-serif text-3xl sm:text-4xl text-[#071A33] mb-1 font-normal">60+</div>
                   <span className="text-[#667085]">Global University Alliances</span>
                 </div>
               </div>
