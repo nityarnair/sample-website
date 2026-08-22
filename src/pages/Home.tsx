@@ -5,62 +5,61 @@ import { EditorialIntro } from '@/components/sections/EditorialIntro';
 import { EditorialTracks } from '@/components/sections/EditorialTracks';
 import { SpeakersSection } from '@/components/sections/SpeakersSection';
 import { ScheduleSection } from '@/components/sections/ScheduleSection';
+import { CallForPapersSection } from '@/components/sections/CallForPapersSection';
 import { ImportantDatesTimeline } from '@/components/sections/ImportantDatesTimeline';
-import { ConferenceCTA } from '@/components/sections/ConferenceCTA';
 import { RegistrationCTA } from '@/components/sections/RegistrationCTA';
 import { InstitutionSection } from '@/components/sections/InstitutionSection';
 import { PartnersSection } from '@/components/sections/PartnersSection';
 
 /**
- * DYUTI 2027 Homepage — Editorial White & Navy Design System
+ * DYUTI 2027 Homepage — Editorial Visual Rhythm:
  * 
- * Editorial Sequence:
- * 01 — HeroEditorial (Large Split Layout with Typography & Academic Imagery)
- * 02 — ConferenceMeta (4-Column Horizontal Key Metadata)
- * 03 — EditorialIntro (01: Asymmetric Statement & Genesis)
- * 04 — EditorialTracks (02: 8 Subthemes as Interactive Editorial Rows)
- * 05 — SpeakersSection (03: Academic Leadership & Keynotes)
- * 06 — ScheduleSection (04: Program Timeline & Session Tables)
- * 07 — ImportantDatesTimeline (05: Horizontal Milestone Timeline)
- * 08 — ConferenceCTA (06: Call for Papers & Guidelines)
- * 09 — RegistrationCTA (07: Category Fee Tables & Bank Transfers)
- * 10 — InstitutionSection (08: Rajagiri College of Social Sciences Profile)
- * 11 — PartnersSection (Accreditations & Indexing)
+ * 01 — HeroEditorial (Warm Off-White: #F7F7F4)
+ * 02 — ConferenceMeta (Off-White Metadata Strip: #F7F7F4)
+ * 03 — EditorialIntro (Pure White: #FFFFFF)
+ * 04 — EditorialTracks (Deep Navy: #071A33)
+ * 05 — SpeakersSection (Warm Off-White: #F7F7F4)
+ * 06 — ScheduleSection (Pure White: #FFFFFF)
+ * 07 — CallForPapersSection (Light Blue Tint: #EEF3F8)
+ * 08 — ImportantDatesTimeline (Warm Off-White: #F7F7F4)
+ * 09 — RegistrationCTA (Deep Navy: #071A33)
+ * 10 — InstitutionSection (Pure White: #FFFFFF)
+ * 11 — PartnersSection (Warm Off-White: #F7F7F4)
  */
 export const Home: React.FC = () => {
   return (
-    <div className="space-y-0 bg-[#F8F8F6] text-[#101828] min-h-screen">
-      {/* 01 — Editorial Hero */}
+    <div className="space-y-0 bg-[#F7F7F4] text-[#101828] min-h-screen">
+      {/* 01 — Editorial Hero (Off-White: #F7F7F4) */}
       <HeroEditorial />
 
       {/* 02 — Key Conference Metadata Strip */}
       <ConferenceMeta />
 
-      {/* 03 — Conference Introduction (01) */}
+      {/* 03 — Conference Introduction (White: #FFFFFF) */}
       <EditorialIntro />
 
-      {/* 04 — Thematic Conference Tracks (02 - Editorial Rows) */}
+      {/* 04 — Thematic Conference Tracks (Navy: #071A33) */}
       <EditorialTracks />
 
-      {/* 05 — Speakers & Academic Leadership (03) */}
+      {/* 05 — Speakers & Academic Leadership (Off-White: #F7F7F4) */}
       <SpeakersSection />
 
-      {/* 06 — Program Schedule (04) */}
+      {/* 06 — Program Schedule (White: #FFFFFF) */}
       <ScheduleSection />
 
-      {/* 07 — Important Dates Timeline (05) */}
+      {/* 07 — Call for Papers (Light Blue: #EEF3F8) */}
+      <CallForPapersSection />
+
+      {/* 08 — Important Dates Timeline (Off-White: #F7F7F4) */}
       <ImportantDatesTimeline />
 
-      {/* 08 — Call for Papers (06) */}
-      <ConferenceCTA />
-
-      {/* 09 — Registration & Fees (07) */}
+      {/* 09 — Registration & Fees (Navy: #071A33) */}
       <RegistrationCTA />
 
-      {/* 10 — Host Institution (08) */}
+      {/* 10 — Host Institution (White: #FFFFFF) */}
       <InstitutionSection />
 
-      {/* 11 — Institutional Accreditations & Partners */}
+      {/* 11 — Institutional Accreditations & Partners (Off-White: #F7F7F4) */}
       <PartnersSection />
     </div>
   );
