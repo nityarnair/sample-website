@@ -61,14 +61,17 @@
   .gold-gradient-text {
     background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 40%, #d97706 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .emerald-gradient-text {
     background: linear-gradient(135deg, #d5eee9 0%, #7ecebf 50%, #18776f 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
 
   .glass-card-luxury {
     background: linear-gradient(135deg, rgba(8, 35, 32, 0.75) 0%, rgba(3, 23, 21, 0.85) 100%);
