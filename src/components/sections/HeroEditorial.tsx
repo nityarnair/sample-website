@@ -5,58 +5,70 @@ import { CONFERENCE_DATA } from '@/data/conference';
 export const HeroEditorial: React.FC = () => {
   return (
     <section
-      className="relative bg-[#F7F7F4] text-[#101828] pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-[#D9DEE5] overflow-hidden"
+      className="relative bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] overflow-hidden"
       aria-label="Conference Masthead"
     >
+      {/* ── Very subtle texture rule across top ── */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#D9DEE5] to-transparent" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Top Editorial Annotation */}
-        <div className="flex items-center justify-between pb-6 mb-12 sm:mb-16 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-[0.18em] text-[#667085]">
+
+        {/* ── TOP EDITORIAL ANNOTATION BAR ── */}
+        <div className="flex items-center justify-between py-5 sm:py-6 border-b border-[#D9DEE5]">
+          {/* Left: section number + label */}
           <div className="flex items-center gap-3">
-            <span className="text-[#2563EB] font-mono font-bold">01</span>
-            <span className="w-8 h-px bg-[#D9DEE5]" />
-            <span className="text-[#071A33] font-semibold">INTERNATIONAL CONFERENCE &bull; 2027</span>
+            <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">01</span>
+            <span className="w-6 h-px bg-[#D9DEE5]" />
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
+              Conference — 2027
+            </span>
           </div>
-          <div className="hidden sm:flex items-center gap-4 text-[#667085]">
-            <span>26th Annual Edition</span>
-            <span>&bull;</span>
-            <span>Continuous Legacy Since 1998</span>
+          {/* Right: legacy note */}
+          <div className="hidden sm:flex items-center gap-4 text-[11px] font-sans text-[#667085] uppercase tracking-[0.14em]">
+            <span>26th Edition</span>
+            <span className="w-px h-3 bg-[#D9DEE5]" />
+            <span>Since 1998</span>
           </div>
         </div>
 
-        {/* Asymmetric Hero Main Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-16">
-          {/* LEFT: Massive Masthead Typography & CTAs */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
-            {/* Small Institution Tag */}
-            <div className="mb-4">
-              <span className="text-xs uppercase tracking-[0.2em] font-sans font-bold text-[#2563EB]">
-                RAJAGIRI COLLEGE OF SOCIAL SCIENCES (AUTONOMOUS)
+        {/* ── MAIN HERO COMPOSITION ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-14 sm:pt-20 pb-14 sm:pb-20">
+
+          {/* ── LEFT: Typography + CTAs ── */}
+          <div className="lg:col-span-7 flex flex-col">
+
+            {/* Eyebrow */}
+            <div className="mb-5 flex items-center gap-3">
+              <span className="w-6 h-px bg-[#2563EB]" />
+              <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
+                Social Work · Sustainable Development · Kochi
               </span>
             </div>
 
-            {/* Enormous Masthead Display Title */}
-            <div className="mb-6">
-              <h1 className="hero-masthead font-serif text-[#071A33] font-normal leading-[0.88] select-none tracking-tight">
-                DYUTI<br />
-                <span className="text-[#12345B] italic font-normal">&rsquo;27</span>
-              </h1>
-            </div>
+            {/* Giant masthead — font-weight now 600 (via .hero-masthead class) */}
+            <h1 className="hero-masthead font-serif text-[#071A33] select-none mb-2">
+              DYUTI
+              <br />
+              <em className="not-italic text-[#12345B]">&rsquo;27</em>
+            </h1>
 
-            {/* Short Magazine Statement */}
-            <div className="mb-8">
-              <p className="font-serif italic text-2xl sm:text-3xl text-[#071A33] leading-snug m-0">
-                Ideas that move beyond the present.
-              </p>
-              <p className="text-sm sm:text-base text-[#667085] leading-relaxed font-sans font-normal max-w-xl mt-3 m-0">
-                A premier global academic symposium advancing the UN 2030 Agenda for Sustainable Development through collaborative social work, empirical research, and community empowerment.
-              </p>
-            </div>
+            {/* Italic editorial tagline */}
+            <p className="font-serif italic text-[1.55rem] sm:text-[1.85rem] lg:text-[2.1rem] text-[#071A33]/80 leading-[1.25] mb-6 max-w-[520px]">
+              Ideas that move<br className="hidden sm:block" /> beyond the present.
+            </p>
 
-            {/* Pill CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
+            {/* Body description — strictly from CONFERENCE_DATA */}
+            <p className="text-sm sm:text-[0.9375rem] text-[#667085] leading-[1.75] font-sans font-normal max-w-[460px] mb-10">
+              A premier academic symposium advancing the UN 2030 Agenda through
+              collaborative social work, empirical research, and community
+              empowerment.
+            </p>
+
+            {/* CTA row */}
+            <div className="flex flex-wrap items-center gap-3.5">
               <Button
                 variant="navy"
-                size="md"
+                size="lg"
                 asLink
                 href={CONFERENCE_DATA.links.registrationForm}
                 showArrow
@@ -66,7 +78,7 @@ export const HeroEditorial: React.FC = () => {
 
               <Button
                 variant="outline"
-                size="md"
+                size="lg"
                 asLink
                 href="#tracks"
               >
@@ -75,62 +87,96 @@ export const HeroEditorial: React.FC = () => {
             </div>
           </div>
 
-          {/* RIGHT: Large Cinematic Academic Visual (Rounded 18px) */}
-          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-            <div className="relative">
-              <div className="relative rounded-[18px] overflow-hidden border border-[#D9DEE5] shadow-editorial bg-[#071A33]">
-                <img
-                  src="https://dyuti.in/uploads/gallery/6L6A6365.JPG"
-                  alt="DYUTI International Conference Proceedings & Scholarly Release"
-                  className="w-full h-[400px] sm:h-[480px] object-cover transition-transform duration-700 hover:scale-103"
-                  loading="eager"
-                />
-                
-                {/* Subtle Cinematic Caption Strip */}
-                <div className="p-4 bg-white/95 backdrop-blur-xs border-t border-[#D9DEE5] flex items-center justify-between text-xs text-[#667085] font-sans">
-                  <span>Scholarly Proceeding Release &bull; Scopus Volumes</span>
-                  <span className="font-mono text-[#071A33] font-semibold">Kochi, Kerala</span>
-                </div>
-              </div>
+          {/* ── RIGHT: Editorial Image Composition ── */}
+          <div className="lg:col-span-5 relative mt-2 lg:mt-0">
 
-              {/* Overlapping Institutional Badge */}
-              <div className="absolute -bottom-5 -left-3 sm:-left-6 bg-[#071A33] text-white px-5 py-4 rounded-xl border border-white/10 shadow-editorial max-w-[240px]">
-                <div className="text-[11px] uppercase font-sans text-[#93C5FD] font-bold tracking-wider mb-0.5">
-                  NIRF #12 in India
+            {/* Thin vertical rule — editorial accent, desktop only */}
+            <div className="hidden lg:block absolute -left-7 top-8 bottom-8 w-px bg-[#D9DEE5]" />
+
+            {/* Image container */}
+            <div className="relative rounded-[24px] overflow-hidden border border-[#D9DEE5] shadow-editorial bg-[#E8EDF2]">
+              <img
+                src="https://dyuti.in/uploads/gallery/6L6A6365.JPG"
+                alt="DYUTI 2027 — Scholarly Conference Proceedings, Rajagiri College, Kochi"
+                className="w-full h-[360px] sm:h-[460px] lg:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
+                loading="eager"
+              />
+
+              {/* Caption strip — clean editorial, no card effect */}
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#071A33]/80 via-[#071A33]/30 to-transparent px-5 pt-10 pb-5">
+                <div className="flex items-end justify-between">
+                  <div>
+                    <p className="text-[10px] font-sans uppercase tracking-[0.2em] text-white/60 mb-1">
+                      DYUTI 2027
+                    </p>
+                    <p className="text-[12px] font-sans font-semibold text-white/95 uppercase tracking-[0.12em] leading-tight">
+                      Rajagiri College of Social Sciences
+                    </p>
+                  </div>
+                  <span className="text-[10px] font-mono text-white/50 uppercase tracking-wider">
+                    Kochi, Kerala
+                  </span>
                 </div>
-                <p className="text-[11px] text-white/80 leading-tight m-0 font-sans">
-                  NAAC A++ Accredited Autonomous College
-                </p>
               </div>
+            </div>
+
+            {/* Floating institutional badge — repositioned to top-right */}
+            <div className="absolute -top-4 -right-2 sm:-right-5 bg-[#071A33] text-white px-4 py-3 rounded-[14px] border border-white/10 shadow-editorial">
+              <div className="text-[10px] uppercase font-sans text-[#93C5FD] font-bold tracking-wider mb-0.5 whitespace-nowrap">
+                NIRF #12 · NAAC A++
+              </div>
+              <p className="text-[10.5px] text-white/75 leading-tight m-0 font-sans whitespace-nowrap">
+                Autonomous · Founded 1955
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Hero Metadata Strip with Thin Separators */}
-        <div className="pt-8 border-t border-[#D9DEE5] grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-sans">
-          <div className="flex items-center gap-4">
-            <span className="font-serif text-3xl font-normal text-[#071A33]">2027</span>
-            <div className="w-px h-6 bg-[#D9DEE5]" />
-            <span className="text-[#667085] uppercase tracking-wider">
-              26th Annual Conference Edition
+        {/* ── METADATA STRIP — editorial horizontal rule ── */}
+        <div className="border-t border-[#D9DEE5] grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#D9DEE5]">
+
+          <div className="flex items-center gap-5 py-5 sm:py-6 sm:pr-8">
+            <span className="font-serif text-[2.25rem] font-semibold text-[#071A33] leading-none tabular-nums">
+              2027
             </span>
+            <div>
+              <p className="text-[10px] font-sans uppercase tracking-[0.18em] text-[#667085] m-0 mb-0.5">
+                Edition
+              </p>
+              <p className="text-[12px] font-sans text-[#101828] font-medium m-0">
+                26th Annual Conference
+              </p>
+            </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="font-serif text-xl font-normal text-[#071A33]">Rajagiri College</span>
-            <div className="w-px h-6 bg-[#D9DEE5]" />
-            <span className="text-[#667085] uppercase tracking-wider">
-              Autonomous &bull; Founded 1955
+          <div className="flex items-center gap-5 py-5 sm:py-6 sm:px-8">
+            <span className="font-serif text-[1.5rem] font-semibold text-[#071A33] leading-none whitespace-nowrap">
+              Rajagiri
             </span>
+            <div>
+              <p className="text-[10px] font-sans uppercase tracking-[0.18em] text-[#667085] m-0 mb-0.5">
+                Host Institution
+              </p>
+              <p className="text-[12px] font-sans text-[#101828] font-medium m-0">
+                College of Social Sciences
+              </p>
+            </div>
           </div>
 
-          <div className="flex items-center gap-4 md:justify-end">
-            <span className="font-serif text-xl font-normal text-[#071A33]">Kochi, Kerala</span>
-            <div className="w-px h-6 bg-[#D9DEE5]" />
-            <span className="text-[#667085] uppercase tracking-wider">
-              India &bull; Global Hub
+          <div className="flex items-center gap-5 py-5 sm:py-6 sm:pl-8">
+            <span className="font-serif text-[1.5rem] font-semibold text-[#071A33] leading-none">
+              Kochi
             </span>
+            <div>
+              <p className="text-[10px] font-sans uppercase tracking-[0.18em] text-[#667085] m-0 mb-0.5">
+                Location
+              </p>
+              <p className="text-[12px] font-sans text-[#101828] font-medium m-0">
+                Kerala · India
+              </p>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
