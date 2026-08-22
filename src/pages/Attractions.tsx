@@ -14,7 +14,7 @@ export const Attractions: React.FC = () => {
   ];
 
   return (
-    <div className="py-20 sm:py-28 bg-[#F8F8F6] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 bg-[#F7F7F4] text-[#101828] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <SectionHeading
           sectionNumber="07"
@@ -25,7 +25,7 @@ export const Attractions: React.FC = () => {
         />
 
         {/* Scenic Banner */}
-        <div className="rounded-container overflow-hidden border border-[#D9DEE5] bg-white shadow-subtle mb-16 max-h-[360px]">
+        <div className="rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-white shadow-editorial mb-16 max-h-[360px]">
           <img
             src="https://dyuti.in/assets/images/attraction/attraction_bnr_02.jpg"
             alt="Scenic Kochi Backwaters and Chinese Fishing Nets"
@@ -34,12 +34,12 @@ export const Attractions: React.FC = () => {
         </div>
 
         {/* Quick Tourism Links */}
-        <div className="rounded-container p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle mb-16">
+        <div className="rounded-[20px] p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle mb-16">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-[#EFF6FF] text-[#2563EB] flex items-center justify-center">
               <Compass className="w-5 h-5" />
             </div>
-            <h3 className="font-serif text-2xl text-[#071A33] m-0">
+            <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] m-0 font-normal">
               Tourist Guides &amp; External Resources
             </h3>
           </div>
@@ -50,7 +50,7 @@ export const Attractions: React.FC = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5] hover:border-[#12345B] hover:bg-white transition-all flex items-center justify-between group shadow-subtle"
+                className="p-4 rounded-[14px] bg-[#F7F7F4] border border-[#D9DEE5] hover:border-[#12345B] hover:bg-white transition-all flex items-center justify-between group shadow-subtle"
               >
                 <span className="text-xs sm:text-sm font-sans font-medium text-[#071A33] group-hover:text-[#2563EB] transition-colors">
                   {link.label}
@@ -68,7 +68,7 @@ export const Attractions: React.FC = () => {
             return (
               <div
                 key={attraction.id}
-                className="rounded-container overflow-hidden border border-[#D9DEE5] bg-white shadow-subtle grid grid-cols-1 lg:grid-cols-12"
+                className="rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-white shadow-editorial grid grid-cols-1 lg:grid-cols-12"
               >
                 <div className={`lg:col-span-6 overflow-hidden max-h-[360px] ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                   <img
@@ -82,7 +82,7 @@ export const Attractions: React.FC = () => {
                   <span className="text-xs font-mono font-bold text-[#2563EB] mb-2 uppercase tracking-widest">
                     Destination 0{idx + 1}
                   </span>
-                  <h3 className="font-serif text-3xl text-[#071A33] mb-4">
+                  <h3 className="font-serif text-3xl sm:text-4xl text-[#071A33] mb-4 font-normal">
                     {attraction.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#667085] leading-relaxed font-sans font-normal m-0">
