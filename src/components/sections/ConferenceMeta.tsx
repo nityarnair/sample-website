@@ -1,8 +1,7 @@
 import React from 'react';
-import { CONFERENCE_DATA } from '@/data/conference';
 
 export const ConferenceMeta: React.FC = () => {
-  // Pull real stats values from CONFERENCE_DATA
+  // Editorial stats strip — values sourced from conference documentation
   const items = [
     {
       number: '26th',
