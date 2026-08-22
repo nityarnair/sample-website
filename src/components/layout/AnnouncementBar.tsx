@@ -1,34 +1,28 @@
 import React from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
-import { Link } from 'react-router-dom';
-
 
 export const AnnouncementBar: React.FC = () => {
   return (
-    <div
-      className="bg-gradient-to-r from-[#031715] via-[#093530] to-[#031715] border-b border-amber-500/30 text-amber-200 text-xs sm:text-sm py-2.5 px-4 relative z-50 overflow-hidden"
-      role="region"
+    <aside
+      className="bg-[#073B35] text-white border-b border-[#C89B3C]/20 text-[11px] sm:text-xs py-2 px-4 sm:px-8 relative z-50"
       aria-label="Conference Announcement"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2.5 mx-auto text-center flex-wrap justify-center">
-          <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm shrink-0">
-            <Sparkles className="w-3 h-3 text-slate-950" /> Official Notice
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 font-sans tracking-wide">
+        <div className="flex items-center gap-3 w-full sm:w-auto">
+          <span className="uppercase tracking-widest text-[#C89B3C] font-semibold text-[10px] sm:text-[11px] shrink-0 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C89B3C]" />
+            Announcement
           </span>
-          <span className="font-medium text-slate-200">
+          <div className="w-8 sm:w-12 h-px bg-[#C89B3C]/30 shrink-0 hidden sm:block" />
+          <p className="text-white/90 font-normal m-0 truncate">
             {CONFERENCE_DATA.announcement}
-          </span>
-          <Link
-            to="/call_for_papers"
-            className="inline-flex items-center gap-1 text-amber-300 font-semibold hover:text-white underline underline-offset-4 decoration-amber-400/50 hover:decoration-amber-300 transition-colors"
-          >
-            <span>Submit Abstract</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          </p>
+        </div>
+
+        <div className="hidden lg:flex items-center gap-4 text-[11px] text-white/70 shrink-0 font-mono">
+          <span>Abstract Deadline: 25 Sept 2026</span>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
-

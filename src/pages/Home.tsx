@@ -1,55 +1,55 @@
 import React from 'react';
-import { Hero } from '@/components/sections/Hero';
-import { QuickFacts } from '@/components/sections/QuickFacts';
-import { AboutDyuti } from '@/components/sections/AboutDyuti';
+import { HeroEditorial } from '@/components/sections/HeroEditorial';
+import { ConferenceMeta } from '@/components/sections/ConferenceMeta';
+import { EditorialSection } from '@/components/sections/EditorialSection';
 import { ConferenceTheme } from '@/components/sections/ConferenceTheme';
-import { SubThemesSection } from '@/components/sections/SubThemesSection';
-import { RajagiriSection } from '@/components/sections/RajagiriSection';
-import { CallForPapersSection } from '@/components/sections/CallForPapersSection';
-import { RegistrationSection } from '@/components/sections/RegistrationSection';
+import { ThemeList } from '@/components/sections/ThemeList';
+import { InstitutionSection } from '@/components/sections/InstitutionSection';
+import { ConferenceCTA } from '@/components/sections/ConferenceCTA';
+import { RegistrationCTA } from '@/components/sections/RegistrationCTA';
 
 /**
- * DYUTI 2027 Homepage
+ * DYUTI 2027 Homepage — Editorial / International Conference Direction
  * 
- * Strict Page Structure:
- * 1. Announcement Bar (Layout)
- * 2. Header / Navigation (Layout)
- * 3. Hero
- * 4. Conference Quick Facts
- * 5. About DYUTI
- * 6. Conference Theme
- * 7. Sub-Themes
- * 8. Rajagiri Introduction
- * 9. Call for Papers CTA
- * 10. Registration CTA
- * 11. Footer (Layout)
+ * Strict Editorial Composition:
+ * 01 — Announcement (Layout)
+ * 02 — Header (Layout)
+ * 03 — Hero (HeroEditorial)
+ * 04 — Conference Information (ConferenceMeta)
+ * 05 — About DYUTI (EditorialSection)
+ * 06 — Conference Theme (ConferenceTheme)
+ * 07 — Thematic Areas (ThemeList)
+ * 08 — Rajagiri (InstitutionSection)
+ * 09 — Call for Papers (ConferenceCTA)
+ * 10 — Registration (RegistrationCTA)
+ * 11 — Footer (Layout)
  */
 export const Home: React.FC = () => {
   return (
-    <div className="space-y-0 bg-[#041412] text-slate-100 min-h-screen">
-      {/* 3. Hero Section */}
-      <Hero />
+    <div className="space-y-0 bg-[#101716] text-[#F7F4EC] min-h-screen">
+      {/* 03 — Hero: Editorial Asymmetric Layout with Massive Typography */}
+      <HeroEditorial />
 
-      {/* 4. Conference Quick Facts */}
-      <QuickFacts />
+      {/* 04 — Conference Information: Horizontal Editorial Strip */}
+      <ConferenceMeta />
 
-      {/* 5. About DYUTI */}
-      <AboutDyuti />
+      {/* 05 — About DYUTI: Editorial Narrative & Photography Spread */}
+      <EditorialSection />
 
-      {/* 6. Conference Theme */}
+      {/* 06 — Conference Theme: Full-Width Deep Emerald Quote Spread */}
       <ConferenceTheme />
 
-      {/* 7. Sub-Themes */}
-      <SubThemesSection />
+      {/* 07 — Thematic Areas: Numbered Editorial 2-Column List */}
+      <ThemeList />
 
-      {/* 8. Rajagiri Introduction */}
-      <RajagiriSection />
+      {/* 08 — Rajagiri: Host Institution 55/45 Editorial Section */}
+      <InstitutionSection />
 
-      {/* 9. Call for Papers CTA */}
-      <CallForPapersSection />
+      {/* 09 — Call for Papers: Deep Emerald Editorial CTA */}
+      <ConferenceCTA />
 
-      {/* 10. Registration CTA */}
-      <RegistrationSection />
+      {/* 10 — Registration: Minimal Ivory Conversion Section */}
+      <RegistrationCTA />
     </div>
   );
 };
