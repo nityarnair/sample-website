@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Globe2, CheckCircle2, ArrowRight, Award, Sparkles, Building2 } from 'lucide-react';
+import { Globe2, CheckCircle2, ArrowRight, Building2 } from 'lucide-react';
+
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const Rajagiri: React.FC = () => {

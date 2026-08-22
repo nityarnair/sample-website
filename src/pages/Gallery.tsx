@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Lightbox } from '@/components/ui/Lightbox';
-import { ZoomIn, Calendar, Sparkles } from 'lucide-react';
+import { ZoomIn, Calendar } from 'lucide-react';
+
 import { CONFERENCE_DATA, GalleryItem } from '@/data/conference';
 import { cn } from '@/lib/utils';
 

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Sparkles, BookOpen, ShieldCheck, Users, Globe2, Target, Award } from 'lucide-react';
+import { Sparkles, BookOpen, Users, Globe2, Target, Award } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Badge } from '@/components/ui/Badge';
+
 
 export const AboutSection: React.FC = () => {
   return (

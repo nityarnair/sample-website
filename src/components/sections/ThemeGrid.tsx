@@ -10,12 +10,13 @@ export const ThemeGrid: React.FC = () => {
 
   const filteredThemes = CONFERENCE_DATA.subThemes.filter((theme) => {
     if (selectedFilter === 'all') return true;
-    if (selectedFilter === 'community') return theme.number === 1 || theme.number === 5;
-    if (selectedFilter === 'environment') return theme.number === 2 || theme.number === 8;
-    if (selectedFilter === 'health') return theme.number === 3 || theme.number === 6;
-    if (selectedFilter === 'innovation') return theme.number === 4 || theme.number === 7;
+    if (selectedFilter === 'community') return theme.number === '01' || theme.number === '05';
+    if (selectedFilter === 'environment') return theme.number === '02' || theme.number === '08';
+    if (selectedFilter === 'health') return theme.number === '03' || theme.number === '06';
+    if (selectedFilter === 'innovation') return theme.number === '04' || theme.number === '07';
     return true;
   });
+
 
   return (
     <section className="py-20 sm:py-28 bg-gradient-to-b from-[#041412] via-[#06221e] to-[#041412] border-y border-amber-500/20 relative">

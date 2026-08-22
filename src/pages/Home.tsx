@@ -6,7 +6,7 @@ import { CtaSection } from '@/components/sections/CtaSection';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { Award, GraduationCap, Building2, ArrowRight, BookMarked, CheckCircle2 } from 'lucide-react';
-import { CONFERENCE_DATA } from '@/data/conference';
+
 
 export const Home: React.FC = () => {
   return (

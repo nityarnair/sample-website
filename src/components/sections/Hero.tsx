@@ -167,14 +167,15 @@ export const Hero: React.FC = () => {
               </h4>
               <div className="space-y-3 text-xs">
                 {CONFERENCE_DATA.importantDates.slice(0, 3).map((milestone) => (
-                  <div key={milestone.label} className="flex items-center justify-between gap-2">
-                    <span className="text-slate-300">{milestone.label}</span>
+                  <div key={milestone.event} className="flex items-center justify-between gap-2">
+                    <span className="text-slate-300">{milestone.event}</span>
                     <span className="font-semibold text-amber-300 shrink-0 font-mono">
                       {milestone.date}
                     </span>
                   </div>
                 ))}
               </div>
+
 
               <div className="mt-6 pt-4 border-t border-amber-500/20 text-center">
                 <a

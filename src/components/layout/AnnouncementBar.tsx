@@ -1,7 +1,8 @@
 import React from 'react';
-import { Bell, Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 import { Link } from 'react-router-dom';
+
 
 export const AnnouncementBar: React.FC = () => {
   return (
