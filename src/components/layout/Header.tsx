@@ -167,7 +167,7 @@ export const Header: React.FC = () => {
               {/* Dropdown Card */}
               {isDelegateDropdownOpen && (
                 <div className="absolute top-full -left-4 w-72 pt-3 z-50 animate-fadeIn">
-                  <div className="bg-white border border-[#D9DEE5] rounded-card shadow-editorial p-2 space-y-1">
+                  <div className="bg-white border border-[#D9DEE5] rounded-[20px] shadow-editorial p-2 space-y-1">
                     {delegateLinks.map((sub) => (
                       <Link
                         key={sub.label}
@@ -244,7 +244,7 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-3 bg-white/98 backdrop-blur-md border border-[#D9DEE5] rounded-container px-6 pt-5 pb-7 space-y-4 shadow-float max-h-[80vh] overflow-y-auto animate-fadeIn">
+          <div className="lg:hidden mt-3 bg-white/98 backdrop-blur-md border border-[#D9DEE5] rounded-[24px] px-6 pt-5 pb-7 space-y-4 shadow-float max-h-[80vh] overflow-y-auto animate-fadeIn">
             <div className="text-[11px] uppercase font-sans tracking-widest text-[#2563EB] font-bold pb-2 border-b border-[#D9DEE5]">
               Conference Navigation
             </div>
