@@ -24,9 +24,6 @@ export const Footer: React.FC = () => {
                 <span className="font-serif text-3xl text-white block leading-none font-normal">
                   DYUTI 2027
                 </span>
-                <span className="text-[10px] text-white/60 tracking-wider uppercase font-sans mt-1 block">
-                  International Academic Conference
-                </span>
               </div>
             </div>
 

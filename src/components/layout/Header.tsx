@@ -109,9 +109,6 @@ export const Header: React.FC = () => {
               <span className="font-serif font-semibold tracking-tight text-[#071A33] text-2xl sm:text-[1.65rem] leading-none group-hover:text-[#2563EB] transition-colors">
                 DYUTI &rsquo;27
               </span>
-              <span className="text-[9px] text-[#667085] tracking-[0.18em] uppercase font-sans font-semibold mt-0.5 hidden md:block">
-                International Academic Conference
-              </span>
             </div>
           </Link>
 
