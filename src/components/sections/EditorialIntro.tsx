@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CONFERENCE_DATA } from '@/data/conference';
 

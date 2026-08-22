@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, CheckCircle2 } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 export const ImportantDatesTimeline: React.FC = () => {
   const steps = [

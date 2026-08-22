@@ -1,7 +1,6 @@
 import React from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ResponsiveTable } from '@/components/ui/ResponsiveTable';
-import { Button } from '@/components/ui/Button';
 import { Calendar, FileCheck, CheckCircle2, Download, ExternalLink, CreditCard, ShieldCheck } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 

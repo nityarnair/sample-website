@@ -1,6 +1,5 @@
 import React from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Button } from '@/components/ui/Button';
 import { Hotel, Download, MapPin, Info, PhoneCall } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 

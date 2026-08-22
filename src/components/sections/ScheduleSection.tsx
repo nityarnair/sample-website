@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Clock, MapPin } from 'lucide-react';
 
 interface ScheduleItem {
   time: string;
