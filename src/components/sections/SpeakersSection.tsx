@@ -48,7 +48,7 @@ export const SpeakersSection: React.FC = () => {
   return (
     <section
       id="speakers"
-      className="py-24 sm:py-32 lg:py-36 bg-[#F8F8F6] text-[#101828] border-b border-[#D9DEE5] relative"
+      className="py-24 sm:py-32 lg:py-36 bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] relative"
       aria-labelledby="speakers-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -69,7 +69,7 @@ export const SpeakersSection: React.FC = () => {
           </span>
           <h2
             id="speakers-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.15] m-0"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.12] m-0"
           >
             Keynote Speakers &amp; Academic Leadership
           </h2>
@@ -79,14 +79,14 @@ export const SpeakersSection: React.FC = () => {
         </div>
 
         {/* Large Editorial Portrait Grid (4 Columns) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {speakers.map((speaker, idx) => (
             <article
               key={idx}
               className="group flex flex-col justify-between"
             >
-              {/* Large Portrait Image (12px rounded corners) */}
-              <div className="relative h-80 sm:h-96 w-full overflow-hidden rounded-xl border border-[#D9DEE5] bg-[#071A33] mb-5 shadow-subtle group-hover:shadow-editorial transition-all duration-500">
+              {/* Large Portrait Image (18px rounded corners) */}
+              <div className="relative h-80 sm:h-96 w-full overflow-hidden rounded-[18px] border border-[#D9DEE5] bg-[#071A33] mb-5 shadow-subtle group-hover:shadow-editorial transition-all duration-500">
                 <img
                   src={speaker.imageUrl}
                   alt={speaker.name}
@@ -95,25 +95,25 @@ export const SpeakersSection: React.FC = () => {
                 />
                 
                 {/* Navy Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071A33] via-[#071A33]/40 to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
-                  <span className="text-[10px] font-sans uppercase tracking-[0.16em] text-[#93C5FD] font-bold mb-1">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071A33] via-[#071A33]/50 to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+                  <span className="text-[10px] font-sans uppercase tracking-[0.16em] text-[#93C5FD] font-bold mb-1.5">
                     Deliberation Focus
                   </span>
-                  <p className="text-xs text-white/95 font-serif italic leading-snug m-0">
-                    "{speaker.topic}"
+                  <p className="text-xs sm:text-sm text-white/95 font-serif italic leading-snug m-0">
+                    &ldquo;{speaker.topic}&rdquo;
                   </p>
                 </div>
               </div>
 
-              {/* Speaker Metadata under image */}
+              {/* Speaker Metadata under image (Open Layout) */}
               <div>
-                <h3 className="font-serif text-xl sm:text-2xl text-[#071A33] group-hover:text-[#2563EB] transition-colors leading-snug mb-1">
+                <h3 className="font-serif text-2xl text-[#071A33] group-hover:text-[#2563EB] transition-colors leading-snug mb-1 font-normal">
                   {speaker.name}
                 </h3>
                 <p className="text-xs font-sans font-semibold text-[#2563EB] mb-1">
                   {speaker.designation}
                 </p>
-                <p className="text-xs text-[#667085] font-sans font-normal leading-relaxed m-0">
+                <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal leading-relaxed m-0">
                   {speaker.institution} &bull; <span className="font-medium text-[#101828]">{speaker.country}</span>
                 </p>
               </div>

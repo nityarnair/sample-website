@@ -114,7 +114,7 @@ export const ScheduleSection: React.FC = () => {
   return (
     <section
       id="schedule"
-      className="py-24 sm:py-32 lg:py-36 bg-white text-[#101828] border-b border-[#D9DEE5] relative"
+      className="py-24 sm:py-32 lg:py-36 bg-[#FFFFFF] text-[#101828] border-b border-[#D9DEE5] relative"
       aria-labelledby="schedule-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -129,25 +129,25 @@ export const ScheduleSection: React.FC = () => {
         </div>
 
         {/* Header & Pill Day Selector */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#2563EB] font-bold block mb-3">
               Chronicle of Sessions
             </span>
             <h2
               id="schedule-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.15] m-0"
+              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.12] m-0"
             >
               Conference Itinerary &amp; Timeline
             </h2>
           </div>
 
           {/* Soft Pill Day Selector Buttons */}
-          <div className="inline-flex border border-[#D9DEE5] rounded-full p-1.5 bg-[#F8F8F6] self-start md:self-auto">
+          <div className="inline-flex border border-[#D9DEE5] rounded-full p-1.5 bg-[#F7F7F4] self-start md:self-auto shadow-subtle">
             <button
               type="button"
               onClick={() => setActiveDay(1)}
-              className={`px-6 py-2.5 text-xs font-sans uppercase tracking-wider font-semibold rounded-full transition-all cursor-pointer ${
+              className={`px-7 py-2.5 text-xs font-sans uppercase tracking-wider font-semibold rounded-full transition-all cursor-pointer ${
                 activeDay === 1
                   ? 'bg-[#071A33] text-white shadow-pill'
                   : 'text-[#667085] hover:text-[#071A33]'
@@ -158,7 +158,7 @@ export const ScheduleSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveDay(2)}
-              className={`px-6 py-2.5 text-xs font-sans uppercase tracking-wider font-semibold rounded-full transition-all cursor-pointer ${
+              className={`px-7 py-2.5 text-xs font-sans uppercase tracking-wider font-semibold rounded-full transition-all cursor-pointer ${
                 activeDay === 2
                   ? 'bg-[#071A33] text-white shadow-pill'
                   : 'text-[#667085] hover:text-[#071A33]'
@@ -169,45 +169,43 @@ export const ScheduleSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Table / Timeline Style Schedule */}
-        <div className="border border-[#D9DEE5] rounded-xl overflow-hidden bg-white shadow-subtle">
-          <div className="divide-y divide-[#D9DEE5]">
-            {currentSchedule.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-6 sm:p-8 hover:bg-[#F8F8F6] transition-colors flex flex-col lg:flex-row lg:items-start justify-between gap-6"
-              >
-                {/* Time & Type */}
-                <div className="lg:w-1/4 shrink-0">
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#071A33] mb-2">
-                    <Clock className="w-3.5 h-3.5 text-[#2563EB]" />
-                    <span>{item.time}</span>
-                  </div>
-                  <span className="inline-block text-[10px] font-sans font-bold uppercase tracking-[0.14em] px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]">
-                    {item.type}
-                  </span>
+        {/* Clean Editorial Timeline with Horizontal Separators */}
+        <div className="border-t border-[#D9DEE5] divide-y divide-[#D9DEE5]">
+          {currentSchedule.map((item, idx) => (
+            <div
+              key={idx}
+              className="py-8 sm:py-10 flex flex-col lg:flex-row lg:items-start justify-between gap-6 hover:bg-[#F7F7F4]/50 transition-colors px-2 sm:px-4"
+            >
+              {/* Time & Type */}
+              <div className="lg:w-1/4 shrink-0">
+                <div className="flex items-center gap-2 text-sm font-mono font-bold text-[#071A33] mb-2">
+                  <Clock className="w-4 h-4 text-[#2563EB]" />
+                  <span>{item.time}</span>
                 </div>
+                <span className="inline-block text-[10px] font-sans font-bold uppercase tracking-[0.14em] px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]">
+                  {item.type}
+                </span>
+              </div>
 
-                {/* Title & Description */}
-                <div className="lg:w-2/4">
-                  <h3 className="font-serif text-xl sm:text-2xl text-[#071A33] mb-2 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal leading-relaxed m-0">
-                    {item.description}
-                  </p>
-                </div>
+              {/* Title & Description */}
+              <div className="lg:w-2/4">
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] mb-2 leading-snug font-normal">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal leading-relaxed m-0">
+                  {item.description}
+                </p>
+              </div>
 
-                {/* Location */}
-                <div className="lg:w-1/4 flex lg:justify-end items-center text-xs text-[#667085] font-sans font-medium">
-                  <div className="flex items-center gap-1.5 bg-[#F8F8F6] border border-[#D9DEE5] px-3.5 py-1.5 rounded-full">
-                    <MapPin className="w-3.5 h-3.5 text-[#071A33]" />
-                    <span>{item.location}</span>
-                  </div>
+              {/* Location */}
+              <div className="lg:w-1/4 flex lg:justify-end items-center text-xs text-[#667085] font-sans font-medium">
+                <div className="flex items-center gap-1.5 bg-[#F7F7F4] border border-[#D9DEE5] px-4 py-2 rounded-full">
+                  <MapPin className="w-3.5 h-3.5 text-[#071A33]" />
+                  <span>{item.location}</span>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

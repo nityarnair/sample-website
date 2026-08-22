@@ -5,12 +5,12 @@ import { CONFERENCE_DATA } from '@/data/conference';
 export const HeroEditorial: React.FC = () => {
   return (
     <section
-      className="relative bg-white text-[#101828] pt-14 pb-16 sm:pt-20 sm:pb-24 border-b border-[#D9DEE5] overflow-hidden"
+      className="relative bg-[#F7F7F4] text-[#101828] pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-[#D9DEE5] overflow-hidden"
       aria-label="Conference Masthead"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Top Editorial Annotation */}
-        <div className="flex items-center justify-between pb-6 mb-10 sm:mb-14 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-[0.18em] text-[#667085]">
+        <div className="flex items-center justify-between pb-6 mb-12 sm:mb-16 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-[0.18em] text-[#667085]">
           <div className="flex items-center gap-3">
             <span className="text-[#2563EB] font-mono font-bold">01</span>
             <span className="w-8 h-px bg-[#D9DEE5]" />
@@ -24,10 +24,10 @@ export const HeroEditorial: React.FC = () => {
         </div>
 
         {/* Asymmetric Hero Main Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-16">
           {/* LEFT: Massive Masthead Typography & CTAs */}
           <div className="lg:col-span-7 flex flex-col justify-between">
-            {/* Small Label */}
+            {/* Small Institution Tag */}
             <div className="mb-4">
               <span className="text-xs uppercase tracking-[0.2em] font-sans font-bold text-[#2563EB]">
                 RAJAGIRI COLLEGE OF SOCIAL SCIENCES (AUTONOMOUS)
@@ -36,19 +36,19 @@ export const HeroEditorial: React.FC = () => {
 
             {/* Enormous Masthead Display Title */}
             <div className="mb-6">
-              <h1 className="hero-masthead font-serif text-[#071A33] font-normal leading-[0.92] tracking-editorial-tight select-none">
+              <h1 className="hero-masthead font-serif text-[#071A33] font-normal leading-[0.88] select-none tracking-tight">
                 DYUTI<br />
-                <span className="text-[#12345B] font-light">2027</span>
+                <span className="text-[#12345B] italic font-normal">&rsquo;27</span>
               </h1>
             </div>
 
-            {/* Short Statement */}
+            {/* Short Magazine Statement */}
             <div className="mb-8">
               <p className="font-serif italic text-2xl sm:text-3xl text-[#071A33] leading-snug m-0">
-                Ideas that illuminate the future.
+                Ideas that move beyond the present.
               </p>
               <p className="text-sm sm:text-base text-[#667085] leading-relaxed font-sans font-normal max-w-xl mt-3 m-0">
-                A global academic symposium advancing the UN 2030 Agenda for Sustainable Development through collaborative social work, empirical research, and community innovation.
+                A premier global academic symposium advancing the UN 2030 Agenda for Sustainable Development through collaborative social work, empirical research, and community empowerment.
               </p>
             </div>
 
@@ -68,17 +68,17 @@ export const HeroEditorial: React.FC = () => {
                 variant="outline"
                 size="md"
                 asLink
-                href="#introduction"
+                href="#tracks"
               >
-                Explore Conference
+                Explore Tracks
               </Button>
             </div>
           </div>
 
-          {/* RIGHT: Large Cinematic Academic Visual (Occupying 40-50%) */}
+          {/* RIGHT: Large Cinematic Academic Visual (Rounded 18px) */}
           <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             <div className="relative">
-              <div className="relative rounded-img overflow-hidden border border-[#D9DEE5] shadow-editorial bg-[#071A33]">
+              <div className="relative rounded-[18px] overflow-hidden border border-[#D9DEE5] shadow-editorial bg-[#071A33]">
                 <img
                   src="https://dyuti.in/uploads/gallery/6L6A6365.JPG"
                   alt="DYUTI International Conference Proceedings & Scholarly Release"
@@ -109,7 +109,7 @@ export const HeroEditorial: React.FC = () => {
         {/* Bottom Hero Metadata Strip with Thin Separators */}
         <div className="pt-8 border-t border-[#D9DEE5] grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-sans">
           <div className="flex items-center gap-4">
-            <span className="font-serif text-2xl font-bold text-[#071A33]">2027</span>
+            <span className="font-serif text-3xl font-normal text-[#071A33]">2027</span>
             <div className="w-px h-6 bg-[#D9DEE5]" />
             <span className="text-[#667085] uppercase tracking-wider">
               26th Annual Conference Edition
@@ -117,7 +117,7 @@ export const HeroEditorial: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="font-serif text-lg font-bold text-[#071A33]">Rajagiri College</span>
+            <span className="font-serif text-xl font-normal text-[#071A33]">Rajagiri College</span>
             <div className="w-px h-6 bg-[#D9DEE5]" />
             <span className="text-[#667085] uppercase tracking-wider">
               Autonomous &bull; Founded 1955
@@ -125,7 +125,7 @@ export const HeroEditorial: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 md:justify-end">
-            <span className="font-serif text-lg font-bold text-[#071A33]">Kochi, Kerala</span>
+            <span className="font-serif text-xl font-normal text-[#071A33]">Kochi, Kerala</span>
             <div className="w-px h-6 bg-[#D9DEE5]" />
             <span className="text-[#667085] uppercase tracking-wider">
               India &bull; Global Hub
