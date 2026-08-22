@@ -25,14 +25,18 @@
     color: #101828;
     overflow-x: hidden;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', Georgia, serif;
     color: #071A33;
-    letter-spacing: -0.015em;
+    font-weight: 400;
+    letter-spacing: -0.02em;
   }
 
-  /* Editorial thin scrollbar */
+  /* Thin Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -42,7 +46,7 @@
   }
   ::-webkit-scrollbar-thumb {
     background: #12345B;
-    border-radius: 3px;
+    border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #071A33;
@@ -50,34 +54,17 @@
 }
 
 @layer utilities {
-  .font-editorial-serif {
-    font-family: 'Playfair Display', 'Newsreader', 'Cormorant Garamond', Georgia, serif;
-    font-feature-settings: 'liga' 1, 'dlig' 1;
+  .hero-masthead {
+    font-size: clamp(3.75rem, 8.5vw, 8.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
   }
 
-  .editorial-hairline {
-    border-color: #D9DEE5;
-  }
-
-  .editorial-hairline-dark {
-    border-color: rgba(255, 255, 255, 0.15);
-  }
-
-  /* Academic focus outlines */
-  .focus-ring-navy {
-    outline: none;
-  }
-  .focus-ring-navy:focus-visible {
-    outline: 2px solid #12345B;
-    outline-offset: 2px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  .editorial-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
   }
 }
