@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dyuti-primary: #0f4c47;
+  --dyuti-primary-dark: #062b27;
+  --dyuti-gold: #d97706;
+  --dyuti-gold-light: #fef3c7;
+  --dyuti-bg: #f8fafb;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafb;
+    color: #334155;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    color: #0f172a;
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer utilities {
+  .text-serif-display {
+    font-family: 'Newsreader', Georgia, Cambria, serif;
+  }
+}
