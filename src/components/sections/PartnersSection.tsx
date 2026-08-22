@@ -12,12 +12,12 @@ export const PartnersSection: React.FC = () => {
 
   return (
     <section
-      className="py-16 bg-[#F8F8F6] text-[#101828] border-b border-[#D9DEE5]"
+      className="py-20 sm:py-24 bg-[#F8F8F6] text-[#101828] border-b border-[#D9DEE5]"
       aria-label="Institutional Accreditations and Partners"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="text-center mb-10">
-          <span className="text-[11px] font-sans uppercase tracking-widest text-[#667085] font-semibold">
+        <div className="text-center mb-12">
+          <span className="text-xs font-sans uppercase tracking-[0.18em] text-[#667085] font-semibold">
             Institutional Accreditations, Indexing &amp; Global Academic Partners
           </span>
         </div>
@@ -26,15 +26,15 @@ export const PartnersSection: React.FC = () => {
           {partners.map((partner, idx) => (
             <div
               key={idx}
-              className="p-5 bg-white border border-[#D9DEE5] rounded-sm flex flex-col items-center justify-center text-center shadow-subtle hover:border-[#12345B]/40 transition-colors"
+              className="p-6 bg-white border border-[#D9DEE5] rounded-xl flex flex-col items-center justify-center text-center shadow-subtle hover:border-[#12345B]/40 transition-colors"
             >
-              <div className="text-[#071A33] mb-2 opacity-80">
+              <div className="text-[#071A33] mb-3 opacity-80">
                 {partner.icon}
               </div>
-              <strong className="text-xs sm:text-sm font-serif font-bold text-[#071A33] block">
+              <strong className="text-sm font-serif font-normal text-[#071A33] block">
                 {partner.label}
               </strong>
-              <span className="text-[11px] text-[#667085] font-sans block mt-0.5">
+              <span className="text-[11px] text-[#667085] font-sans block mt-1">
                 {partner.sub}
               </span>
             </div>

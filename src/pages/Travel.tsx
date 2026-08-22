@@ -61,52 +61,51 @@ export const Travel: React.FC = () => {
   ];
 
   return (
-    <div className="py-16 sm:py-24 bg-[#F8F8F6] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 bg-[#F8F8F6] text-[#101828] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <SectionHeading
           eyebrow="Route & Navigation"
-          eyebrowVariant="blue"
           title="Travel &amp; Directions to Rajagiri Campus"
           subtitle="Rajagiri College of Social Sciences (Autonomous) is situated in Kalamassery, Kochi, seamlessly connected via Cochin International Airport, Kochi Metro rail, and Southern Railway."
         />
 
         {/* Airport Section */}
-        <div className="mb-14">
-          <div className="flex items-center gap-3.5 mb-6">
-            <div className="w-10 h-10 rounded-sm bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center">
-              <Plane className="w-5 h-5" />
+        <div className="mb-16">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-12 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center">
+              <Plane className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#071A33] m-0">
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] m-0">
                 Arriving by Air (Cochin International Airport - COK)
               </h3>
-              <p className="text-xs text-[#2563EB] font-sans font-semibold m-0">Distance: ~22 km to campus</p>
+              <p className="text-xs text-[#2563EB] font-sans font-semibold m-0 mt-0.5">Distance: ~22 km to campus</p>
             </div>
           </div>
           <Accordion items={airportItems} />
         </div>
 
         {/* Railway Section */}
-        <div className="mb-14">
-          <div className="flex items-center gap-3.5 mb-6">
-            <div className="w-10 h-10 rounded-sm bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center">
-              <Train className="w-5 h-5" />
+        <div className="mb-16">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-12 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center">
+              <Train className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#071A33] m-0">
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] m-0">
                 Arriving by Train (Southern Railway Terminals)
               </h3>
-              <p className="text-xs text-[#2563EB] font-sans font-semibold m-0">Key Stations: Aluva (AWY), Ernakulam Town (ERN), Ernakulam Jn (ERS)</p>
+              <p className="text-xs text-[#2563EB] font-sans font-semibold m-0 mt-0.5">Key Stations: Aluva (AWY), Ernakulam Town (ERN), Ernakulam Jn (ERS)</p>
             </div>
           </div>
           <Accordion items={railwayItems} />
         </div>
 
         {/* Map & Campus Address */}
-        <div className="rounded-sm overflow-hidden border border-[#D9DEE5] shadow-editorial bg-white">
-          <div className="p-8 bg-[#071A33] text-white border-b border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="rounded-container overflow-hidden border border-[#D9DEE5] shadow-editorial bg-white">
+          <div className="p-8 sm:p-10 bg-[#071A33] text-white border-b border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <h4 className="font-serif font-bold text-xl text-white m-0 mb-1">
+              <h4 className="font-serif text-2xl text-white m-0 mb-1">
                 Conference Venue Coordinates
               </h4>
               <p className="text-xs sm:text-sm text-white/80 m-0 font-sans font-normal">
@@ -117,7 +116,7 @@ export const Travel: React.FC = () => {
               href="https://maps.google.com/?q=Rajagiri+College+of+Social+Sciences+Kalamassery"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-white text-[#071A33] hover:bg-[#EFF6FF] text-xs font-bold font-sans uppercase tracking-wider shrink-0 shadow-subtle transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#071A33] hover:bg-[#EFF6FF] text-xs font-semibold font-sans uppercase tracking-[0.14em] shrink-0 shadow-pill transition-all"
             >
               <Navigation className="w-4 h-4 text-[#2563EB]" />
               <span>Open in Google Maps</span>

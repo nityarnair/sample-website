@@ -38,11 +38,10 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="py-16 sm:py-24 bg-[#F8F8F6] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 bg-[#F8F8F6] text-[#101828] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <SectionHeading
           eyebrow="Direct Secretariat"
-          eyebrowVariant="blue"
           title="Contact DYUTI 2027 Secretariat"
           subtitle="Reach out directly to the conference convenors for inquiries regarding paper submissions, delegate registrations, or institutional partnerships."
         />
@@ -50,16 +49,16 @@ export const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Contact Details Column */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-sm p-8 bg-white border border-[#D9DEE5] shadow-subtle">
-              <h3 className="font-serif font-bold text-xl text-[#071A33] mb-5 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-sm bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2563EB]">
+            <div className="rounded-container p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle">
+              <h3 className="font-serif text-2xl text-[#071A33] mb-6 flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2563EB]">
                   <Mail className="w-5 h-5" />
                 </div>
                 <span>Conference Coordinators</span>
               </h3>
               <div className="space-y-4">
                 {CONFERENCE_DATA.contacts.map((contact, idx) => (
-                  <div key={idx} className="border-l-2 border-[#12345B] pl-3.5 py-1 bg-[#F8F8F6] rounded-xs">
+                  <div key={idx} className="border-l-2 border-[#12345B] pl-4 py-1.5 bg-[#F8F8F6] rounded-r-lg">
                     <p className="font-sans font-semibold text-[#071A33] text-sm m-0">{contact.name}</p>
                     <p className="text-xs text-[#667085] m-0">{contact.role}</p>
                     <p className="text-xs text-[#667085] m-0">{contact.department}</p>
@@ -76,8 +75,8 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="rounded-sm p-8 bg-white border border-[#D9DEE5] shadow-subtle">
-              <h4 className="font-serif font-bold text-lg text-[#071A33] mb-3 flex items-center gap-2.5">
+            <div className="rounded-container p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle">
+              <h4 className="font-serif text-xl text-[#071A33] mb-3 flex items-center gap-2.5">
                 <MapPin className="w-5 h-5 text-[#2563EB]" />
                 <span>Mailing &amp; Venue Address</span>
               </h4>
@@ -85,7 +84,7 @@ export const Contact: React.FC = () => {
                 <strong className="text-[#071A33]">{CONFERENCE_DATA.hostInstitution}</strong><br />
                 Rajagiri P.O, Kalamassery, Kochi, Kerala, India - 683104
               </p>
-              <div className="mt-4 pt-3 border-t border-[#D9DEE5] text-xs text-[#667085] font-sans">
+              <div className="mt-4 pt-4 border-t border-[#D9DEE5] text-xs text-[#667085] font-sans">
                 Official Email: <a href="mailto:dyuti@rajagiri.edu" className="text-[#2563EB] font-semibold font-mono">dyuti@rajagiri.edu</a>
               </div>
             </div>
@@ -93,20 +92,20 @@ export const Contact: React.FC = () => {
 
           {/* Contact Form Column */}
           <div className="lg:col-span-7">
-            <div className="rounded-sm p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle">
-              <span className="inline-flex items-center gap-1.5 text-xs font-sans font-bold uppercase tracking-widest text-[#2563EB] mb-2">
+            <div className="rounded-container p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle">
+              <span className="inline-flex items-center gap-1.5 text-xs font-sans font-bold uppercase tracking-[0.16em] text-[#2563EB] mb-2">
                 Inquiry Form
               </span>
-              <h3 className="font-serif font-bold text-2xl text-[#071A33] mb-2">
+              <h3 className="font-serif text-3xl text-[#071A33] mb-2">
                 Send an Inquiry Message
               </h3>
-              <p className="text-xs sm:text-sm text-[#667085] mb-6 font-sans font-normal">
+              <p className="text-xs sm:text-sm text-[#667085] mb-8 font-sans font-normal">
                 Submit your query below and our organizing committee will respond promptly.
               </p>
 
               {feedback && (
                 <div
-                  className={`p-4 rounded-sm mb-6 flex items-center gap-2.5 text-sm ${
+                  className={`p-4 rounded-xl mb-6 flex items-center gap-2.5 text-sm ${
                     feedback.type === 'success'
                       ? 'bg-emerald-50 text-emerald-900 border border-emerald-300'
                       : 'bg-red-50 text-red-900 border border-red-300'
@@ -121,7 +120,7 @@ export const Contact: React.FC = () => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-4 font-sans">
+              <form onSubmit={handleSubmit} className="space-y-5 font-sans">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <FormField label="Full Name" id="name" required>
                     <input
@@ -132,7 +131,7 @@ export const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Dr. Jane Smith"
-                      className="w-full px-4 py-2.5 rounded-sm bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828] placeholder-[#9CA3AF] text-sm focus:outline-none focus:border-[#071A33] focus:ring-1 focus:ring-[#071A33] transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828] placeholder-[#9CA3AF] text-sm focus:outline-none focus:border-[#071A33] focus:ring-1 focus:ring-[#071A33] transition-all"
                     />
                   </FormField>
 
@@ -145,7 +144,7 @@ export const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="name@university.edu"
-                      className="w-full px-4 py-2.5 rounded-sm bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828] placeholder-[#9CA3AF] text-sm focus:outline-none focus:border-[#071A33] focus:ring-1 focus:ring-[#071A33] transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828] placeholder-[#9CA3AF] text-sm focus:outline-none focus:border-[#071A33] focus:ring-1 focus:ring-[#071A33] transition-all"
                     />
                   </FormField>
                 </div>
@@ -158,7 +157,7 @@ export const Contact: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+91 98765 43210"
-                    className="w-full px-4 py-2.5 rounded-sm bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828] placeholder-[#9CA3AF] text-sm focus:outline-none focus:border-[#071A33] focus:ring-1 focus:ring-[#071A33] transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828] placeholder-[#9CA3AF] text-sm focus:outline-none focus:border-[#071A33] focus:ring-1 focus:ring-[#071A33] transition-all"
                   />
                 </FormField>
 
@@ -171,7 +170,7 @@ export const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Specify your inquiry regarding abstract submission, conference schedule, registration, or accommodation..."
-                    className="w-full px-4 py-2.5 rounded-sm bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828] placeholder-[#9CA3AF] text-sm focus:outline-none focus:border-[#071A33] focus:ring-1 focus:ring-[#071A33] transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828] placeholder-[#9CA3AF] text-sm focus:outline-none focus:border-[#071A33] focus:ring-1 focus:ring-[#071A33] transition-all"
                   />
                 </FormField>
 
