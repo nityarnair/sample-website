@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ResponsiveTable } from '@/components/ui/ResponsiveTable';
-import { Calendar, FileCheck, CheckCircle2, Download, ExternalLink, CreditCard, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Calendar, FileCheck, CheckCircle2, Download, ExternalLink, CreditCard, ShieldCheck } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const CallForPapers: React.FC = () => {

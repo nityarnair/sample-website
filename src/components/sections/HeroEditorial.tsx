@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { CONFERENCE_DATA } from '@/data/conference';
 

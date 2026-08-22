@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 
 export interface SectionHeadingProps {
   eyebrow?: string;
+  eyebrowVariant?: string;
   sectionNumber?: string;
   title: string;
   subtitle?: string;
