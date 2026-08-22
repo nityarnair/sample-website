@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Card } from '@/components/ui/Card';
 import { FormField } from '@/components/ui/FormField';
 import { Button } from '@/components/ui/Button';
-import { Mail, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle, AlertCircle, Sparkles } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 import { apiService } from '@/lib/api';
 
@@ -39,32 +38,36 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="py-12 sm:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <div className="py-16 sm:py-24 bg-[#041412] text-slate-100 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <SectionHeading
-          eyebrow="Get In Touch"
+          eyebrow="Direct Secretariat"
+          eyebrowVariant="gold-luxury"
           title="Contact DYUTI 2027 Secretariat"
-          subtitle="Reach out to the conference convenors for inquiries regarding paper submissions, registrations, or academic partnerships."
+          subtitle="Reach out directly to the conference convenors for inquiries regarding paper submissions, delegate registrations, or institutional partnerships."
+          dark
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Contact Details Column */}
           <div className="lg:col-span-5 space-y-6">
-            <Card>
-              <h3 className="font-display font-bold text-xl text-slate-900 mb-4 flex items-center gap-2">
-                <Mail className="w-5 h-5 text-[#0f4c47]" />
+            <div className="rounded-3xl p-8 bg-gradient-to-b from-[#082a26]/90 to-[#041513]/95 border border-amber-500/30 backdrop-blur-xl shadow-luxury-md">
+              <h3 className="font-cinzel font-bold text-xl text-white mb-5 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-400/30 flex items-center justify-center text-amber-300">
+                  <Mail className="w-5 h-5" />
+                </div>
                 <span>Conference Coordinators</span>
               </h3>
               <div className="space-y-4">
                 {CONFERENCE_DATA.contacts.map((contact, idx) => (
-                  <div key={idx} className="border-l-2 border-[#0f4c47] pl-3 py-1">
-                    <p className="font-display font-bold text-slate-900 m-0">{contact.name}</p>
-                    <p className="text-xs text-slate-500 m-0">{contact.role}</p>
-                    <p className="text-xs text-slate-500 m-0">{contact.department}</p>
+                  <div key={idx} className="border-l-2 border-amber-400/60 pl-3.5 py-1 bg-white/5 rounded-r-xl">
+                    <p className="font-display font-semibold text-white text-sm m-0">{contact.name}</p>
+                    <p className="text-xs text-slate-300 m-0">{contact.role}</p>
+                    <p className="text-xs text-slate-400 m-0">{contact.department}</p>
                     {contact.email && (
                       <a
                         href={`mailto:${contact.email}`}
-                        className="text-xs text-[#0f4c47] font-semibold hover:underline mt-1 block"
+                        className="text-xs text-amber-300 font-mono hover:underline mt-1 block"
                       >
                         {contact.email}
                       </a>
@@ -72,45 +75,48 @@ export const Contact: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </Card>
+            </div>
 
-            <Card>
-              <h4 className="font-display font-bold text-lg text-slate-900 mb-3 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#d97706]" />
-                <span>Mailing Address</span>
+            <div className="rounded-3xl p-8 bg-gradient-to-b from-[#082a26]/90 to-[#041513]/95 border border-emerald-500/30 backdrop-blur-xl shadow-luxury-md">
+              <h4 className="font-cinzel font-bold text-lg text-white mb-3 flex items-center gap-2.5">
+                <MapPin className="w-5 h-5 text-amber-400" />
+                <span>Mailing &amp; Venue Address</span>
               </h4>
-              <p className="text-sm text-slate-600 leading-relaxed m-0">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed m-0 font-normal">
                 <strong>{CONFERENCE_DATA.hostInstitution}</strong><br />
                 Rajagiri P.O, Kalamassery, Kochi, Kerala, India - 683104
               </p>
-              <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500">
-                Email: <a href="mailto:dyuti@rajagiri.edu" className="text-[#0f4c47] font-semibold">dyuti@rajagiri.edu</a>
+              <div className="mt-4 pt-3 border-t border-white/10 text-xs text-slate-300">
+                Official Email: <a href="mailto:dyuti@rajagiri.edu" className="text-amber-300 font-semibold font-mono">dyuti@rajagiri.edu</a>
               </div>
-            </Card>
+            </div>
           </div>
 
           {/* Contact Form Column */}
           <div className="lg:col-span-7">
-            <Card>
-              <h3 className="font-display font-bold text-xl text-slate-900 mb-1">
+            <div className="rounded-3xl p-8 sm:p-10 bg-gradient-to-b from-[#082a26]/90 to-[#041513]/95 border border-amber-500/30 backdrop-blur-xl shadow-luxury-md">
+              <span className="inline-flex items-center gap-1.5 text-xs font-cinzel font-bold uppercase tracking-widest text-amber-300 mb-2">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Inquiry Form
+              </span>
+              <h3 className="font-cinzel font-bold text-2xl text-white mb-2">
                 Send an Inquiry Message
               </h3>
-              <p className="text-xs text-slate-500 mb-6">
-                Fill out the form below and our secretariat will respond as soon as possible.
+              <p className="text-xs sm:text-sm text-slate-300 mb-6 font-normal">
+                Submit your query below and our organizing committee will respond promptly.
               </p>
 
               {feedback && (
                 <div
                   className={`p-4 rounded-xl mb-6 flex items-center gap-2.5 text-sm ${
                     feedback.type === 'success'
-                      ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-                      : 'bg-red-50 text-red-800 border border-red-200'
+                      ? 'bg-emerald-950/80 text-emerald-200 border border-emerald-500/40'
+                      : 'bg-red-950/80 text-red-200 border border-red-500/40'
                   }`}
                 >
                   {feedback.type === 'success' ? (
-                    <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
                   ) : (
-                    <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+                    <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
                   )}
                   <span>{feedback.text}</span>
                 </div>
@@ -127,7 +133,7 @@ export const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Dr. Jane Smith"
-                      className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f4c47] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-black/40 border border-amber-500/30 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all"
                     />
                   </FormField>
 
@@ -140,7 +146,7 @@ export const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="name@university.edu"
-                      className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f4c47] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-black/40 border border-amber-500/30 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all"
                     />
                   </FormField>
                 </div>
@@ -153,11 +159,11 @@ export const Contact: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+91 98765 43210"
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f4c47] focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-black/40 border border-amber-500/30 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all"
                   />
                 </FormField>
 
-                <FormField label="Your Message / Query" id="message" required>
+                <FormField label="Your Inquiry Message" id="message" required>
                   <textarea
                     id="message"
                     name="message"
@@ -165,26 +171,27 @@ export const Contact: React.FC = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Please specify your query regarding registration, abstract submission, or accommodation..."
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f4c47] focus:border-transparent transition-all"
+                    placeholder="Specify your inquiry regarding abstract submission, conference schedule, registration, or accommodation..."
+                    className="w-full px-4 py-3 rounded-xl bg-black/40 border border-amber-500/30 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all"
                   />
                 </FormField>
 
                 <Button
                   type="submit"
-                  variant="primary"
+                  variant="gold"
                   size="lg"
                   disabled={isSubmitting}
                   className="w-full sm:w-auto"
-                  icon={<Send className="w-4 h-4" />}
+                  icon={<Send className="w-4 h-4 text-slate-950" />}
                 >
                   {isSubmitting ? 'Sending Message...' : 'Submit Inquiry'}
                 </Button>
               </form>
-            </Card>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 };
+

@@ -1,31 +1,35 @@
 import React from 'react';
-import { Edit3, FileText, ExternalLink } from 'lucide-react';
+import { Edit3, FileText, ExternalLink, Sparkles, Hotel } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const CtaSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-[#0a3d38] to-[#062b27] text-white relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-20 sm:py-28 bg-[#03110f] text-white relative overflow-hidden border-t border-amber-500/20">
+      {/* Background ambient lighting */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           {/* Card 1: Call for Papers */}
-          <div className="bg-white/10 border border-white/15 rounded-2xl p-8 backdrop-blur-sm flex flex-col h-full justify-between">
+          <div className="bg-gradient-to-b from-[#082a26]/95 to-[#041513]/95 border-2 border-amber-400/30 rounded-3xl p-8 sm:p-10 backdrop-blur-2xl shadow-luxury-md flex flex-col justify-between hover:border-amber-400/60 transition-all duration-300">
             <div>
-              <span className="inline-block text-xs font-display font-bold uppercase tracking-wider text-amber-300 bg-amber-400/20 px-3 py-1 rounded-full mb-4">
-                Research Submissions
+              <span className="inline-flex items-center gap-1.5 text-xs font-cinzel font-bold uppercase tracking-widest text-amber-300 bg-amber-500/20 border border-amber-400/30 px-3.5 py-1 rounded-full mb-5">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>Call for Submissions</span>
               </span>
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
-                Call for Papers & Abstracts
+              <h3 className="text-2xl sm:text-3xl font-cinzel font-bold text-white mb-4">
+                Abstract &amp; Research Submissions
               </h3>
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
-                Abstracts based on original research and practice models are invited for Oral and Poster Presentations. Selected presented abstracts will be considered for publication as Scopus-indexed book chapters.
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 font-normal">
+                Original research abstracts and field practice models are invited for Oral and Poster presentation tracks. Selected papers will be reviewed for publication in Scopus-indexed conference book volumes.
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3.5 pt-4 border-t border-white/10">
               <Button
                 variant="gold"
+                size="md"
                 asLink
                 href={CONFERENCE_DATA.links.cmtSubmission}
                 icon={<ExternalLink className="w-4 h-4" />}
@@ -34,43 +38,46 @@ export const CtaSection: React.FC = () => {
               </Button>
               <Button
                 variant="outline"
+                size="md"
                 asLink
                 href="/call_for_papers"
-                className="text-white border-white/50 hover:bg-white/15"
                 icon={<FileText className="w-4 h-4" />}
               >
-                View Guidelines
+                Author Guidelines
               </Button>
             </div>
           </div>
 
           {/* Card 2: Conference Registration */}
-          <div className="bg-white/10 border border-white/15 rounded-2xl p-8 backdrop-blur-sm flex flex-col h-full justify-between">
+          <div className="bg-gradient-to-b from-[#082a26]/95 to-[#041513]/95 border-2 border-amber-400/30 rounded-3xl p-8 sm:p-10 backdrop-blur-2xl shadow-luxury-md flex flex-col justify-between hover:border-amber-400/60 transition-all duration-300">
             <div>
-              <span className="inline-block text-xs font-display font-bold uppercase tracking-wider text-emerald-300 bg-emerald-400/20 px-3 py-1 rounded-full mb-4">
-                Delegate Participation
+              <span className="inline-flex items-center gap-1.5 text-xs font-cinzel font-bold uppercase tracking-widest text-emerald-300 bg-emerald-500/20 border border-emerald-400/30 px-3.5 py-1 rounded-full mb-5">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Delegate Registration</span>
               </span>
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
+              <h3 className="text-2xl sm:text-3xl font-cinzel font-bold text-white mb-4">
                 Register for DYUTI 2027
               </h3>
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
-                Join academic leaders, students, and practitioners from across India and worldwide. Delegate registration fee includes full access to all academic sessions, kit, and lunch on both conference days.
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 font-normal">
+                Join international delegates, academic leaders, development practitioners, and research scholars at the prestigious Rajagiri Valley campus. Registration includes full session access, conference kits, and networking lunches.
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3.5 pt-4 border-t border-white/10">
               <Button
                 variant="gold"
+                size="md"
                 asLink
                 href={CONFERENCE_DATA.links.registrationForm}
                 icon={<Edit3 className="w-4 h-4" />}
               >
-                Online Registration Form
+                Online Registration
               </Button>
               <Button
                 variant="outline"
+                size="md"
                 asLink
                 href="/accomodation"
-                className="text-white border-white/50 hover:bg-white/15"
+                icon={<Hotel className="w-4 h-4" />}
               >
                 Accommodation Info
               </Button>
@@ -81,3 +88,4 @@ export const CtaSection: React.FC = () => {
     </section>
   );
 };
+

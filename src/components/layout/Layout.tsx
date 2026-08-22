@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 
 export const Layout: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8fafb]">
+    <div className="min-h-screen flex flex-col bg-[#041412] text-slate-100 selection:bg-[#d97706] selection:text-slate-950">
       <AnnouncementBar />
       <Header />
       <main className="flex-grow">
@@ -16,3 +16,4 @@ export const Layout: React.FC = () => {
     </div>
   );
 };
+

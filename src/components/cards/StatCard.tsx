@@ -6,38 +6,23 @@ export interface StatCardProps {
   dark?: boolean;
 }
 
-export const StatCard: React.FC<StatCardProps> = ({ stat, dark = false }) => {
+export const StatCard: React.FC<StatCardProps> = ({ stat }) => {
   return (
     <div
-      className={`rounded-2xl p-5 sm:p-6 text-center transition-transform hover:-translate-y-1 ${
-        dark
-          ? 'bg-white/10 border border-white/15 backdrop-blur-sm'
-          : 'bg-white border border-slate-200 shadow-dyuti-sm'
-      }`}
+      className="relative group rounded-2xl p-6 text-center transition-all duration-300 bg-gradient-to-b from-[#092e2a]/90 to-[#041916]/95 border border-amber-500/20 backdrop-blur-xl shadow-luxury-sm hover:border-amber-400/50 hover:shadow-gold-glow hover:-translate-y-1"
     >
-      <div
-        className={`font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl mb-1 tracking-tight ${
-          dark ? 'text-amber-400' : 'text-[#0f4c47]'
-        }`}
-      >
+      <div className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold mb-2 tracking-tight bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
         {stat.value}
       </div>
-      <div
-        className={`font-display font-bold text-sm sm:text-base ${
-          dark ? 'text-white' : 'text-slate-900'
-        }`}
-      >
+      <div className="font-display font-semibold text-sm sm:text-base text-slate-100 mb-1">
         {stat.label}
       </div>
       {stat.description && (
-        <div
-          className={`text-xs mt-1 leading-relaxed ${
-            dark ? 'text-slate-300' : 'text-slate-500'
-          }`}
-        >
+        <div className="text-xs leading-relaxed text-slate-400 font-normal">
           {stat.description}
         </div>
       )}
     </div>
   );
 };
+

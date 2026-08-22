@@ -27,33 +27,33 @@ export const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <div className={cn('space-y-3', className)}>
+    <div className={cn('space-y-3.5', className)}>
       {items.map((item) => {
         const isOpen = openId === item.id;
         return (
           <div
             key={item.id}
-            className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm transition-colors"
+            className="border border-amber-500/25 hover:border-amber-400/50 rounded-2xl overflow-hidden bg-gradient-to-b from-[#082a26]/90 to-[#041513]/95 backdrop-blur-xl shadow-luxury-sm transition-all"
           >
             <button
               type="button"
               onClick={() => toggle(item.id)}
               aria-expanded={isOpen}
-              className="w-full px-5 py-4 flex items-center justify-between text-left font-display font-semibold text-slate-800 hover:text-[#0f4c47] transition-colors focus-visible:outline-none focus-visible:bg-slate-50"
+              className="w-full px-6 py-4 flex items-center justify-between text-left font-display font-semibold text-slate-100 hover:text-amber-300 transition-colors focus-visible:outline-none cursor-pointer"
             >
-              <div className="flex items-center gap-3">
-                {item.icon && <span className="text-[#0f4c47]">{item.icon}</span>}
-                <span className="text-base sm:text-lg">{item.title}</span>
+              <div className="flex items-center gap-3.5">
+                {item.icon && <span className="text-amber-400">{item.icon}</span>}
+                <span className="text-base sm:text-lg text-white font-cinzel">{item.title}</span>
               </div>
               <ChevronDown
                 className={cn(
-                  'w-5 h-5 text-slate-500 transition-transform duration-200 shrink-0',
-                  isOpen && 'transform rotate-180 text-[#0f4c47]'
+                  'w-5 h-5 text-amber-400 transition-transform duration-300 shrink-0',
+                  isOpen && 'transform rotate-180 text-amber-300'
                 )}
               />
             </button>
             {isOpen && (
-              <div className="px-5 pb-5 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 animate-fadeIn">
+              <div className="px-6 pb-6 pt-2 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-emerald-500/20 font-normal">
                 {item.content}
               </div>
             )}
@@ -63,3 +63,4 @@ export const Accordion: React.FC<AccordionProps> = ({
     </div>
   );
 };
+

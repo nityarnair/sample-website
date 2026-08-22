@@ -1,58 +1,68 @@
 import React from 'react';
-import { Badge } from './Badge';
+import { Badge, BadgeProps } from './Badge';
 import { cn } from '@/lib/utils';
+import { Sparkles } from 'lucide-react';
 
 export interface SectionHeadingProps {
   eyebrow?: string;
-  eyebrowVariant?: 'emerald' | 'gold' | 'slate' | 'white';
+  eyebrowVariant?: BadgeProps['variant'];
   title: string;
   subtitle?: string;
   align?: 'left' | 'center';
   dark?: boolean;
+  serifTitle?: boolean;
   className?: string;
 }
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({
   eyebrow,
-  eyebrowVariant = 'emerald',
+  eyebrowVariant = 'gold-luxury',
   title,
   subtitle,
   align = 'center',
   dark = false,
+  serifTitle = false,
   className,
 }) => {
   return (
     <div
       className={cn(
-        'max-w-3xl mb-12',
+        'max-w-3xl mb-12 sm:mb-16',
         align === 'center' ? 'mx-auto text-center' : 'text-left',
         className
       )}
     >
       {eyebrow && (
-        <div className="mb-3">
-          <Badge variant={dark ? 'white' : eyebrowVariant}>{eyebrow}</Badge>
+        <div className="mb-4 inline-block">
+          <Badge variant={eyebrowVariant}>{eyebrow}</Badge>
         </div>
       )}
       <h2
         className={cn(
-          'text-2xl sm:text-3xl md:text-4xl font-display font-extrabold tracking-tight',
-          dark ? 'text-white' : 'text-[#0f172a]'
+          'text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight',
+          serifTitle ? 'font-serif italic font-normal text-amber-200' : 'font-display text-white'
         )}
       >
         {title}
       </h2>
+      
+      {/* Luxury Ornamental Gold Divider */}
       <div
         className={cn(
-          'w-14 h-1 rounded-full my-4 bg-gradient-to-r from-[#0f4c47] to-[#d97706]',
-          align === 'center' ? 'mx-auto' : 'mr-auto'
+          'flex items-center gap-3 my-5',
+          align === 'center' ? 'justify-center' : 'justify-start'
         )}
-      />
+      >
+        <div className="w-12 h-[1.5px] bg-gradient-to-r from-transparent to-amber-400" />
+        <Sparkles className="w-4 h-4 text-amber-400 shrink-0 animate-pulse" />
+        <div className="w-12 h-[1.5px] bg-gradient-to-l from-transparent to-amber-400" />
+      </div>
+
       {subtitle && (
         <p
           className={cn(
-            'text-base md:text-lg leading-relaxed',
-            dark ? 'text-slate-200' : 'text-slate-600'
+            'text-base md:text-lg leading-relaxed font-normal',
+            dark ? 'text-slate-300' : 'text-slate-300'
           )}
         >
           {subtitle}
@@ -61,3 +71,4 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     </div>
   );
 };
+

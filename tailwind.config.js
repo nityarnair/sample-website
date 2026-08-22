@@ -63,4 +63,32 @@ export default {
       },
       boxShadow: {
         'luxury-sm': '0 2px 8px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(217, 119, 6, 0.05)',
-        'luxury-md': '0 8px 24px -4px rgba(0, 0, 0, 0.4), 
+        'luxury-md': '0 8px 24px -4px rgba(0, 0, 0, 0.4), 0 0 12px 1px rgba(217, 119, 6, 0.12)',
+        'luxury-lg': '0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 24px 2px rgba(217, 119, 6, 0.18)',
+        'gold-glow': '0 0 25px -3px rgba(245, 158, 11, 0.35)',
+        'emerald-glow': '0 0 30px -4px rgba(24, 119, 111, 0.4)',
+      },
+      backgroundImage: {
+        'gold-gradient': 'linear-gradient(135deg, #fcd34d 0%, #d97706 50%, #b45309 100%)',
+        'gold-shimmer': 'linear-gradient(90deg, transparent, rgba(254, 243, 199, 0.4), transparent)',
+        'luxury-mesh': 'radial-gradient(at 0% 0%, #0a3d38 0px, transparent 50%), radial-gradient(at 100% 100%, #031715 0px, transparent 50%)',
+      },
+      animation: {
+        'shimmer': 'shimmer 2.5s infinite',
+        'float': 'float 6s ease-in-out infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
+

@@ -3,28 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --dyuti-primary: #0f4c47;
-  --dyuti-primary-dark: #062b27;
+  --dyuti-emerald-core: #0a3d38;
+  --dyuti-emerald-dark: #031715;
   --dyuti-gold: #d97706;
+  --dyuti-gold-bright: #f59e0b;
   --dyuti-gold-light: #fef3c7;
-  --dyuti-bg: #f8fafb;
+  --dyuti-bg-dark: #041412;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
   
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #f8fafb;
-    color: #334155;
+    background-color: #041412;
+    color: #e2e8f0;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-    color: #0f172a;
-    letter-spacing: -0.015em;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  /* Custom luxury gold scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #031715;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #18776f;
+    border-radius: 4px;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d97706;
   }
 }
 
@@ -32,4 +52,39 @@
   .text-serif-display {
     font-family: 'Newsreader', Georgia, Cambria, serif;
   }
+
+  .text-cinzel-display {
+    font-family: 'Cinzel', Georgia, serif;
+    letter-spacing: 0.04em;
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 40%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .emerald-gradient-text {
+    background: linear-gradient(135deg, #d5eee9 0%, #7ecebf 50%, #18776f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass-card-luxury {
+    background: linear-gradient(135deg, rgba(8, 35, 32, 0.75) 0%, rgba(3, 23, 21, 0.85) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+  }
+
+  .glass-card-luxury:hover {
+    border-color: rgba(245, 158, 11, 0.35);
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(217, 119, 6, 0.15);
+  }
+
+  .gold-border-glow {
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    box-shadow: inset 0 0 12px rgba(245, 158, 11, 0.05), 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
 }
+
