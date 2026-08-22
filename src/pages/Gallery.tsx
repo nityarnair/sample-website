@@ -27,16 +27,17 @@ export const Gallery: React.FC = () => {
     selectedPhotoIndex !== null ? filteredPhotos[selectedPhotoIndex] : null;
 
   return (
-    <div className="py-20 sm:py-28 bg-[#F8F8F6] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 bg-[#F7F7F4] text-[#101828] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <SectionHeading
+          sectionNumber="10"
           eyebrow="Conference Archive"
           title="DYUTI Historical Conference Gallery"
           subtitle="Glimpses of keynote addresses, book release ceremonies, academic dialogues, and cultural exchanges over 25+ historic editions."
         />
 
         {/* Filter Pill Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -60,19 +61,19 @@ export const Gallery: React.FC = () => {
             <div
               key={photo.id}
               onClick={() => setSelectedPhotoIndex(index)}
-              className="group relative bg-white border border-[#D9DEE5] hover:border-[#12345B]/40 rounded-xl overflow-hidden shadow-subtle hover:shadow-editorial transition-all duration-300 cursor-pointer h-72"
+              className="group relative bg-white border border-[#D9DEE5] hover:border-[#12345B]/40 rounded-[18px] overflow-hidden shadow-subtle hover:shadow-editorial transition-all duration-300 cursor-pointer h-72"
             >
               <img
                 src={photo.imageUrl}
                 alt={photo.title}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#071A33]/90 via-[#071A33]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
                 <span className="text-[10px] font-sans font-semibold text-[#93C5FD] uppercase tracking-[0.14em] mb-1 flex items-center gap-1.5">
                   <Calendar className="w-3 h-3" /> {photo.year} &bull; {photo.category}
                 </span>
-                <h4 className="font-serif text-sm leading-snug line-clamp-2 text-white">
+                <h4 className="font-serif text-base leading-snug line-clamp-2 text-white font-normal">
                   {photo.title}
                 </h4>
                 <div className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white">
