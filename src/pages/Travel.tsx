@@ -1,138 +1,172 @@
 import React from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Accordion } from '@/components/ui/Accordion';
-import { Plane, Train, Bus, Car, Navigation } from 'lucide-react';
+import { Plane, Train, Bus, Car, Navigation, MapPin } from 'lucide-react';
 
 export const Travel: React.FC = () => {
-  const airportItems = [
-    {
-      id: 'airport-taxi',
-      title: 'Prepaid Taxi / Uber / Ola from Airport',
-      icon: <Car className="w-5 h-5" />,
-      content: (
-        <p>
-          Cochin International Airport (COK) at Nedumbassery is approximately 22 km from Rajagiri College, Kalamassery. 24/7 prepaid taxi counters operate inside the arrival terminal. Ride-hailing services (Uber and Ola) operate round-the-clock pickups. Travel time is approximately 35 to 45 minutes.
-        </p>
-      ),
-    },
-    {
-      id: 'airport-bus',
-      title: 'KSRTC Low-Floor AC Feeder Buses to Metro',
-      icon: <Bus className="w-5 h-5" />,
-      content: (
-        <p>
-          KSRTC operates frequent AC feeder buses from the airport directly to Aluva Metro Station. From Aluva, board the Kochi Metro southwards to Kalamassery or Premier Junction Station (3 stops, ~8 mins).
-        </p>
-      ),
-    },
-  ];
-
-  const railwayItems = [
-    {
-      id: 'rail-aluva',
-      title: 'From Aluva Railway Station (AWY) — Approx. 8 km',
-      icon: <Train className="w-5 h-5" />,
-      content: (
-        <p>
-          Aluva is the nearest major railway station for trains arriving from Northern India and Malabar. Take an auto-rickshaw (approx. 15 mins) or board the Kochi Metro directly from Aluva Metro Station to Kalamassery Station.
-        </p>
-      ),
-    },
-    {
-      id: 'rail-ernakulam-town',
-      title: 'From Ernakulam Town (North) Station (ERN) — Approx. 11 km',
-      icon: <Train className="w-5 h-5" />,
-      content: (
-        <p>
-          Located 11 km south of the campus. Board the Kochi Metro at Town Hall Metro Station towards Aluva, and alight at Kalamassery Station (approx. 18 mins).
-        </p>
-      ),
-    },
-    {
-      id: 'rail-ernakulam-junction',
-      title: 'From Ernakulam Junction (South) Station (ERS) — Approx. 14 km',
-      icon: <Train className="w-5 h-5" />,
-      content: (
-        <p>
-          Ernakulam South is Kochi's primary terminal. Board the Kochi Metro directly at Maharaja's College or South Metro Station towards Aluva and alight at Kalamassery Station.
-        </p>
-      ),
-    },
-  ];
-
   return (
     <div className="py-20 sm:py-28 bg-[#F8F8F6] text-[#101828] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <SectionHeading
+          sectionNumber="09"
           eyebrow="Route & Navigation"
-          title="Travel &amp; Directions to Rajagiri Campus"
-          subtitle="Rajagiri College of Social Sciences (Autonomous) is situated in Kalamassery, Kochi, seamlessly connected via Cochin International Airport, Kochi Metro rail, and Southern Railway."
+          title="Directions &amp; Travel Guide"
+          subtitle="Rajagiri College of Social Sciences (Autonomous) Hill Campus in Kalamassery, Kochi is seamlessly connected via Cochin International Airport, Kochi Metro rail, and Southern Railway."
         />
 
-        {/* Airport Section */}
-        <div className="mb-16">
+        {/* Scenic Banner */}
+        <div className="rounded-container overflow-hidden border border-[#D9DEE5] bg-white shadow-subtle mb-16 max-h-[360px]">
+          <img
+            src="https://dyuti.in/assets/images/attraction/attraction_bnr_02.jpg"
+            alt="Kochi City & Campus Directions"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Route 1: From Airport */}
+        <div className="rounded-container border border-[#D9DEE5] bg-white shadow-subtle p-8 sm:p-12 mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
               <Plane className="w-6 h-6" />
             </div>
             <div>
+              <span className="text-xs font-mono font-bold text-[#2563EB] uppercase tracking-widest block">Route 01</span>
               <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] m-0">
-                Arriving by Air (Cochin International Airport - COK)
+                From Cochin International Airport (COK) to Rajagiri Campus
               </h3>
-              <p className="text-xs text-[#2563EB] font-sans font-semibold m-0 mt-0.5">Distance: ~22 km to campus</p>
             </div>
           </div>
-          <Accordion items={airportItems} />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-6 space-y-4">
+              {/* Taxi */}
+              <div className="p-6 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5]">
+                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-semibold text-sm">
+                  <Car className="w-5 h-5 text-[#2563EB]" />
+                  <span>By Taxi / Car</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal">
+                  <strong>Direct pickup from Kochi Airport:</strong> You can book a taxi or car directly (Uber and airport prepaid taxis are readily available). The driver will pick you up from the arrival terminal and take you directly to Rajagiri College of Social Sciences (Autonomous) Hill Campus, Kalamassery. You can also use the Metro Feeder bus services to the campus.
+                </p>
+              </div>
+
+              {/* Public Bus */}
+              <div className="p-6 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5]">
+                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-semibold text-sm">
+                  <Bus className="w-5 h-5 text-[#2563EB]" />
+                  <span>By Public Bus</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal">
+                  Take an auto-rickshaw from the airport to the <strong>Aluva Private Bus Stand</strong>. Board any private bus heading toward Ernakulam and get down at the <strong>Municipal Town Hall or Rajagiri Hill stop</strong>. The campus is a short walk from there.
+                </p>
+              </div>
+
+              {/* Metro */}
+              <div className="p-6 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE]">
+                <div className="flex items-center gap-3 mb-2 text-[#1E3A8A] font-semibold text-sm">
+                  <Train className="w-5 h-5 text-[#2563EB]" />
+                  <span>By Kochi Metro (Recommended)</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#1E40AF] leading-relaxed m-0 font-sans font-normal">
+                  For a traffic-free trip, take the Kochi Metro from <strong>Aluva station to the Kalamassery Town station</strong>, which is the nearest metro station to Rajagiri College of Social Sciences (Autonomous) Hill Campus. From there, you can take an auto or walk to the campus, which is just <strong>200 meters from the Hill Campus</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 rounded-xl overflow-hidden border border-[#D9DEE5] h-full min-h-[420px] shadow-subtle">
+              <iframe
+                title="Airport to Rajagiri Route Map"
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d79256.39818911608!2d76.31909662535186!3d10.111720112330207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3b080882748f4a6f%3A0x30b2ebe45d968458!2sCochin%20International%20Airport%EF%BC%88Nedumbassery%20Airport%EF%BC%89%20(COK)%2C%20Airport%20Road%2C%20Nedumbassery%2C%20Kochi%2C%20Kerala!3m2!1d10.1532129!2d76.3933204!4m5!1s0x3b080dd2c4bfaed9%3A0x616d1c1cb927fe62!2sRajagiri%20College%20of%20Social%20Sciences%20(Autonomous)%2C%20Rajagiri%20Rd%2C%20South%20Kalamassery%2C%20Kalamassery%2C%20Kochi%2C%20Kerala!3m2!1d10.053237099999999!2d76.3155973!5e0!3m2!1sen!2sin!4v1766501131440!5m2!1sen!2sin"
+                width="100%"
+                height="420"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Railway Section */}
-        <div className="mb-16">
+        {/* Route 2: From Ernakulam South Railway Station */}
+        <div className="rounded-container border border-[#D9DEE5] bg-white shadow-subtle p-8 sm:p-12 mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
               <Train className="w-6 h-6" />
             </div>
             <div>
+              <span className="text-xs font-mono font-bold text-[#2563EB] uppercase tracking-widest block">Route 02</span>
               <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] m-0">
-                Arriving by Train (Southern Railway Terminals)
+                From Ernakulam South Railway Station to Rajagiri Campus
               </h3>
-              <p className="text-xs text-[#2563EB] font-sans font-semibold m-0 mt-0.5">Key Stations: Aluva (AWY), Ernakulam Town (ERN), Ernakulam Jn (ERS)</p>
             </div>
           </div>
-          <Accordion items={railwayItems} />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-6 space-y-4">
+              {/* Taxi / Auto */}
+              <div className="p-6 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5]">
+                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-semibold text-sm">
+                  <Car className="w-5 h-5 text-[#2563EB]" />
+                  <span>By Taxi / Auto-Rickshaw</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal mb-3">
+                  <strong>Taxi:</strong> The most direct way is to take a taxi from the station to the Rajagiri Hill Campus; it is about 12–14 km and takes roughly 30–40 minutes depending on traffic.
+                </p>
+                <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal">
+                  <strong>Auto-Rickshaw:</strong> A economical option — takes a similar time and drops directly at the college entrance.
+                </p>
+              </div>
+
+              {/* Metro */}
+              <div className="p-6 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE]">
+                <div className="flex items-center gap-3 mb-2 text-[#1E3A8A] font-semibold text-sm">
+                  <Train className="w-5 h-5 text-[#2563EB]" />
+                  <span>By Kochi Metro</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#1E40AF] leading-relaxed m-0 font-sans font-normal">
+                  You can also take the Kochi Metro from <strong>Ernakulam South Station to the Kalamassery Town station</strong> for a much faster, traffic-free trip. From there, you can take an auto or walk to the campus, which is just <strong>200 meters from the Hill Campus</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 rounded-xl overflow-hidden border border-[#D9DEE5] h-full min-h-[380px] shadow-subtle">
+              <iframe
+                title="Ernakulam South to Rajagiri Route Map"
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d62865.52467195637!2d76.25915440113695!3d10.008987264663576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3b08730db3a5bb1d%3A0xd75994675ce7d175!2sERNAKULAM%20SOUTH%20RAILWAY%20STATION%2C%20Ernakulam%20South%2C%20Kochi%2C%20Ernakulam%2C%20Kerala%20682016!3m2!1d9.9692376!2d76.29098669999999!4m5!1s0x3b080dd2c4bfaed9%3A0x616d1c1cb927fe62!2sRajagiri%20College%20of%20Social%20Sciences%20(Autonomous)%2C%20Rajagiri%20Rd%2C%20South%20Kalamassery%2C%20Kalamassery%2C%20Kochi%2C%20Kerala!3m2!1d10.053237099999999!2d76.3155973!5e0!3m2!1sen!2sin!4v1766501245718!5m2!1sen!2sin"
+                width="100%"
+                height="380"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Map & Campus Address */}
-        <div className="rounded-container overflow-hidden border border-[#D9DEE5] shadow-editorial bg-white">
-          <div className="p-8 sm:p-10 bg-[#071A33] text-white border-b border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <h4 className="font-serif text-2xl text-white m-0 mb-1">
-                Conference Venue Coordinates
-              </h4>
-              <p className="text-xs sm:text-sm text-white/80 m-0 font-sans font-normal">
-                Rajagiri College of Social Sciences (Autonomous), Rajagiri P.O, Kalamassery, Kochi, Kerala 683104
-              </p>
-            </div>
-            <a
-              href="https://maps.google.com/?q=Rajagiri+College+of+Social+Sciences+Kalamassery"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#071A33] hover:bg-[#EFF6FF] text-xs font-semibold font-sans uppercase tracking-[0.14em] shrink-0 shadow-pill transition-all"
-            >
-              <Navigation className="w-4 h-4 text-[#2563EB]" />
-              <span>Open in Google Maps</span>
-            </a>
+        {/* Venue Action Card */}
+        <div className="p-8 sm:p-10 bg-[#071A33] text-white rounded-container border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-editorial">
+          <div>
+            <span className="text-xs font-mono font-bold text-[#93C5FD] uppercase tracking-widest block mb-1">
+              Campus Landmark
+            </span>
+            <h4 className="font-serif text-2xl sm:text-3xl text-white m-0 mb-2">
+              Rajagiri College of Social Sciences (Autonomous)
+            </h4>
+            <p className="text-xs sm:text-sm text-white/80 m-0 font-sans font-normal flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-[#93C5FD] shrink-0" />
+              <span>Rajagiri Road, South Kalamassery, Kalamassery, Kochi, Kerala 683104</span>
+            </p>
           </div>
-          <div className="w-full h-96 bg-[#F8F8F6]">
-            <iframe
-              title="Rajagiri College Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.618671408107!2d76.32629631479455!3d10.048281392818169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c39f1c79e67%3A0xb3514a6008b8b80b!2sRajagiri%20College%20of%20Social%20Sciences!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-            />
-          </div>
+          <a
+            href="https://maps.google.com/?q=Rajagiri+College+of+Social+Sciences+Kalamassery"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#071A33] hover:bg-[#EFF6FF] text-xs font-semibold font-sans uppercase tracking-[0.14em] shrink-0 shadow-pill transition-all"
+          >
+            <Navigation className="w-4 h-4 text-[#2563EB]" />
+            <span>Open in Google Maps</span>
+          </a>
         </div>
       </div>
     </div>

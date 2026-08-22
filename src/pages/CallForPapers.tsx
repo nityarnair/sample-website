@@ -1,10 +1,19 @@
 import React from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ResponsiveTable } from '@/components/ui/ResponsiveTable';
-import { Calendar, FileCheck, CheckCircle2, Download, ExternalLink, CreditCard, ShieldCheck } from 'lucide-react';
+import { Calendar, FileCheck, CheckCircle2, Download, ExternalLink, CreditCard, ShieldCheck, Users, Info } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const CallForPapers: React.FC = () => {
+  const participantTypes = [
+    'Graduate Students',
+    'Post Graduate Students',
+    'Academicians / Faculty Members',
+    'Research Scholars',
+    'NGO Delegates',
+    'CSR Delegates & Development Practitioners',
+  ];
+
   return (
     <div className="py-20 sm:py-28 bg-[#F8F8F6] text-[#101828] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -12,7 +21,7 @@ export const CallForPapers: React.FC = () => {
           sectionNumber="06"
           eyebrow="Scholarly Submissions"
           title="Call for Papers &amp; Submission Guidelines"
-          subtitle="Academicians, practitioners, PhD scholars, and students are invited to submit original, empirical, and practice-based extended abstracts across the 8 conference tracks."
+          subtitle="Abstracts based on original research and practice models are invited for Oral Presentations and Poster Presentations across the 8 conference themes."
         />
 
         {/* Action Header Editorial Banner */}
@@ -22,7 +31,7 @@ export const CallForPapers: React.FC = () => {
               <span>Microsoft CMT Portal Active</span>
             </span>
             <h3 className="text-3xl sm:text-4xl font-serif font-normal italic text-white mb-3">
-              Submit Your Extended Abstract
+              Submit Your Abstract / Full Paper
             </h3>
             <p className="text-white/80 text-xs sm:text-sm max-w-xl m-0 font-sans font-normal leading-relaxed">
               All submissions must be uploaded electronically via the official Microsoft CMT portal. Peer review outcomes will be communicated systematically.
@@ -59,25 +68,25 @@ export const CallForPapers: React.FC = () => {
                 <FileCheck className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] m-0">
-                Abstract Guidelines
+                Guidelines for Abstract
               </h3>
             </div>
             <ul className="space-y-3.5 text-xs sm:text-sm text-[#667085] leading-relaxed font-sans font-normal">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-2 shrink-0" />
-                <span>Length: <strong className="text-[#071A33]">250 to 300 words</strong> including Title, Author(s), Institutional Affiliation, Email ID, Keywords (4-5), Background, Methodology, Key Findings, and Policy/Practice Implications.</span>
+                <span>The abstract should be <strong className="text-[#071A33]">within 300 words</strong> of text including the title and keywords (MS Word Doc).</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-2 shrink-0" />
-                <span>Format: MS Word document (.docx), Times New Roman, 12 pt, 1.5 line spacing.</span>
+                <span>The text should be arranged according to the following headlines: <strong className="text-[#071A33]">Objectives, Design, Model, Result, and Conclusion</strong>.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-2 shrink-0" />
-                <span>Presentation formats: <strong className="text-[#071A33]">Oral Presentations</strong> (15 mins) and <strong className="text-[#071A33]">Poster Presentations</strong> (A1 size portrait).</span>
+                <span>The abstract’s title page should include the paper’s title, Author’s name, designation, institution affiliation, mailing address, contact number, and email id.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-2 shrink-0" />
-                <span>Peer review: All submitted abstracts undergo double-blind review by the Academic Scientific Committee.</span>
+                <span>It is essential that you specify the <strong className="text-[#071A33]">Theme and Subtheme</strong> to which your abstract pertains when submitting it.</span>
               </li>
             </ul>
           </div>
@@ -89,15 +98,37 @@ export const CallForPapers: React.FC = () => {
                 <CheckCircle2 className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] m-0">
-                Scopus Book Publications
+                Publication
               </h3>
             </div>
             <p className="text-xs sm:text-sm text-[#667085] leading-relaxed mb-6 font-sans font-normal">
-              Selected and presented high-quality research papers from DYUTI 2027 will be processed for publication as peer-reviewed book chapters in Scopus-indexed conference proceedings / Springer / Routledge volumes (subject to peer-review revisions).
+              Selected abstracts presented at the conference will be considered for publication as <strong className="text-[#071A33]">Scopus-indexed book chapters</strong> after the due review process.
             </p>
-            <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-xl p-5 text-xs text-[#1E40AF] leading-relaxed font-sans">
-              <strong className="text-[#1E3A8A]">Important Requirement:</strong> Only registered and physically/virtually presented papers by at least one author will be eligible for post-conference Scopus publication indexing.
+            <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-xl p-5 text-xs text-[#1E40AF] leading-relaxed font-sans mb-4">
+              <strong className="text-[#1E3A8A]">Presentation Formats:</strong> Oral Presentation &amp; Poster Presentation.
             </div>
+            <p className="text-xs text-[#667085] font-sans">
+              All submissions undergo rigorous double-blind peer review by national and international experts.
+            </p>
+          </div>
+        </div>
+
+        {/* Types of Participants */}
+        <div className="rounded-container p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-11 h-11 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2563EB]">
+              <Users className="w-5 h-5" />
+            </div>
+            <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] m-0">
+              Type of Participants
+            </h3>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-xs sm:text-sm text-[#101828]">
+            {participantTypes.map((type, idx) => (
+              <div key={idx} className="p-4 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5] text-center font-medium">
+                <span className="text-[#071A33] block">{type}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -107,7 +138,7 @@ export const CallForPapers: React.FC = () => {
           <div className="lg:col-span-5">
             <h3 className="font-serif text-2xl text-[#071A33] mb-6 flex items-center gap-2.5">
               <Calendar className="w-5 h-5 text-[#2563EB]" />
-              <span>Key Submission Deadlines</span>
+              <span>Important Dates &amp; Deadlines</span>
             </h3>
             <div className="space-y-3">
               {CONFERENCE_DATA.importantDates.map((item, idx) => (
@@ -128,14 +159,14 @@ export const CallForPapers: React.FC = () => {
           <div className="lg:col-span-7">
             <h3 className="font-serif text-2xl text-[#071A33] mb-6 flex items-center gap-2.5">
               <CreditCard className="w-5 h-5 text-[#2563EB]" />
-              <span>Registration Fee Structure</span>
+              <span>Registration Fees</span>
             </h3>
-            <div className="rounded-xl border border-[#D9DEE5] overflow-hidden shadow-subtle bg-white">
+            <div className="rounded-xl border border-[#D9DEE5] overflow-hidden shadow-subtle bg-white mb-4">
               <ResponsiveTable>
                 <thead className="bg-[#071A33] text-white font-sans border-b border-[#071A33]">
                   <tr>
-                    <th className="py-4 px-4 font-bold text-xs uppercase tracking-wider text-left">Participant Category</th>
-                    <th className="py-4 px-4 font-bold text-xs uppercase tracking-wider text-left">Fee (INR)</th>
+                    <th className="py-4 px-4 font-bold text-xs uppercase tracking-wider text-left">Type of Participant</th>
+                    <th className="py-4 px-4 font-bold text-xs uppercase tracking-wider text-left">Registration Fees</th>
                     <th className="py-4 px-4 font-bold text-xs uppercase tracking-wider text-left">Inclusions</th>
                   </tr>
                 </thead>
@@ -150,18 +181,21 @@ export const CallForPapers: React.FC = () => {
                 </tbody>
               </ResponsiveTable>
             </div>
+            <div className="p-4 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] text-xs text-[#1E40AF] font-sans">
+              <strong>Registration Fee Includes:</strong> Lunch on both conference days &amp; Access to all conference sessions.
+            </div>
           </div>
         </div>
 
         {/* Bank Details Card */}
-        <div className="rounded-container p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle">
+        <div className="rounded-container p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle mb-16">
           <h4 className="font-serif text-xl text-[#071A33] mb-4 flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-[#2563EB]" />
-            <span>Official Bank Details for NEFT / RTGS Online Transfer</span>
+            <span>Mode of Payment (Bank Transfer)</span>
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs sm:text-sm">
             <div className="p-5 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5]">
-              <span className="text-xs text-[#667085] block mb-1">Beneficiary Name</span>
+              <span className="text-xs text-[#667085] block mb-1">Account Name</span>
               <strong className="text-[#071A33] font-medium block">{CONFERENCE_DATA.bankDetails.accountName}</strong>
             </div>
             <div className="p-5 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5]">
@@ -169,13 +203,26 @@ export const CallForPapers: React.FC = () => {
               <strong className="text-[#071A33] font-mono font-bold block">{CONFERENCE_DATA.bankDetails.accountNumber}</strong>
             </div>
             <div className="p-5 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5]">
-              <span className="text-xs text-[#667085] block mb-1">Bank Name</span>
+              <span className="text-xs text-[#667085] block mb-1">Bank</span>
               <strong className="text-[#071A33] block">{CONFERENCE_DATA.bankDetails.bank}</strong>
             </div>
             <div className="p-5 rounded-xl bg-[#F8F8F6] border border-[#D9DEE5]">
-              <span className="text-xs text-[#667085] block mb-1">IFSC Code</span>
+              <span className="text-xs text-[#667085] block mb-1">IFSC / NEFT Code</span>
               <strong className="text-[#2563EB] font-mono font-bold block">{CONFERENCE_DATA.bankDetails.ifsc}</strong>
             </div>
+          </div>
+        </div>
+
+        {/* Microsoft CMT Acknowledgement Card */}
+        <div className="rounded-container p-8 sm:p-10 bg-[#FAFAFA] border border-[#D9DEE5] shadow-subtle flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-white border border-[#D9DEE5] text-[#667085] flex items-center justify-center shrink-0">
+            <Info className="w-5 h-5" />
+          </div>
+          <div>
+            <h4 className="font-serif text-lg text-[#071A33] mb-2">Acknowledgement</h4>
+            <p className="text-xs sm:text-sm text-[#667085] leading-relaxed font-sans font-normal m-0">
+              The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+            </p>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { FormField } from '@/components/ui/FormField';
 import { Button } from '@/components/ui/Button';
-import { Mail, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 import { apiService } from '@/lib/api';
 
@@ -41,12 +41,13 @@ export const Contact: React.FC = () => {
     <div className="py-20 sm:py-28 bg-[#F8F8F6] text-[#101828] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <SectionHeading
+          sectionNumber="10"
           eyebrow="Direct Secretariat"
           title="Contact DYUTI 2027 Secretariat"
           subtitle="Reach out directly to the conference convenors for inquiries regarding paper submissions, delegate registrations, or institutional partnerships."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
           {/* Contact Details Column */}
           <div className="lg:col-span-5 space-y-6">
             <div className="rounded-container p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-subtle">
@@ -58,7 +59,7 @@ export const Contact: React.FC = () => {
               </h3>
               <div className="space-y-4">
                 {CONFERENCE_DATA.contacts.map((contact, idx) => (
-                  <div key={idx} className="border-l-2 border-[#12345B] pl-4 py-1.5 bg-[#F8F8F6] rounded-r-lg">
+                  <div key={idx} className="border-l-2 border-[#12345B] pl-4 py-2 bg-[#F8F8F6] rounded-r-lg">
                     <p className="font-sans font-semibold text-[#071A33] text-sm m-0">{contact.name}</p>
                     <p className="text-xs text-[#667085] m-0">{contact.role}</p>
                     <p className="text-xs text-[#667085] m-0">{contact.department}</p>
@@ -80,12 +81,20 @@ export const Contact: React.FC = () => {
                 <MapPin className="w-5 h-5 text-[#2563EB]" />
                 <span>Mailing &amp; Venue Address</span>
               </h4>
-              <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal">
+              <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal mb-4">
                 <strong className="text-[#071A33]">{CONFERENCE_DATA.hostInstitution}</strong><br />
-                Rajagiri P.O, Kalamassery, Kochi, Kerala, India - 683104
+                Rajagiri Valley, Chittethukara, Ernakulam, Kerala 682030, India<br />
+                Hill Campus: South Kalamassery, Kalamassery, Kochi 683104
               </p>
-              <div className="mt-4 pt-4 border-t border-[#D9DEE5] text-xs text-[#667085] font-sans">
-                Official Email: <a href="mailto:dyuti@rajagiri.edu" className="text-[#2563EB] font-semibold font-mono">dyuti@rajagiri.edu</a>
+              <div className="space-y-2 pt-4 border-t border-[#D9DEE5] text-xs text-[#667085] font-sans">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-[#2563EB]" />
+                  <span>Phone: <strong>+91 484-2911 346, 2911 321</strong></span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-[#2563EB]" />
+                  <span>Email: <a href="mailto:dyuti@rajagiri.edu" className="text-[#2563EB] font-mono font-semibold">dyuti@rajagiri.edu</a></span>
+                </div>
               </div>
             </div>
           </div>
@@ -186,6 +195,26 @@ export const Contact: React.FC = () => {
                 </Button>
               </form>
             </div>
+          </div>
+        </div>
+
+        {/* Google Map Section */}
+        <div className="rounded-container overflow-hidden border border-[#D9DEE5] shadow-subtle bg-white">
+          <div className="p-6 bg-[#071A33] text-white">
+            <h4 className="font-serif text-xl text-white m-0">Campus Location Map</h4>
+            <p className="text-xs text-white/80 m-0 mt-1">Rajagiri College of Social Sciences (Autonomous), Kalamassery / Rajagiri Valley</p>
+          </div>
+          <div className="w-full h-80 bg-[#F8F8F6]">
+            <iframe
+              title="Rajagiri Campus Map"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d694.3646809247406!2d76.35574209792348!3d9.993886412091518!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xffe403fa83187691!2sRajagiri%20College%20Of%20Social%20Sciences!5e0!3m2!1sen!2sin!4v1660152795214!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </div>
