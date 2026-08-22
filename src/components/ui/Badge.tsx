@@ -2,29 +2,34 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: 'emerald' | 'gold' | 'slate' | 'white' | 'gold-luxury' | 'emerald-luxury' | 'glass';
+  variant?: 'navy' | 'blue' | 'subtle' | 'outline' | 'white' | 'emerald' | 'gold' | 'slate' | 'gold-luxury' | 'emerald-luxury' | 'glass';
 }
 
 export const Badge: React.FC<BadgeProps> = ({
   children,
-  variant = 'gold-luxury',
+  variant = 'subtle',
   className,
   ...props
 }) => {
   const variants = {
-    emerald: 'bg-emerald-950/80 text-emerald-300 border-emerald-500/30',
-    gold: 'bg-amber-950/70 text-amber-300 border-amber-500/30',
-    slate: 'bg-slate-900/80 text-slate-300 border-slate-700/50',
-    white: 'bg-white/10 text-white border-white/20 backdrop-blur-md',
-    'gold-luxury': 'bg-gradient-to-r from-amber-500/20 via-amber-400/25 to-amber-600/20 text-amber-200 border-amber-400/40 shadow-sm backdrop-blur-md',
-    'emerald-luxury': 'bg-gradient-to-r from-emerald-900/60 to-emerald-950/80 text-emerald-200 border-emerald-500/40 shadow-sm backdrop-blur-md',
-    glass: 'bg-white/5 text-slate-200 border-white/10 backdrop-blur-md',
+    navy: 'bg-[#071A33] text-white border border-[#071A33]',
+    blue: 'bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]',
+    subtle: 'bg-[#F8F8F6] text-[#12345B] border border-[#D9DEE5]',
+    outline: 'bg-transparent text-[#12345B] border border-[#12345B]/30',
+    white: 'bg-white text-[#071A33] border border-white/20',
+    // Fallbacks for legacy props
+    emerald: 'bg-[#EFF6FF] text-[#12345B] border border-[#D9DEE5]',
+    gold: 'bg-[#F8F8F6] text-[#12345B] border border-[#D9DEE5]',
+    slate: 'bg-slate-100 text-slate-800 border border-slate-200',
+    'gold-luxury': 'bg-[#F8F8F6] text-[#071A33] border border-[#D9DEE5]',
+    'emerald-luxury': 'bg-[#EFF6FF] text-[#12345B] border border-[#BFDBFE]',
+    glass: 'bg-white/80 backdrop-blur-xs text-[#071A33] border border-[#D9DEE5]',
   };
 
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-display font-semibold uppercase tracking-wider border transition-all duration-200',
+        'inline-flex items-center gap-1.5 px-3 py-1 rounded-sm text-[11px] font-sans font-semibold uppercase tracking-wider transition-all duration-200',
         variants[variant],
         className
       )}
@@ -34,4 +39,3 @@ export const Badge: React.FC<BadgeProps> = ({
     </span>
   );
 };
-

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Badge, BadgeProps } from './Badge';
 import { cn } from '@/lib/utils';
-import { Sparkles } from 'lucide-react';
 
 export interface SectionHeadingProps {
   eyebrow?: string;
   eyebrowVariant?: BadgeProps['variant'];
+  sectionNumber?: string;
   title: string;
   subtitle?: string;
   align?: 'left' | 'center';
@@ -16,12 +16,13 @@ export interface SectionHeadingProps {
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({
   eyebrow,
-  eyebrowVariant = 'gold-luxury',
+  eyebrowVariant = 'subtle',
+  sectionNumber,
   title,
   subtitle,
   align = 'center',
   dark = false,
-  serifTitle = false,
+  serifTitle = true,
   className,
 }) => {
   return (
@@ -32,37 +33,50 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         className
       )}
     >
-      {eyebrow && (
-        <div className="mb-4 inline-block">
-          <Badge variant={eyebrowVariant}>{eyebrow}</Badge>
+      {(eyebrow || sectionNumber) && (
+        <div className="flex items-center gap-3 mb-4 justify-center sm:justify-start">
+          {sectionNumber && (
+            <span className={cn(
+              "font-mono text-xs font-bold uppercase tracking-widest",
+              dark ? "text-blue-400" : "text-[#2563EB]"
+            )}>
+              {sectionNumber}
+            </span>
+          )}
+          {sectionNumber && eyebrow && <span className={cn("w-6 h-px", dark ? "bg-white/20" : "bg-[#D9DEE5]")} />}
+          {eyebrow && (
+            <Badge variant={dark ? 'white' : eyebrowVariant}>
+              {eyebrow}
+            </Badge>
+          )}
         </div>
       )}
+
       <h2
         className={cn(
-          'text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight',
-          serifTitle ? 'font-serif italic font-normal text-amber-200' : 'font-display text-white'
+          'text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight leading-tight',
+          serifTitle ? 'font-serif' : 'font-sans font-bold',
+          dark ? 'text-white' : 'text-[#071A33]'
         )}
       >
         {title}
       </h2>
-      
-      {/* Luxury Ornamental Gold Divider */}
+
+      {/* Thin Editorial Divider */}
       <div
         className={cn(
-          'flex items-center gap-3 my-5',
-          align === 'center' ? 'justify-center' : 'justify-start'
+          'w-16 h-px my-6',
+          dark ? 'bg-white/20' : 'bg-[#12345B]',
+          align === 'center' ? 'mx-auto' : ''
         )}
-      >
-        <div className="w-12 h-[1.5px] bg-gradient-to-r from-transparent to-amber-400" />
-        <Sparkles className="w-4 h-4 text-amber-400 shrink-0 animate-pulse" />
-        <div className="w-12 h-[1.5px] bg-gradient-to-l from-transparent to-amber-400" />
-      </div>
+      />
 
       {subtitle && (
         <p
           className={cn(
-            'text-base md:text-lg leading-relaxed font-normal',
-            dark ? 'text-slate-300' : 'text-slate-300'
+            'text-base sm:text-lg leading-relaxed font-sans font-normal max-w-2xl',
+            align === 'center' ? 'mx-auto' : '',
+            dark ? 'text-white/80' : 'text-[#667085]'
           )}
         >
           {subtitle}
@@ -71,4 +85,3 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     </div>
   );
 };
-

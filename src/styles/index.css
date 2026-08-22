@@ -3,30 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --editorial-emerald: #073B35;
-  --editorial-black: #101716;
-  --editorial-ivory: #F7F4EC;
-  --editorial-gold: #C89B3C;
+  --editorial-deepnavy: #071A33;
+  --editorial-navy: #12345B;
+  --editorial-offwhite: #F8F8F6;
   --editorial-white: #FFFFFF;
+  --editorial-border: #D9DEE5;
+  --editorial-muted: #667085;
+  --editorial-text: #101828;
+  --editorial-blue: #2563EB;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: light;
   }
   
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #101716;
-    color: #F7F4EC;
+    background-color: #F8F8F6;
+    color: #101828;
     overflow-x: hidden;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-    color: #FFFFFF;
-    letter-spacing: -0.01em;
+    color: #071A33;
+    letter-spacing: -0.015em;
   }
 
   /* Editorial thin scrollbar */
@@ -35,34 +38,46 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #101716;
+    background: #F8F8F6;
   }
   ::-webkit-scrollbar-thumb {
-    background: #073B35;
-    border-radius: 0px;
-    border: 1px solid rgba(200, 155, 60, 0.2);
+    background: #12345B;
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #C89B3C;
+    background: #071A33;
   }
 }
 
 @layer utilities {
   .font-editorial-serif {
-    font-family: 'Newsreader', Georgia, serif;
+    font-family: 'Playfair Display', 'Newsreader', 'Cormorant Garamond', Georgia, serif;
     font-feature-settings: 'liga' 1, 'dlig' 1;
   }
 
   .editorial-hairline {
-    border-color: rgba(200, 155, 60, 0.2);
+    border-color: #D9DEE5;
   }
 
   .editorial-hairline-dark {
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
   }
 
-  .gold-accent {
-    color: #C89B3C;
+  /* Academic focus outlines */
+  .focus-ring-navy {
+    outline: none;
+  }
+  .focus-ring-navy:focus-visible {
+    outline: 2px solid #12345B;
+    outline-offset: 2px;
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

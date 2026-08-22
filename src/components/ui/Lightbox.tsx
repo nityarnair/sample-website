@@ -44,7 +44,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-6 animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A33]/90 backdrop-blur-xs p-4 sm:p-6 animate-fadeIn"
       role="dialog"
       aria-modal="true"
       aria-label="Image Lightbox"
@@ -56,7 +56,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
         className="absolute top-4 right-4 p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors z-10"
         aria-label="Close Lightbox"
       >
-        <X className="w-7 h-7" />
+        <X className="w-6 h-6" />
       </button>
 
       {hasPrev && onPrev && (
@@ -94,10 +94,10 @@ export const Lightbox: React.FC<LightboxProps> = ({
         <img
           src={imageUrl}
           alt={title}
-          className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl"
+          className="max-w-full max-h-[75vh] object-contain rounded-sm shadow-2xl border border-white/10"
         />
         {title && (
-          <p className="mt-4 text-center text-white/90 text-sm sm:text-base font-display font-medium max-w-xl">
+          <p className="mt-4 text-center text-white/95 text-sm sm:text-base font-serif italic max-w-xl">
             {title}
           </p>
         )}

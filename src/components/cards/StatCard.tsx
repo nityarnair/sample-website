@@ -6,23 +6,32 @@ export interface StatCardProps {
   dark?: boolean;
 }
 
-export const StatCard: React.FC<StatCardProps> = ({ stat }) => {
+export const StatCard: React.FC<StatCardProps> = ({ stat, dark = false }) => {
   return (
     <div
-      className="relative group rounded-2xl p-6 text-center transition-all duration-300 bg-gradient-to-b from-[#092e2a]/90 to-[#041916]/95 border border-amber-500/20 backdrop-blur-xl shadow-luxury-sm hover:border-amber-400/50 hover:shadow-gold-glow hover:-translate-y-1"
+      className={`relative group rounded-md p-6 text-center transition-all duration-200 border ${
+        dark
+          ? 'bg-[#071A33] border-white/10 text-white'
+          : 'bg-white border-[#D9DEE5] text-[#101828] shadow-subtle hover:border-[#12345B]/40 hover:shadow-editorial'
+      }`}
     >
-      <div className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold mb-2 tracking-tight bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
+      <div className={`text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-2 tracking-tight ${
+        dark ? 'text-white' : 'text-[#071A33]'
+      }`}>
         {stat.value}
       </div>
-      <div className="font-display font-semibold text-sm sm:text-base text-slate-100 mb-1">
+      <div className={`font-sans font-semibold text-sm sm:text-base mb-1 ${
+        dark ? 'text-white/90' : 'text-[#101828]'
+      }`}>
         {stat.label}
       </div>
       {stat.description && (
-        <div className="text-xs leading-relaxed text-slate-400 font-normal">
+        <div className={`text-xs leading-relaxed font-sans font-normal ${
+          dark ? 'text-white/60' : 'text-[#667085]'
+        }`}>
           {stat.description}
         </div>
       )}
     </div>
   );
 };
-

@@ -1,67 +1,75 @@
 import React from 'react';
+import { ArrowRight, Award, Building, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { CONFERENCE_DATA } from '@/data/conference';
 
 export const InstitutionSection: React.FC = () => {
   return (
     <section
-      className="py-24 sm:py-32 bg-[#101716] text-[#F7F4EC] border-b border-white/10 relative overflow-hidden"
-      aria-labelledby="institution-section-title"
+      id="institution"
+      className="py-20 sm:py-28 bg-white text-[#101828] border-b border-[#D9DEE5] relative"
+      aria-labelledby="institution-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
-        <div className="flex items-center justify-between pb-6 mb-12 sm:mb-16 border-b border-white/10 text-xs font-sans uppercase tracking-widest text-white/50">
+        <div className="flex items-center justify-between pb-4 mb-12 sm:mb-16 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-widest text-[#667085]">
           <div className="flex items-center gap-3">
-            <span className="text-[#C89B3C] font-mono font-bold">05 / 10</span>
-            <span className="w-6 h-px bg-white/20" />
-            <span className="text-white/80">The Host Institution</span>
+            <span className="text-[#2563EB] font-mono font-bold">08</span>
+            <span className="w-6 h-px bg-[#D9DEE5]" />
+            <span className="text-[#071A33] font-semibold">The Host Institution</span>
           </div>
-          <span className="font-mono text-white/60">Autonomous &bull; Established 1955</span>
+          <span>Autonomous &bull; Established 1955</span>
         </div>
 
-        {/* Asymmetric 55% / 45% Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Large Image ~55% */}
-          <div className="lg:col-span-7">
-            <div className="relative border border-white/10 bg-black/40 overflow-hidden">
+        {/* Asymmetric 12-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* LEFT: Large Campus Image */}
+          <div className="lg:col-span-6">
+            <div className="relative border border-[#D9DEE5] bg-[#F8F8F6] overflow-hidden rounded-sm shadow-editorial">
               <img
                 src="https://dyuti.in/assets/images/1.jpg"
                 alt="Rajagiri College Valley Campus"
-                className="w-full h-[360px] sm:h-[460px] object-cover grayscale contrast-115 hover:grayscale-0 transition-all duration-700"
+                className="w-full h-[380px] sm:h-[460px] object-cover contrast-105 hover:scale-102 transition-all duration-700"
                 loading="lazy"
               />
-              <div className="p-4 bg-[#073B35] text-white text-xs font-sans flex items-center justify-between">
-                <span>Rajagiri Valley Campus &bull; Centre of Excellence</span>
-                <span className="font-mono text-[#C89B3C]">Kalamassery, Kochi</span>
+              <div className="p-4 bg-white border-t border-[#D9DEE5] flex items-center justify-between text-xs text-[#667085] font-sans">
+                <span className="font-medium text-[#071A33]">Rajagiri Valley Campus, Kalamassery</span>
+                <span className="font-mono text-[#2563EB]">NAAC A++ (3.83 CGPA)</span>
               </div>
             </div>
           </div>
 
-          {/* Editorial Content ~45% */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          {/* RIGHT: Narrative & Metrics */}
+          <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#C89B3C] font-semibold block mb-3">
-                NAAC A++ &bull; NIRF #12 in India
+              <span className="text-xs font-sans uppercase tracking-widest text-[#2563EB] font-bold block mb-2">
+                Centre of Excellence
               </span>
 
               <h2
-                id="institution-section-title"
-                className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal italic text-white leading-tight mb-6"
+                id="institution-heading"
+                className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-tight mb-6"
               >
-                Rajagiri College of Social Sciences
+                Rajagiri College of Social Sciences (Autonomous)
               </h2>
 
-              <p className="text-sm sm:text-base text-white/80 font-sans leading-relaxed mb-6 font-normal">
-                Managed by the Carmelites of Mary Immaculate (CMI), Rajagiri has been a pioneer in social work education, management, and research in India for over seven decades.
+              <p className="text-sm sm:text-base text-[#667085] leading-relaxed font-sans font-normal mb-8">
+                Managed by the Carmelites of Mary Immaculate (CMI) congregation, Rajagiri has pioneered professional social work, management education, and empirical research in India for over seven decades.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 py-6 my-6 border-y border-white/10 text-xs font-sans">
+              {/* Metric Highlights */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-6 border-y border-[#D9DEE5] mb-8 text-xs font-sans">
                 <div>
-                  <span className="block font-mono text-xl font-bold text-white mb-1">NIRF #12</span>
-                  <span className="text-white/60">Top Ranked College in India</span>
+                  <div className="font-serif font-bold text-2xl text-[#071A33] mb-0.5">#12</div>
+                  <span className="text-[#667085]">NIRF India 2025</span>
                 </div>
                 <div>
-                  <span className="block font-mono text-xl font-bold text-[#C89B3C] mb-1">3.83 / 4.0</span>
-                  <span className="text-white/60">Highest NAAC CGPA in South India</span>
+                  <div className="font-serif font-bold text-2xl text-[#071A33] mb-0.5">#1</div>
+                  <span className="text-[#667085]">KIRF Kerala 2025</span>
+                </div>
+                <div>
+                  <div className="font-serif font-bold text-2xl text-[#071A33] mb-0.5">60+</div>
+                  <span className="text-[#667085]">Global University Alliances</span>
                 </div>
               </div>
             </div>
@@ -69,9 +77,10 @@ export const InstitutionSection: React.FC = () => {
             <div>
               <Link
                 to="/rajagiri"
-                className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-widest font-semibold text-[#C89B3C] hover:text-white transition-colors group"
+                className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-widest font-semibold text-[#071A33] hover:text-[#2563EB] transition-colors"
               >
-                <span>Explore Rajagiri →</span>
+                <span>Read Full Institutional Profile</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

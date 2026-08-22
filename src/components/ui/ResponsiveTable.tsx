@@ -14,13 +14,13 @@ export const ResponsiveTable: React.FC<ResponsiveTableProps> = ({
   return (
     <div
       className={cn(
-        'w-full overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-dyuti-sm',
+        'w-full overflow-x-auto rounded-md border border-[#D9DEE5] bg-white shadow-subtle',
         wrapperClassName
       )}
     >
       <table
         className={cn(
-          'w-full text-left text-sm text-slate-700 border-collapse',
+          'w-full text-left text-sm text-[#101828] border-collapse',
           className
         )}
         {...props}

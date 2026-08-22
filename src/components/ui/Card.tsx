@@ -3,30 +3,35 @@ import { cn } from '@/lib/utils';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   hover?: boolean;
-  variant?: 'luxury' | 'emerald' | 'gold-border' | 'glass' | 'slate';
+  variant?: 'editorial' | 'offwhite' | 'navy' | 'subtle' | 'luxury' | 'emerald' | 'gold-border' | 'glass' | 'slate';
 }
 
 export const Card: React.FC<CardProps> = ({
   children,
   hover = true,
-  variant = 'luxury',
+  variant = 'editorial',
   className,
   ...props
 }) => {
   const variants = {
-    luxury: 'bg-[#072421]/80 backdrop-blur-xl border border-amber-500/20 text-slate-100 shadow-luxury-md',
-    emerald: 'bg-gradient-to-br from-[#0a3d38] to-[#041c19] border border-emerald-500/30 text-white shadow-luxury-md',
-    'gold-border': 'bg-[#061e1b]/90 backdrop-blur-xl border-2 border-amber-400/40 text-slate-100 shadow-gold-glow',
-    glass: 'bg-white/5 backdrop-blur-md border border-white/10 text-slate-200 shadow-luxury-sm',
-    slate: 'bg-slate-900/80 backdrop-blur-md border border-slate-700/60 text-slate-200 shadow-luxury-sm',
+    editorial: 'bg-white border border-[#D9DEE5] text-[#101828] shadow-subtle',
+    offwhite: 'bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828]',
+    navy: 'bg-[#071A33] border border-white/10 text-white',
+    subtle: 'bg-white border border-[#EAEFF5] text-[#101828]',
+    // Legacy variants mapped gracefully:
+    luxury: 'bg-white border border-[#D9DEE5] text-[#101828] shadow-subtle',
+    emerald: 'bg-[#071A33] border border-white/10 text-white',
+    'gold-border': 'bg-white border border-[#12345B]/30 text-[#101828] shadow-subtle',
+    glass: 'bg-white/90 backdrop-blur-xs border border-[#D9DEE5] text-[#101828]',
+    slate: 'bg-[#F8F8F6] border border-[#D9DEE5] text-[#101828]',
   };
 
   return (
     <div
       className={cn(
-        'rounded-2xl p-6 md:p-8 transition-all duration-300 relative overflow-hidden',
+        'rounded-md p-6 sm:p-8 transition-all duration-200 relative',
         variants[variant],
-        hover && 'hover:-translate-y-1 hover:border-amber-400/60 hover:shadow-luxury-lg',
+        hover && 'hover:border-[#12345B]/40 hover:shadow-editorial',
         className
       )}
       {...props}
@@ -35,4 +40,3 @@ export const Card: React.FC<CardProps> = ({
     </div>
   );
 };
-
