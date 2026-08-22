@@ -38,60 +38,60 @@ export const ImportantDatesTimeline: React.FC = () => {
   return (
     <section
       id="important-dates"
-      className="py-20 sm:py-28 bg-[#F8F8F6] text-[#101828] border-b border-[#D9DEE5] relative"
+      className="py-24 sm:py-32 lg:py-36 bg-[#F8F8F6] text-[#101828] border-b border-[#D9DEE5] relative"
       aria-labelledby="dates-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
-        <div className="flex items-center justify-between pb-4 mb-12 sm:mb-16 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-widest text-[#667085]">
+        <div className="flex items-center justify-between pb-4 mb-14 sm:mb-20 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-[0.18em] text-[#667085]">
           <div className="flex items-center gap-3">
             <span className="text-[#2563EB] font-mono font-bold">05</span>
-            <span className="w-6 h-px bg-[#D9DEE5]" />
-            <span className="text-[#071A33] font-semibold">Important Dates</span>
+            <span className="w-8 h-px bg-[#D9DEE5]" />
+            <span className="text-[#071A33] font-semibold">IMPORTANT DATES</span>
           </div>
-          <span>Conference Deadlines</span>
+          <span>Key Deadlines</span>
         </div>
 
         {/* Title */}
-        <div className="max-w-3xl mb-14">
-          <span className="text-xs font-sans uppercase tracking-widest text-[#2563EB] font-bold block mb-2">
-            Chronology of Submissions
+        <div className="max-w-3xl mb-16">
+          <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#2563EB] font-bold block mb-3">
+            Milestones of Discourse
           </span>
           <h2
             id="dates-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-tight m-0"
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.15] m-0"
           >
-            Key Deadlines &amp; Milestone Timeline
+            Chronology of Submissions &amp; Deadlines
           </h2>
         </div>
 
-        {/* Horizontal Editorial Timeline (Desktop 5-col grid with connecting line) */}
+        {/* Horizontal Editorial Timeline */}
         <div className="relative">
-          {/* Subtle navy horizontal connecting line across desktop */}
-          <div className="hidden lg:block absolute top-12 left-0 right-0 h-px bg-[#12345B]/20 -z-0" />
+          {/* Subtle navy connecting line across desktop */}
+          <div className="hidden lg:block absolute top-14 left-0 right-0 h-px bg-[#12345B]/20 -z-0" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4 relative z-10">
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-[#D9DEE5] hover:border-[#12345B]/40 rounded-sm p-6 shadow-subtle hover:shadow-editorial transition-all flex flex-col justify-between"
+                className="bg-white border border-[#D9DEE5] hover:border-[#12345B]/40 rounded-xl p-7 shadow-subtle hover:shadow-editorial transition-all flex flex-col justify-between"
               >
                 <div>
                   {/* Step Number & Icon */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-serif italic font-bold text-2xl text-[#12345B]">
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="font-serif text-3xl font-normal text-[#12345B]">
                       {step.number}
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2563EB]">
+                    <div className="w-9 h-9 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2563EB]">
                       <Calendar className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="font-serif font-bold text-lg text-[#071A33] mb-2 leading-snug">
+                  <h3 className="font-serif text-xl text-[#071A33] mb-2 leading-snug">
                     {step.title}
                   </h3>
 
-                  <div className="inline-block text-xs font-mono font-bold text-[#2563EB] bg-[#EFF6FF] px-2.5 py-1 rounded-xs border border-[#BFDBFE] mb-3">
+                  <div className="inline-block text-xs font-mono font-bold text-[#2563EB] bg-[#EFF6FF] px-3 py-1 rounded-full border border-[#BFDBFE] mb-3">
                     {step.date}
                   </div>
 
