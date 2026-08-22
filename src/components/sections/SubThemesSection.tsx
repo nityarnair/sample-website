@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, FileText, ArrowRight } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { CONFERENCE_DATA } from '@/data/conference';

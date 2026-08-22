@@ -1,6 +1,5 @@
 import React from 'react';
 import { Calendar, MapPin, Award, BookMarked, Users } from 'lucide-react';
-import { CONFERENCE_DATA } from '@/data/conference';
 
 export interface QuickFactItem {
   icon: React.ReactNode;

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Award, GraduationCap, Building2, Globe2, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Award, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { CONFERENCE_DATA } from '@/data/conference';
 
 export const RajagiriSection: React.FC = () => {
   return (
