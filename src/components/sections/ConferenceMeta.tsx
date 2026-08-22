@@ -1,48 +1,58 @@
 import React from 'react';
+import { CONFERENCE_DATA } from '@/data/conference';
 
 export const ConferenceMeta: React.FC = () => {
-  const metaItems = [
+  // Pull real stats values from CONFERENCE_DATA
+  const items = [
     {
-      label: 'Abstract Deadline',
-      value: '25 September 2026',
-      subtext: 'Via Microsoft CMT Portal',
+      number: '26th',
+      label: 'Annual Edition',
+      sub: 'Continuous legacy since 1998',
     },
     {
-      label: 'Conference Venue',
-      value: 'Rajagiri Valley Campus',
-      subtext: 'Kalamassery, Kochi, Kerala',
+      number: '60+',
+      label: 'Global Partners',
+      sub: 'Universities across 30+ countries',
     },
     {
-      label: 'Publication Proceeding',
-      value: 'Scopus Indexed Volumes',
-      subtext: 'Peer-reviewed book chapters & ISBN',
+      number: 'NIRF',
+      label: '#12 in India',
+      sub: 'National Institutional Ranking 2025',
     },
     {
-      label: 'Registration Begins',
-      value: '10 August 2026',
-      subtext: 'Scholars, Academicians & Delegates',
+      number: 'NAAC',
+      label: 'A++ Grade',
+      sub: '3.83 CGPA · Highest Accreditation',
     },
   ];
 
   return (
     <section
-      className="bg-white text-[#101828] border-b border-[#D9DEE5] relative z-20"
-      aria-label="Conference Key Information"
+      className="bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5]"
+      aria-label="Conference Key Statistics"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Desktop: One horizontal row with thin vertical dividers */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#D9DEE5]">
-          {metaItems.map((item, idx) => (
-            <div key={idx} className="py-6 sm:py-7 px-4 sm:px-6 first:pl-0 last:pr-0">
-              <span className="block text-[11px] font-sans uppercase tracking-widest text-[#2563EB] mb-1.5 font-bold">
+        {/* ── Horizontal editorial strip — no card borders, just ruled columns ── */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#D9DEE5]">
+          {items.map((item, idx) => (
+            <div
+              key={idx}
+              className="py-8 sm:py-10 px-5 sm:px-8 first:pl-0 last:pr-0 group"
+            >
+              {/* Large display number — Cormorant Garamond */}
+              <div className="font-serif text-[2.4rem] sm:text-[2.75rem] font-semibold text-[#071A33] leading-none mb-2 tracking-tight tabular-nums">
+                {item.number}
+              </div>
+
+              {/* Label — Manrope medium */}
+              <div className="text-[13px] sm:text-[13.5px] font-sans font-semibold text-[#101828] leading-tight mb-1">
                 {item.label}
-              </span>
-              <span className="block font-serif font-bold text-lg sm:text-xl text-[#071A33] leading-tight mb-1">
-                {item.value}
-              </span>
-              <span className="block text-xs text-[#667085] font-sans font-normal leading-relaxed">
-                {item.subtext}
-              </span>
+              </div>
+
+              {/* Sub — muted */}
+              <div className="text-[11px] font-sans text-[#667085] leading-relaxed">
+                {item.sub}
+              </div>
             </div>
           ))}
         </div>
