@@ -115,37 +115,37 @@ export const ScheduleSection: React.FC = () => {
   return (
     <section
       id="schedule"
-      className="bg-[#FFFFFF] text-[#101828] border-b border-[#D9DEE5] relative py-24 sm:py-32 lg:py-36"
+      className="bg-[#FFFFFF] text-[#0B1220] border-b border-[#D9DEE5] relative py-20 sm:py-28 lg:py-32"
       aria-labelledby="schedule-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── TOP SECTION ANNOTATION BAR ── */}
-        <div className="flex items-center justify-between pb-5 mb-14 sm:mb-20 border-b border-[#D9DEE5]">
+        <div className="flex items-center justify-between pb-5 mb-12 sm:mb-16 border-b border-[#D9DEE5]">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">04</span>
             <span className="w-6 h-px bg-[#D9DEE5]" />
-            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
-              Programme
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-bold">
+              Conference Programme
             </span>
           </div>
-          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085]">
+          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] font-semibold">
             Two Days of Ideas, Dialogue and Discovery
           </span>
         </div>
 
         {/* ── SECTION EDITORIAL HEADER & DAY TOGGLE ── */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 lg:mb-20">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 lg:mb-16">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-5 h-px bg-[#2563EB]" />
-              <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
+              <span className="w-5 h-0.5 bg-[#2563EB]" />
+              <span className="text-[11.5px] font-sans uppercase tracking-[0.18em] font-bold text-[#2563EB]">
                 Session Chronicle
               </span>
             </div>
             <h2
               id="schedule-heading"
-              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-serif font-normal text-[#071A33] leading-[1.08] tracking-tight m-0"
+              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-heading font-extrabold text-[#071A33] leading-[1.08] tracking-tight m-0"
             >
               Two days of ideas, dialogue and discovery.
             </h2>
@@ -154,63 +154,63 @@ export const ScheduleSection: React.FC = () => {
             </p>
           </div>
 
-          {/* ── PILL DAY SELECTOR ── */}
-          <div className="inline-flex items-center p-1.5 bg-[#F7F7F4] border border-[#D9DEE5] rounded-full self-start lg:self-end shadow-subtle shrink-0">
+          {/* ── DAY SELECTOR (Modern Rounded-14px Container) ── */}
+          <div className="inline-flex items-center p-1.5 bg-[#F5F5F0] border border-[#D9DEE5] rounded-[14px] self-start lg:self-end shadow-subtle shrink-0">
             <button
               type="button"
               onClick={() => setActiveDay(1)}
-              className={`px-6 sm:px-8 py-2.5 sm:py-3 text-xs font-sans uppercase tracking-[0.14em] font-semibold rounded-full transition-all duration-300 cursor-pointer ${
+              className={`px-5 sm:px-6 py-2.5 text-xs font-sans uppercase tracking-[0.14em] font-bold rounded-[10px] transition-all duration-200 cursor-pointer ${
                 activeDay === 1
-                  ? 'bg-[#071A33] text-white shadow-pill'
+                  ? 'bg-[#071A33] text-white shadow-sm'
                   : 'text-[#667085] hover:text-[#071A33] bg-transparent'
               }`}
             >
-              <span>Day 01 · Inauguration &amp; Tracks 01–04</span>
+              <span>Day 01 &middot; Inauguration &amp; Tracks 01–04</span>
             </button>
             <button
               type="button"
               onClick={() => setActiveDay(2)}
-              className={`px-6 sm:px-8 py-2.5 sm:py-3 text-xs font-sans uppercase tracking-[0.14em] font-semibold rounded-full transition-all duration-300 cursor-pointer ${
+              className={`px-5 sm:px-6 py-2.5 text-xs font-sans uppercase tracking-[0.14em] font-bold rounded-[10px] transition-all duration-200 cursor-pointer ${
                 activeDay === 2
-                  ? 'bg-[#071A33] text-white shadow-pill'
+                  ? 'bg-[#071A33] text-white shadow-sm'
                   : 'text-[#667085] hover:text-[#071A33] bg-transparent'
               }`}
             >
-              <span>Day 02 · Tracks 05–08 &amp; Valedictory</span>
+              <span>Day 02 &middot; Tracks 05–08 &amp; Valedictory</span>
             </button>
           </div>
         </div>
 
-        {/* ── EDITORIAL TIMELINE ROWS (Structured high-contrast timeline) ── */}
+        {/* ── EDITORIAL TIMELINE ROWS ── */}
         <div className="border-t-2 border-[#071A33]/20 divide-y divide-[#D9DEE5]">
           {currentSchedule.map((item, idx) => (
             <div
               key={idx}
-              className="group py-8 sm:py-10 px-3 sm:px-6 flex flex-col lg:flex-row lg:items-start justify-between gap-6 hover:bg-[#F7F7F4] border-l-4 border-l-transparent hover:border-l-[#2563EB] transition-all duration-300 rounded-r-[16px]"
+              className="group py-7 sm:py-9 px-3 sm:px-6 flex flex-col lg:flex-row lg:items-start justify-between gap-6 hover:bg-[#F5F5F0] border-l-4 border-l-transparent hover:border-l-[#2563EB] transition-all duration-200 rounded-r-[14px]"
             >
               {/* Left Column: Prominent Time & Session Type */}
               <div className="lg:w-1/4 shrink-0">
-                <div className="font-mono text-lg sm:text-xl font-bold text-[#071A33] group-hover:text-[#2563EB] transition-colors mb-2.5 tracking-tight tabular-nums">
+                <div className="font-mono text-base sm:text-lg font-bold text-[#071A33] group-hover:text-[#2563EB] transition-colors mb-2 tracking-tight tabular-nums">
                   {item.time}
                 </div>
-                <span className="inline-block text-[11px] font-sans font-bold uppercase tracking-[0.14em] px-3.5 py-1 rounded-full bg-[#EEF3F8] text-[#12345B] border border-[#D9DEE5] group-hover:border-[#2563EB]/40 transition-colors">
+                <span className="inline-block text-[11px] font-sans font-bold uppercase tracking-[0.14em] px-3 py-1 rounded-[8px] bg-[#E8F0F7] text-[#071A33] border border-[#D9DEE5] group-hover:border-[#2563EB]/40 transition-colors">
                   {item.type}
                 </span>
               </div>
 
               {/* Middle Column: Session Title & Description */}
               <div className="lg:w-2/4 lg:px-4">
-                <h3 className="font-serif text-[1.5rem] sm:text-[1.8rem] text-[#071A33] font-normal leading-[1.2] mb-2.5 group-hover:text-[#2563EB] transition-colors">
+                <h3 className="font-heading text-[1.25rem] sm:text-[1.4rem] font-bold text-[#071A33] leading-[1.3] mb-2 group-hover:text-[#2563EB] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-[13px] sm:text-[14px] text-[#475467] font-sans font-normal leading-relaxed m-0">
+                <p className="text-[13.5px] sm:text-[14px] text-[#475467] font-sans font-normal leading-relaxed m-0">
                   {item.description}
                 </p>
               </div>
 
               {/* Right Column: Venue / Location */}
               <div className="lg:w-1/4 flex lg:justify-end items-center shrink-0">
-                <div className="inline-flex items-center gap-2 bg-[#EEF3F8] border border-[#D9DEE5] px-4 py-2 rounded-full text-[12px] font-sans text-[#071A33] font-medium group-hover:border-[#2563EB]/40 group-hover:bg-white transition-all shadow-subtle">
+                <div className="inline-flex items-center gap-2 bg-[#E8F0F7] border border-[#D9DEE5] px-3.5 py-1.5 rounded-[10px] text-[12px] font-sans text-[#071A33] font-semibold group-hover:border-[#2563EB]/40 group-hover:bg-white transition-all shadow-subtle">
                   <MapPin className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
                   <span>{item.location}</span>
                 </div>
@@ -229,7 +229,7 @@ export const ScheduleSection: React.FC = () => {
             href={CONFERENCE_DATA.links.brochurePdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[11.5px] font-sans uppercase tracking-[0.14em] font-semibold text-[#071A33] hover:text-[#2563EB] transition-colors shrink-0"
+            className="group inline-flex items-center gap-2 text-[12px] font-sans uppercase tracking-[0.14em] font-bold text-[#071A33] hover:text-[#2563EB] transition-colors shrink-0"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Download Complete Schedule (PDF)</span>

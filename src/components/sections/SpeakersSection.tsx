@@ -56,37 +56,37 @@ export const SpeakersSection: React.FC = () => {
   return (
     <section
       id="voices"
-      className="bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] relative py-24 sm:py-32 lg:py-36"
+      className="bg-[#F5F5F0] text-[#0B1220] border-b border-[#D9DEE5] relative py-20 sm:py-28 lg:py-32"
       aria-labelledby="voices-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── TOP SECTION ANNOTATION BAR ── */}
-        <div className="flex items-center justify-between pb-5 mb-14 sm:mb-20 border-b border-[#D9DEE5]">
+        <div className="flex items-center justify-between pb-5 mb-12 sm:mb-16 border-b border-[#D9DEE5]">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">03</span>
             <span className="w-6 h-px bg-[#D9DEE5]" />
-            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
-              Conference Voices
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-bold">
+              Conference Leadership
             </span>
           </div>
-          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085]">
+          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] font-semibold">
             Academic Leadership &amp; Scientific Direction
           </span>
         </div>
 
         {/* ── SECTION EDITORIAL HEADER ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-20 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 lg:mb-16 items-end">
           <div className="lg:col-span-8">
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-5 h-px bg-[#2563EB]" />
-              <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
+              <span className="w-5 h-0.5 bg-[#2563EB]" />
+              <span className="text-[11.5px] font-sans uppercase tracking-[0.18em] font-bold text-[#2563EB]">
                 Scholarly Convenors &amp; Scientific Board
               </span>
             </div>
             <h2
               id="voices-heading"
-              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-serif font-normal text-[#071A33] leading-[1.08] tracking-tight m-0"
+              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-heading font-extrabold text-[#071A33] leading-[1.08] tracking-tight m-0"
             >
               People shaping the conversation.
             </h2>
@@ -97,7 +97,7 @@ export const SpeakersSection: React.FC = () => {
           <div className="lg:col-span-4 lg:text-right">
             <Link
               to="/contactus"
-              className="group inline-flex items-center gap-2 text-[11.5px] font-sans uppercase tracking-[0.16em] font-semibold text-[#071A33] hover:text-[#2563EB] transition-colors"
+              className="group inline-flex items-center gap-2 text-[12px] font-sans uppercase tracking-[0.14em] font-bold text-[#071A33] hover:text-[#2563EB] transition-colors"
             >
               <span>Contact Scientific Secretariat</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -105,51 +105,51 @@ export const SpeakersSection: React.FC = () => {
           </div>
         </div>
 
-        {/* ── EDITORIAL VOICES GRID (White cards standing out against Off-White background) ── */}
+        {/* ── EDITORIAL VOICES GRID (Modern White Cards on Warm Off-White) ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {voices.map((voice) => (
             <div
               key={voice.number}
-              className="bg-white border border-[#D9DEE5] rounded-[24px] p-7 sm:p-9 shadow-subtle hover:shadow-editorial hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white border border-[#D9DEE5] rounded-[20px] p-7 sm:p-8 shadow-subtle hover:shadow-editorial hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Header: Number + Initials Monogram */}
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#D9DEE5]/60">
+                <div className="flex items-center justify-between mb-5 pb-4 border-b border-[#D9DEE5]/60">
                   <span className="font-mono text-sm font-bold text-[#2563EB] tracking-wider">
                     {voice.number}
                   </span>
                   <div className="flex items-center gap-3">
                     {voice.badge && (
-                      <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.14em] text-[#667085] bg-[#F7F7F4] px-3 py-1 rounded-full border border-[#D9DEE5]">
+                      <span className="text-[10px] font-sans font-bold uppercase tracking-[0.14em] text-[#667085] bg-[#F5F5F0] px-3 py-1 rounded-[8px] border border-[#D9DEE5]">
                         {voice.badge}
                       </span>
                     )}
-                    <div className="w-10 h-10 rounded-full bg-[#071A33] text-white flex items-center justify-center font-serif text-sm font-semibold tracking-wider transition-colors group-hover:bg-[#2563EB]">
+                    <div className="w-10 h-10 rounded-[10px] bg-[#071A33] text-white flex items-center justify-center font-heading text-sm font-bold tracking-wider transition-colors group-hover:bg-[#2563EB]">
                       {voice.initials}
                     </div>
                   </div>
                 </div>
 
                 {/* Name */}
-                <h3 className="font-serif text-[1.65rem] sm:text-[1.85rem] text-[#071A33] font-normal leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
+                <h3 className="font-heading text-[1.45rem] sm:text-[1.65rem] font-bold text-[#071A33] leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
                   {voice.name}
                 </h3>
 
                 {/* Designation & Affiliation */}
-                <p className="text-[12.5px] sm:text-[13px] font-sans font-semibold text-[#2563EB] mb-1">
+                <p className="text-[13px] font-sans font-semibold text-[#2563EB] mb-1">
                   {voice.role}
                 </p>
-                <p className="text-[12px] sm:text-[13px] font-sans text-[#667085] mb-6 leading-relaxed">
+                <p className="text-[12.5px] sm:text-[13px] font-sans text-[#667085] mb-5 leading-relaxed">
                   {voice.affiliation}
                 </p>
               </div>
 
               {/* Deliberation Scope */}
-              <div className="bg-[#F7F7F4] border border-[#D9DEE5] rounded-[16px] p-4 transition-all duration-300 group-hover:border-[#2563EB]/30">
-                <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#667085] font-bold block mb-1.5">
+              <div className="bg-[#F5F5F0] border border-[#D9DEE5] rounded-[14px] p-4 transition-all duration-300 group-hover:border-[#2563EB]/30">
+                <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#667085] font-bold block mb-1">
                   Academic Focus &amp; Scope
                 </span>
-                <p className="text-[12.5px] sm:text-[13px] text-[#101828]/85 font-sans leading-relaxed m-0">
+                <p className="text-[13px] text-[#0B1220]/85 font-sans leading-relaxed m-0">
                   {voice.focus}
                 </p>
               </div>
@@ -158,9 +158,9 @@ export const SpeakersSection: React.FC = () => {
         </div>
 
         {/* ── KEYNOTE NOTIFICATION BANNER ── */}
-        <div className="mt-14 sm:mt-16 pt-8 border-t border-[#D9DEE5] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-2xl border border-[#D9DEE5]">
+        <div className="mt-12 sm:mt-14 pt-8 border-t border-[#D9DEE5] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-[20px] border border-[#D9DEE5] shadow-subtle">
           <div className="flex items-start sm:items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#EFF6FF] text-[#2563EB] flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
               <Globe2 className="w-5 h-5" />
             </div>
             <div>
@@ -178,7 +178,7 @@ export const SpeakersSection: React.FC = () => {
 
           <Link
             to="/call_for_papers"
-            className="inline-flex items-center justify-center gap-2 text-xs font-sans uppercase tracking-[0.14em] font-semibold bg-[#071A33] text-white hover:bg-[#12345B] rounded-full px-6 py-3 transition-all duration-300 shrink-0 shadow-pill"
+            className="inline-flex items-center justify-center gap-2 text-xs font-sans uppercase tracking-[0.14em] font-bold bg-[#071A33] text-white hover:bg-[#12345B] rounded-[12px] px-6 py-3 transition-all duration-200 shrink-0 shadow-sm"
           >
             <BookOpen className="w-3.5 h-3.5" />
             <span>Review Submission Tracks</span>
