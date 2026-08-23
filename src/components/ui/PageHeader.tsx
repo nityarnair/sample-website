@@ -91,7 +91,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
 
         <h1
           className={cn(
-            'text-[2.5rem] sm:text-[3.5rem] lg:text-[4.25rem] font-serif font-normal leading-[1.06] tracking-tight m-0',
+            'text-[2.25rem] sm:text-[3.25rem] lg:text-[4rem] font-heading font-extrabold leading-[1.06] tracking-tight m-0',
             dark ? 'text-white' : 'text-[#071A33]'
           )}
         >
