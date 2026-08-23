@@ -272,24 +272,24 @@ export const Rajagiri: React.FC = () => {
         </div>
 
         {/* ── OFFICIAL RCSS PORTAL BANNER WITH BLURRED RAJAGIRI CAMPUS BACKGROUND ── */}
-        <div className="relative text-center text-white border border-white/15 rounded-[24px] sm:rounded-[28px] p-10 sm:p-16 shadow-editorial overflow-hidden">
-          {/* Blurred Background Campus Image */}
-          <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="relative text-center text-white border border-white/20 rounded-[24px] sm:rounded-[28px] p-10 sm:p-16 shadow-editorial overflow-hidden bg-[#071A33]">
+          {/* Blurred Background Campus Image + Gradient Overlay */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <img
               src="https://dyuti.in/assets/images/rcss/Rajagiri-College-of-Social-Sciences.jpg"
               alt="Rajagiri College Campus Background"
-              className="w-full h-full object-cover object-center filter blur-md scale-110 brightness-50"
-              loading="lazy"
+              className="w-full h-full object-cover object-center filter blur-sm scale-105 brightness-60"
+              loading="eager"
             />
-            {/* Deep Navy Atmospheric Gradient Overlay for crisp readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#071A33]/88 via-[#071A33]/78 to-[#071A33]/90" />
+            {/* Deep Navy Atmospheric Gradient Overlay for crystal clear readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#071A33]/80 via-[#071A33]/70 to-[#071A33]/85" />
           </div>
 
           <div className="relative z-10">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-[16px] bg-white/15 backdrop-blur-md text-white mb-5 border border-white/20 shadow-sm">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-[16px] bg-white/15 backdrop-blur-md text-white mb-5 border border-white/25 shadow-sm">
               <Building2 className="w-7 h-7 text-[#93C5FD]" />
             </div>
-            <h3 className="font-heading text-[2rem] sm:text-[2.65rem] font-extrabold mb-3 tracking-tight">
+            <h3 className="font-heading text-[2rem] sm:text-[2.65rem] font-extrabold text-white mb-3 tracking-tight">
               Explore RCSS Official Portal
             </h3>
             <p className="text-white/90 text-sm sm:text-base max-w-xl mx-auto mb-8 font-sans font-normal leading-relaxed">
