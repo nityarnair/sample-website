@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
 import { ResponsiveTable } from '@/components/ui/ResponsiveTable';
-import { Calendar, FileCheck, CheckCircle2, Download, ExternalLink, CreditCard, ShieldCheck, Users, Info, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calendar, FileCheck, CheckCircle2, Download, CreditCard, ShieldCheck, Users, Info, ChevronDown, ChevronUp } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const CallForPapers: React.FC = () => {
@@ -98,7 +98,7 @@ export const CallForPapers: React.FC = () => {
           </div>
 
           <div className="divide-y divide-[#D9DEE5] border-y border-[#D9DEE5] bg-white rounded-[20px] overflow-hidden shadow-subtle">
-            {CONFERENCE_DATA.tracks.map((track, idx) => {
+            {CONFERENCE_DATA.subThemes.map((track, idx) => {
               const isExpanded = expandedTheme === idx;
               return (
                 <div
@@ -119,7 +119,7 @@ export const CallForPapers: React.FC = () => {
                           {track.title}
                         </h4>
                         <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal mt-1 m-0 line-clamp-1">
-                          {track.description}
+                          {track.topics.join(' · ')}
                         </p>
                       </div>
                     </div>
@@ -130,10 +130,7 @@ export const CallForPapers: React.FC = () => {
 
                   {isExpanded && (
                     <div className="px-6 sm:px-8 pb-8 pt-2 bg-[#F7F7F4] border-t border-[#D9DEE5]/60">
-                      <p className="text-sm text-[#101828] leading-relaxed font-sans font-normal mb-4">
-                        {track.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 pt-2">
                         {track.topics.map((topic, tIdx) => (
                           <span
                             key={tIdx}
