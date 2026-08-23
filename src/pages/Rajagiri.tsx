@@ -271,28 +271,43 @@ export const Rajagiri: React.FC = () => {
           </div>
         </div>
 
-        {/* ── OFFICIAL RCSS PORTAL BANNER ── */}
-        <div className="text-center bg-[#071A33] text-white border border-white/10 rounded-[20px] p-10 sm:p-14 shadow-editorial">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-[14px] bg-white/10 text-white mb-5 border border-white/15">
-            <Building2 className="w-7 h-7" />
+        {/* ── OFFICIAL RCSS PORTAL BANNER WITH BLURRED RAJAGIRI CAMPUS BACKGROUND ── */}
+        <div className="relative text-center text-white border border-white/15 rounded-[24px] sm:rounded-[28px] p-10 sm:p-16 shadow-editorial overflow-hidden">
+          {/* Blurred Background Campus Image */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <img
+              src="https://dyuti.in/assets/images/rcss/Rajagiri-College-of-Social-Sciences.jpg"
+              alt="Rajagiri College Campus Background"
+              className="w-full h-full object-cover object-center filter blur-md scale-110 brightness-50"
+              loading="lazy"
+            />
+            {/* Deep Navy Atmospheric Gradient Overlay for crisp readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#071A33]/88 via-[#071A33]/78 to-[#071A33]/90" />
           </div>
-          <h3 className="font-heading text-[2rem] sm:text-[2.5rem] font-extrabold mb-3">
-            Explore RCSS Official Portal
-          </h3>
-          <p className="text-white/80 text-sm sm:text-base max-w-xl mx-auto mb-8 font-sans font-normal leading-relaxed">
-            Discover academic programmes, research centres, live lab initiatives, and faculty publications at Rajagiri College of Social Sciences (Autonomous).
-          </p>
-          <Button
-            variant="white"
-            size="lg"
-            asLink
-            href={CONFERENCE_DATA.links.rajagiriPortal}
-            target="_blank"
-            rel="noopener noreferrer"
-            showArrow
-          >
-            Visit rcss.rajagiri.edu
-          </Button>
+
+          <div className="relative z-10">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-[16px] bg-white/15 backdrop-blur-md text-white mb-5 border border-white/20 shadow-sm">
+              <Building2 className="w-7 h-7 text-[#93C5FD]" />
+            </div>
+            <h3 className="font-heading text-[2rem] sm:text-[2.65rem] font-extrabold mb-3 tracking-tight">
+              Explore RCSS Official Portal
+            </h3>
+            <p className="text-white/90 text-sm sm:text-base max-w-xl mx-auto mb-8 font-sans font-normal leading-relaxed">
+              Discover academic programmes, research centres, live lab initiatives, and faculty publications at Rajagiri College of Social Sciences (Autonomous).
+            </p>
+            <Button
+              variant="white"
+              size="lg"
+              asLink
+              href={CONFERENCE_DATA.links.rajagiriPortal}
+              target="_blank"
+              rel="noopener noreferrer"
+              showArrow
+              className="shadow-lg hover:shadow-xl transition-all hover:scale-105"
+            >
+              Visit rcss.rajagiri.edu
+            </Button>
+          </div>
         </div>
 
       </div>
