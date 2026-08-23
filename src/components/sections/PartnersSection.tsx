@@ -92,13 +92,20 @@ export const PartnersSection: React.FC = () => {
         </div>
 
         {/* ── GLOBAL PARTNER UNIVERSITIES (Moving Rectangles, Full Color) ── */}
-        <div className="pt-4">
-          <div className="text-center mb-8">
-            <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.22em] text-[#2563EB] block mb-1">
+        <div className="pt-8">
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="w-5 h-0.5 bg-[#2563EB]" />
+              <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB]">
+                Global Alliances
+              </span>
+              <span className="w-5 h-0.5 bg-[#2563EB]" />
+            </div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-heading font-extrabold text-[#071A33] tracking-tight m-0 leading-tight">
               International Academic Partner Network
-            </span>
-            <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal m-0">
-              60+ Global Institutional Collaborations &bull; Moving one by one across partner networks
+            </h3>
+            <p className="text-sm sm:text-base text-[#667085] font-sans font-normal mt-3 max-w-2xl mx-auto leading-relaxed">
+              60+ Global Institutional Collaborations across 30+ Countries supporting student exchange and international research initiatives.
             </p>
           </div>
 
