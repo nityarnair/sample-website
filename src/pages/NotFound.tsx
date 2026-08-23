@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home as HomeIcon, ArrowRight } from 'lucide-react';
+import { Home as HomeIcon } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export const NotFound: React.FC = () => {

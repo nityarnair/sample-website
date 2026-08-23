@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
-import { Hotel, Download, MapPin, Info, Mail, PhoneCall, ArrowRight } from 'lucide-react';
+import { Download, MapPin, Info, Mail } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const Accommodation: React.FC = () => {

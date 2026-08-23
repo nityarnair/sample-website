@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
-import { Globe2, CheckCircle2, Award, BookOpen, HeartPulse, Building2, ExternalLink } from 'lucide-react';
+import { Globe2, CheckCircle2, Award, BookOpen, HeartPulse, Building2 } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const Rajagiri: React.FC = () => {
