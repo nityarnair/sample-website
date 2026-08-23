@@ -44,37 +44,37 @@ export const ImportantDatesTimeline: React.FC = () => {
   return (
     <section
       id="important-dates"
-      className="bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] relative py-24 sm:py-32 lg:py-36"
+      className="bg-[#F5F5F0] text-[#0B1220] border-b border-[#D9DEE5] relative py-20 sm:py-28 lg:py-32"
       aria-labelledby="dates-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── TOP SECTION ANNOTATION BAR ── */}
-        <div className="flex items-center justify-between pb-5 mb-14 sm:mb-20 border-b border-[#D9DEE5]">
+        <div className="flex items-center justify-between pb-5 mb-12 sm:mb-16 border-b border-[#D9DEE5]">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">06</span>
             <span className="w-6 h-px bg-[#D9DEE5]" />
-            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-bold">
               Important Dates
             </span>
           </div>
-          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085]">
+          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] font-semibold">
             Chronology of Key Deadlines &amp; Milestones
           </span>
         </div>
 
         {/* ── SECTION EDITORIAL HEADER ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-24 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 lg:mb-20 items-end">
           <div className="lg:col-span-8">
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-5 h-px bg-[#2563EB]" />
-              <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
+              <span className="w-5 h-0.5 bg-[#2563EB]" />
+              <span className="text-[11.5px] font-sans uppercase tracking-[0.18em] font-bold text-[#2563EB]">
                 Conference Schedule &amp; Milestones
               </span>
             </div>
             <h2
               id="dates-heading"
-              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-serif font-normal text-[#071A33] leading-[1.08] tracking-tight m-0"
+              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-heading font-extrabold text-[#071A33] leading-[1.08] tracking-tight m-0"
             >
               The road to DYUTI 2027.
             </h2>
@@ -85,7 +85,7 @@ export const ImportantDatesTimeline: React.FC = () => {
           <div className="lg:col-span-4 lg:text-right">
             <Link
               to="/call_for_papers"
-              className="group inline-flex items-center gap-2 text-[11.5px] font-sans uppercase tracking-[0.16em] font-semibold text-[#071A33] hover:text-[#2563EB] transition-colors"
+              className="group inline-flex items-center gap-2 text-[12px] font-sans uppercase tracking-[0.14em] font-bold text-[#071A33] hover:text-[#2563EB] transition-colors"
             >
               <span>View Extended Abstract Guidelines</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -104,10 +104,10 @@ export const ImportantDatesTimeline: React.FC = () => {
                 {/* Timeline Node & Number Marker */}
                 <div className="flex items-center gap-3 mb-6 pl-2">
                   <div
-                    className={`w-7 h-7 rounded-full shrink-0 flex items-center justify-center font-mono text-[11px] font-bold transition-all duration-300 group-hover:scale-110 ${
+                    className={`w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono text-[11px] font-bold transition-all duration-300 group-hover:scale-110 ${
                       step.isHighlight
                         ? 'bg-[#2563EB] text-white ring-4 ring-[#BFDBFE]'
-                        : 'bg-[#071A33] text-white ring-4 ring-[#F7F7F4] group-hover:bg-[#2563EB]'
+                        : 'bg-[#071A33] text-white ring-4 ring-[#F5F5F0] group-hover:bg-[#2563EB]'
                     }`}
                   >
                     {step.number}
@@ -119,7 +119,7 @@ export const ImportantDatesTimeline: React.FC = () => {
 
                 {/* White Editorial Milestone Card */}
                 <div
-                  className={`bg-white border rounded-[22px] p-6 shadow-subtle hover:shadow-editorial transition-all duration-300 flex flex-col justify-between min-h-[220px] ${
+                  className={`bg-white border rounded-[20px] p-6 shadow-subtle hover:shadow-editorial transition-all duration-300 flex flex-col justify-between min-h-[220px] ${
                     step.isHighlight
                       ? 'border-[#2563EB]/40 ring-1 ring-[#2563EB]/20 bg-white'
                       : 'border-[#D9DEE5] hover:border-[#2563EB]/40'
@@ -129,7 +129,7 @@ export const ImportantDatesTimeline: React.FC = () => {
                     {/* Date Display */}
                     <div className="mb-2.5">
                       <span
-                        className={`inline-block font-mono text-[12px] font-bold uppercase tracking-wider ${
+                        className={`inline-block font-mono text-[12.5px] font-bold uppercase tracking-wider ${
                           step.isHighlight
                             ? 'text-[#2563EB]'
                             : 'text-[#071A33]'
@@ -140,13 +140,13 @@ export const ImportantDatesTimeline: React.FC = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-serif text-[1.35rem] text-[#071A33] font-normal leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
+                    <h3 className="font-heading text-[1.2rem] text-[#071A33] font-bold leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
                       {step.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="text-[12px] text-[#667085] font-sans font-normal leading-relaxed m-0 mt-3 pt-3 border-t border-[#D9DEE5]/60">
+                  <p className="text-[12.5px] text-[#667085] font-sans font-normal leading-relaxed m-0 mt-3 pt-3 border-t border-[#D9DEE5]/60">
                     {step.desc}
                   </p>
                 </div>
@@ -164,10 +164,10 @@ export const ImportantDatesTimeline: React.FC = () => {
             <div key={idx} className="relative group">
               {/* Vertical Numbered Marker */}
               <div
-                className={`absolute -left-[29px] sm:-left-[33px] top-4 w-7 h-7 rounded-full flex items-center justify-center font-mono text-[10px] font-bold ${
+                className={`absolute -left-[29px] sm:-left-[33px] top-4 w-7 h-7 rounded-[8px] flex items-center justify-center font-mono text-[10px] font-bold ${
                   step.isHighlight
                     ? 'bg-[#2563EB] text-white ring-4 ring-[#BFDBFE]'
-                    : 'bg-[#071A33] text-white ring-4 ring-[#F7F7F4]'
+                    : 'bg-[#071A33] text-white ring-4 ring-[#F5F5F0]'
                 }`}
               >
                 {step.number}
@@ -195,12 +195,12 @@ export const ImportantDatesTimeline: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-[1.4rem] sm:text-[1.55rem] text-[#071A33] font-normal leading-snug mb-1.5">
+                <h3 className="font-heading text-[1.3rem] sm:text-[1.45rem] text-[#071A33] font-bold leading-snug mb-1.5">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[12.5px] sm:text-[13px] text-[#667085] font-sans font-normal leading-relaxed m-0">
+                <p className="text-[13px] text-[#667085] font-sans font-normal leading-relaxed m-0">
                   {step.desc}
                 </p>
               </div>
@@ -209,7 +209,7 @@ export const ImportantDatesTimeline: React.FC = () => {
         </div>
 
         {/* ── BOTTOM NOTIFICATION FOOTER ── */}
-        <div className="mt-16 pt-8 border-t border-[#D9DEE5] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="mt-14 pt-8 border-t border-[#D9DEE5] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2.5 text-xs text-[#667085] font-sans">
             <Clock className="w-4 h-4 text-[#2563EB] shrink-0" />
             <span>All submission deadlines are set to 23:59 IST (Indian Standard Time).</span>
