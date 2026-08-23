@@ -1,73 +1,71 @@
 import React from 'react';
+import { ArrowUpRight, Award, Calendar, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const HeroEditorial: React.FC = () => {
   return (
     <section
-      className="relative bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] overflow-hidden"
+      className="relative bg-[#F5F5F0] text-[#0B1220] border-b border-[#D9DEE5] overflow-hidden"
       aria-label="Conference Masthead"
     >
-      {/* ── Very subtle texture rule across top ── */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#D9DEE5] to-transparent" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── TOP EDITORIAL ANNOTATION BAR ── */}
-        <div className="flex items-center justify-between py-5 sm:py-6 border-b border-[#D9DEE5]">
-          {/* Left: section number + label */}
+        <div className="flex items-center justify-between py-4 sm:py-5 border-b border-[#D9DEE5]">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">01</span>
             <span className="w-6 h-px bg-[#D9DEE5]" />
-            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
-              Conference — 2027
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-bold">
+              International Conference &middot; 2027
             </span>
           </div>
-          {/* Right: legacy note */}
-          <div className="hidden sm:flex items-center gap-4 text-[11px] font-sans text-[#667085] uppercase tracking-[0.14em]">
-            <span>26th Edition</span>
+          <div className="hidden sm:flex items-center gap-4 text-[11px] font-sans text-[#667085] uppercase tracking-[0.14em] font-semibold">
+            <span>26th Annual Edition</span>
             <span className="w-px h-3 bg-[#D9DEE5]" />
-            <span>Since 1998</span>
+            <span>Continuous Since 1998</span>
           </div>
         </div>
 
         {/* ── MAIN HERO COMPOSITION ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-14 sm:pt-20 pb-14 sm:pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pt-10 sm:pt-16 pb-14 sm:pb-20">
 
-          {/* ── LEFT: Typography + CTAs ── */}
-          <div className="lg:col-span-7 flex flex-col">
+          {/* ── LEFT: Modern Bold Typography + CTAs (7 cols) ── */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
 
             {/* Eyebrow */}
-            <div className="mb-5 flex items-center gap-3">
-              <span className="w-6 h-px bg-[#2563EB]" />
-              <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
-                Social Work · Sustainable Development · Kochi
+            <div className="mb-4 flex items-center gap-2.5">
+              <span className="w-6 h-0.5 bg-[#2563EB]" />
+              <span className="text-[11.5px] font-sans uppercase tracking-[0.18em] font-bold text-[#2563EB]">
+                Social Work &middot; Sustainable Development &middot; Kochi
               </span>
             </div>
 
-            {/* Giant masthead — font-weight now 600 (via .hero-masthead class) */}
-            <h1 className="hero-masthead font-serif text-[#071A33] select-none mb-2">
+            {/* Powerful Modern Masthead */}
+            <h1 className="font-heading font-extrabold text-[#071A33] text-[3.25rem] sm:text-[4.75rem] lg:text-[5.75rem] tracking-tight leading-[0.92] select-none mb-4">
               DYUTI
-              <br />
-              <em className="not-italic text-[#12345B]">&rsquo;27</em>
+              <span className="text-[#2563EB] ml-3">2027</span>
             </h1>
 
-            {/* Italic editorial tagline */}
-            <p className="font-serif italic text-[1.55rem] sm:text-[1.85rem] lg:text-[2.1rem] text-[#071A33]/80 leading-[1.25] mb-6 max-w-[520px]">
-              Ideas that move<br className="hidden sm:block" /> beyond the present.
+            {/* Conference Theme Title */}
+            <p className="font-heading text-[1.2rem] sm:text-[1.4rem] lg:text-[1.5rem] font-bold text-[#071A33] leading-snug mb-4 max-w-[580px]">
+              Social Work for Sustainable Development:
+              <span className="block font-medium text-[#12345B] text-[1.1rem] sm:text-[1.25rem] mt-1">
+                Empowering Communities through Innovation, Inclusion, and Partnership
+              </span>
             </p>
 
-            {/* Body description — strictly from CONFERENCE_DATA */}
-            <p className="text-sm sm:text-[0.9375rem] text-[#667085] leading-[1.75] font-sans font-normal max-w-[460px] mb-10">
-              A premier academic symposium advancing the UN 2030 Agenda through
-              collaborative social work, empirical research, and community
-              empowerment.
+            {/* Body Description */}
+            <p className="text-[14.5px] sm:text-[15px] text-[#667085] leading-relaxed font-sans font-normal max-w-[500px] mb-8">
+              A premier international symposium advancing the UN 2030 Agenda through
+              collaborative social work scholarship, double-blind peer-reviewed research,
+              and global academic alliances.
             </p>
 
-            {/* CTA row */}
+            {/* CTA Row */}
             <div className="flex flex-wrap items-center gap-3.5">
               <Button
-                variant="navy"
+                variant="primary"
                 size="lg"
                 asLink
                 href={CONFERENCE_DATA.links.registrationForm}
@@ -77,7 +75,7 @@ export const HeroEditorial: React.FC = () => {
               </Button>
 
               <Button
-                variant="outline"
+                variant="secondary"
                 size="lg"
                 asLink
                 href="#tracks"
@@ -87,92 +85,99 @@ export const HeroEditorial: React.FC = () => {
             </div>
           </div>
 
-          {/* ── RIGHT: Editorial Image Composition ── */}
-          <div className="lg:col-span-5 relative mt-2 lg:mt-0">
-
-            {/* Thin vertical rule — editorial accent, desktop only */}
-            <div className="hidden lg:block absolute -left-7 top-8 bottom-8 w-px bg-[#D9DEE5]" />
-
-            {/* Image container */}
-            <div className="relative rounded-[24px] overflow-hidden border border-[#D9DEE5] shadow-editorial bg-[#E8EDF2]">
+          {/* ── RIGHT: Editorial Image & Overlapping Navy Panel (5 cols) ── */}
+          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+            
+            {/* Campus Image Frame */}
+            <div className="relative rounded-[24px] overflow-hidden border border-[#D9DEE5] shadow-editorial bg-[#E8EDF2] group">
               <img
                 src="https://dyuti.in/uploads/gallery/6L6A6365.JPG"
                 alt="DYUTI 2027 — Scholarly Conference Proceedings, Rajagiri College, Kochi"
-                className="w-full h-[360px] sm:h-[460px] lg:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
+                className="w-full h-[360px] sm:h-[440px] lg:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="eager"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071A33]/70 via-transparent to-transparent" />
+            </div>
 
-              {/* Caption strip — clean editorial, no card effect */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#071A33]/80 via-[#071A33]/30 to-transparent px-5 pt-10 pb-5">
-                <div className="flex items-end justify-between">
-                  <div>
-                    <p className="text-[10px] font-sans uppercase tracking-[0.2em] text-white/60 mb-1">
-                      DYUTI 2027
-                    </p>
-                    <p className="text-[12px] font-sans font-semibold text-white/95 uppercase tracking-[0.12em] leading-tight">
-                      Rajagiri College of Social Sciences
-                    </p>
-                  </div>
-                  <span className="text-[10px] font-mono text-white/50 uppercase tracking-wider">
-                    Kochi, Kerala
+            {/* Overlapping Deep Navy Information Panel */}
+            <div className="relative -mt-14 sm:-mt-16 mx-4 sm:mx-6 bg-[#071A33] text-white rounded-[20px] p-5 sm:p-6 border border-white/15 shadow-float z-10">
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/12">
+                <div className="flex items-center gap-2 text-[11px] font-sans font-bold text-[#93C5FD] uppercase tracking-wider">
+                  <Award className="w-3.5 h-3.5 text-[#60A5FA]" />
+                  <span>NIRF #12 &middot; NAAC A++</span>
+                </div>
+                <span className="text-[10px] font-mono text-white/70 uppercase">
+                  Autonomous
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-white/60 block mb-0.5">
+                    Abstract Deadline
                   </span>
+                  <div className="font-heading font-bold text-white text-[15px] leading-tight flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-[#60A5FA] shrink-0" />
+                    <span>25 Sep 2026</span>
+                  </div>
+                </div>
+
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-white/60 block mb-0.5">
+                    Venue
+                  </span>
+                  <div className="font-heading font-bold text-white text-[15px] leading-tight flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-[#60A5FA] shrink-0" />
+                    <span>Rajagiri, Kochi</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Floating institutional badge — repositioned to top-right */}
-            <div className="absolute -top-4 -right-2 sm:-right-5 bg-[#071A33] text-white px-4 py-3 rounded-[14px] border border-white/10 shadow-editorial">
-              <div className="text-[10px] uppercase font-sans text-[#93C5FD] font-bold tracking-wider mb-0.5 whitespace-nowrap">
-                NIRF #12 · NAAC A++
-              </div>
-              <p className="text-[10.5px] text-white/75 leading-tight m-0 font-sans whitespace-nowrap">
-                Autonomous · Founded 1955
-              </p>
-            </div>
           </div>
         </div>
 
-        {/* ── METADATA STRIP — editorial horizontal rule ── */}
+        {/* ── METADATA STRIP — Modern 3-Column Information Row ── */}
         <div className="border-t border-[#D9DEE5] grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#D9DEE5]">
 
-          <div className="flex items-center gap-5 py-5 sm:py-6 sm:pr-8">
-            <span className="font-serif text-[2.25rem] font-semibold text-[#071A33] leading-none tabular-nums">
+          <div className="flex items-center gap-4 py-5 sm:py-6 sm:pr-8">
+            <span className="font-heading text-[2.25rem] font-extrabold text-[#071A33] leading-none tabular-nums">
               2027
             </span>
             <div>
-              <p className="text-[10px] font-sans uppercase tracking-[0.18em] text-[#667085] m-0 mb-0.5">
+              <p className="text-[10.5px] font-sans uppercase tracking-[0.16em] text-[#667085] font-bold m-0 mb-0.5">
                 Edition
               </p>
-              <p className="text-[12px] font-sans text-[#101828] font-medium m-0">
+              <p className="text-[13px] font-sans text-[#0B1220] font-semibold m-0">
                 26th Annual Conference
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-5 py-5 sm:py-6 sm:px-8">
-            <span className="font-serif text-[1.5rem] font-semibold text-[#071A33] leading-none whitespace-nowrap">
+          <div className="flex items-center gap-4 py-5 sm:py-6 sm:px-8">
+            <span className="font-heading text-[1.65rem] font-bold text-[#071A33] leading-none whitespace-nowrap">
               Rajagiri
             </span>
             <div>
-              <p className="text-[10px] font-sans uppercase tracking-[0.18em] text-[#667085] m-0 mb-0.5">
+              <p className="text-[10.5px] font-sans uppercase tracking-[0.16em] text-[#667085] font-bold m-0 mb-0.5">
                 Host Institution
               </p>
-              <p className="text-[12px] font-sans text-[#101828] font-medium m-0">
+              <p className="text-[13px] font-sans text-[#0B1220] font-semibold m-0">
                 College of Social Sciences
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-5 py-5 sm:py-6 sm:pl-8">
-            <span className="font-serif text-[1.5rem] font-semibold text-[#071A33] leading-none">
+          <div className="flex items-center gap-4 py-5 sm:py-6 sm:pl-8">
+            <span className="font-heading text-[1.65rem] font-bold text-[#071A33] leading-none">
               Kochi
             </span>
             <div>
-              <p className="text-[10px] font-sans uppercase tracking-[0.18em] text-[#667085] m-0 mb-0.5">
+              <p className="text-[10.5px] font-sans uppercase tracking-[0.16em] text-[#667085] font-bold m-0 mb-0.5">
                 Location
               </p>
-              <p className="text-[12px] font-sans text-[#101828] font-medium m-0">
-                Kerala · India
+              <p className="text-[13px] font-sans text-[#0B1220] font-semibold m-0">
+                Kerala &middot; India
               </p>
             </div>
           </div>

@@ -27,29 +27,29 @@ export const ConferenceMeta: React.FC = () => {
 
   return (
     <section
-      className="bg-[#FFFFFF] text-[#101828] border-b border-[#D9DEE5]"
+      className="bg-[#FFFFFF] text-[#0B1220] border-b border-[#D9DEE5]"
       aria-label="Conference Key Statistics"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* ── Horizontal editorial strip — crisp white field with ruled navy-accented columns ── */}
+        {/* ── Horizontal Modern Information Strip ── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#D9DEE5]">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="py-10 sm:py-12 px-5 sm:px-8 first:pl-0 last:pr-0 group hover:bg-[#F7F7F4]/50 transition-colors duration-200"
+              className="py-10 sm:py-12 px-5 sm:px-8 first:pl-0 last:pr-0 group hover:bg-[#F5F5F0]/60 transition-colors duration-200"
             >
-              {/* Large display number — Cormorant Garamond SemiBold */}
-              <div className="font-serif text-[2.5rem] sm:text-[3rem] font-semibold text-[#071A33] leading-none mb-2.5 tracking-tight tabular-nums group-hover:text-[#2563EB] transition-colors">
+              {/* Large display number — DM Sans ExtraBold */}
+              <div className="font-heading text-[2.5rem] sm:text-[3rem] font-extrabold text-[#071A33] leading-none mb-2 tracking-tight tabular-nums group-hover:text-[#2563EB] transition-colors">
                 {item.number}
               </div>
 
-              {/* Label — Manrope bold */}
-              <div className="text-[13px] sm:text-[14px] font-sans font-semibold text-[#101828] leading-tight mb-1">
+              {/* Label — DM Sans bold */}
+              <div className="text-[13.5px] sm:text-[14px] font-sans font-bold text-[#0B1220] leading-tight mb-1">
                 {item.label}
               </div>
 
               {/* Sub — muted description */}
-              <div className="text-[11.5px] font-sans text-[#667085] leading-relaxed">
+              <div className="text-[12px] font-sans text-[#667085] leading-relaxed">
                 {item.sub}
               </div>
             </div>
