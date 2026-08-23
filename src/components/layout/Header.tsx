@@ -48,16 +48,16 @@ export const Header: React.FC = () => {
       className="sticky top-0 z-50 w-full pointer-events-none"
       role="banner"
     >
-      {/* ── CURVED FLOATING NAVBAR CONTAINER ── */}
+      {/* ── CURVED FLOATING WHITE NAVBAR CONTAINER ── */}
       <div className="max-w-[1440px] mx-auto px-3 sm:px-6 pointer-events-auto pt-3.5 sm:pt-4">
         <div
           className={cn(
-            'w-full rounded-full flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 bg-[#071A33] text-white border border-white/15 shadow-[0_12px_40px_rgba(7,26,51,0.4)] gap-4 lg:gap-6 2xl:gap-8',
+            'w-full rounded-full flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 bg-white text-[#0B1220] border border-[#D9DEE5] shadow-[0_8px_30px_rgba(7,26,51,0.08)] gap-4 lg:gap-6 2xl:gap-8',
             isScrolled
-              ? 'h-[64px] sm:h-[68px] backdrop-blur-xl border-white/20 shadow-[0_16px_45px_rgba(7,26,51,0.5)]'
+              ? 'h-[64px] sm:h-[68px] bg-white/95 backdrop-blur-xl border-[#CBD5E1] shadow-[0_12px_36px_rgba(7,26,51,0.12)]'
               : 'h-[70px] sm:h-[74px]'
           )}
-          style={{ backgroundColor: '#071A33' }}
+          style={{ backgroundColor: '#FFFFFF' }}
         >
           {/* ── LEFT SECTION: BRANDING & 2 BANNERS/LOGOS ── */}
           <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
@@ -70,20 +70,20 @@ export const Header: React.FC = () => {
               <img
                 src="https://dyuti.in/assets/images/dyutilogoog.jpg"
                 alt="DYUTI Conference Emblem"
-                className="h-8 w-8 sm:h-9 sm:w-9 object-contain rounded-full border border-white/30 shadow-sm transition-transform duration-200 group-hover:scale-105"
+                className="h-8 w-8 sm:h-9 sm:w-9 object-contain rounded-full border border-[#D9DEE5] shadow-sm transition-transform duration-200 group-hover:scale-105"
               />
               <div className="flex flex-col leading-none">
-                <span className="font-heading font-extrabold text-white text-[1.2rem] sm:text-[1.35rem] tracking-tight leading-none group-hover:text-[#93C5FD] transition-colors">
+                <span className="font-heading font-extrabold text-[#071A33] text-[1.2rem] sm:text-[1.35rem] tracking-tight leading-none group-hover:text-[#2563EB] transition-colors">
                   DYUTI
                 </span>
-                <span className="font-sans text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#93C5FD] font-bold leading-none mt-1">
+                <span className="font-sans text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#2563EB] font-bold leading-none mt-1">
                   2027 &middot; Kochi
                 </span>
               </div>
             </Link>
 
             {/* Vertical Divider */}
-            <div className="hidden sm:block w-px h-7 bg-white/20 mx-0.5" />
+            <div className="hidden sm:block w-px h-7 bg-[#D9DEE5] mx-0.5" />
 
             {/* Official DYUTI 2027 Conference Banner Logo */}
             <Link
@@ -94,7 +94,7 @@ export const Header: React.FC = () => {
               <img
                 src="https://dyuti.in/assets/images/dyuti_2027_logo_new-removebg-preview.png"
                 alt="DYUTI 2027 Official Logo Banner"
-                className="h-8 sm:h-9 w-auto max-w-[130px] lg:max-w-[160px] object-contain brightness-110 drop-shadow-sm"
+                className="h-8 sm:h-9 w-auto max-w-[130px] lg:max-w-[160px] object-contain drop-shadow-sm"
               />
             </Link>
           </div>
@@ -112,17 +112,17 @@ export const Header: React.FC = () => {
                     end={item.exact}
                     className={({ isActive }) =>
                       cn(
-                        'relative px-3.5 2xl:px-4.5 py-2.5 rounded-full text-[13.5px] 2xl:text-[14px] font-sans font-medium transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60A5FA]',
+                        'relative px-3.5 2xl:px-4.5 py-2.5 rounded-full text-[13.5px] 2xl:text-[14px] font-sans font-medium transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]',
                         isActive
-                          ? 'text-white font-semibold bg-white/18 shadow-inner'
-                          : 'text-white/85 hover:text-white hover:bg-white/12'
+                          ? 'text-[#071A33] font-bold bg-[#E8F0F7] shadow-sm'
+                          : 'text-[#475467] hover:text-[#071A33] hover:bg-[#F1F5F9]'
                       )
                     }
                   >
                     {({ isActive }) => (
                       <span className="flex items-center gap-2">
                         {isActive && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA] shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0" />
                         )}
                         <span>{item.label}</span>
                       </span>
@@ -140,7 +140,7 @@ export const Header: React.FC = () => {
               href={CONFERENCE_DATA.links.rajagiriPortal}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white hover:bg-slate-50 px-3 sm:px-3.5 py-1.5 rounded-full border border-white/40 shadow-sm transition-all duration-200 hover:scale-105 flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60A5FA]"
+              className="bg-[#F8FAFC] hover:bg-[#F1F5F9] px-3 sm:px-3.5 py-1.5 rounded-full border border-[#E2E8F0] shadow-sm transition-all duration-200 hover:scale-105 flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
               title="Rajagiri College of Social Sciences (Autonomous)"
               aria-label="Rajagiri College of Social Sciences Website"
             >
@@ -156,7 +156,7 @@ export const Header: React.FC = () => {
               href={REGISTRATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group h-[42px] px-5 sm:px-6 inline-flex items-center gap-2 text-[13px] font-sans font-semibold bg-[#2563EB] text-white hover:bg-[#1D4ED8] rounded-full transition-all duration-200 shadow-md shadow-blue-600/30 hover:shadow-blue-600/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60A5FA]"
+              className="group h-[42px] px-5 sm:px-6 inline-flex items-center gap-2 text-[13px] font-sans font-semibold bg-[#2563EB] text-white hover:bg-[#1D4ED8] rounded-full transition-all duration-200 shadow-md shadow-blue-600/25 hover:shadow-blue-600/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
             >
               <span>Register</span>
               <span className="text-[14px] transition-transform duration-200 group-hover:translate-x-1 inline-block">
@@ -171,7 +171,7 @@ export const Header: React.FC = () => {
               href={CONFERENCE_DATA.links.rajagiriPortal}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white px-2 py-1 rounded-full border border-white/40 shadow-sm flex items-center"
+              className="bg-[#F8FAFC] px-2 py-1 rounded-full border border-[#E2E8F0] shadow-sm flex items-center"
               title="Rajagiri College"
             >
               <img
@@ -193,43 +193,43 @@ export const Header: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              className="w-8 h-8 flex items-center justify-center text-white border border-white/25 rounded-full bg-white/12 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60A5FA] transition-colors hover:bg-white/20"
+              className="w-8 h-8 flex items-center justify-center text-[#071A33] border border-[#D9DEE5] rounded-full bg-[#F8FAFC] shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] transition-colors hover:bg-[#F1F5F9]"
             >
               {isMobileMenuOpen ? (
-                <X className="w-4 h-4 text-white" />
+                <X className="w-4 h-4 text-[#071A33]" />
               ) : (
-                <Menu className="w-4 h-4 text-white" />
+                <Menu className="w-4 h-4 text-[#071A33]" />
               )}
             </button>
           </div>
         </div>
 
-        {/* ── MOBILE DRAWER (Dark Navy Theme with Curved Edges) ── */}
+        {/* ── MOBILE DRAWER (White Theme with Curved Edges) ── */}
         {isMobileMenuOpen && (
           <div
-            className="xl:hidden mt-2.5 bg-[#071A33] border border-white/15 text-white rounded-[28px] overflow-hidden shadow-[0_16px_45px_rgba(7,26,51,0.5)] animate-slideDown"
+            className="xl:hidden mt-2.5 bg-white border border-[#D9DEE5] text-[#0B1220] rounded-[28px] overflow-hidden shadow-[0_16px_45px_rgba(7,26,51,0.14)] animate-slideDown"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
           >
             {/* Drawer header with Logos */}
-            <div className="px-5 pt-4 pb-3 border-b border-white/12 flex items-center justify-between">
+            <div className="px-5 pt-4 pb-3 border-b border-[#E2E8F0] flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <img
                   src="https://dyuti.in/assets/images/dyutilogoog.jpg"
                   alt="DYUTI Logo"
-                  className="h-7 w-7 rounded-full border border-white/20"
+                  className="h-7 w-7 rounded-full border border-[#D9DEE5]"
                 />
                 <img
                   src="https://dyuti.in/assets/images/dyuti_2027_logo_new-removebg-preview.png"
                   alt="DYUTI 2027 Banner"
-                  className="h-6 w-auto object-contain brightness-110"
+                  className="h-6 w-auto object-contain"
                 />
               </div>
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white/70 hover:text-white transition-colors p-1"
+                className="text-[#667085] hover:text-[#071A33] transition-colors p-1"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -248,8 +248,8 @@ export const Header: React.FC = () => {
                     cn(
                       'flex items-center justify-between px-4 py-3 rounded-full text-[14.5px] font-sans font-medium transition-colors',
                       isActive
-                        ? 'text-white font-semibold bg-white/18 shadow-inner'
-                        : 'text-white/85 hover:text-white hover:bg-white/10'
+                        ? 'text-[#2563EB] font-bold bg-[#E8F0F7] shadow-sm'
+                        : 'text-[#475467] hover:text-[#071A33] hover:bg-[#F1F5F9]'
                     )
                   }
                 >
@@ -257,7 +257,7 @@ export const Header: React.FC = () => {
                     <>
                       <span>{item.label}</span>
                       {isActive && (
-                        <span className="w-2 h-2 rounded-full bg-[#60A5FA] shrink-0" />
+                        <span className="w-2 h-2 rounded-full bg-[#2563EB] shrink-0" />
                       )}
                     </>
                   )}
@@ -271,7 +271,7 @@ export const Header: React.FC = () => {
                 href={CONFERENCE_DATA.links.rajagiriPortal}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-full bg-white hover:bg-slate-50 flex items-center justify-between text-[#071A33] text-xs font-semibold shadow-sm transition-colors"
+                className="w-full py-2.5 px-4 rounded-full bg-[#F8FAFC] hover:bg-[#F1F5F9] border border-[#E2E8F0] flex items-center justify-between text-[#071A33] text-xs font-semibold shadow-sm transition-colors"
               >
                 <div className="flex items-center gap-2">
                   <img
@@ -288,7 +288,7 @@ export const Header: React.FC = () => {
                 href={REGISTRATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full h-[48px] flex items-center justify-center gap-2 text-[13px] font-sans font-semibold bg-[#2563EB] text-white rounded-full shadow-md shadow-blue-600/30 hover:bg-[#1D4ED8] transition-colors focus-visible:outline-none"
+                className="group w-full h-[48px] flex items-center justify-center gap-2 text-[13px] font-sans font-semibold bg-[#2563EB] text-white rounded-full shadow-md shadow-blue-600/25 hover:bg-[#1D4ED8] transition-colors focus-visible:outline-none"
               >
                 <span>Register for Conference</span>
                 <span className="text-[14px] transition-transform duration-200 group-hover:translate-x-1 inline-block">
