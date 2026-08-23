@@ -72,6 +72,16 @@ export const EditorialIntro: React.FC = () => {
               Transformed India
             </h3>
 
+            {/* Official DYUTI 27 Theme Emblem Graphic */}
+            <div className="bg-white p-3.5 sm:p-4 rounded-[16px] border border-[#D9DEE5] shadow-subtle mb-6">
+              <img
+                src="/images/dyuti27_theme_banner.png"
+                alt="DYUTI 27 — Social Work for Sustainable Development: Empowering Communities through Innovation, Inclusion, and Partnership"
+                className="w-full h-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+
             <p className="text-[13.5px] text-[#667085] leading-[1.75] font-sans font-normal mb-8">
               Christened <strong className="text-[#0B1220] font-bold">DYUTI</strong>, the conference
               represents Rajagiri's enduring commitment to bridging academic

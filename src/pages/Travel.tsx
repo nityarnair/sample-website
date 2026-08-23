@@ -25,12 +25,12 @@ export const Travel: React.FC = () => {
           subtitle="Rajagiri College of Social Sciences (Autonomous) in Kalamassery, Kochi is seamlessly connected via Cochin International Airport (COK), Kochi Metro Rail, and Southern Railway networks."
         />
 
-        {/* ── SCENIC BANNER ── */}
-        <div className="rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial mb-20 lg:mb-28 max-h-[400px]">
+        {/* ── SCENIC HERO BANNER ── */}
+        <div className="rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial mb-20 lg:mb-28 group max-h-[480px]">
           <img
-            src="https://dyuti.in/assets/images/attraction/attraction_bnr_02.jpg"
-            alt="Kochi City and Campus Route Directions"
-            className="w-full h-full object-cover"
+            src="/images/dyuti27_kochi_watercolor_art.jpg"
+            alt="Illustrated Travel Panorama of Kochi — Cochin International Airport, Water Metro, and Rajagiri Campus"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
         </div>

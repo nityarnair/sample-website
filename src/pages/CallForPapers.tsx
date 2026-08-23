@@ -80,6 +80,29 @@ export const CallForPapers: React.FC = () => {
           </div>
         </div>
 
+        {/* ── OFFICIAL CONFERENCE THEME BANNER ── */}
+        <div className="bg-white border border-[#D9DEE5] rounded-[24px] p-6 sm:p-8 mb-16 shadow-subtle flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="max-w-xl">
+            <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB] block mb-2">
+              Official Conference Identity &amp; Scope
+            </span>
+            <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#071A33] mb-2 leading-snug">
+              DYUTI 2027 Thematic Framework
+            </h3>
+            <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal m-0 leading-relaxed">
+              Advancing empirical research across community innovation, social inclusion, human rights, and global partnership initiatives.
+            </p>
+          </div>
+          <div className="w-full md:w-auto shrink-0 max-w-[380px] bg-[#F5F5F0] p-4 rounded-[18px] border border-[#D9DEE5]">
+            <img
+              src="/images/dyuti27_theme_banner.png"
+              alt="DYUTI 27 — Social Work for Sustainable Development"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
         {/* ── CONFERENCE THEMES ── */}
         <div className="mb-20 lg:mb-28">
           <div className="flex items-center justify-between pb-4 mb-10 border-b border-[#D9DEE5]">

@@ -35,10 +35,10 @@ export const Attractions: React.FC = () => {
         />
 
         {/* ── SCENIC HERO BANNER ── */}
-        <div className="rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial mb-20 lg:mb-28 group max-h-[440px]">
+        <div className="rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial mb-20 lg:mb-28 group max-h-[480px]">
           <img
-            src="https://dyuti.in/assets/images/attraction/attraction_bnr_02.jpg"
-            alt="Scenic Kochi Backwaters and Chinese Fishing Nets"
+            src="/images/dyuti27_kochi_watercolor_art.jpg"
+            alt="Artistic Watercolor Panorama of Kochi — Chinese Fishing Nets, Heritage Architecture, Water Metro, and Rajagiri Campus"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />

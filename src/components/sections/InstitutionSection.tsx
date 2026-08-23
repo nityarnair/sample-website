@@ -124,7 +124,29 @@ export const InstitutionSection: React.FC = () => {
               </Button>
             </div>
           </div>
+        </div>
 
+        {/* ── KOCHI & RAJAGIRI ARTISTIC PANORAMA ── */}
+        <div className="mt-16 sm:mt-20 rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-white p-4 sm:p-6 shadow-subtle group">
+          <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D9DEE5]">
+            <div className="flex items-center gap-2">
+              <span className="w-5 h-0.5 bg-[#2563EB]" />
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB]">
+                Kochi &middot; Host City &amp; Ecological Tapestry
+              </span>
+            </div>
+            <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] hidden sm:inline font-semibold">
+              Heritage &bull; Water Metro &bull; Innovation
+            </span>
+          </div>
+          <div className="rounded-[18px] overflow-hidden max-h-[360px] sm:max-h-[440px]">
+            <img
+              src="/images/dyuti27_kochi_watercolor_art.jpg"
+              alt="Artistic Watercolor Panorama of Kochi — Heritage, Water Metro, Rajagiri, and Backwaters"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
         </div>
 
       </div>
