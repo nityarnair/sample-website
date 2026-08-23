@@ -54,9 +54,10 @@ export const Header: React.FC = () => {
           className={cn(
             'w-full rounded-full flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 bg-[#071A33] text-white border border-white/15 shadow-[0_12px_40px_rgba(7,26,51,0.4)] gap-4 lg:gap-6 2xl:gap-8',
             isScrolled
-              ? 'h-[64px] sm:h-[68px] bg-[#071A33]/98 backdrop-blur-xl border-white/20 shadow-[0_16px_45px_rgba(7,26,51,0.5)]'
+              ? 'h-[64px] sm:h-[68px] backdrop-blur-xl border-white/20 shadow-[0_16px_45px_rgba(7,26,51,0.5)]'
               : 'h-[70px] sm:h-[74px]'
           )}
+          style={{ backgroundColor: '#071A33' }}
         >
           {/* ── LEFT SECTION: BRANDING & 2 BANNERS/LOGOS ── */}
           <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
