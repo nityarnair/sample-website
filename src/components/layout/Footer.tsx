@@ -49,9 +49,15 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-sans uppercase tracking-[0.16em] text-[#93C5FD] font-bold">
               Navigation
             </h4>
-            <ul className="space-y-3 text-xs text-white/75 font-sans">
+            <ul className="space-y-3.5 text-xs text-white/75 font-sans">
+              <li>
+                <Link to="/" className="hover:text-white transition-colors">Home</Link>
+              </li>
               <li>
                 <Link to="/rajagiri" className="hover:text-white transition-colors">About RCSS</Link>
+              </li>
+              <li>
+                <Link to="/call_for_papers" className="hover:text-white transition-colors">Call for Papers</Link>
               </li>
               <li>
                 <a href="/#tracks" className="hover:text-white transition-colors">Conference Tracks</a>
@@ -62,9 +68,6 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="/#schedule" className="hover:text-white transition-colors">Schedule</a>
               </li>
-              <li>
-                <Link to="/call_for_papers" className="hover:text-white transition-colors">Call for Papers</Link>
-              </li>
             </ul>
           </div>
 
@@ -73,15 +76,15 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-sans uppercase tracking-[0.16em] text-[#93C5FD] font-bold">
               Delegate Hub
             </h4>
-            <ul className="space-y-3 text-xs text-white/75 font-sans">
+            <ul className="space-y-3.5 text-xs text-white/75 font-sans">
               <li>
                 <Link to="/accomodation" className="hover:text-white transition-colors">Hotels &amp; Stay</Link>
               </li>
               <li>
-                <Link to="/travel" className="hover:text-white transition-colors">Travel Advisory</Link>
+                <Link to="/attractions" className="hover:text-white transition-colors">Kochi Sights</Link>
               </li>
               <li>
-                <Link to="/attractions" className="hover:text-white transition-colors">Kochi Sights</Link>
+                <Link to="/travel" className="hover:text-white transition-colors">Travel Advisory</Link>
               </li>
               <li>
                 <Link to="/gallery" className="hover:text-white transition-colors">Photo Gallery</Link>

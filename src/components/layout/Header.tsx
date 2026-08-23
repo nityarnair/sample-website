@@ -48,10 +48,10 @@ export const Header: React.FC = () => {
       role="banner"
     >
       {/* ── COMPACT DARK NAVY NAVBAR WRAPPER ── */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pointer-events-auto pt-3.5 sm:pt-4">
+      <div className="max-w-[1340px] mx-auto px-4 sm:px-6 pointer-events-auto pt-3.5 sm:pt-4">
         <div
           className={cn(
-            'w-full rounded-[20px] flex items-center justify-between px-4 sm:px-6 transition-all duration-300 bg-[#071A33] text-white border border-white/12 shadow-float',
+            'w-full rounded-[20px] flex items-center justify-between px-4 sm:px-6 lg:px-7 transition-all duration-300 bg-[#071A33] text-white border border-white/12 shadow-float',
             isScrolled
               ? 'h-[62px] sm:h-[64px] bg-[#071A33]/98 backdrop-blur-xl border-white/18'
               : 'h-[66px] sm:h-[68px]'
@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
           {/* ── LOGO / WORDMARK ── */}
           <Link
             to="/"
-            className="flex items-center gap-3 group focus-visible:outline-none shrink-0"
+            className="flex items-center gap-3 group focus-visible:outline-none shrink-0 mr-4 2xl:mr-6"
             aria-label="DYUTI 2027 — Return to Homepage"
           >
             <img
@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
               className="h-8 w-8 sm:h-9 sm:w-9 object-contain rounded-full border border-white/20 shadow-sm transition-transform duration-200 group-hover:scale-105"
             />
             <div className="flex flex-col leading-none">
-              <span className="font-heading font-extrabold text-white text-[1.25rem] sm:text-[1.4rem] tracking-tight leading-none group-hover:text-[#93C5FD] transition-colors">
+              <span className="font-heading font-extrabold text-white text-[1.25rem] sm:text-[1.35rem] tracking-tight leading-none group-hover:text-[#93C5FD] transition-colors">
                 DYUTI
               </span>
               <span className="font-sans text-[9.5px] sm:text-[10px] uppercase tracking-[0.2em] text-[#93C5FD] font-bold leading-none mt-1">
@@ -81,9 +81,9 @@ export const Header: React.FC = () => {
           {/* ── DESKTOP NAVIGATION ── */}
           <nav
             aria-label="Main Navigation"
-            className="hidden xl:flex items-center"
+            className="hidden xl:flex items-center mx-auto"
           >
-            <ul className="flex items-center gap-1 list-none m-0 p-0">
+            <ul className="flex items-center gap-1.5 2xl:gap-3 list-none m-0 p-0">
               {navLinks.map((item) => (
                 <li key={item.path}>
                   <NavLink
@@ -91,15 +91,15 @@ export const Header: React.FC = () => {
                     end={item.exact}
                     className={({ isActive }) =>
                       cn(
-                        'relative px-3.5 py-2 rounded-[12px] text-[13.5px] font-sans font-medium transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60A5FA]',
+                        'relative px-3.5 2xl:px-4 py-2 rounded-[12px] text-[13.5px] 2xl:text-[14px] font-sans font-medium transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60A5FA]',
                         isActive
-                          ? 'text-white font-semibold bg-white/12 shadow-inner'
-                          : 'text-white/75 hover:text-white hover:bg-white/8'
+                          ? 'text-white font-semibold bg-white/14 shadow-inner'
+                          : 'text-white/80 hover:text-white hover:bg-white/10'
                       )
                     }
                   >
                     {({ isActive }) => (
-                      <span className="flex items-center gap-1.5">
+                      <span className="flex items-center gap-2">
                         {isActive && (
                           <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA] shrink-0" />
                         )}
@@ -177,8 +177,8 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Nav links */}
-            <nav className="px-3 py-2">
-              {navLinks.map((item, idx) => (
+            <nav className="px-3.5 py-3 space-y-1">
+              {navLinks.map((item) => (
                 <NavLink
                   key={item.path}
                   to={item.path}
@@ -186,11 +186,10 @@ export const Header: React.FC = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={({ isActive }) =>
                     cn(
-                      'flex items-center justify-between px-3.5 py-3 rounded-[12px] text-[14px] font-sans transition-colors',
-                      idx < navLinks.length - 1 ? 'border-b border-white/6' : '',
+                      'flex items-center justify-between px-4 py-3 rounded-[12px] text-[14.5px] font-sans font-medium transition-colors',
                       isActive
-                        ? 'text-white font-semibold bg-white/12'
-                        : 'text-white/75 hover:text-white hover:bg-white/8'
+                        ? 'text-white font-semibold bg-white/14 shadow-inner'
+                        : 'text-white/80 hover:text-white hover:bg-white/8'
                     )
                   }
                 >
