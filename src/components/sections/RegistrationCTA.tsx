@@ -57,22 +57,22 @@ export const RegistrationCTA: React.FC = () => {
           </div>
         </div>
 
-        {/* ── EDITORIAL PRICING COLUMNS (Open, no generic white boxes) ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/15 border-y border-white/15 mb-16">
+        {/* ── EDITORIAL PRICING CARDS (Distinct high-contrast cards against Deep Navy) ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
           {CONFERENCE_DATA.fees.map((fee: RegistrationFee, idx: number) => {
             const isFeatured = idx === 1; // Academicians / Faculty Members
             return (
               <div
                 key={idx}
-                className={`py-10 sm:py-12 px-4 sm:px-8 flex flex-col justify-between transition-colors duration-300 ${
+                className={`rounded-[24px] p-8 sm:p-10 flex flex-col justify-between transition-all duration-300 shadow-editorial border backdrop-blur-sm ${
                   isFeatured
-                    ? 'bg-white/[0.04]'
-                    : 'hover:bg-white/[0.02]'
+                    ? 'bg-white/[0.10] border-white/35 ring-1 ring-white/20 hover:bg-white/[0.14]'
+                    : 'bg-white/[0.05] border-white/15 hover:border-white/30 hover:bg-white/[0.08]'
                 }`}
               >
                 <div>
                   {/* Category Header */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
                     <span className="font-mono text-xs font-bold text-[#60A5FA] uppercase tracking-wider">
                       Tier 0{idx + 1}
                     </span>
@@ -84,13 +84,13 @@ export const RegistrationCTA: React.FC = () => {
                   </div>
 
                   {/* Category Title */}
-                  <h3 className="font-serif text-[1.65rem] sm:text-[1.85rem] text-white font-normal leading-snug mb-6 min-h-[3.25rem]">
+                  <h3 className="font-serif text-[1.65rem] sm:text-[1.85rem] text-white font-normal leading-snug mb-5 min-h-[3rem]">
                     {fee.category}
                   </h3>
 
                   {/* Fee Amount Display */}
                   <div className="flex items-baseline gap-2 mb-8 pb-6 border-b border-white/10">
-                    <span className="font-serif text-4xl sm:text-5xl text-white font-normal tracking-tight">
+                    <span className="font-serif text-4xl sm:text-5xl text-white font-normal tracking-tight tabular-nums">
                       {fee.amount}
                     </span>
                     <span className="text-xs text-[#CBD5E1] font-sans">
