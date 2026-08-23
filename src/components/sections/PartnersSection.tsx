@@ -31,36 +31,36 @@ export const PartnersSection: React.FC = () => {
   return (
     <section
       id="partners"
-      className="bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] relative py-24 sm:py-32 lg:py-36"
+      className="bg-[#F5F5F0] text-[#0B1220] border-b border-[#D9DEE5] relative py-20 sm:py-28 lg:py-32"
       aria-labelledby="partners-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── TOP SECTION ANNOTATION BAR ── */}
-        <div className="flex items-center justify-between pb-5 mb-14 sm:mb-20 border-b border-[#D9DEE5]">
+        <div className="flex items-center justify-between pb-5 mb-12 sm:mb-16 border-b border-[#D9DEE5]">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">09</span>
             <span className="w-6 h-px bg-[#D9DEE5]" />
-            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-bold">
               Partners &amp; Accreditations
             </span>
           </div>
-          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085]">
+          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] font-semibold">
             Global University Alliances &amp; Academic Honors
           </span>
         </div>
 
         {/* ── SECTION EDITORIAL HEADER ── */}
-        <div className="max-w-3xl mb-16 lg:mb-20">
+        <div className="max-w-3xl mb-14 lg:mb-18">
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-5 h-px bg-[#2563EB]" />
-            <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
+            <span className="w-5 h-0.5 bg-[#2563EB]" />
+            <span className="text-[11.5px] font-sans uppercase tracking-[0.18em] font-bold text-[#2563EB]">
               Institutional Affiliations &amp; Global Reach
             </span>
           </div>
           <h2
             id="partners-heading"
-            className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-serif font-normal text-[#071A33] leading-[1.08] tracking-tight m-0"
+            className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-heading font-extrabold text-[#071A33] leading-[1.08] tracking-tight m-0"
           >
             Connected beyond borders.
           </h2>
@@ -69,18 +69,18 @@ export const PartnersSection: React.FC = () => {
           </p>
         </div>
 
-        {/* ── ACCREDITATION TRUST MARKERS (Structured white cards on off-white canvas) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 mb-16">
+        {/* ── ACCREDITATION TRUST MARKERS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 mb-14">
           {accreditations.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#D9DEE5] rounded-[20px] p-4 sm:p-5 shadow-subtle hover:shadow-editorial hover:border-[#2563EB]/40 transition-all duration-300 flex items-start gap-3.5 group"
+              className="bg-white border border-[#D9DEE5] rounded-[16px] p-4 sm:p-5 shadow-subtle hover:shadow-editorial hover:border-[#2563EB]/40 transition-all duration-300 flex items-start gap-3.5 group"
             >
-              <div className="w-9 h-9 rounded-full bg-[#EEF3F8] border border-[#D9DEE5] flex items-center justify-center shrink-0 group-hover:border-[#2563EB]/40 transition-colors">
+              <div className="w-9 h-9 rounded-[10px] bg-[#E8F0F7] border border-[#D9DEE5] flex items-center justify-center shrink-0 group-hover:border-[#2563EB]/40 transition-colors">
                 {item.icon}
               </div>
               <div>
-                <strong className="block text-[13px] sm:text-[13.5px] font-sans font-semibold text-[#071A33] leading-snug">
+                <strong className="block text-[13px] sm:text-[13.5px] font-sans font-bold text-[#071A33] leading-snug">
                   {item.label}
                 </strong>
                 <span className="block text-[11px] font-sans text-[#667085] mt-0.5 leading-tight">
@@ -91,20 +91,20 @@ export const PartnersSection: React.FC = () => {
           ))}
         </div>
 
-        {/* ── GLOBAL PARTNER UNIVERSITIES (Flexible centered logo wrapping) ── */}
-        <div className="pt-4">
-          <div className="text-center mb-10">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB]">
+        {/* ── GLOBAL PARTNER UNIVERSITIES ── */}
+        <div className="pt-2">
+          <div className="text-center mb-8">
+            <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB]">
               International Academic Partner Network
             </span>
           </div>
 
           {/* Centered Flex-Wrap Container for 15 Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-7 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 max-w-6xl mx-auto">
             {universityLogos.map((logo, idx) => (
               <div
                 key={idx}
-                className="w-32 h-24 sm:w-36 sm:h-28 p-4 rounded-[16px] bg-white border border-[#D9DEE5] flex items-center justify-center shadow-subtle hover:border-[#2563EB]/40 hover:shadow-editorial transition-all duration-300 group"
+                className="w-32 h-24 sm:w-36 sm:h-28 p-4 rounded-[14px] bg-white border border-[#D9DEE5] flex items-center justify-center shadow-subtle hover:border-[#2563EB]/40 hover:shadow-editorial transition-all duration-300 group"
               >
                 <img
                   src={logo.src}
