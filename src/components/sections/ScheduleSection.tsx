@@ -181,36 +181,36 @@ export const ScheduleSection: React.FC = () => {
           </div>
         </div>
 
-        {/* ── EDITORIAL TIMELINE ROWS (No enclosed rectangular cards) ── */}
-        <div className="border-t border-[#D9DEE5] divide-y divide-[#D9DEE5]">
+        {/* ── EDITORIAL TIMELINE ROWS (Structured high-contrast timeline) ── */}
+        <div className="border-t-2 border-[#071A33]/20 divide-y divide-[#D9DEE5]">
           {currentSchedule.map((item, idx) => (
             <div
               key={idx}
-              className="group py-8 sm:py-10 px-2 sm:px-6 flex flex-col lg:flex-row lg:items-start justify-between gap-6 hover:bg-[#F7F7F4]/60 transition-all duration-300"
+              className="group py-8 sm:py-10 px-3 sm:px-6 flex flex-col lg:flex-row lg:items-start justify-between gap-6 hover:bg-[#F7F7F4] border-l-4 border-l-transparent hover:border-l-[#2563EB] transition-all duration-300 rounded-r-[16px]"
             >
               {/* Left Column: Prominent Time & Session Type */}
               <div className="lg:w-1/4 shrink-0">
-                <div className="font-mono text-lg sm:text-xl font-bold text-[#071A33] group-hover:text-[#2563EB] transition-colors mb-2 tracking-tight">
+                <div className="font-mono text-lg sm:text-xl font-bold text-[#071A33] group-hover:text-[#2563EB] transition-colors mb-2.5 tracking-tight tabular-nums">
                   {item.time}
                 </div>
-                <span className="inline-block text-[10.5px] font-sans font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]">
+                <span className="inline-block text-[11px] font-sans font-bold uppercase tracking-[0.14em] px-3.5 py-1 rounded-full bg-[#EEF3F8] text-[#12345B] border border-[#D9DEE5] group-hover:border-[#2563EB]/40 transition-colors">
                   {item.type}
                 </span>
               </div>
 
               {/* Middle Column: Session Title & Description */}
               <div className="lg:w-2/4 lg:px-4">
-                <h3 className="font-serif text-[1.45rem] sm:text-[1.75rem] text-[#071A33] font-normal leading-[1.25] mb-2 group-hover:text-[#2563EB] transition-colors">
+                <h3 className="font-serif text-[1.5rem] sm:text-[1.8rem] text-[#071A33] font-normal leading-[1.2] mb-2.5 group-hover:text-[#2563EB] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-[13px] sm:text-[14px] text-[#667085] font-sans font-normal leading-relaxed m-0">
+                <p className="text-[13px] sm:text-[14px] text-[#475467] font-sans font-normal leading-relaxed m-0">
                   {item.description}
                 </p>
               </div>
 
               {/* Right Column: Venue / Location */}
               <div className="lg:w-1/4 flex lg:justify-end items-center shrink-0">
-                <div className="inline-flex items-center gap-2 bg-[#F7F7F4] border border-[#D9DEE5] px-4 py-2 rounded-full text-[12px] font-sans text-[#101828] font-medium group-hover:border-[#2563EB]/30 transition-colors">
+                <div className="inline-flex items-center gap-2 bg-[#EEF3F8] border border-[#D9DEE5] px-4 py-2 rounded-full text-[12px] font-sans text-[#071A33] font-medium group-hover:border-[#2563EB]/40 group-hover:bg-white transition-all shadow-subtle">
                   <MapPin className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
                   <span>{item.location}</span>
                 </div>

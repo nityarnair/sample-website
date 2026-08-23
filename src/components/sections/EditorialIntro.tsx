@@ -25,13 +25,13 @@ export const EditorialIntro: React.FC = () => {
   return (
     <section
       id="introduction"
-      className="bg-white text-[#101828] border-b border-[#D9DEE5]"
+      className="bg-[#EEF3F8] text-[#101828] border-b border-[#D9DEE5] relative py-20 sm:py-28 lg:py-32"
       aria-labelledby="intro-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── TOP SECTION LABEL ── */}
-        <div className="flex items-center justify-between py-5 border-b border-[#D9DEE5]">
+        <div className="flex items-center justify-between pb-5 mb-12 sm:mb-16 border-b border-[#D9DEE5]">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[11px] font-bold text-[#2563EB]">02</span>
             <span className="w-6 h-px bg-[#D9DEE5]" />
@@ -45,34 +45,34 @@ export const EditorialIntro: React.FC = () => {
         </div>
 
         {/* ── MAIN ASYMMETRIC BODY ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-0 items-start py-16 sm:py-20 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
           {/* LEFT SIDEBAR — 4 cols on desktop */}
-          <div className="lg:col-span-4 lg:border-r border-[#D9DEE5] lg:pr-12 pb-10 lg:pb-0 border-b lg:border-b-0">
+          <div className="lg:col-span-4 lg:border-r border-[#D9DEE5] lg:pr-10 pb-8 lg:pb-0 border-b lg:border-b-0">
 
             {/* Large watermark number */}
-            <span className="block font-serif text-[6rem] sm:text-[7rem] text-[#071A33]/8 leading-none select-none font-semibold mb-2">
+            <span className="block font-serif text-[5.5rem] sm:text-[6.5rem] text-[#071A33]/10 leading-none select-none font-semibold mb-2">
               01
             </span>
 
             {/* Acronym meaning */}
             <div className="mb-5">
-              <p className="text-[10px] font-sans uppercase tracking-[0.2em] text-[#2563EB] font-bold m-0 mb-1.5">
+              <p className="text-[10.5px] font-sans uppercase tracking-[0.2em] text-[#2563EB] font-bold m-0 mb-1.5">
                 DYUTI — The Genesis
               </p>
-              <p className="text-[12px] font-sans text-[#667085] font-normal leading-relaxed m-0">
+              <p className="text-[12.5px] font-sans text-[#667085] font-normal leading-relaxed m-0">
                 Sanskrit: <em className="not-italic text-[#101828] font-semibold">&ldquo;Spark of Life&rdquo;</em>
               </p>
             </div>
 
             {/* Acronym expanded */}
-            <h3 className="font-serif text-[1.35rem] sm:text-[1.5rem] text-[#071A33] leading-[1.3] mb-6 font-normal">
+            <h3 className="font-serif text-[1.45rem] sm:text-[1.65rem] text-[#071A33] leading-[1.25] mb-5 font-normal">
               Developmental Yearnings<br />
               for a United and<br />
               Transformed India
             </h3>
 
-            <p className="text-[13px] text-[#667085] leading-[1.8] font-sans font-normal mb-8">
+            <p className="text-[13px] sm:text-[13.5px] text-[#667085] leading-[1.8] font-sans font-normal mb-8">
               Christened <strong className="text-[#101828] font-semibold">DYUTI</strong>, the conference
               represents Rajagiri's enduring commitment to bridging academic
               scholarship with grassroots transformation.
@@ -89,12 +89,12 @@ export const EditorialIntro: React.FC = () => {
           </div>
 
           {/* RIGHT CONTENT — 8 cols on desktop */}
-          <div className="lg:col-span-8 lg:pl-14 pt-10 lg:pt-0">
+          <div className="lg:col-span-8 lg:pl-4">
 
             {/* Large editorial statement heading */}
             <h2
               id="intro-heading"
-              className="font-serif font-normal text-[#071A33] text-[2rem] sm:text-[2.5rem] lg:text-[2.85rem] leading-[1.1] tracking-tight mb-6"
+              className="font-serif font-normal text-[#071A33] text-[2.2rem] sm:text-[2.75rem] lg:text-[3.1rem] leading-[1.08] tracking-tight mb-6"
             >
               A platform where ideas,<br className="hidden md:block" />
               research, and<br className="hidden md:block" />
@@ -102,23 +102,28 @@ export const EditorialIntro: React.FC = () => {
             </h2>
 
             {/* Conference overview — from CONFERENCE_DATA */}
-            <p className="text-[14.5px] sm:text-base text-[#667085] font-sans font-normal leading-[1.8] mb-12 max-w-[600px]">
+            <p className="text-[14.5px] sm:text-[15.5px] text-[#101828]/80 font-sans font-normal leading-[1.8] mb-10 max-w-[620px]">
               {CONFERENCE_DATA.overview.slice(0, 340)}&hellip;
             </p>
 
-            {/* ── 3 PILLARS — open, no card boxes ── */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[#D9DEE5]">
+            {/* ── 3 PILLARS — structured white cards against light-blue field ── */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 pt-4">
               {pillars.map((p) => (
-                <div key={p.num} className="border-l-2 border-[#071A33]/20 pl-5 group">
-                  <div className="text-[10px] font-mono font-bold text-[#2563EB] uppercase tracking-[0.18em] mb-2">
-                    {p.num}
+                <div
+                  key={p.num}
+                  className="bg-white border border-[#D9DEE5] rounded-[20px] p-6 sm:p-7 shadow-subtle hover:shadow-editorial hover:border-[#2563EB]/40 transition-all duration-300 group flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="text-[10px] font-mono font-bold text-[#2563EB] uppercase tracking-[0.18em] mb-2.5">
+                      {p.num}
+                    </div>
+                    <h4 className="font-serif text-[1.35rem] sm:text-[1.45rem] text-[#071A33] mb-2.5 font-normal leading-snug group-hover:text-[#2563EB] transition-colors">
+                      {p.title}
+                    </h4>
+                    <p className="text-[12.5px] sm:text-[13px] text-[#667085] leading-[1.7] m-0 font-sans font-normal">
+                      {p.body}
+                    </p>
                   </div>
-                  <h4 className="font-serif text-[1.35rem] text-[#071A33] mb-2.5 font-normal leading-snug">
-                    {p.title}
-                  </h4>
-                  <p className="text-[12.5px] sm:text-[13px] text-[#667085] leading-[1.75] m-0 font-sans font-normal">
-                    {p.body}
-                  </p>
                 </div>
               ))}
             </div>

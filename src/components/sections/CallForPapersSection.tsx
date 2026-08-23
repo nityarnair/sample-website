@@ -49,30 +49,32 @@ export const CallForPapersSection: React.FC = () => {
               Academicians, doctoral scholars, practitioners, policymakers, and graduate students are invited to submit original empirical abstracts and field intervention models. Selected peer-reviewed chapters will be published in <strong>Scopus-indexed</strong> volumes and registered conference proceedings.
             </p>
 
-            {/* Prominent Typography Milestone Strip (No boxed cards) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 pb-8 border-y border-[#D9DEE5] mb-10">
-              <div>
-                <span className="text-[10.5px] font-mono uppercase tracking-[0.18em] text-[#667085] block mb-1">
-                  Abstract Submission Deadline
-                </span>
-                <div className="font-serif text-[1.85rem] sm:text-[2.1rem] font-semibold text-[#071A33] leading-none mb-1">
-                  25 Sept 2026
+            {/* Prominent Typography Milestone Panel in White */}
+            <div className="bg-white border border-[#D9DEE5] rounded-[22px] p-6 sm:p-8 shadow-subtle mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-[#D9DEE5]">
+                <div className="sm:pr-4">
+                  <span className="text-[10.5px] font-mono uppercase tracking-[0.18em] text-[#667085] block mb-1">
+                    Abstract Submission Deadline
+                  </span>
+                  <div className="font-serif text-[2rem] sm:text-[2.25rem] font-semibold text-[#071A33] leading-none mb-1 tabular-nums">
+                    25 Sept 2026
+                  </div>
+                  <span className="text-[12px] font-sans text-[#2563EB] font-medium">
+                    Extended abstract via Microsoft CMT
+                  </span>
                 </div>
-                <span className="text-[12px] font-sans text-[#2563EB] font-medium">
-                  Extended abstract via Microsoft CMT
-                </span>
-              </div>
 
-              <div>
-                <span className="text-[10.5px] font-mono uppercase tracking-[0.18em] text-[#667085] block mb-1">
-                  Publication Proceedings
-                </span>
-                <div className="font-serif text-[1.85rem] sm:text-[2.1rem] font-semibold text-[#071A33] leading-none mb-1">
-                  Scopus Book Chapters
+                <div className="pt-4 sm:pt-0 sm:pl-8">
+                  <span className="text-[10.5px] font-mono uppercase tracking-[0.18em] text-[#667085] block mb-1">
+                    Publication Proceedings
+                  </span>
+                  <div className="font-serif text-[2rem] sm:text-[2.25rem] font-semibold text-[#071A33] leading-none mb-1">
+                    Scopus Chapters
+                  </div>
+                  <span className="text-[12px] font-sans text-[#2563EB] font-medium">
+                    Double-blind peer-reviewed volume
+                  </span>
                 </div>
-                <span className="text-[12px] font-sans text-[#2563EB] font-medium">
-                  Double-blind peer-reviewed volume
-                </span>
               </div>
             </div>
 
@@ -100,45 +102,45 @@ export const CallForPapersSection: React.FC = () => {
             </div>
           </div>
 
-          {/* ── RIGHT COLUMN: Open Editorial Feature Breakdown (5 cols) ── */}
+          {/* ── RIGHT COLUMN: High-Contrast Navy Feature Card (5 cols) ── */}
           <div className="lg:col-span-5 pt-2 lg:pt-0">
-            <div className="border-t-2 border-[#071A33] pt-6 space-y-6">
+            <div className="bg-[#071A33] text-white rounded-[24px] p-7 sm:p-9 border border-white/15 shadow-editorial space-y-6">
               
-              <div className="flex items-center justify-between pb-4 border-b border-[#D9DEE5]">
-                <span className="text-[11px] font-mono font-bold text-[#2563EB] uppercase tracking-[0.18em]">
+              <div className="flex items-center justify-between pb-4 border-b border-white/15">
+                <span className="text-[11px] font-mono font-bold text-[#60A5FA] uppercase tracking-[0.18em]">
                   Review &amp; Track Protocols
                 </span>
-                <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider">
+                <span className="text-[11px] font-sans text-white/70 uppercase tracking-wider">
                   8 Sub-Themes
                 </span>
               </div>
 
-              <ul className="space-y-5 text-[13.5px] sm:text-[14px] text-[#101828]/85 font-sans leading-relaxed">
+              <ul className="space-y-4 text-[13px] sm:text-[13.5px] text-white/90 font-sans leading-relaxed">
                 <li className="flex items-start gap-3.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-1" />
+                  <CheckCircle2 className="w-4 h-4 text-[#60A5FA] shrink-0 mt-1" />
                   <span><strong>Double-Blind Peer Review:</strong> Every abstract is rigorously evaluated by the RCSS scientific board and domain experts.</span>
                 </li>
                 <li className="flex items-start gap-3.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-1" />
+                  <CheckCircle2 className="w-4 h-4 text-[#60A5FA] shrink-0 mt-1" />
                   <span><strong>Presentation Modes:</strong> Concurrent 15-minute oral sessions and interactive research poster exhibition gallery.</span>
                 </li>
                 <li className="flex items-start gap-3.5">
-                  <Award className="w-4 h-4 text-[#2563EB] shrink-0 mt-1" />
+                  <Award className="w-4 h-4 text-[#60A5FA] shrink-0 mt-1" />
                   <span><strong>Best Paper Awards:</strong> Conferred across student, scholar, and practitioner categories for each thematic track.</span>
                 </li>
                 <li className="flex items-start gap-3.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-1" />
+                  <CheckCircle2 className="w-4 h-4 text-[#60A5FA] shrink-0 mt-1" />
                   <span><strong>Microsoft CMT Workflow:</strong> Transparent tracking from initial submission to final camera-ready volume.</span>
                 </li>
               </ul>
 
               {/* Direct PDF Link */}
-              <div className="pt-6 border-t border-[#D9DEE5]">
+              <div className="pt-5 border-t border-white/15">
                 <a
                   href={CONFERENCE_DATA.links.brochurePdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.16em] font-semibold text-[#071A33] hover:text-[#2563EB] transition-colors"
+                  className="group inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.16em] font-semibold text-[#60A5FA] hover:text-white transition-colors"
                 >
                   <span>Download Complete Call for Papers (PDF)</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -53,8 +53,8 @@ export const Header: React.FC = () => {
           className={cn(
             'w-full rounded-full flex items-center justify-between px-4 sm:px-6 transition-all duration-300',
             isScrolled
-              ? 'h-[64px] bg-white/97 backdrop-blur-lg border border-[#D9DEE5] shadow-float'
-              : 'h-[70px] sm:h-[74px] bg-white/92 backdrop-blur-md border border-[#D9DEE5]/70 shadow-editorial'
+              ? 'h-[64px] bg-white/95 backdrop-blur-xl border border-[#071A33]/15 shadow-float'
+              : 'h-[70px] sm:h-[74px] bg-white/90 backdrop-blur-md border border-[#D9DEE5] shadow-editorial'
           )}
         >
           {/* ── LOGO / WORDMARK ── */}

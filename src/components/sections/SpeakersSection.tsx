@@ -105,45 +105,47 @@ export const SpeakersSection: React.FC = () => {
           </div>
         </div>
 
-        {/* ── EDITORIAL VOICES GRID (Typographic & Monogrammed Layout) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        {/* ── EDITORIAL VOICES GRID (White cards standing out against Off-White background) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {voices.map((voice) => (
             <div
               key={voice.number}
-              className="group border-t-2 border-[#071A33]/20 pt-8 pb-4 transition-all duration-300 hover:border-[#2563EB]"
+              className="bg-white border border-[#D9DEE5] rounded-[24px] p-7 sm:p-9 shadow-subtle hover:shadow-editorial hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col justify-between group"
             >
-              {/* Header: Number + Initials Monogram */}
-              <div className="flex items-center justify-between mb-6">
-                <span className="font-mono text-sm font-bold text-[#2563EB] tracking-wider">
-                  {voice.number}
-                </span>
-                <div className="flex items-center gap-3">
-                  {voice.badge && (
-                    <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.14em] text-[#667085] bg-white px-3 py-1 rounded-full border border-[#D9DEE5]">
-                      {voice.badge}
-                    </span>
-                  )}
-                  <div className="w-10 h-10 rounded-full bg-[#071A33] text-white flex items-center justify-center font-serif text-sm font-semibold tracking-wider transition-colors group-hover:bg-[#2563EB]">
-                    {voice.initials}
+              <div>
+                {/* Header: Number + Initials Monogram */}
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#D9DEE5]/60">
+                  <span className="font-mono text-sm font-bold text-[#2563EB] tracking-wider">
+                    {voice.number}
+                  </span>
+                  <div className="flex items-center gap-3">
+                    {voice.badge && (
+                      <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.14em] text-[#667085] bg-[#F7F7F4] px-3 py-1 rounded-full border border-[#D9DEE5]">
+                        {voice.badge}
+                      </span>
+                    )}
+                    <div className="w-10 h-10 rounded-full bg-[#071A33] text-white flex items-center justify-center font-serif text-sm font-semibold tracking-wider transition-colors group-hover:bg-[#2563EB]">
+                      {voice.initials}
+                    </div>
                   </div>
                 </div>
+
+                {/* Name */}
+                <h3 className="font-serif text-[1.65rem] sm:text-[1.85rem] text-[#071A33] font-normal leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
+                  {voice.name}
+                </h3>
+
+                {/* Designation & Affiliation */}
+                <p className="text-[12.5px] sm:text-[13px] font-sans font-semibold text-[#2563EB] mb-1">
+                  {voice.role}
+                </p>
+                <p className="text-[12px] sm:text-[13px] font-sans text-[#667085] mb-6 leading-relaxed">
+                  {voice.affiliation}
+                </p>
               </div>
 
-              {/* Name */}
-              <h3 className="font-serif text-[1.65rem] sm:text-[1.85rem] text-[#071A33] font-normal leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
-                {voice.name}
-              </h3>
-
-              {/* Designation & Affiliation */}
-              <p className="text-[12.5px] sm:text-[13px] font-sans font-semibold text-[#2563EB] mb-1">
-                {voice.role}
-              </p>
-              <p className="text-[12px] sm:text-[13px] font-sans text-[#667085] mb-5 leading-relaxed">
-                {voice.affiliation}
-              </p>
-
               {/* Deliberation Scope */}
-              <div className="bg-white/80 border border-[#D9DEE5] rounded-xl p-4 transition-all duration-300 group-hover:bg-white group-hover:border-[#2563EB]/40 group-hover:shadow-subtle">
+              <div className="bg-[#F7F7F4] border border-[#D9DEE5] rounded-[16px] p-4 transition-all duration-300 group-hover:border-[#2563EB]/30">
                 <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#667085] font-bold block mb-1.5">
                   Academic Focus &amp; Scope
                 </span>

@@ -27,29 +27,29 @@ export const ConferenceMeta: React.FC = () => {
 
   return (
     <section
-      className="bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5]"
+      className="bg-[#FFFFFF] text-[#101828] border-b border-[#D9DEE5]"
       aria-label="Conference Key Statistics"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* ── Horizontal editorial strip — no card borders, just ruled columns ── */}
+        {/* ── Horizontal editorial strip — crisp white field with ruled navy-accented columns ── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#D9DEE5]">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="py-8 sm:py-10 px-5 sm:px-8 first:pl-0 last:pr-0 group"
+              className="py-10 sm:py-12 px-5 sm:px-8 first:pl-0 last:pr-0 group hover:bg-[#F7F7F4]/50 transition-colors duration-200"
             >
-              {/* Large display number — Cormorant Garamond */}
-              <div className="font-serif text-[2.4rem] sm:text-[2.75rem] font-semibold text-[#071A33] leading-none mb-2 tracking-tight tabular-nums">
+              {/* Large display number — Cormorant Garamond SemiBold */}
+              <div className="font-serif text-[2.5rem] sm:text-[3rem] font-semibold text-[#071A33] leading-none mb-2.5 tracking-tight tabular-nums group-hover:text-[#2563EB] transition-colors">
                 {item.number}
               </div>
 
-              {/* Label — Manrope medium */}
-              <div className="text-[13px] sm:text-[13.5px] font-sans font-semibold text-[#101828] leading-tight mb-1">
+              {/* Label — Manrope bold */}
+              <div className="text-[13px] sm:text-[14px] font-sans font-semibold text-[#101828] leading-tight mb-1">
                 {item.label}
               </div>
 
-              {/* Sub — muted */}
-              <div className="text-[11px] font-sans text-[#667085] leading-relaxed">
+              {/* Sub — muted description */}
+              <div className="text-[11.5px] font-sans text-[#667085] leading-relaxed">
                 {item.sub}
               </div>
             </div>
