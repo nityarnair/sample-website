@@ -44,21 +44,23 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A33]/90 backdrop-blur-xs p-4 sm:p-6 animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A33]/95 backdrop-blur-md p-4 sm:p-8 animate-fadeIn"
       role="dialog"
       aria-modal="true"
       aria-label="Image Lightbox"
       onClick={onClose}
     >
+      {/* Top Close Button */}
       <button
         type="button"
         onClick={onClose}
-        className="absolute top-4 right-4 p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors z-10"
+        className="absolute top-6 right-6 p-3 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full border border-white/15 transition-all z-20 cursor-pointer"
         aria-label="Close Lightbox"
       >
-        <X className="w-6 h-6" />
+        <X className="w-5 h-5" />
       </button>
 
+      {/* Prev Button */}
       {hasPrev && onPrev && (
         <button
           type="button"
@@ -66,13 +68,14 @@ export const Lightbox: React.FC<LightboxProps> = ({
             e.stopPropagation();
             onPrev();
           }}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white/80 hover:text-white hover:bg-white/15 rounded-full transition-colors z-10"
+          className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 p-3 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full border border-white/15 transition-all z-20 cursor-pointer"
           aria-label="Previous Image"
         >
-          <ChevronLeft className="w-8 h-8" />
+          <ChevronLeft className="w-6 h-6" />
         </button>
       )}
 
+      {/* Next Button */}
       {hasNext && onNext && (
         <button
           type="button"
@@ -80,26 +83,31 @@ export const Lightbox: React.FC<LightboxProps> = ({
             e.stopPropagation();
             onNext();
           }}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white/80 hover:text-white hover:bg-white/15 rounded-full transition-colors z-10"
+          className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 p-3 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full border border-white/15 transition-all z-20 cursor-pointer"
           aria-label="Next Image"
         >
-          <ChevronRight className="w-8 h-8" />
+          <ChevronRight className="w-6 h-6" />
         </button>
       )}
 
+      {/* Content */}
       <div
-        className="max-w-4xl max-h-[85vh] flex flex-col items-center justify-center"
+        className="max-w-5xl max-h-[90vh] flex flex-col items-center justify-center relative z-10"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={imageUrl}
-          alt={title}
-          className="max-w-full max-h-[75vh] object-contain rounded-sm shadow-2xl border border-white/10"
-        />
+        <div className="rounded-[20px] overflow-hidden border border-white/20 shadow-2xl bg-black/40">
+          <img
+            src={imageUrl}
+            alt={title}
+            className="max-w-full max-h-[75vh] object-contain"
+          />
+        </div>
         {title && (
-          <p className="mt-4 text-center text-white/95 text-sm sm:text-base font-serif italic max-w-xl">
-            {title}
-          </p>
+          <div className="mt-5 text-center px-4">
+            <p className="text-white/95 text-base sm:text-lg font-serif font-normal tracking-wide max-w-2xl m-0 leading-relaxed">
+              {title}
+            </p>
+          </div>
         )}
       </div>
     </div>

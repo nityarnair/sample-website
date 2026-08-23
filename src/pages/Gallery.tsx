@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { PageHeader } from '@/components/ui/PageHeader';
 import { Lightbox } from '@/components/ui/Lightbox';
 import { ZoomIn, Calendar } from 'lucide-react';
 import { CONFERENCE_DATA, GalleryItem } from '@/data/conference';
@@ -27,56 +27,75 @@ export const Gallery: React.FC = () => {
     selectedPhotoIndex !== null ? filteredPhotos[selectedPhotoIndex] : null;
 
   return (
-    <div className="py-20 sm:py-28 bg-[#F7F7F4] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 lg:py-32 bg-[#F7F7F4] text-[#101828] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <SectionHeading
-          sectionNumber="10"
-          eyebrow="Conference Archive"
-          title="DYUTI Historical Conference Gallery"
-          subtitle="Glimpses of keynote addresses, book release ceremonies, academic dialogues, and cultural exchanges over 25+ historic editions."
+
+        {/* ── 06 / EDITORIAL PAGE HEADER ── */}
+        <PageHeader
+          number="06"
+          category="ARCHIVE"
+          metaRight="25+ Editions of Academic Dialogue · 1998–2026"
+          eyebrow="Conference Historical Archive"
+          title={
+            <>
+              Historical Conference
+              <span className="block font-serif text-[#667085] text-[2rem] sm:text-[2.75rem] font-normal mt-1">
+                Gallery &amp; Retrospective
+              </span>
+            </>
+          }
+          subtitle="Glimpses of keynote addresses, book release ceremonies, academic dialogues, and cultural exchanges over 25+ historic editions of the DYUTI international conference."
         />
 
-        {/* Filter Pill Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setActiveFilter(cat)}
-              className={cn(
-                'px-6 py-2.5 rounded-full text-xs font-sans font-semibold uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer border',
-                activeFilter === cat
-                  ? 'bg-[#071A33] text-white border-[#071A33] shadow-pill'
-                  : 'bg-white border-[#D9DEE5] text-[#667085] hover:text-[#071A33] hover:border-[#071A33]/40'
-              )}
-            >
-              {cat === 'All' ? 'All Editions' : `DYUTI ${cat}`}
-            </button>
-          ))}
+        {/* ── FILTER PILL CONTROLS ── */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-16 lg:mb-20">
+          {categories.map((cat) => {
+            const isActive = activeFilter === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setActiveFilter(cat)}
+                className={cn(
+                  'px-6 py-2.5 rounded-full text-xs font-sans font-semibold uppercase tracking-[0.14em] transition-all duration-300 cursor-pointer border',
+                  isActive
+                    ? 'bg-[#071A33] text-white border-[#071A33] shadow-pill'
+                    : 'bg-white border-[#D9DEE5] text-[#667085] hover:text-[#071A33] hover:border-[#071A33]/40 shadow-subtle'
+                )}
+              >
+                {cat === 'All' ? 'All Editions' : `DYUTI ${cat}`}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {/* ── EDITORIAL IMAGE GRID ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 mb-20 lg:mb-28">
           {filteredPhotos.map((photo, index) => (
             <div
               key={photo.id}
               onClick={() => setSelectedPhotoIndex(index)}
-              className="group relative bg-white border border-[#D9DEE5] hover:border-[#12345B]/40 rounded-[18px] overflow-hidden shadow-subtle hover:shadow-editorial transition-all duration-300 cursor-pointer h-72"
+              className="group relative bg-white border border-[#D9DEE5] hover:border-[#2563EB]/40 rounded-[20px] overflow-hidden shadow-editorial transition-all duration-500 cursor-pointer h-80 flex flex-col justify-end"
             >
               <img
                 src={photo.imageUrl}
                 alt={photo.title}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#071A33]/90 via-[#071A33]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
-                <span className="text-[10px] font-sans font-semibold text-[#93C5FD] uppercase tracking-[0.14em] mb-1 flex items-center gap-1.5">
-                  <Calendar className="w-3 h-3" /> {photo.year} &bull; {photo.category}
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071A33]/90 via-[#071A33]/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white z-10">
+                <span className="text-[10.5px] font-mono font-bold text-[#93C5FD] uppercase tracking-[0.16em] mb-1.5 flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>DYUTI {photo.year} · {photo.category}</span>
                 </span>
-                <h4 className="font-serif text-base leading-snug line-clamp-2 text-white font-normal">
+                <h4 className="font-serif text-base sm:text-lg leading-snug line-clamp-2 text-white font-normal m-0">
                   {photo.title}
                 </h4>
-                <div className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white">
+                
+                {/* Floating Zoom Button */}
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white border border-white/25 shadow-subtle">
                   <ZoomIn className="w-4 h-4" />
                 </div>
               </div>
@@ -84,7 +103,7 @@ export const Gallery: React.FC = () => {
           ))}
         </div>
 
-        {/* Lightbox */}
+        {/* ── LIGHTBOX INTEGRATION ── */}
         {selectedPhoto && (
           <Lightbox
             isOpen={selectedPhotoIndex !== null}
@@ -105,6 +124,7 @@ export const Gallery: React.FC = () => {
             hasNext={filteredPhotos.length > 1}
           />
         )}
+
       </div>
     </div>
   );

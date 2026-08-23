@@ -1,21 +1,55 @@
 import React from 'react';
-import { Home } from 'lucide-react';
+import { Home as HomeIcon, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export const NotFound: React.FC = () => {
   return (
-    <div className="py-32 px-4 text-center bg-[#F8F8F6] text-[#101828] min-h-[70vh] flex items-center justify-center">
-      <div className="max-w-md mx-auto p-12 rounded-container bg-white border border-[#D9DEE5] shadow-editorial">
-        <h1 className="text-8xl font-serif text-[#071A33] mb-4">404</h1>
-        <h2 className="text-3xl font-serif text-[#071A33] mb-3">Page Not Found</h2>
-        <p className="text-[#667085] text-xs sm:text-sm mb-8 font-sans font-normal leading-relaxed">
-          The requested conference page may have been relocated or updated in the new DYUTI 2027 portal.
+    <div className="py-24 sm:py-36 px-4 sm:px-8 bg-[#F7F7F4] text-[#101828] min-h-[75vh] flex items-center justify-center">
+      <div className="max-w-3xl mx-auto text-center">
+        
+        {/* Editorial Annotation */}
+        <div className="inline-flex items-center gap-3 pb-3 mb-8 border-b border-[#D9DEE5]">
+          <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">404</span>
+          <span className="w-6 h-px bg-[#D9DEE5]" />
+          <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
+            Page Not Found
+          </span>
+        </div>
+
+        {/* Display 404 Heading */}
+        <div className="font-serif text-[7.5rem] sm:text-[10rem] lg:text-[12rem] font-light text-[#071A33] leading-none mb-4 select-none tracking-tight">
+          404
+        </div>
+
+        <h1 className="text-[2.25rem] sm:text-[3rem] font-serif font-normal text-[#071A33] mb-4">
+          The requested page could not be found.
+        </h1>
+
+        <p className="text-[#667085] text-base sm:text-lg max-w-xl mx-auto mb-10 font-sans font-normal leading-relaxed">
+          The conference page you are looking for may have been updated, relocated, or temporarily archived in the new DYUTI 2027 portal.
         </p>
-        <div className="flex justify-center">
-          <Button variant="navy" asLink href="/" icon={<Home className="w-4 h-4 text-white" />}>
+
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <Button
+            variant="navy"
+            size="lg"
+            asLink
+            href="/"
+            icon={<HomeIcon className="w-4 h-4 text-white" />}
+            showArrow
+          >
             Return to Conference Home
           </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            asLink
+            href="/contactus"
+          >
+            Contact Secretariat
+          </Button>
         </div>
+
       </div>
     </div>
   );
