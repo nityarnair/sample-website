@@ -91,29 +91,55 @@ export const PartnersSection: React.FC = () => {
           ))}
         </div>
 
-        {/* ── GLOBAL PARTNER UNIVERSITIES ── */}
-        <div className="pt-2">
+        {/* ── GLOBAL PARTNER UNIVERSITIES (Moving Rectangles, Full Color) ── */}
+        <div className="pt-4">
           <div className="text-center mb-8">
-            <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB]">
+            <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.22em] text-[#2563EB] block mb-1">
               International Academic Partner Network
             </span>
+            <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal m-0">
+              60+ Global Institutional Collaborations &bull; Moving one by one across partner networks
+            </p>
           </div>
 
-          {/* Centered Flex-Wrap Container for 15 Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 max-w-6xl mx-auto">
-            {universityLogos.map((logo, idx) => (
-              <div
-                key={idx}
-                className="w-32 h-24 sm:w-36 sm:h-28 p-4 rounded-[14px] bg-white border border-[#D9DEE5] flex items-center justify-center shadow-subtle hover:border-[#2563EB]/40 hover:shadow-editorial transition-all duration-300 group"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="max-h-full max-w-full object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+          {/* Smooth Continuous Marquee Carousel with Fade Edges */}
+          <div className="relative overflow-hidden w-full py-4 -mx-4 sm:-mx-8 px-4 sm:px-8">
+            {/* Left and right gradient fade masks */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#F5F5F0] via-[#F5F5F0]/80 to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#F5F5F0] via-[#F5F5F0]/80 to-transparent z-10" />
+
+            {/* Continuous Marquee Track */}
+            <div className="animate-marquee flex items-center gap-5 sm:gap-6">
+              {/* First Track Set */}
+              {universityLogos.map((logo, idx) => (
+                <div
+                  key={`partner-a-${idx}`}
+                  className="w-[200px] sm:w-[230px] h-[90px] sm:h-[100px] px-5 py-3.5 rounded-[14px] bg-white border border-[#D9DEE5] flex items-center justify-center shadow-subtle hover:border-[#2563EB]/50 hover:shadow-editorial transition-all duration-300 group shrink-0"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="max-h-full max-w-full object-contain filter-none opacity-100 transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+
+              {/* Duplicate Track Set for Seamless Infinite Motion */}
+              {universityLogos.map((logo, idx) => (
+                <div
+                  key={`partner-b-${idx}`}
+                  className="w-[200px] sm:w-[230px] h-[90px] sm:h-[100px] px-5 py-3.5 rounded-[14px] bg-white border border-[#D9DEE5] flex items-center justify-center shadow-subtle hover:border-[#2563EB]/50 hover:shadow-editorial transition-all duration-300 group shrink-0"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="max-h-full max-w-full object-contain filter-none opacity-100 transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
