@@ -5,19 +5,19 @@ import { Plane, Train, Bus, Car, Navigation, MapPin } from 'lucide-react';
 
 export const Travel: React.FC = () => {
   return (
-    <div className="py-20 sm:py-28 lg:py-32 bg-[#F7F7F4] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 lg:py-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── 05 / EDITORIAL PAGE HEADER ── */}
         <PageHeader
           number="05"
           category="TRAVEL & VENUE"
-          metaRight="Transit &amp; Directions · South Kalamassery, Kochi"
+          metaRight="Transit &amp; Directions &middot; South Kalamassery, Kochi"
           eyebrow="Route &amp; Navigation Guide"
           title={
             <>
               Directions &amp;
-              <span className="block font-serif text-[#667085] text-[2rem] sm:text-[2.75rem] font-normal mt-1">
+              <span className="block font-heading text-[#667085] text-[1.85rem] sm:text-[2.5rem] font-bold mt-1">
                 Campus Travel Guide
               </span>
             </>
@@ -36,16 +36,16 @@ export const Travel: React.FC = () => {
         </div>
 
         {/* ── ROUTE 01: FROM COCHIN INTERNATIONAL AIRPORT (COK) ── */}
-        <div className="rounded-[24px] border border-[#D9DEE5] bg-white shadow-editorial p-8 sm:p-12 lg:p-14 mb-16 lg:mb-20">
+        <div className="rounded-[20px] border border-[#D9DEE5] bg-white shadow-editorial p-8 sm:p-12 lg:p-14 mb-16 lg:mb-20">
           <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#D9DEE5]">
-            <div className="w-12 h-12 rounded-full bg-[#EEF3F8] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-[14px] bg-[#E8F0F7] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
               <Plane className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-[11px] font-mono font-bold text-[#2563EB] uppercase tracking-widest block">
+              <span className="text-[11.5px] font-mono font-bold text-[#2563EB] uppercase tracking-widest block">
                 Route 01
               </span>
-              <h3 className="font-serif text-[1.85rem] sm:text-[2.35rem] text-[#071A33] font-normal m-0 leading-tight">
+              <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0 leading-tight">
                 From Cochin International Airport (COK) to Rajagiri
               </h3>
             </div>
@@ -57,8 +57,8 @@ export const Travel: React.FC = () => {
             <div className="lg:col-span-6 space-y-4">
               
               {/* Kochi Metro Recommended */}
-              <div className="p-6 rounded-[20px] bg-[#EEF3F8] border border-[#BFDBFE]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-semibold text-sm font-sans">
+              <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE]">
+                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <Train className="w-5 h-5 text-[#2563EB]" />
                   <span>By Kochi Metro (Recommended)</span>
                 </div>
@@ -68,8 +68,8 @@ export const Travel: React.FC = () => {
               </div>
 
               {/* Taxi / Car */}
-              <div className="p-6 rounded-[20px] bg-[#F7F7F4] border border-[#D9DEE5]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-semibold text-sm font-sans">
+              <div className="p-6 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5]">
+                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <Car className="w-5 h-5 text-[#2563EB]" />
                   <span>By Taxi / Prepaid Cab</span>
                 </div>
@@ -79,8 +79,8 @@ export const Travel: React.FC = () => {
               </div>
 
               {/* Public Bus */}
-              <div className="p-6 rounded-[20px] bg-[#F7F7F4] border border-[#D9DEE5]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-semibold text-sm font-sans">
+              <div className="p-6 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5]">
+                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <Bus className="w-5 h-5 text-[#2563EB]" />
                   <span>By Public Bus &amp; Feeder</span>
                 </div>
@@ -92,7 +92,7 @@ export const Travel: React.FC = () => {
             </div>
 
             {/* Interactive Map (6 cols) */}
-            <div className="lg:col-span-6 rounded-[20px] overflow-hidden border border-[#D9DEE5] h-full min-h-[440px] shadow-subtle bg-[#F7F7F4]">
+            <div className="lg:col-span-6 rounded-[16px] overflow-hidden border border-[#D9DEE5] h-full min-h-[440px] shadow-subtle bg-[#F5F5F0]">
               <iframe
                 title="Airport to Rajagiri Route Map"
                 src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d79256.39818911608!2d76.31909662535186!3d10.111720112330207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3b080882748f4a6f%3A0x30b2ebe45d968458!2sCochin%20International%20Airport%EF%BC%88Nedumbassery%20Airport%EF%BC%89%20(COK)%2C%20Airport%20Road%2C%20Nedumbassery%2C%20Kochi%2C%20Kerala!3m2!1d10.1532129!2d76.3933204!4m5!1s0x3b080dd2c4bfaed9%3A0x616d1c1cb927fe62!2sRajagiri%20College%20of%20Social%20Sciences%20(Autonomous)%2C%20Rajagiri%20Rd%2C%20South%20Kalamassery%2C%20Kalamassery%2C%20Kochi%2C%20Kerala!3m2!1d10.053237099999999!2d76.3155973!5e0!3m2!1sen!2sin!4v1766501131440!5m2!1sen!2sin"
@@ -109,16 +109,16 @@ export const Travel: React.FC = () => {
         </div>
 
         {/* ── ROUTE 02: FROM ERNAKULAM SOUTH / NORTH RAILWAY STATIONS ── */}
-        <div className="rounded-[24px] border border-[#D9DEE5] bg-white shadow-editorial p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28">
+        <div className="rounded-[20px] border border-[#D9DEE5] bg-white shadow-editorial p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28">
           <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#D9DEE5]">
-            <div className="w-12 h-12 rounded-full bg-[#EEF3F8] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-[14px] bg-[#E8F0F7] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
               <Train className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-[11px] font-mono font-bold text-[#2563EB] uppercase tracking-widest block">
+              <span className="text-[11.5px] font-mono font-bold text-[#2563EB] uppercase tracking-widest block">
                 Route 02
               </span>
-              <h3 className="font-serif text-[1.85rem] sm:text-[2.35rem] text-[#071A33] font-normal m-0 leading-tight">
+              <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0 leading-tight">
                 From Ernakulam South Railway Station to Rajagiri
               </h3>
             </div>
@@ -130,8 +130,8 @@ export const Travel: React.FC = () => {
             <div className="lg:col-span-6 space-y-4">
               
               {/* Kochi Metro */}
-              <div className="p-6 rounded-[20px] bg-[#EEF3F8] border border-[#BFDBFE]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-semibold text-sm font-sans">
+              <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE]">
+                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <Train className="w-5 h-5 text-[#2563EB]" />
                   <span>By Kochi Metro (Direct)</span>
                 </div>
@@ -141,8 +141,8 @@ export const Travel: React.FC = () => {
               </div>
 
               {/* Taxi / Auto */}
-              <div className="p-6 rounded-[20px] bg-[#F7F7F4] border border-[#D9DEE5]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-semibold text-sm font-sans">
+              <div className="p-6 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5]">
+                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <Car className="w-5 h-5 text-[#2563EB]" />
                   <span>By Taxi / Auto-Rickshaw</span>
                 </div>
@@ -157,7 +157,7 @@ export const Travel: React.FC = () => {
             </div>
 
             {/* Interactive Map (6 cols) */}
-            <div className="lg:col-span-6 rounded-[20px] overflow-hidden border border-[#D9DEE5] h-full min-h-[400px] shadow-subtle bg-[#F7F7F4]">
+            <div className="lg:col-span-6 rounded-[16px] overflow-hidden border border-[#D9DEE5] h-full min-h-[400px] shadow-subtle bg-[#F5F5F0]">
               <iframe
                 title="Ernakulam South to Rajagiri Route Map"
                 src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d62865.52467195637!2d76.25915440113695!3d10.008987264663576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3b08730db3a5bb1d%3A0xd75994675ce7d175!2sERNAKULAM%20SOUTH%20RAILWAY%20STATION%2C%20Ernakulam%20South%2C%20Kochi%2C%20Ernakulam%2C%20Kerala%20682016!3m2!1d9.9692376!2d76.29098669999999!4m5!1s0x3b080dd2c4bfaed9%3A0x616d1c1cb927fe62!2sRajagiri%20College%20of%20Social%20Sciences%20(Autonomous)%2C%20Rajagiri%20Rd%2C%20South%20Kalamassery%2C%20Kalamassery%2C%20Kochi%2C%20Kerala!3m2!1d10.053237099999999!2d76.3155973!5e0!3m2!1sen!2sin!4v1766501245718!5m2!1sen!2sin"
@@ -173,13 +173,13 @@ export const Travel: React.FC = () => {
           </div>
         </div>
 
-        {/* ── CAMPUS LANDMARK & GOOGLE MAPS ACTION BANNER (Deep Navy #071A33) ── */}
-        <div className="p-8 sm:p-12 lg:p-14 bg-[#071A33] text-white rounded-[24px] border border-white/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-editorial">
+        {/* ── CAMPUS LANDMARK & GOOGLE MAPS ACTION BANNER ── */}
+        <div className="p-8 sm:p-12 lg:p-14 bg-[#071A33] text-white rounded-[20px] border border-white/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-editorial">
           <div>
             <span className="text-[11px] font-mono font-bold text-[#93C5FD] uppercase tracking-widest block mb-2">
               Official Venue Coordinates
             </span>
-            <h4 className="font-serif text-3xl sm:text-4xl text-white m-0 mb-3 font-normal">
+            <h4 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white m-0 mb-3 font-extrabold">
               Rajagiri College of Social Sciences (Autonomous)
             </h4>
             <p className="text-sm sm:text-base text-white/80 m-0 font-sans font-normal flex items-center gap-2">

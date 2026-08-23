@@ -22,7 +22,7 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({ attraction }) 
         </div>
       </div>
       <div className="p-6 flex-grow flex flex-col">
-        <h3 className="font-serif text-xl sm:text-2xl text-[#071A33] mb-2 group-hover:text-[#2563EB] transition-colors leading-snug">
+        <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#071A33] mb-2 group-hover:text-[#2563EB] transition-colors leading-snug">
           {attraction.title}
         </h3>
         <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal">

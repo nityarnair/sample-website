@@ -22,7 +22,7 @@ export const ThemeCard: React.FC<ThemeCardProps> = ({ theme }) => {
       </div>
 
       {/* Theme Title */}
-      <h3 className="font-serif font-bold text-lg sm:text-xl text-[#071A33] group-hover:text-[#2563EB] transition-colors leading-snug mb-4">
+      <h3 className="font-heading font-bold text-lg sm:text-xl text-[#071A33] group-hover:text-[#2563EB] transition-colors leading-snug mb-4">
         {theme.title}
       </h3>
 

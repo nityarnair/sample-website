@@ -18,19 +18,19 @@ export const CallForPapers: React.FC = () => {
   ];
 
   return (
-    <div className="py-20 sm:py-28 lg:py-32 bg-[#F7F7F4] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 lg:py-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── 02 / EDITORIAL PAGE HEADER ── */}
         <PageHeader
           number="02"
           category="CALL FOR PAPERS"
-          metaRight="Oral &amp; Poster Submissions · Scopus Indexing"
+          metaRight="Oral &amp; Poster Submissions &middot; Scopus Indexing"
           eyebrow="Scholarly Submissions &amp; Guidelines"
           title={
             <>
               Call for Papers
-              <span className="block font-serif text-[#667085] text-[2rem] sm:text-[2.75rem] font-normal mt-1">
+              <span className="block font-heading text-[#667085] text-[1.85rem] sm:text-[2.5rem] font-bold mt-1">
                 &amp; Submission Guidelines
               </span>
             </>
@@ -42,10 +42,10 @@ export const CallForPapers: React.FC = () => {
         <div className="bg-[#071A33] border border-white/10 text-white rounded-[24px] p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28 shadow-editorial">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#93C5FD] bg-white/10 px-4 py-1.5 rounded-full mb-4 border border-white/15">
-                Microsoft CMT Portal Active · Submission Deadline: 25 Sept 2026
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#93C5FD] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
+                Microsoft CMT Portal Active &middot; Deadline: 25 Sept 2026
               </span>
-              <h2 className="text-[2.25rem] sm:text-[2.85rem] font-serif font-normal text-white mb-3 leading-tight">
+              <h2 className="text-[2.25rem] sm:text-[2.85rem] font-heading font-extrabold text-white mb-3 leading-tight">
                 Submit Your Abstract or Full Paper
               </h2>
               <p className="text-white/80 text-sm sm:text-base m-0 font-sans font-normal leading-relaxed">
@@ -53,9 +53,9 @@ export const CallForPapers: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4 shrink-0">
+            <div className="flex flex-wrap gap-3.5 shrink-0">
               <Button
-                variant="white"
+                variant="primary"
                 size="lg"
                 asLink
                 href={CONFERENCE_DATA.links.cmtSubmission}
@@ -66,33 +66,32 @@ export const CallForPapers: React.FC = () => {
                 Submit Your Paper
               </Button>
               <Button
-                variant="outline"
+                variant="white"
                 size="lg"
                 asLink
                 href={CONFERENCE_DATA.links.brochurePdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-white/30 text-white hover:bg-white/10 hover:text-white"
                 icon={<Download className="w-4 h-4" />}
               >
-                Conference Brochure (PDF)
+                Brochure (PDF)
               </Button>
             </div>
           </div>
         </div>
 
-        {/* ── CONFERENCE THEMES (Numbered Editorial Rows) ── */}
+        {/* ── CONFERENCE THEMES ── */}
         <div className="mb-20 lg:mb-28">
           <div className="flex items-center justify-between pb-4 mb-10 border-b border-[#D9DEE5]">
             <div>
-              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB] block mb-1">
+              <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
                 Thematic Areas
               </span>
-              <h3 className="font-serif text-[1.85rem] sm:text-[2.25rem] text-[#071A33] font-normal m-0">
+              <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0">
                 Eight Conference Sub-Themes
               </h3>
             </div>
-            <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] hidden sm:inline">
+            <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] hidden sm:inline font-semibold">
               Select a theme to inspect focus areas
             </span>
           </div>
@@ -103,7 +102,7 @@ export const CallForPapers: React.FC = () => {
               return (
                 <div
                   key={track.id}
-                  className="transition-colors hover:bg-[#F7F7F4]/60"
+                  className="transition-colors hover:bg-[#F5F5F0]/60"
                 >
                   <button
                     type="button"
@@ -115,7 +114,7 @@ export const CallForPapers: React.FC = () => {
                         {String(idx + 1).padStart(2, '0')}
                       </span>
                       <div>
-                        <h4 className="font-serif text-lg sm:text-xl md:text-2xl text-[#071A33] font-normal m-0 leading-snug">
+                        <h4 className="font-heading text-lg sm:text-xl font-bold text-[#071A33] m-0 leading-snug">
                           {track.title}
                         </h4>
                         <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal mt-1 m-0 line-clamp-1">
@@ -129,12 +128,12 @@ export const CallForPapers: React.FC = () => {
                   </button>
 
                   {isExpanded && (
-                    <div className="px-6 sm:px-8 pb-8 pt-2 bg-[#F7F7F4] border-t border-[#D9DEE5]/60">
+                    <div className="px-6 sm:px-8 pb-8 pt-2 bg-[#F5F5F0] border-t border-[#D9DEE5]/60">
                       <div className="flex flex-wrap gap-2 pt-2">
                         {track.topics.map((topic, tIdx) => (
                           <span
                             key={tIdx}
-                            className="inline-block text-[11.5px] font-sans text-[#071A33] bg-white border border-[#D9DEE5] px-3.5 py-1.5 rounded-full shadow-subtle"
+                            className="inline-block text-[12px] font-sans text-[#071A33] bg-white border border-[#D9DEE5] px-3.5 py-1.5 rounded-[8px] shadow-subtle"
                           >
                             {topic}
                           </span>
@@ -152,12 +151,12 @@ export const CallForPapers: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-20 lg:mb-28 items-start">
           
           {/* Submission Guidelines (6 cols) */}
-          <div className="lg:col-span-6 p-8 sm:p-10 rounded-[24px] bg-white border border-[#D9DEE5] shadow-editorial">
+          <div className="lg:col-span-6 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-[#EEF3F8] text-[#2563EB] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
                 <FileCheck className="w-5 h-5" />
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] font-normal m-0">
+              <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
                 Guidelines for Abstract
               </h3>
             </div>
@@ -183,12 +182,12 @@ export const CallForPapers: React.FC = () => {
           </div>
 
           {/* Publication Opportunities (6 cols) */}
-          <div className="lg:col-span-6 p-8 sm:p-10 rounded-[24px] bg-white border border-[#D9DEE5] shadow-editorial">
+          <div className="lg:col-span-6 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-[#EEF3F8] text-[#2563EB] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] font-normal m-0">
+              <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
                 Publication &amp; Presentation Formats
               </h3>
             </div>
@@ -198,11 +197,11 @@ export const CallForPapers: React.FC = () => {
             </p>
 
             <div className="space-y-3 mb-6">
-              <div className="p-4 rounded-[16px] bg-[#EEF3F8] border border-[#D9DEE5] text-xs sm:text-sm text-[#071A33] font-sans">
-                <strong className="text-[#2563EB] block font-mono text-[11px] uppercase tracking-wider mb-1">Presentation Formats</strong>
+              <div className="p-4 rounded-[14px] bg-[#E8F0F7] border border-[#D9DEE5] text-xs sm:text-sm text-[#071A33] font-sans">
+                <strong className="text-[#2563EB] block font-mono text-[11px] uppercase tracking-wider mb-1 font-bold">Presentation Formats</strong>
                 <span>Oral Paper Presentations (15 mins + Q&amp;A) &amp; Poster Presentations with dedicated display gallery.</span>
               </div>
-              <div className="p-4 rounded-[16px] bg-[#F7F7F4] border border-[#D9DEE5] text-xs text-[#667085] font-sans">
+              <div className="p-4 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5] text-xs text-[#667085] font-sans">
                 <span>All submissions undergo rigorous double-blind peer review by an international scientific review panel.</span>
               </div>
             </div>
@@ -210,18 +209,18 @@ export const CallForPapers: React.FC = () => {
         </div>
 
         {/* ── TYPES OF PARTICIPANTS ── */}
-        <div className="mb-20 lg:mb-28 p-8 sm:p-10 rounded-[24px] bg-white border border-[#D9DEE5] shadow-editorial">
+        <div className="mb-20 lg:mb-28 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-full bg-[#EEF3F8] text-[#2563EB] flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
               <Users className="w-5 h-5" />
             </div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] font-normal m-0">
+            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
               Eligible Participant Categories
             </h3>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {participantTypes.map((type, idx) => (
-              <div key={idx} className="p-4 rounded-[16px] bg-[#F7F7F4] border border-[#D9DEE5] text-center font-sans text-xs sm:text-sm font-semibold text-[#071A33] shadow-subtle flex items-center justify-center">
+              <div key={idx} className="p-4 rounded-[12px] bg-[#F5F5F0] border border-[#D9DEE5] text-center font-sans text-xs sm:text-sm font-bold text-[#071A33] shadow-subtle flex items-center justify-center">
                 <span>{type}</span>
               </div>
             ))}
@@ -233,7 +232,7 @@ export const CallForPapers: React.FC = () => {
           
           {/* Important Deadlines (5 cols) */}
           <div className="lg:col-span-5">
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] mb-6 flex items-center gap-2.5 font-normal">
+            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] mb-6 flex items-center gap-2.5 font-bold">
               <Calendar className="w-5 h-5 text-[#2563EB]" />
               <span>Submission Deadlines</span>
             </h3>
@@ -241,10 +240,10 @@ export const CallForPapers: React.FC = () => {
               {CONFERENCE_DATA.importantDates.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-[#D9DEE5] rounded-[18px] p-5 flex items-center justify-between shadow-subtle"
+                  className="bg-white border border-[#D9DEE5] rounded-[14px] p-5 flex items-center justify-between shadow-subtle"
                 >
-                  <span className="text-xs sm:text-sm text-[#071A33] font-medium">{item.event}</span>
-                  <span className="text-xs font-mono font-bold text-[#2563EB] bg-[#EEF3F8] border border-[#BFDBFE] px-3 py-1 rounded-full shrink-0">
+                  <span className="text-xs sm:text-sm text-[#071A33] font-semibold">{item.event}</span>
+                  <span className="text-xs font-mono font-bold text-[#2563EB] bg-[#E8F0F7] border border-[#BFDBFE] px-3 py-1 rounded-[6px] shrink-0">
                     {item.date}
                   </span>
                 </div>
@@ -254,11 +253,11 @@ export const CallForPapers: React.FC = () => {
 
           {/* Registration Fees Table (7 cols) */}
           <div className="lg:col-span-7">
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] mb-6 flex items-center gap-2.5 font-normal">
+            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] mb-6 flex items-center gap-2.5 font-bold">
               <CreditCard className="w-5 h-5 text-[#2563EB]" />
               <span>Registration Fees</span>
             </h3>
-            <div className="rounded-[20px] border border-[#D9DEE5] overflow-hidden shadow-subtle bg-white mb-4">
+            <div className="rounded-[16px] border border-[#D9DEE5] overflow-hidden shadow-subtle bg-white mb-4">
               <ResponsiveTable>
                 <thead className="bg-[#071A33] text-white font-sans">
                   <tr>
@@ -267,53 +266,53 @@ export const CallForPapers: React.FC = () => {
                     <th className="py-4 px-5 font-bold text-xs uppercase tracking-wider text-left">Inclusions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#D9DEE5] bg-white text-[#101828] text-xs sm:text-sm">
+                <tbody className="divide-y divide-[#D9DEE5] bg-white text-[#0B1220] text-xs sm:text-sm">
                   {CONFERENCE_DATA.fees.map((fee, idx) => (
-                    <tr key={idx} className="hover:bg-[#F7F7F4] transition-colors">
-                      <td className="py-4 px-5 font-semibold text-[#071A33]">{fee.category}</td>
-                      <td className="py-4 px-5 font-serif text-xl text-[#071A33] font-normal">{fee.amount}</td>
+                    <tr key={idx} className="hover:bg-[#F5F5F0] transition-colors">
+                      <td className="py-4 px-5 font-bold text-[#071A33]">{fee.category}</td>
+                      <td className="py-4 px-5 font-heading text-lg text-[#071A33] font-extrabold">{fee.amount}</td>
                       <td className="py-4 px-5 text-xs text-[#667085]">{fee.deadline}</td>
                     </tr>
                   ))}
                 </tbody>
               </ResponsiveTable>
             </div>
-            <div className="p-4 rounded-[16px] bg-[#EEF3F8] border border-[#BFDBFE] text-xs text-[#071A33] font-sans">
+            <div className="p-4 rounded-[14px] bg-[#E8F0F7] border border-[#BFDBFE] text-xs text-[#071A33] font-sans">
               <strong>Registration Fee Includes:</strong> Conference kit, badge, certificate, lunch on both conference days (7 &amp; 8 Jan 2027), tea/refreshments, and access to all plenaries and track sessions.
             </div>
           </div>
         </div>
 
         {/* ── BANK TRANSFER DETAILS STRIP ── */}
-        <div className="rounded-[24px] p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-editorial mb-20 lg:mb-28">
+        <div className="rounded-[20px] p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-editorial mb-20 lg:mb-28">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-full bg-[#EEF3F8] text-[#2563EB] flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif text-2xl sm:text-3xl text-[#071A33] font-normal m-0">
+              <h4 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
                 Mode of Payment (NEFT / RTGS Bank Transfer)
               </h4>
-              <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider">
+              <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider font-semibold">
                 Official RCSS Conference Bank Account
               </span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs sm:text-sm">
-            <div className="p-5 rounded-[16px] bg-[#F7F7F4] border border-[#D9DEE5]">
+            <div className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
               <span className="text-xs text-[#667085] block mb-1">Account Name</span>
-              <strong className="text-[#071A33] font-medium block">{CONFERENCE_DATA.bankDetails.accountName}</strong>
+              <strong className="text-[#071A33] font-semibold block">{CONFERENCE_DATA.bankDetails.accountName}</strong>
             </div>
-            <div className="p-5 rounded-[16px] bg-[#F7F7F4] border border-[#D9DEE5]">
+            <div className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
               <span className="text-xs text-[#667085] block mb-1">Account Number</span>
               <strong className="text-[#071A33] font-mono font-bold block">{CONFERENCE_DATA.bankDetails.accountNumber}</strong>
             </div>
-            <div className="p-5 rounded-[16px] bg-[#F7F7F4] border border-[#D9DEE5]">
+            <div className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
               <span className="text-xs text-[#667085] block mb-1">Bank &amp; Branch</span>
-              <strong className="text-[#071A33] block">{CONFERENCE_DATA.bankDetails.bank}</strong>
+              <strong className="text-[#071A33] font-semibold block">{CONFERENCE_DATA.bankDetails.bank}</strong>
             </div>
-            <div className="p-5 rounded-[16px] bg-[#F7F7F4] border border-[#D9DEE5]">
+            <div className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
               <span className="text-xs text-[#667085] block mb-1">IFSC / NEFT Code</span>
               <strong className="text-[#2563EB] font-mono font-bold block">{CONFERENCE_DATA.bankDetails.ifsc}</strong>
             </div>
@@ -321,12 +320,12 @@ export const CallForPapers: React.FC = () => {
         </div>
 
         {/* ── MICROSOFT CMT ACKNOWLEDGEMENT ── */}
-        <div className="rounded-[20px] p-6 sm:p-8 bg-white/70 border border-[#D9DEE5] flex items-start gap-4">
-          <div className="w-9 h-9 rounded-full bg-white border border-[#D9DEE5] text-[#667085] flex items-center justify-center shrink-0">
+        <div className="rounded-[16px] p-6 sm:p-8 bg-white/80 border border-[#D9DEE5] flex items-start gap-4">
+          <div className="w-9 h-9 rounded-[10px] bg-white border border-[#D9DEE5] text-[#667085] flex items-center justify-center shrink-0">
             <Info className="w-4 h-4" />
           </div>
           <div>
-            <h4 className="font-serif text-lg text-[#071A33] mb-1 font-normal">Microsoft CMT Acknowledgement</h4>
+            <h4 className="font-heading text-lg text-[#071A33] mb-1 font-bold">Microsoft CMT Acknowledgement</h4>
             <p className="text-xs text-[#667085] leading-relaxed font-sans font-normal m-0">
               The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
             </p>

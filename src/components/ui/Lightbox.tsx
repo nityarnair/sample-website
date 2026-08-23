@@ -104,7 +104,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
         </div>
         {title && (
           <div className="mt-5 text-center px-4">
-            <p className="text-white/95 text-base sm:text-lg font-serif font-normal tracking-wide max-w-2xl m-0 leading-relaxed">
+            <p className="text-white/95 text-base sm:text-lg font-heading font-semibold tracking-normal max-w-2xl m-0 leading-relaxed">
               {title}
             </p>
           </div>

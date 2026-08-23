@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Award, Calendar, MapPin } from 'lucide-react';
+import { Award, Calendar, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { CONFERENCE_DATA } from '@/data/conference';
 

@@ -14,19 +14,19 @@ export const Attractions: React.FC = () => {
   ];
 
   return (
-    <div className="py-20 sm:py-28 lg:py-32 bg-[#F7F7F4] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 lg:py-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── 04 / EDITORIAL PAGE HEADER ── */}
         <PageHeader
           number="04"
           category="ATTRACTIONS"
-          metaRight="Queen of the Arabian Sea · Kerala, India"
+          metaRight="Queen of the Arabian Sea &middot; Kerala, India"
           eyebrow="Explore Kerala"
           title={
             <>
               Attractions in &amp;
-              <span className="block font-serif text-[#667085] text-[2rem] sm:text-[2.75rem] font-normal mt-1">
+              <span className="block font-heading text-[#667085] text-[1.85rem] sm:text-[2.5rem] font-bold mt-1">
                 Around Historic Kochi
               </span>
             </>
@@ -44,14 +44,14 @@ export const Attractions: React.FC = () => {
           />
         </div>
 
-        {/* ── DETAILED ATTRACTIONS (Alternating Editorial Layouts) ── */}
+        {/* ── DETAILED ATTRACTIONS (Alternating Layouts) ── */}
         <div className="space-y-16 lg:space-y-24 mb-20 lg:mb-28">
           {CONFERENCE_DATA.attractions.map((attraction, idx) => {
             const isEven = idx % 2 === 1;
             return (
               <div
                 key={attraction.id}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
               >
                 {/* Photo Column */}
                 <div
@@ -59,7 +59,7 @@ export const Attractions: React.FC = () => {
                     isEven ? 'lg:order-2' : 'lg:order-1'
                   }`}
                 >
-                  <div className="rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial group">
+                  <div className="rounded-[20px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial group">
                     <img
                       src={attraction.imageUrl}
                       alt={attraction.title}
@@ -80,17 +80,17 @@ export const Attractions: React.FC = () => {
                       Destination {String(idx + 1).padStart(2, '0')}
                     </span>
                     <span className="w-6 h-px bg-[#D9DEE5]" />
-                    <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#667085] flex items-center gap-1">
+                    <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#667085] flex items-center gap-1 font-semibold">
                       <MapPin className="w-3.5 h-3.5 text-[#2563EB]" />
                       <span>Kochi, Kerala</span>
                     </span>
                   </div>
 
-                  <h3 className="text-[2.25rem] sm:text-[2.85rem] font-serif font-normal text-[#071A33] leading-[1.1] mb-6">
+                  <h3 className="text-[2rem] sm:text-[2.5rem] font-heading font-extrabold text-[#071A33] leading-[1.1] mb-5">
                     {attraction.title}
                   </h3>
 
-                  <p className="text-base sm:text-[1.0625rem] text-[#667085] leading-relaxed font-sans font-normal m-0">
+                  <p className="text-[15px] sm:text-[16px] text-[#667085] leading-relaxed font-sans font-normal m-0">
                     {attraction.description}
                   </p>
                 </div>
@@ -100,16 +100,16 @@ export const Attractions: React.FC = () => {
         </div>
 
         {/* ── QUICK TOURISM GUIDES & EXTERNAL RESOURCES ── */}
-        <div className="rounded-[24px] p-8 sm:p-12 lg:p-14 bg-white border border-[#D9DEE5] shadow-editorial">
+        <div className="rounded-[20px] p-8 sm:p-12 lg:p-14 bg-white border border-[#D9DEE5] shadow-editorial">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-full bg-[#EEF3F8] text-[#2563EB] flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
               <Compass className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] font-normal m-0">
+              <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
                 Tourist Guides &amp; Official Travel Portals
               </h3>
-              <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider">
+              <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider font-semibold">
                 External State Tourism &amp; Sightseeing Resources
               </span>
             </div>
@@ -122,9 +122,9 @@ export const Attractions: React.FC = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-5 rounded-[16px] bg-[#F7F7F4] border border-[#D9DEE5] hover:border-[#2563EB]/40 hover:bg-white transition-all flex items-center justify-between group shadow-subtle"
+                className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5] hover:border-[#2563EB]/40 hover:bg-white transition-all flex items-center justify-between group shadow-subtle"
               >
-                <span className="text-xs sm:text-sm font-sans font-medium text-[#071A33] group-hover:text-[#2563EB] transition-colors leading-snug">
+                <span className="text-xs sm:text-sm font-sans font-semibold text-[#071A33] group-hover:text-[#2563EB] transition-colors leading-snug">
                   {link.label}
                 </span>
                 <ExternalLink className="w-4 h-4 text-[#667085] group-hover:text-[#2563EB] shrink-0 ml-3 transition-colors" />

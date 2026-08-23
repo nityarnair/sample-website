@@ -15,7 +15,7 @@ export const StatCard: React.FC<StatCardProps> = ({ stat, dark = false }) => {
           : 'bg-white border-[#D9DEE5] text-[#101828] shadow-subtle hover:border-[#12345B]/40 hover:shadow-editorial'
       }`}
     >
-      <div className={`text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-2 tracking-tight ${
+      <div className={`text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold mb-2 tracking-tight ${
         dark ? 'text-white' : 'text-[#071A33]'
       }`}>
         {stat.value}

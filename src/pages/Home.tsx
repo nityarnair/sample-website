@@ -12,23 +12,23 @@ import { InstitutionSection } from '@/components/sections/InstitutionSection';
 import { PartnersSection } from '@/components/sections/PartnersSection';
 
 /**
- * DYUTI 2027 Homepage — Editorial Visual Rhythm:
+ * DYUTI 2027 Homepage — Modern International Conference Visual Rhythm:
  * 
- * 01 — HeroEditorial (Warm Off-White: #F7F7F4)
- * 02 — ConferenceMeta (Off-White Metadata Strip: #F7F7F4)
- * 03 — EditorialIntro (Pure White: #FFFFFF)
+ * 01 — HeroEditorial (Warm Off-White: #F5F5F0)
+ * 02 — ConferenceMeta (Pure White: #FFFFFF)
+ * 03 — EditorialIntro (Soft Blue: #E8F0F7)
  * 04 — EditorialTracks (Deep Navy: #071A33)
- * 05 — SpeakersSection (Warm Off-White: #F7F7F4)
+ * 05 — SpeakersSection (Warm Off-White: #F5F5F0)
  * 06 — ScheduleSection (Pure White: #FFFFFF)
- * 07 — CallForPapersSection (Light Blue Tint: #EEF3F8)
- * 08 — ImportantDatesTimeline (Warm Off-White: #F7F7F4)
+ * 07 — CallForPapersSection (Soft Blue: #E8F0F7)
+ * 08 — ImportantDatesTimeline (Warm Off-White: #F5F5F0)
  * 09 — RegistrationCTA (Deep Navy: #071A33)
  * 10 — InstitutionSection (Pure White: #FFFFFF)
- * 11 — PartnersSection (Warm Off-White: #F7F7F4)
+ * 11 — PartnersSection (Warm Off-White: #F5F5F0)
  */
 export const Home: React.FC = () => {
   return (
-    <div className="space-y-0 bg-[#F7F7F4] text-[#101828] min-h-screen">
+    <div className="space-y-0 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       {/* 01 — Editorial Hero (Off-White: #F7F7F4) */}
       <HeroEditorial />
 

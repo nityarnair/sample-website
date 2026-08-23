@@ -27,19 +27,19 @@ export const Gallery: React.FC = () => {
     selectedPhotoIndex !== null ? filteredPhotos[selectedPhotoIndex] : null;
 
   return (
-    <div className="py-20 sm:py-28 lg:py-32 bg-[#F7F7F4] text-[#101828] min-h-screen">
+    <div className="py-20 sm:py-28 lg:py-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── 06 / EDITORIAL PAGE HEADER ── */}
         <PageHeader
           number="06"
           category="ARCHIVE"
-          metaRight="25+ Editions of Academic Dialogue · 1998–2026"
+          metaRight="25+ Editions of Academic Dialogue &middot; 1998–2026"
           eyebrow="Conference Historical Archive"
           title={
             <>
               Historical Conference
-              <span className="block font-serif text-[#667085] text-[2rem] sm:text-[2.75rem] font-normal mt-1">
+              <span className="block font-heading text-[#667085] text-[1.85rem] sm:text-[2.5rem] font-bold mt-1">
                 Gallery &amp; Retrospective
               </span>
             </>
@@ -47,8 +47,8 @@ export const Gallery: React.FC = () => {
           subtitle="Glimpses of keynote addresses, book release ceremonies, academic dialogues, and cultural exchanges over 25+ historic editions of the DYUTI international conference."
         />
 
-        {/* ── FILTER PILL CONTROLS ── */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-16 lg:mb-20">
+        {/* ── FILTER CONTROLS ── */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14 lg:mb-18">
           {categories.map((cat) => {
             const isActive = activeFilter === cat;
             return (
@@ -57,9 +57,9 @@ export const Gallery: React.FC = () => {
                 type="button"
                 onClick={() => setActiveFilter(cat)}
                 className={cn(
-                  'px-6 py-2.5 rounded-full text-xs font-sans font-semibold uppercase tracking-[0.14em] transition-all duration-300 cursor-pointer border',
+                  'px-5 py-2.5 rounded-[10px] text-[12px] font-sans font-bold uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer border',
                   isActive
-                    ? 'bg-[#071A33] text-white border-[#071A33] shadow-pill'
+                    ? 'bg-[#071A33] text-white border-[#071A33] shadow-sm'
                     : 'bg-white border-[#D9DEE5] text-[#667085] hover:text-[#071A33] hover:border-[#071A33]/40 shadow-subtle'
                 )}
               >
@@ -69,7 +69,7 @@ export const Gallery: React.FC = () => {
           })}
         </div>
 
-        {/* ── EDITORIAL IMAGE GRID ── */}
+        {/* ── IMAGE GRID ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 mb-20 lg:mb-28">
           {filteredPhotos.map((photo, index) => (
             <div
@@ -97,14 +97,14 @@ export const Gallery: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#071A33]/90 via-[#071A33]/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white z-10">
                 <span className="text-[10.5px] font-mono font-bold text-[#93C5FD] uppercase tracking-[0.16em] mb-1.5 flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5" />
-                  <span>DYUTI {photo.year} · {photo.category}</span>
+                  <span>DYUTI {photo.year} &middot; {photo.category}</span>
                 </span>
-                <h4 className="font-serif text-base sm:text-lg leading-snug line-clamp-2 text-white font-normal m-0">
+                <h4 className="font-heading text-base sm:text-[17px] leading-snug line-clamp-2 text-white font-bold m-0">
                   {photo.title}
                 </h4>
                 
                 {/* Floating Zoom Button */}
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white border border-white/25 shadow-subtle">
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-[10px] bg-white/20 backdrop-blur-xs flex items-center justify-center text-white border border-white/25 shadow-subtle">
                   <ZoomIn className="w-4 h-4" />
                 </div>
               </div>

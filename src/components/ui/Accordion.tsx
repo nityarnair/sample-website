@@ -43,7 +43,7 @@ export const Accordion: React.FC<AccordionProps> = ({
             >
               <div className="flex items-center gap-3.5">
                 {item.icon && <span className="text-[#12345B]">{item.icon}</span>}
-                <span className="text-base font-serif font-medium sm:text-lg text-[#071A33]">{item.title}</span>
+                <span className="text-base font-heading font-bold sm:text-lg text-[#071A33]">{item.title}</span>
               </div>
               <ChevronDown
                 className={cn(
