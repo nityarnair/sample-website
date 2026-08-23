@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, Globe2, Sparkles, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { CONFERENCE_DATA } from '@/data/conference';
 
 export interface AcademicVoice {
   number: string;
