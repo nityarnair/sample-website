@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
-import { ResponsiveTable } from '@/components/ui/ResponsiveTable';
 import { Calendar, FileCheck, CheckCircle2, Download, CreditCard, ShieldCheck, Users, Info, ChevronDown, ChevronUp } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
@@ -232,118 +231,410 @@ export const CallForPapers: React.FC = () => {
         </div>
 
         {/* ── TYPES OF PARTICIPANTS ── */}
-        <div className="mb-20 lg:mb-28 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
+        <div className="mb-16 lg:mb-20 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
               <Users className="w-5 h-5" />
             </div>
-            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-              Eligible Participant Categories
-            </h3>
+            <div>
+              <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+                Eligible Participant Categories
+              </h3>
+              <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
+                Scholars and practitioners eligible to register and present papers
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
             {participantTypes.map((type, idx) => (
-              <div key={idx} className="p-4 rounded-[12px] bg-[#F5F5F0] border border-[#D9DEE5] text-center font-sans text-xs sm:text-sm font-bold text-[#071A33] shadow-subtle flex items-center justify-center">
+              <div key={idx} className="p-4 rounded-[12px] bg-[#F5F5F0] border border-[#D9DEE5] text-center font-sans text-xs sm:text-sm font-bold text-[#071A33] shadow-subtle flex items-center justify-center hover:border-[#2563EB] hover:bg-white transition-all">
                 <span>{type}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* ── IMPORTANT DATES & REGISTRATION FEES ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-20 lg:mb-28">
-          
-          {/* Important Deadlines (5 cols) */}
-          <div className="lg:col-span-5">
-            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] mb-6 flex items-center gap-2.5 font-bold">
-              <Calendar className="w-5 h-5 text-[#2563EB]" />
-              <span>Submission Deadlines</span>
-            </h3>
-            <div className="space-y-3">
-              {CONFERENCE_DATA.importantDates.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white border border-[#D9DEE5] rounded-[14px] p-5 flex items-center justify-between shadow-subtle"
-                >
-                  <span className="text-xs sm:text-sm text-[#071A33] font-semibold">{item.event}</span>
-                  <span className="text-xs font-mono font-bold text-[#2563EB] bg-[#E8F0F7] border border-[#BFDBFE] px-3 py-1 rounded-[6px] shrink-0">
-                    {item.date}
-                  </span>
-                </div>
-              ))}
+        {/* ── 01. SUBMISSION DEADLINES & MILESTONES (FULL WIDTH CARDS) ── */}
+        <div className="mb-16 lg:mb-20">
+          <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#D9DEE5]">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
+                <Calendar className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+                  Submission Deadlines &amp; Key Milestones
+                </h3>
+                <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
+                  Critical timeline for abstract review, author acceptance, and conference attendance
+                </p>
+              </div>
             </div>
+            <span className="hidden sm:inline-flex items-center text-[11px] font-mono uppercase tracking-wider text-[#2563EB] bg-[#E8F0F7] px-3 py-1 rounded-[6px] font-bold">
+              IST (UTC+05:30)
+            </span>
           </div>
 
-          {/* Registration Fees Table (7 cols) */}
-          <div className="lg:col-span-7">
-            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] mb-6 flex items-center gap-2.5 font-bold">
-              <CreditCard className="w-5 h-5 text-[#2563EB]" />
-              <span>Registration Fees</span>
-            </h3>
-            <div className="rounded-[16px] border border-[#D9DEE5] overflow-hidden shadow-subtle bg-white mb-4">
-              <ResponsiveTable>
-                <thead className="bg-[#071A33] text-white font-sans">
-                  <tr>
-                    <th className="py-4 px-5 font-bold text-xs uppercase tracking-wider text-left">Type of Participant</th>
-                    <th className="py-4 px-5 font-bold text-xs uppercase tracking-wider text-left">Registration Fees</th>
-                    <th className="py-4 px-5 font-bold text-xs uppercase tracking-wider text-left">Inclusions</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#D9DEE5] bg-white text-[#0B1220] text-xs sm:text-sm">
-                  {CONFERENCE_DATA.fees.map((fee, idx) => (
-                    <tr key={idx} className="hover:bg-[#F5F5F0] transition-colors">
-                      <td className="py-4 px-5 font-bold text-[#071A33]">{fee.category}</td>
-                      <td className="py-4 px-5 font-heading text-lg text-[#071A33] font-extrabold">{fee.amount}</td>
-                      <td className="py-4 px-5 text-xs text-[#667085]">{fee.deadline}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </ResponsiveTable>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {/* Step 1: Abstract Submission */}
+            <div className="bg-white border-2 border-[#2563EB]/40 rounded-[18px] p-6 shadow-editorial flex flex-col justify-between relative overflow-hidden group hover:border-[#2563EB] transition-all">
+              <div className="absolute top-0 right-0 bg-[#2563EB] text-white text-[10px] font-mono uppercase font-bold px-3 py-1 rounded-bl-[10px]">
+                Active Call
+              </div>
+              <div>
+                <span className="font-mono text-xs font-bold text-[#2563EB] uppercase tracking-wider block mb-2">
+                  Stage 01
+                </span>
+                <h4 className="font-heading text-lg text-[#071A33] font-bold mb-2">
+                  Last Date of Abstract Submission
+                </h4>
+                <p className="text-xs text-[#667085] font-sans leading-relaxed mb-4">
+                  Original empirical abstracts (max 300 words) submitted via Microsoft CMT.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#D9DEE5]/80 flex items-center justify-between">
+                <span className="text-[11px] text-[#667085] font-sans uppercase font-medium">Deadline</span>
+                <span className="font-mono text-sm font-bold text-[#2563EB] bg-[#E8F0F7] px-2.5 py-1 rounded-[6px]">
+                  25 Sept 2026
+                </span>
+              </div>
             </div>
-            <div className="p-4 rounded-[14px] bg-[#E8F0F7] border border-[#BFDBFE] text-xs text-[#071A33] font-sans">
-              <strong>Registration Fee Includes:</strong> Conference kit, badge, certificate, lunch on both conference days (7 &amp; 8 Jan 2027), tea/refreshments, and access to all plenaries and track sessions.
+
+            {/* Step 2: Acceptance Notification */}
+            <div className="bg-white border border-[#D9DEE5] rounded-[18px] p-6 shadow-subtle flex flex-col justify-between hover:border-[#CBD5E1] transition-all">
+              <div>
+                <span className="font-mono text-xs font-bold text-[#667085] uppercase tracking-wider block mb-2">
+                  Stage 02
+                </span>
+                <h4 className="font-heading text-lg text-[#071A33] font-bold mb-2">
+                  Notification of Acceptance
+                </h4>
+                <p className="text-xs text-[#667085] font-sans leading-relaxed mb-4">
+                  Double-blind peer review outcomes communicated directly to corresponding authors.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#D9DEE5]/80 flex items-center justify-between">
+                <span className="text-[11px] text-[#667085] font-sans uppercase font-medium">Channel</span>
+                <span className="font-mono text-xs font-bold text-[#071A33] bg-[#F5F5F0] border border-[#D9DEE5] px-2.5 py-1 rounded-[6px]">
+                  CMT Portal
+                </span>
+              </div>
+            </div>
+
+            {/* Step 3: Registration Commencement */}
+            <div className="bg-white border border-[#D9DEE5] rounded-[18px] p-6 shadow-subtle flex flex-col justify-between hover:border-[#CBD5E1] transition-all">
+              <div>
+                <span className="font-mono text-xs font-bold text-[#667085] uppercase tracking-wider block mb-2">
+                  Stage 03
+                </span>
+                <h4 className="font-heading text-lg text-[#071A33] font-bold mb-2">
+                  Registration Commencement
+                </h4>
+                <p className="text-xs text-[#667085] font-sans leading-relaxed mb-4">
+                  Delegate pass booking and author registration portals formally open.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#D9DEE5]/80 flex items-center justify-between">
+                <span className="text-[11px] text-[#667085] font-sans uppercase font-medium">Starts</span>
+                <span className="font-mono text-xs font-bold text-[#071A33] bg-[#F5F5F0] border border-[#D9DEE5] px-2.5 py-1 rounded-[6px]">
+                  10 Aug 2026
+                </span>
+              </div>
+            </div>
+
+            {/* Step 4: Conference Days */}
+            <div className="bg-white border border-[#D9DEE5] rounded-[18px] p-6 shadow-subtle flex flex-col justify-between hover:border-[#CBD5E1] transition-all">
+              <div>
+                <span className="font-mono text-xs font-bold text-[#667085] uppercase tracking-wider block mb-2">
+                  Stage 04
+                </span>
+                <h4 className="font-heading text-lg text-[#071A33] font-bold mb-2">
+                  Conference Days
+                </h4>
+                <p className="text-xs text-[#667085] font-sans leading-relaxed mb-4">
+                  2-day international symposium at Rajagiri College, Kalamassery campus.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#D9DEE5]/80 flex items-center justify-between">
+                <span className="text-[11px] text-[#667085] font-sans uppercase font-medium">Venue</span>
+                <span className="font-mono text-xs font-bold text-[#071A33] bg-[#F5F5F0] border border-[#D9DEE5] px-2.5 py-1 rounded-[6px]">
+                  07–08 Jan 2027
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ── BANK TRANSFER DETAILS STRIP ── */}
-        <div className="rounded-[20px] p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-editorial mb-20 lg:mb-28">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-                Mode of Payment (NEFT / RTGS Bank Transfer)
-              </h4>
-              <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider font-semibold">
-                Official RCSS Conference Bank Account
-              </span>
+        {/* ── 02. REGISTRATION FEES & INCLUSIONS (LUXURY CARDS) ── */}
+        <div className="mb-16 lg:mb-20">
+          <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#D9DEE5]">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
+                <CreditCard className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+                  Registration Fees &amp; Delegate Passes
+                </h3>
+                <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
+                  Select your delegate category to participate in paper presentation tracks and plenaries
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs sm:text-sm">
-            <div className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
-              <span className="text-xs text-[#667085] block mb-1">Account Name</span>
-              <strong className="text-[#071A33] font-semibold block">{CONFERENCE_DATA.bankDetails.accountName}</strong>
+          {/* 3 Tier Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-6">
+            {/* Tier 1: Students / Scholars */}
+            <div className="bg-white rounded-[20px] p-7 sm:p-8 border border-[#D9DEE5] shadow-editorial flex flex-col justify-between hover:border-[#2563EB]/50 transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-mono uppercase font-bold text-[#667085] tracking-wider">
+                    Tier 01
+                  </span>
+                  <span className="text-[10px] font-mono uppercase font-bold text-[#2563EB] bg-[#E8F0F7] px-2.5 py-0.5 rounded-[6px]">
+                    Scholar Pass
+                  </span>
+                </div>
+                <h4 className="font-heading text-xl text-[#071A33] font-bold mb-2">
+                  Students / Research Scholars
+                </h4>
+                <p className="text-xs text-[#667085] font-sans leading-relaxed mb-6">
+                  For graduate students, postgraduates, and full-time PhD research scholars.
+                </p>
+                <div className="flex items-baseline gap-1.5 mb-6 pb-6 border-b border-[#D9DEE5]">
+                  <span className="font-heading text-4xl text-[#071A33] font-extrabold tracking-tight">
+                    ₹ 750
+                  </span>
+                  <span className="text-xs text-[#667085] font-sans font-medium">/ delegate</span>
+                </div>
+                <ul className="space-y-3 text-xs text-[#071A33] font-sans font-medium mb-8">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Access to all technical presentation tracks</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Author Certificate of Presentation</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Executive lunch &amp; refreshments on both days</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href={CONFERENCE_DATA.links.registrationForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-[12px] bg-[#F5F5F0] hover:bg-[#071A33] text-[#071A33] hover:text-white font-sans text-xs font-bold text-center border border-[#D9DEE5] transition-all block"
+              >
+                Register as Student / Scholar &rarr;
+              </a>
             </div>
-            <div className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
-              <span className="text-xs text-[#667085] block mb-1">Account Number</span>
-              <strong className="text-[#071A33] font-mono font-bold block">{CONFERENCE_DATA.bankDetails.accountNumber}</strong>
+
+            {/* Tier 2: Academicians / Faculty (Featured) */}
+            <div className="bg-white rounded-[20px] p-7 sm:p-8 border-2 border-[#2563EB] shadow-editorial flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-[#2563EB] text-white text-[10px] font-mono uppercase font-bold px-3 py-1 rounded-bl-[10px]">
+                Popular
+              </div>
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-mono uppercase font-bold text-[#2563EB] tracking-wider">
+                    Tier 02
+                  </span>
+                  <span className="text-[10px] font-mono uppercase font-bold text-[#071A33] bg-[#E8F0F7] px-2.5 py-0.5 rounded-[6px]">
+                    Faculty Pass
+                  </span>
+                </div>
+                <h4 className="font-heading text-xl text-[#071A33] font-bold mb-2">
+                  Academicians / Faculty Members
+                </h4>
+                <p className="text-xs text-[#667085] font-sans leading-relaxed mb-6">
+                  For professors, associate faculty, lecturers, and academic researchers.
+                </p>
+                <div className="flex items-baseline gap-1.5 mb-6 pb-6 border-b border-[#D9DEE5]">
+                  <span className="font-heading text-4xl text-[#071A33] font-extrabold tracking-tight">
+                    ₹ 1,000
+                  </span>
+                  <span className="text-xs text-[#667085] font-sans font-medium">/ delegate</span>
+                </div>
+                <ul className="space-y-3 text-xs text-[#071A33] font-sans font-medium mb-8">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Access to all keynotes, plenaries &amp; paper tracks</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Official Conference Kit, badge &amp; certificate</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Executive lunch &amp; banquet tea on both days</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href={CONFERENCE_DATA.links.registrationForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-[12px] bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-sans text-xs font-bold text-center shadow-sm transition-all block"
+              >
+                Register as Faculty Member &rarr;
+              </a>
             </div>
-            <div className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
-              <span className="text-xs text-[#667085] block mb-1">Bank &amp; Branch</span>
-              <strong className="text-[#071A33] font-semibold block">{CONFERENCE_DATA.bankDetails.bank}</strong>
+
+            {/* Tier 3: NGO & CSR Delegates */}
+            <div className="bg-white rounded-[20px] p-7 sm:p-8 border border-[#D9DEE5] shadow-editorial flex flex-col justify-between hover:border-[#2563EB]/50 transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-mono uppercase font-bold text-[#667085] tracking-wider">
+                    Tier 03
+                  </span>
+                  <span className="text-[10px] font-mono uppercase font-bold text-[#071A33] bg-[#F5F5F0] px-2.5 py-0.5 rounded-[6px]">
+                    Industry Pass
+                  </span>
+                </div>
+                <h4 className="font-heading text-xl text-[#071A33] font-bold mb-2">
+                  NGO &amp; CSR Delegates
+                </h4>
+                <p className="text-xs text-[#667085] font-sans leading-relaxed mb-6">
+                  For development practitioners, corporate sustainability leaders, and NGO heads.
+                </p>
+                <div className="flex items-baseline gap-1.5 mb-6 pb-6 border-b border-[#D9DEE5]">
+                  <span className="font-heading text-4xl text-[#071A33] font-extrabold tracking-tight">
+                    ₹ 1,500
+                  </span>
+                  <span className="text-xs text-[#667085] font-sans font-medium">/ delegate</span>
+                </div>
+                <ul className="space-y-3 text-xs text-[#071A33] font-sans font-medium mb-8">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Access to plenaries, industry roundtables &amp; tracks</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Exclusive delegate folder, kit &amp; formal certificate</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span>Executive buffet lunch on both conference days</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href={CONFERENCE_DATA.links.registrationForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-[12px] bg-[#F5F5F0] hover:bg-[#071A33] text-[#071A33] hover:text-white font-sans text-xs font-bold text-center border border-[#D9DEE5] transition-all block"
+              >
+                Register as NGO / CSR Delegate &rarr;
+              </a>
             </div>
-            <div className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
-              <span className="text-xs text-[#667085] block mb-1">IFSC / NEFT Code</span>
-              <strong className="text-[#2563EB] font-mono font-bold block">{CONFERENCE_DATA.bankDetails.ifsc}</strong>
+          </div>
+
+          {/* Unified Inclusions Banner */}
+          <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE] flex items-start sm:items-center gap-4 text-xs sm:text-sm text-[#071A33] font-sans leading-relaxed">
+            <div className="w-8 h-8 rounded-[8px] bg-[#2563EB] text-white flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-4 h-4" />
+            </div>
+            <div>
+              <strong className="font-bold text-[#071A33]">Every Registration Pass Includes:</strong> Conference kit, official delegate badge, verified certificate of participation/presentation, executive buffet lunch on both conference days (7 &amp; 8 January 2027), morning and evening tea/refreshments, and unrestricted entry to all plenaries and thematic paper tracks.
+            </div>
+          </div>
+        </div>
+
+        {/* ── 03. MODE OF PAYMENT & OFFICIAL RCSS BANK DETAILS ── */}
+        <div className="rounded-[24px] p-8 sm:p-12 bg-white border border-[#D9DEE5] shadow-editorial mb-16 lg:mb-20">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-[#D9DEE5]">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-[14px] bg-[#071A33] text-white flex items-center justify-center shrink-0 shadow-sm">
+                <ShieldCheck className="w-6 h-6 text-[#60A5FA]" />
+              </div>
+              <div>
+                <h4 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+                  Mode of Payment (NEFT / RTGS Bank Transfer)
+                </h4>
+                <span className="text-xs font-sans text-[#667085] uppercase tracking-wider font-semibold">
+                  Official RCSS Conference Bank Account &middot; Verified Gateway
+                </span>
+              </div>
+            </div>
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#2563EB] bg-[#E8F0F7] border border-[#BFDBFE] px-3.5 py-1.5 rounded-[8px] font-bold self-start sm:self-auto">
+              Direct Wire &middot; Instant Receipt
+            </span>
+          </div>
+
+          {/* 4 Clean Metric Cards with 1-Click Copy */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs sm:text-sm mb-8">
+            <div className="p-5 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5] flex flex-col justify-between hover:bg-white hover:border-[#2563EB]/40 transition-all">
+              <div>
+                <span className="text-[11px] text-[#667085] font-sans uppercase font-bold tracking-wider block mb-1">
+                  Account Name
+                </span>
+                <strong className="text-[#071A33] font-sans font-bold text-sm block leading-snug">
+                  {CONFERENCE_DATA.bankDetails.accountName}
+                </strong>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5] flex flex-col justify-between hover:bg-white hover:border-[#2563EB]/40 transition-all">
+              <div>
+                <span className="text-[11px] text-[#667085] font-sans uppercase font-bold tracking-wider block mb-1">
+                  Account Number
+                </span>
+                <strong className="text-[#071A33] font-mono font-bold text-base block tracking-tight">
+                  {CONFERENCE_DATA.bankDetails.accountNumber}
+                </strong>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5] flex flex-col justify-between hover:bg-white hover:border-[#2563EB]/40 transition-all">
+              <div>
+                <span className="text-[11px] text-[#667085] font-sans uppercase font-bold tracking-wider block mb-1">
+                  Bank &amp; Branch
+                </span>
+                <strong className="text-[#071A33] font-sans font-bold text-sm block leading-snug">
+                  {CONFERENCE_DATA.bankDetails.bank}
+                </strong>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE] flex flex-col justify-between hover:bg-white hover:border-[#2563EB] transition-all">
+              <div>
+                <span className="text-[11px] text-[#2563EB] font-sans uppercase font-bold tracking-wider block mb-1">
+                  IFSC / NEFT Code
+                </span>
+                <strong className="text-[#2563EB] font-mono font-extrabold text-base block tracking-tight">
+                  {CONFERENCE_DATA.bankDetails.ifsc}
+                </strong>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Row */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#D9DEE5]">
+            <p className="text-xs text-[#667085] font-sans m-0">
+              * Please preserve the transaction UTR number or transfer receipt screenshot to upload during online delegate registration.
+            </p>
+            <div className="flex items-center gap-3 shrink-0">
+              <Button
+                variant="primary"
+                size="md"
+                asLink
+                href={CONFERENCE_DATA.links.registrationForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                showArrow
+              >
+                Proceed to Delegate Registration
+              </Button>
             </div>
           </div>
         </div>
 
         {/* ── MICROSOFT CMT ACKNOWLEDGEMENT ── */}
-        <div className="rounded-[16px] p-6 sm:p-8 bg-white/80 border border-[#D9DEE5] flex items-start gap-4">
+        <div className="rounded-[16px] p-6 sm:p-8 bg-white/80 border border-[#D9DEE5] flex items-start gap-4 shadow-subtle">
           <div className="w-9 h-9 rounded-[10px] bg-white border border-[#D9DEE5] text-[#667085] flex items-center justify-center shrink-0">
             <Info className="w-4 h-4" />
           </div>
@@ -359,3 +650,4 @@ export const CallForPapers: React.FC = () => {
     </div>
   );
 };
+
