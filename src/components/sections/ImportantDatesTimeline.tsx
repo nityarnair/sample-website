@@ -94,31 +94,97 @@ export const ImportantDatesTimeline: React.FC = () => {
         </div>
 
         {/* ── DESKTOP HORIZONTAL EDITORIAL TIMELINE (lg and above) ── */}
-        <div className="hidden lg:block relative pt-6 pb-4">
-          {/* Continuous Connecting Line */}
-          <div className="absolute top-[34px] left-8 right-8 h-px bg-[#071A33]/20 -z-0" />
+        <div className="hidden lg:block relative pt-4 pb-4">
+          {/* Continuous Navy Connecting Line */}
+          <div className="absolute top-[28px] left-12 right-12 h-[2px] bg-[#071A33]/20 -z-0" />
 
-          <div className="grid grid-cols-5 gap-8 relative z-10">
+          <div className="grid grid-cols-5 gap-5 relative z-10">
             {steps.map((step, idx) => (
               <div key={idx} className="flex flex-col group">
-                {/* Timeline Node & Number */}
-                <div className="flex items-center gap-3 mb-6">
+                {/* Timeline Node & Number Marker */}
+                <div className="flex items-center gap-3 mb-6 pl-2">
                   <div
-                    className={`rounded-full shrink-0 transition-transform duration-300 group-hover:scale-125 ${
+                    className={`w-7 h-7 rounded-full shrink-0 flex items-center justify-center font-mono text-[11px] font-bold transition-all duration-300 group-hover:scale-110 ${
                       step.isHighlight
-                        ? 'w-5 h-5 bg-[#2563EB] ring-4 ring-[#BFDBFE]'
-                        : 'w-4 h-4 bg-[#071A33] ring-4 ring-[#F7F7F4] group-hover:bg-[#2563EB]'
+                        ? 'bg-[#2563EB] text-white ring-4 ring-[#BFDBFE]'
+                        : 'bg-[#071A33] text-white ring-4 ring-[#F7F7F4] group-hover:bg-[#2563EB]'
                     }`}
-                  />
-                  <span className="font-mono text-xs font-bold text-[#667085] group-hover:text-[#2563EB] transition-colors">
+                  >
                     {step.number}
+                  </div>
+                  <span className="font-mono text-[11px] font-bold text-[#667085] uppercase tracking-wider group-hover:text-[#2563EB] transition-colors">
+                    Step {step.number}
                   </span>
                 </div>
 
-                {/* Date Display */}
-                <div className="mb-2">
+                {/* White Editorial Milestone Card */}
+                <div
+                  className={`bg-white border rounded-[22px] p-6 shadow-subtle hover:shadow-editorial transition-all duration-300 flex flex-col justify-between min-h-[220px] ${
+                    step.isHighlight
+                      ? 'border-[#2563EB]/40 ring-1 ring-[#2563EB]/20 bg-white'
+                      : 'border-[#D9DEE5] hover:border-[#2563EB]/40'
+                  }`}
+                >
+                  <div>
+                    {/* Date Display */}
+                    <div className="mb-2.5">
+                      <span
+                        className={`inline-block font-mono text-[12px] font-bold uppercase tracking-wider ${
+                          step.isHighlight
+                            ? 'text-[#2563EB]'
+                            : 'text-[#071A33]'
+                        }`}
+                      >
+                        {step.date}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="font-serif text-[1.35rem] text-[#071A33] font-normal leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
+                      {step.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-[12px] text-[#667085] font-sans font-normal leading-relaxed m-0 mt-3 pt-3 border-t border-[#D9DEE5]/60">
+                    {step.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── MOBILE / TABLET VERTICAL TIMELINE (under lg) ── */}
+        <div className="lg:hidden relative pl-8 sm:pl-10 space-y-6 sm:space-y-8">
+          {/* Vertical Connecting Line */}
+          <div className="absolute left-[13px] sm:left-[17px] top-4 bottom-4 w-[2px] bg-[#071A33]/20" />
+
+          {steps.map((step, idx) => (
+            <div key={idx} className="relative group">
+              {/* Vertical Numbered Marker */}
+              <div
+                className={`absolute -left-[29px] sm:-left-[33px] top-4 w-7 h-7 rounded-full flex items-center justify-center font-mono text-[10px] font-bold ${
+                  step.isHighlight
+                    ? 'bg-[#2563EB] text-white ring-4 ring-[#BFDBFE]'
+                    : 'bg-[#071A33] text-white ring-4 ring-[#F7F7F4]'
+                }`}
+              >
+                {step.number}
+              </div>
+
+              {/* White Card container */}
+              <div
+                className={`bg-white border rounded-[20px] p-5 sm:p-6 shadow-subtle transition-all duration-300 ${
+                  step.isHighlight
+                    ? 'border-[#2563EB]/40 ring-1 ring-[#2563EB]/20'
+                    : 'border-[#D9DEE5]'
+                }`}
+              >
+                {/* Date & Step */}
+                <div className="flex items-center gap-3 mb-1.5">
                   <span
-                    className={`inline-block font-mono text-[12px] font-bold uppercase tracking-wider ${
+                    className={`font-mono text-[12px] font-bold uppercase tracking-wider ${
                       step.isHighlight
                         ? 'text-[#2563EB]'
                         : 'text-[#071A33]'
@@ -129,61 +195,15 @@ export const ImportantDatesTimeline: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-[1.4rem] text-[#071A33] font-normal leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
+                <h3 className="font-serif text-[1.4rem] sm:text-[1.55rem] text-[#071A33] font-normal leading-snug mb-1.5">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[12.5px] text-[#667085] font-sans font-normal leading-relaxed m-0">
+                <p className="text-[12.5px] sm:text-[13px] text-[#667085] font-sans font-normal leading-relaxed m-0">
                   {step.desc}
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── MOBILE / TABLET VERTICAL TIMELINE (under lg) ── */}
-        <div className="lg:hidden relative pl-8 sm:pl-10 space-y-10 sm:space-y-12">
-          {/* Vertical Connecting Line */}
-          <div className="absolute left-[13px] sm:left-[17px] top-3 bottom-3 w-px bg-[#071A33]/20" />
-
-          {steps.map((step, idx) => (
-            <div key={idx} className="relative group">
-              {/* Vertical Node */}
-              <div
-                className={`absolute -left-[27px] sm:-left-[31px] top-1.5 rounded-full ${
-                  step.isHighlight
-                    ? 'w-5 h-5 bg-[#2563EB] ring-4 ring-[#BFDBFE]'
-                    : 'w-4 h-4 bg-[#071A33] ring-4 ring-[#F7F7F4]'
-                }`}
-              />
-
-              {/* Number & Date */}
-              <div className="flex items-center gap-3 mb-1.5">
-                <span className="font-mono text-xs font-bold text-[#667085]">
-                  {step.number}
-                </span>
-                <span className="w-4 h-px bg-[#D9DEE5]" />
-                <span
-                  className={`font-mono text-[12px] font-bold uppercase tracking-wider ${
-                    step.isHighlight
-                      ? 'text-[#2563EB]'
-                      : 'text-[#071A33]'
-                  }`}
-                >
-                  {step.date}
-                </span>
-              </div>
-
-              {/* Title */}
-              <h3 className="font-serif text-[1.4rem] sm:text-[1.6rem] text-[#071A33] font-normal leading-snug mb-1.5">
-                {step.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-[13px] text-[#667085] font-sans font-normal leading-relaxed m-0 max-w-md">
-                {step.desc}
-              </p>
             </div>
           ))}
         </div>
