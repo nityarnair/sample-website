@@ -1,108 +1,205 @@
 import React from 'react';
-import { Calendar } from 'lucide-react';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const ImportantDatesTimeline: React.FC = () => {
   const steps = [
     {
       number: '01',
-      title: 'Registration Begins',
+      title: 'Registration Commences',
       date: '10 August 2026',
-      desc: 'Online registration portal opens for all delegate categories.',
+      desc: 'Online registration portal opens for student, faculty, and delegate categories.',
+      isHighlight: false,
     },
     {
       number: '02',
-      title: 'Abstract Submission',
+      title: 'Abstract Submission Deadline',
       date: '25 September 2026',
-      desc: 'Deadline for extended abstract submission via Microsoft CMT.',
+      desc: 'Deadline for extended abstract submission via the Microsoft CMT portal.',
+      isHighlight: true,
     },
     {
       number: '03',
       title: 'Peer Review & Acceptance',
       date: 'Rolling Notifications',
-      desc: 'Scientific committee blind peer review outcomes communicated.',
+      desc: 'Double-blind peer review outcomes communicated to corresponding authors.',
+      isHighlight: false,
     },
     {
       number: '04',
       title: 'Camera-Ready Paper',
       date: 'Prior to Conference',
-      desc: 'Final full manuscripts processed for Scopus volume indexing.',
+      desc: 'Final full manuscripts processed for Scopus-indexed volume publication.',
+      isHighlight: false,
     },
     {
       number: '05',
       title: 'Conference Days',
       date: 'Rajagiri Valley Campus',
-      desc: 'Two days of keynotes, plenary panels, and technical sessions.',
+      desc: 'Two days of keynotes, plenary panels, and concurrent technical paper sessions.',
+      isHighlight: false,
     },
   ];
 
   return (
     <section
       id="important-dates"
-      className="py-24 sm:py-32 lg:py-36 bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] relative"
+      className="bg-[#F7F7F4] text-[#101828] border-b border-[#D9DEE5] relative py-24 sm:py-32 lg:py-36"
       aria-labelledby="dates-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Section Header */}
-        <div className="flex items-center justify-between pb-4 mb-14 sm:mb-20 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-[0.18em] text-[#667085]">
+
+        {/* ── TOP SECTION ANNOTATION BAR ── */}
+        <div className="flex items-center justify-between pb-5 mb-14 sm:mb-20 border-b border-[#D9DEE5]">
           <div className="flex items-center gap-3">
-            <span className="text-[#2563EB] font-mono font-bold">06</span>
-            <span className="w-8 h-px bg-[#D9DEE5]" />
-            <span className="text-[#071A33] font-semibold">IMPORTANT DATES</span>
+            <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">06</span>
+            <span className="w-6 h-px bg-[#D9DEE5]" />
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
+              Important Dates
+            </span>
           </div>
-          <span>Key Deadlines</span>
-        </div>
-
-        {/* Title */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#2563EB] font-bold block mb-3">
-            Milestones of Discourse
+          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085]">
+            Chronology of Key Deadlines &amp; Milestones
           </span>
-          <h2
-            id="dates-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.12] m-0"
-          >
-            Chronology of Submissions &amp; Deadlines
-          </h2>
         </div>
 
-        {/* Horizontal Editorial Timeline */}
-        <div className="relative">
-          {/* Subtle navy connecting line across desktop */}
-          <div className="hidden lg:block absolute top-14 left-0 right-0 h-px bg-[#12345B]/15 -z-0" />
+        {/* ── SECTION EDITORIAL HEADER ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-24 items-end">
+          <div className="lg:col-span-8">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-5 h-px bg-[#2563EB]" />
+              <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
+                Conference Schedule &amp; Milestones
+              </span>
+            </div>
+            <h2
+              id="dates-heading"
+              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-serif font-normal text-[#071A33] leading-[1.08] tracking-tight m-0"
+            >
+              The road to DYUTI 2027.
+            </h2>
+            <p className="text-sm sm:text-base text-[#667085] font-sans font-normal mt-4 max-w-[620px] leading-relaxed">
+              Track critical submission windows, peer review notifications, and registration commencement dates leading up to the 26th annual symposium.
+            </p>
+          </div>
+          <div className="lg:col-span-4 lg:text-right">
+            <Link
+              to="/call_for_papers"
+              className="group inline-flex items-center gap-2 text-[11.5px] font-sans uppercase tracking-[0.16em] font-semibold text-[#071A33] hover:text-[#2563EB] transition-colors"
+            >
+              <span>View Extended Abstract Guidelines</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4 relative z-10">
+        {/* ── DESKTOP HORIZONTAL EDITORIAL TIMELINE (lg and above) ── */}
+        <div className="hidden lg:block relative pt-6 pb-4">
+          {/* Continuous Connecting Line */}
+          <div className="absolute top-[34px] left-8 right-8 h-px bg-[#071A33]/20 -z-0" />
+
+          <div className="grid grid-cols-5 gap-8 relative z-10">
             {steps.map((step, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-[#D9DEE5] hover:border-[#12345B]/40 rounded-[20px] p-7 shadow-subtle hover:shadow-editorial transition-all flex flex-col justify-between"
-              >
-                <div>
-                  {/* Step Number & Icon */}
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="font-serif text-3xl font-normal text-[#12345B]">
-                      {step.number}
-                    </span>
-                    <div className="w-9 h-9 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2563EB]">
-                      <Calendar className="w-4 h-4" />
-                    </div>
-                  </div>
-
-                  <h3 className="font-serif text-2xl text-[#071A33] mb-2 leading-snug font-normal">
-                    {step.title}
-                  </h3>
-
-                  <div className="inline-block text-xs font-mono font-bold text-[#2563EB] bg-[#EFF6FF] px-3 py-1 rounded-full border border-[#BFDBFE] mb-3">
-                    {step.date}
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal leading-relaxed m-0">
-                    {step.desc}
-                  </p>
+              <div key={idx} className="flex flex-col group">
+                {/* Timeline Node & Number */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div
+                    className={`rounded-full shrink-0 transition-transform duration-300 group-hover:scale-125 ${
+                      step.isHighlight
+                        ? 'w-5 h-5 bg-[#2563EB] ring-4 ring-[#BFDBFE]'
+                        : 'w-4 h-4 bg-[#071A33] ring-4 ring-[#F7F7F4] group-hover:bg-[#2563EB]'
+                    }`}
+                  />
+                  <span className="font-mono text-xs font-bold text-[#667085] group-hover:text-[#2563EB] transition-colors">
+                    {step.number}
+                  </span>
                 </div>
+
+                {/* Date Display */}
+                <div className="mb-2">
+                  <span
+                    className={`inline-block font-mono text-[12px] font-bold uppercase tracking-wider ${
+                      step.isHighlight
+                        ? 'text-[#2563EB]'
+                        : 'text-[#071A33]'
+                    }`}
+                  >
+                    {step.date}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="font-serif text-[1.4rem] text-[#071A33] font-normal leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-[12.5px] text-[#667085] font-sans font-normal leading-relaxed m-0">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
+
+        {/* ── MOBILE / TABLET VERTICAL TIMELINE (under lg) ── */}
+        <div className="lg:hidden relative pl-8 sm:pl-10 space-y-10 sm:space-y-12">
+          {/* Vertical Connecting Line */}
+          <div className="absolute left-[13px] sm:left-[17px] top-3 bottom-3 w-px bg-[#071A33]/20" />
+
+          {steps.map((step, idx) => (
+            <div key={idx} className="relative group">
+              {/* Vertical Node */}
+              <div
+                className={`absolute -left-[27px] sm:-left-[31px] top-1.5 rounded-full ${
+                  step.isHighlight
+                    ? 'w-5 h-5 bg-[#2563EB] ring-4 ring-[#BFDBFE]'
+                    : 'w-4 h-4 bg-[#071A33] ring-4 ring-[#F7F7F4]'
+                }`}
+              />
+
+              {/* Number & Date */}
+              <div className="flex items-center gap-3 mb-1.5">
+                <span className="font-mono text-xs font-bold text-[#667085]">
+                  {step.number}
+                </span>
+                <span className="w-4 h-px bg-[#D9DEE5]" />
+                <span
+                  className={`font-mono text-[12px] font-bold uppercase tracking-wider ${
+                    step.isHighlight
+                      ? 'text-[#2563EB]'
+                      : 'text-[#071A33]'
+                  }`}
+                >
+                  {step.date}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h3 className="font-serif text-[1.4rem] sm:text-[1.6rem] text-[#071A33] font-normal leading-snug mb-1.5">
+                {step.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-[13px] text-[#667085] font-sans font-normal leading-relaxed m-0 max-w-md">
+                {step.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── BOTTOM NOTIFICATION FOOTER ── */}
+        <div className="mt-16 pt-8 border-t border-[#D9DEE5] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 text-xs text-[#667085] font-sans">
+            <Clock className="w-4 h-4 text-[#2563EB] shrink-0" />
+            <span>All submission deadlines are set to 23:59 IST (Indian Standard Time).</span>
+          </div>
+          <div className="flex items-center gap-2 text-xs font-mono text-[#071A33] font-semibold">
+            <Calendar className="w-3.5 h-3.5 text-[#2563EB]" />
+            <span>Official Venue: Rajagiri College of Social Sciences, Kalamassery</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );
