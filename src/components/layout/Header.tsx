@@ -114,19 +114,12 @@ export const Header: React.FC = () => {
                       cn(
                         'relative px-3.5 2xl:px-4.5 py-2.5 rounded-full text-[13.5px] 2xl:text-[14px] font-sans font-medium transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]',
                         isActive
-                          ? 'text-[#071A33] font-bold bg-[#E8F0F7] shadow-sm'
+                          ? 'text-[#2563EB] font-bold bg-[#E8F0F7] shadow-sm'
                           : 'text-[#475467] hover:text-[#071A33] hover:bg-[#F1F5F9]'
                       )
                     }
                   >
-                    {({ isActive }) => (
-                      <span className="flex items-center gap-2">
-                        {isActive && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0" />
-                        )}
-                        <span>{item.label}</span>
-                      </span>
-                    )}
+                    <span>{item.label}</span>
                   </NavLink>
                 </li>
               ))}
@@ -246,21 +239,14 @@ export const Header: React.FC = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={({ isActive }) =>
                     cn(
-                      'flex items-center justify-between px-4 py-3 rounded-full text-[14.5px] font-sans font-medium transition-colors',
+                      'flex items-center px-4 py-3 rounded-full text-[14.5px] font-sans font-medium transition-colors',
                       isActive
                         ? 'text-[#2563EB] font-bold bg-[#E8F0F7] shadow-sm'
                         : 'text-[#475467] hover:text-[#071A33] hover:bg-[#F1F5F9]'
                     )
                   }
                 >
-                  {({ isActive }) => (
-                    <>
-                      <span>{item.label}</span>
-                      {isActive && (
-                        <span className="w-2 h-2 rounded-full bg-[#2563EB] shrink-0" />
-                      )}
-                    </>
-                  )}
+                  <span>{item.label}</span>
                 </NavLink>
               ))}
             </nav>
