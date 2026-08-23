@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CONFERENCE_DATA, SubTheme } from '@/data/conference';
 
@@ -13,46 +13,57 @@ export const EditorialTracks: React.FC = () => {
   return (
     <section
       id="tracks"
-      className="py-24 sm:py-32 lg:py-36 bg-[#071A33] text-white border-b border-[#1E3A8A]/40 relative overflow-hidden"
+      className="bg-[#071A33] text-white border-b border-white/10 relative overflow-hidden py-24 sm:py-32 lg:py-36"
       aria-labelledby="tracks-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Section Header */}
-        <div className="flex items-center justify-between pb-4 mb-14 sm:mb-20 border-b border-white/15 text-xs font-sans uppercase tracking-[0.18em] text-[#93C5FD]">
+
+        {/* ── TOP SECTION ANNOTATION BAR ── */}
+        <div className="flex items-center justify-between pb-5 mb-14 sm:mb-20 border-b border-white/15">
           <div className="flex items-center gap-3">
-            <span className="text-[#60A5FA] font-mono font-bold">02</span>
-            <span className="w-8 h-px bg-white/20" />
-            <span className="text-white font-semibold">CONFERENCE TRACKS</span>
+            <span className="font-mono text-[11px] font-bold text-[#60A5FA] tabular-nums">02</span>
+            <span className="w-6 h-px bg-white/20" />
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-white font-semibold">
+              Conference Themes
+            </span>
           </div>
-          <span className="text-white/70">8 Scholarly Sub-Themes</span>
+          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#CBD5E1]">
+            8 Thematic Tracks · Double-Blind Peer Reviewed
+          </span>
         </div>
 
-        {/* Section Title & Editorial Narrative */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
+        {/* ── SECTION EDITORIAL HEADER ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-20 items-end">
           <div className="lg:col-span-8">
-            <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#60A5FA] font-bold block mb-3">
-              Explore the ideas shaping tomorrow.
-            </span>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-5 h-px bg-[#60A5FA]" />
+              <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#60A5FA]">
+                Thematic Architecture
+              </span>
+            </div>
             <h2
               id="tracks-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-white leading-[1.12] m-0"
+              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-serif font-normal text-white leading-[1.08] tracking-tight m-0"
             >
-              Academic Sub-Themes &amp; Research Tracks
+              Eight perspectives on sustainable transformation.
             </h2>
+            <p className="text-sm sm:text-base text-[#CBD5E1] font-sans font-normal mt-4 max-w-[620px] leading-relaxed">
+              Spanning grassroots social interventions, digital inclusion, climate resilience, and indigenous knowledge systems aligned with the UN 2030 Sustainable Development Goals.
+            </p>
           </div>
-          <div className="lg:col-span-4 text-left lg:text-right">
+          <div className="lg:col-span-4 lg:text-right">
             <Link
               to="/call_for_papers"
-              className="group inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.16em] font-semibold text-[#93C5FD] hover:text-white transition-colors"
+              className="group inline-flex items-center gap-2 text-[11.5px] font-sans uppercase tracking-[0.16em] font-semibold text-[#60A5FA] hover:text-white transition-colors"
             >
-              <span>Download Guidelines (PDF)</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <span>View Full Call for Papers</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
 
-        {/* Interactive Full-Width Editorial Rows */}
-        <div className="border-t border-white/15 divide-y divide-white/10">
+        {/* ── TRACK LIST — LARGE EDITORIAL HORIZONTAL ROWS ── */}
+        <div className="border-t border-white/15 divide-y divide-white/15">
           {CONFERENCE_DATA.subThemes.map((theme: SubTheme) => {
             const isExpanded = expandedTrack === theme.id;
             return (
@@ -60,12 +71,13 @@ export const EditorialTracks: React.FC = () => {
                 key={theme.id}
                 className="transition-colors duration-300"
               >
+                {/* Horizontal Row Button */}
                 <div
                   onClick={() => toggleTrack(theme.id)}
-                  className={`group py-8 sm:py-10 px-4 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer select-none transition-all duration-300 ${
+                  className={`group py-8 sm:py-10 px-3 sm:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer select-none transition-all duration-300 ${
                     isExpanded
-                      ? 'bg-white/10 text-white'
-                      : 'hover:bg-white/5 text-white'
+                      ? 'bg-white/[0.06] text-white'
+                      : 'hover:bg-white/[0.03] text-white/95 hover:text-white'
                   }`}
                   role="button"
                   tabIndex={0}
@@ -78,68 +90,87 @@ export const EditorialTracks: React.FC = () => {
                   }}
                 >
                   {/* Left: Number + Title */}
-                  <div className="flex items-start sm:items-center gap-6 sm:gap-10">
-                    <span className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-normal transition-colors w-14 shrink-0 ${
-                      isExpanded
-                        ? 'text-[#60A5FA]'
-                        : 'text-white/30 group-hover:text-[#60A5FA]'
-                    }`}>
+                  <div className="flex items-baseline sm:items-center gap-6 sm:gap-10">
+                    <span
+                      className={`font-mono text-sm sm:text-base font-semibold tracking-wider transition-colors w-8 sm:w-10 shrink-0 ${
+                        isExpanded
+                          ? 'text-[#60A5FA]'
+                          : 'text-[#60A5FA]/60 group-hover:text-[#60A5FA]'
+                      }`}
+                    >
                       {theme.number}
                     </span>
                     <div>
-                      <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal leading-snug m-0 text-white transition-colors">
+                      <h3 className="font-serif text-[1.65rem] sm:text-[2rem] lg:text-[2.35rem] font-normal leading-[1.2] m-0 text-white group-hover:text-white transition-colors">
                         {theme.title}
                       </h3>
-                      <p className="text-xs sm:text-sm font-sans font-normal mt-2 m-0 text-white/70">
-                        {theme.topics.length} specialized focus topics &bull; Peer-reviewed proceedings
+                      <p className="text-[12px] sm:text-[13px] font-sans font-normal mt-2 m-0 text-[#CBD5E1]">
+                        {theme.topics.length} focus areas · Extended Abstract submission via CMT
                       </p>
                     </div>
                   </div>
 
-                  {/* Right: Expand arrow indicator */}
+                  {/* Right: Interaction Indicator & Arrow */}
                   <div className="flex items-center gap-4 shrink-0 self-end md:self-center">
-                    <span className="text-xs font-sans uppercase tracking-[0.14em] hidden sm:block text-white/70 group-hover:text-white transition-colors">
-                      {isExpanded ? 'Collapse' : 'Explore Topics'}
+                    <span className="text-[11px] font-sans uppercase tracking-[0.14em] hidden sm:block text-[#CBD5E1] group-hover:text-white transition-colors">
+                      {isExpanded ? 'Hide Focus Areas' : 'Explore Topics'}
                     </span>
-                    <div className={`w-11 h-11 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                      isExpanded
-                        ? 'border-white bg-white text-[#071A33]'
-                        : 'border-white/30 text-white group-hover:border-white group-hover:bg-white group-hover:text-[#071A33]'
-                    }`}>
-                      <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${
-                        isExpanded ? 'rotate-90' : 'group-hover:translate-x-1'
-                      }`} />
+                    <div
+                      className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                        isExpanded
+                          ? 'border-[#60A5FA] bg-[#60A5FA] text-[#071A33]'
+                          : 'border-white/20 text-white/80 group-hover:border-white group-hover:text-white'
+                      }`}
+                    >
+                      <ArrowUpRight
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          isExpanded
+                            ? 'rotate-90'
+                            : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'
+                        }`}
+                      />
                     </div>
                   </div>
                 </div>
 
-                {/* Expanded Topic Details Panel */}
+                {/* ── EXPANDED EDITORIAL PANEL (Integrated Navy) ── */}
                 {isExpanded && (
-                  <div className="px-4 sm:px-10 py-8 bg-[#040F1E]/80 border-t border-white/10 animate-fadeIn">
-                    <div className="p-8 sm:p-10 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-xs">
-                      <h4 className="text-xs font-sans uppercase tracking-[0.16em] text-[#60A5FA] font-bold mb-6">
-                        Key Sub-Topics for Track {theme.number}:
-                      </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                  <div className="px-4 sm:px-8 py-8 sm:py-10 bg-[#040F1E]/70 border-t border-white/10 animate-fadeIn">
+                    <div className="max-w-5xl">
+                      {/* Eyebrow in panel */}
+                      <div className="flex items-center gap-2 mb-6">
+                        <Sparkles className="w-3.5 h-3.5 text-[#60A5FA]" />
+                        <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-[#60A5FA] font-bold">
+                          Sub-Theme {theme.number} Focus Areas
+                        </span>
+                      </div>
+
+                      {/* Topic List — 2-Column Editorial Grid */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 mb-8">
                         {theme.topics.map((topic, idx) => (
-                          <div key={idx} className="flex items-start gap-3.5 text-xs sm:text-sm text-white/90 font-sans font-normal">
+                          <div
+                            key={idx}
+                            className="flex items-start gap-3 text-[13px] sm:text-sm text-white/90 font-sans font-normal leading-relaxed"
+                          >
                             <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA] mt-2 shrink-0" />
-                            <span className="leading-relaxed">{topic}</span>
+                            <span>{topic}</span>
                           </div>
                         ))}
                       </div>
-                      <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <span className="text-xs text-white/60 font-sans">
-                          Accepted abstracts will be scheduled for 15-minute oral or poster presentations.
-                        </span>
+
+                      {/* Panel Footer & Submission CTA */}
+                      <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <p className="text-[12px] text-[#CBD5E1] font-sans m-0">
+                          Authors of accepted abstracts will be invited to submit full papers for Scopus-indexed volume publication.
+                        </p>
                         <a
                           href={CONFERENCE_DATA.links.cmtSubmission}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-7 py-3 inline-flex items-center justify-center gap-2 text-xs font-sans uppercase tracking-wider font-semibold bg-white text-[#071A33] hover:bg-[#EEF3F8] rounded-full transition-all shadow-pill"
+                          className="inline-flex items-center justify-center gap-2 text-xs font-sans uppercase tracking-[0.14em] font-semibold bg-white text-[#071A33] hover:bg-[#EEF3F8] rounded-full px-6 py-3 transition-all duration-300 shrink-0 shadow-pill"
                         >
                           <span>Submit Extended Abstract</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
+                          <ArrowUpRight className="w-3.5 h-3.5" />
                         </a>
                       </div>
                     </div>
@@ -149,6 +180,7 @@ export const EditorialTracks: React.FC = () => {
             );
           })}
         </div>
+
       </div>
     </section>
   );

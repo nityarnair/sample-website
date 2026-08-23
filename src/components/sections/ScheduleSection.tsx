@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Clock, MapPin } from 'lucide-react';
+import { MapPin, ArrowUpRight, Calendar, Download } from 'lucide-react';
+import { CONFERENCE_DATA } from '@/data/conference';
 
 interface ScheduleItem {
   time: string;
@@ -114,99 +115,128 @@ export const ScheduleSection: React.FC = () => {
   return (
     <section
       id="schedule"
-      className="py-24 sm:py-32 lg:py-36 bg-[#FFFFFF] text-[#101828] border-b border-[#D9DEE5] relative"
+      className="bg-[#FFFFFF] text-[#101828] border-b border-[#D9DEE5] relative py-24 sm:py-32 lg:py-36"
       aria-labelledby="schedule-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Section Header */}
-        <div className="flex items-center justify-between pb-4 mb-14 sm:mb-20 border-b border-[#D9DEE5] text-xs font-sans uppercase tracking-[0.18em] text-[#667085]">
+
+        {/* ── TOP SECTION ANNOTATION BAR ── */}
+        <div className="flex items-center justify-between pb-5 mb-14 sm:mb-20 border-b border-[#D9DEE5]">
           <div className="flex items-center gap-3">
-            <span className="text-[#2563EB] font-mono font-bold">04</span>
-            <span className="w-8 h-px bg-[#D9DEE5]" />
-            <span className="text-[#071A33] font-semibold">PROGRAM SCHEDULE</span>
+            <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">04</span>
+            <span className="w-6 h-px bg-[#D9DEE5]" />
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-semibold">
+              Programme
+            </span>
           </div>
-          <span>Two Days of Discourse</span>
+          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085]">
+            Two Days of Ideas, Dialogue and Discovery
+          </span>
         </div>
 
-        {/* Header & Pill Day Selector */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#2563EB] font-bold block mb-3">
-              Chronicle of Sessions
-            </span>
+        {/* ── SECTION EDITORIAL HEADER & DAY TOGGLE ── */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 lg:mb-20">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-5 h-px bg-[#2563EB]" />
+              <span className="text-[11px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
+                Session Chronicle
+              </span>
+            </div>
             <h2
               id="schedule-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#071A33] leading-[1.12] m-0"
+              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-serif font-normal text-[#071A33] leading-[1.08] tracking-tight m-0"
             >
-              Conference Itinerary &amp; Timeline
+              Two days of ideas, dialogue and discovery.
             </h2>
+            <p className="text-sm sm:text-base text-[#667085] font-sans font-normal mt-4 leading-relaxed">
+              Carefully choreographed across plenary deliberations, concurrent technical presentation tracks, youth forums, and policy roundtables.
+            </p>
           </div>
 
-          {/* Soft Pill Day Selector Buttons */}
-          <div className="inline-flex border border-[#D9DEE5] rounded-full p-1.5 bg-[#F7F7F4] self-start md:self-auto shadow-subtle">
+          {/* ── PILL DAY SELECTOR ── */}
+          <div className="inline-flex items-center p-1.5 bg-[#F7F7F4] border border-[#D9DEE5] rounded-full self-start lg:self-end shadow-subtle shrink-0">
             <button
               type="button"
               onClick={() => setActiveDay(1)}
-              className={`px-7 py-2.5 text-xs font-sans uppercase tracking-wider font-semibold rounded-full transition-all cursor-pointer ${
+              className={`px-6 sm:px-8 py-2.5 sm:py-3 text-xs font-sans uppercase tracking-[0.14em] font-semibold rounded-full transition-all duration-300 cursor-pointer ${
                 activeDay === 1
                   ? 'bg-[#071A33] text-white shadow-pill'
-                  : 'text-[#667085] hover:text-[#071A33]'
+                  : 'text-[#667085] hover:text-[#071A33] bg-transparent'
               }`}
             >
-              Day 01 — Inauguration &amp; Tracks 01-04
+              <span>Day 01 · Inauguration &amp; Tracks 01–04</span>
             </button>
             <button
               type="button"
               onClick={() => setActiveDay(2)}
-              className={`px-7 py-2.5 text-xs font-sans uppercase tracking-wider font-semibold rounded-full transition-all cursor-pointer ${
+              className={`px-6 sm:px-8 py-2.5 sm:py-3 text-xs font-sans uppercase tracking-[0.14em] font-semibold rounded-full transition-all duration-300 cursor-pointer ${
                 activeDay === 2
                   ? 'bg-[#071A33] text-white shadow-pill'
-                  : 'text-[#667085] hover:text-[#071A33]'
+                  : 'text-[#667085] hover:text-[#071A33] bg-transparent'
               }`}
             >
-              Day 02 — Tracks 05-08 &amp; Valedictory
+              <span>Day 02 · Tracks 05–08 &amp; Valedictory</span>
             </button>
           </div>
         </div>
 
-        {/* Clean Editorial Timeline with Horizontal Separators */}
+        {/* ── EDITORIAL TIMELINE ROWS (No enclosed rectangular cards) ── */}
         <div className="border-t border-[#D9DEE5] divide-y divide-[#D9DEE5]">
           {currentSchedule.map((item, idx) => (
             <div
               key={idx}
-              className="py-8 sm:py-10 flex flex-col lg:flex-row lg:items-start justify-between gap-6 hover:bg-[#F7F7F4]/50 transition-colors px-2 sm:px-4"
+              className="group py-8 sm:py-10 px-2 sm:px-6 flex flex-col lg:flex-row lg:items-start justify-between gap-6 hover:bg-[#F7F7F4]/60 transition-all duration-300"
             >
-              {/* Time & Type */}
+              {/* Left Column: Prominent Time & Session Type */}
               <div className="lg:w-1/4 shrink-0">
-                <div className="flex items-center gap-2 text-sm font-mono font-bold text-[#071A33] mb-2">
-                  <Clock className="w-4 h-4 text-[#2563EB]" />
-                  <span>{item.time}</span>
+                <div className="font-mono text-lg sm:text-xl font-bold text-[#071A33] group-hover:text-[#2563EB] transition-colors mb-2 tracking-tight">
+                  {item.time}
                 </div>
-                <span className="inline-block text-[10px] font-sans font-bold uppercase tracking-[0.14em] px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]">
+                <span className="inline-block text-[10.5px] font-sans font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]">
                   {item.type}
                 </span>
               </div>
 
-              {/* Title & Description */}
-              <div className="lg:w-2/4">
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#071A33] mb-2 leading-snug font-normal">
+              {/* Middle Column: Session Title & Description */}
+              <div className="lg:w-2/4 lg:px-4">
+                <h3 className="font-serif text-[1.45rem] sm:text-[1.75rem] text-[#071A33] font-normal leading-[1.25] mb-2 group-hover:text-[#2563EB] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#667085] font-sans font-normal leading-relaxed m-0">
+                <p className="text-[13px] sm:text-[14px] text-[#667085] font-sans font-normal leading-relaxed m-0">
                   {item.description}
                 </p>
               </div>
 
-              {/* Location */}
-              <div className="lg:w-1/4 flex lg:justify-end items-center text-xs text-[#667085] font-sans font-medium">
-                <div className="flex items-center gap-1.5 bg-[#F7F7F4] border border-[#D9DEE5] px-4 py-2 rounded-full">
-                  <MapPin className="w-3.5 h-3.5 text-[#071A33]" />
+              {/* Right Column: Venue / Location */}
+              <div className="lg:w-1/4 flex lg:justify-end items-center shrink-0">
+                <div className="inline-flex items-center gap-2 bg-[#F7F7F4] border border-[#D9DEE5] px-4 py-2 rounded-full text-[12px] font-sans text-[#101828] font-medium group-hover:border-[#2563EB]/30 transition-colors">
+                  <MapPin className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
                   <span>{item.location}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* ── SCHEDULE FOOTER WITH BROCHURE LINK ── */}
+        <div className="mt-12 pt-8 border-t border-[#D9DEE5] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-xs text-[#667085] font-sans">
+            <Calendar className="w-4 h-4 text-[#2563EB]" />
+            <span>Detailed session chair allocations &amp; presentation timings will be circulated to registered delegates.</span>
+          </div>
+          <a
+            href={CONFERENCE_DATA.links.brochurePdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-[11.5px] font-sans uppercase tracking-[0.14em] font-semibold text-[#071A33] hover:text-[#2563EB] transition-colors shrink-0"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Download Complete Schedule (PDF)</span>
+            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </div>
+
       </div>
     </section>
   );
