@@ -69,18 +69,21 @@ export const PartnersSection: React.FC = () => {
           </p>
         </div>
 
-        {/* ── ACCREDITATION TRUST MARKERS (Clean horizontal row, no heavy cards) ── */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 pt-6 pb-12 border-y border-[#D9DEE5] mb-16">
+        {/* ── ACCREDITATION TRUST MARKERS (Structured white cards on off-white canvas) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 mb-16">
           {accreditations.map((item, idx) => (
-            <div key={idx} className="flex items-start gap-3.5 group">
-              <div className="w-8 h-8 rounded-full bg-white border border-[#D9DEE5] flex items-center justify-center shrink-0 shadow-subtle group-hover:border-[#2563EB] transition-colors">
+            <div
+              key={idx}
+              className="bg-white border border-[#D9DEE5] rounded-[20px] p-4 sm:p-5 shadow-subtle hover:shadow-editorial hover:border-[#2563EB]/40 transition-all duration-300 flex items-start gap-3.5 group"
+            >
+              <div className="w-9 h-9 rounded-full bg-[#EEF3F8] border border-[#D9DEE5] flex items-center justify-center shrink-0 group-hover:border-[#2563EB]/40 transition-colors">
                 {item.icon}
               </div>
               <div>
                 <strong className="block text-[13px] sm:text-[13.5px] font-sans font-semibold text-[#071A33] leading-snug">
                   {item.label}
                 </strong>
-                <span className="block text-[11px] font-sans text-[#667085] mt-0.5">
+                <span className="block text-[11px] font-sans text-[#667085] mt-0.5 leading-tight">
                   {item.sub}
                 </span>
               </div>
