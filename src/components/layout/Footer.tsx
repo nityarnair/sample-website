@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
                 className="h-10 w-auto object-contain rounded-full border border-white/20"
               />
               <div>
-                <span className="font-serif text-3xl text-white block leading-none font-normal">
+                <span className="font-heading font-extrabold text-2xl sm:text-3xl text-white block leading-none tracking-tight">
                   DYUTI 2027
                 </span>
               </div>
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                 href={CONFERENCE_DATA.links.registrationForm}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#071A33] hover:bg-[#EEF3F8] text-xs font-sans uppercase tracking-[0.14em] font-semibold transition-all shadow-pill"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-[12px] bg-[#2563EB] text-white hover:bg-[#1D4ED8] text-xs font-sans uppercase tracking-[0.14em] font-bold transition-all shadow-sm"
               >
                 <span>Register for Conference</span>
                 <ArrowRight className="w-3.5 h-3.5" />
