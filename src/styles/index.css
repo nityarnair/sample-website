@@ -5,12 +5,12 @@
 :root {
   --editorial-deepnavy: #071A33;
   --editorial-navy: #12345B;
-  --editorial-offwhite: #F7F7F4;
+  --editorial-offwhite: #F5F5F0;
   --editorial-white: #FFFFFF;
-  --editorial-lightblue: #EEF3F8;
+  --editorial-softblue: #E8F0F7;
   --editorial-border: #D9DEE5;
   --editorial-muted: #667085;
-  --editorial-text: #101828;
+  --editorial-text: #0B1220;
   --editorial-blue: #2563EB;
 }
 
@@ -31,20 +31,20 @@
   }
   
   body {
-    font-family: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #F7F7F4;
-    color: #101828;
+    font-family: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #F5F5F0;
+    color: #0B1220;
     overflow-x: hidden;
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'DM Sans', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: #071A33;
-    font-weight: 500;
-    letter-spacing: -0.015em;
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   /* Thin Elegant Scrollbar */
@@ -53,7 +53,7 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #F7F7F4;
+    background: #F5F5F0;
   }
   ::-webkit-scrollbar-thumb {
     background: #12345B;
@@ -65,19 +65,19 @@
 }
 
 @layer utilities {
-  /* Hero masthead — weight raised to 600 for stronger visual presence */
+  /* Modern Hero Masthead — DM Sans 800 bold tight display */
   .hero-masthead {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(5rem, 10vw, 10rem);
-    line-height: 0.88;
-    letter-spacing: -0.025em;
-    font-weight: 600;
+    font-family: 'DM Sans', 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(3.75rem, 9vw, 8.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    font-weight: 800;
   }
 
   .editorial-label {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.16em;
   }

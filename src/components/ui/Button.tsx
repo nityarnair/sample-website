@@ -31,36 +31,36 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-sans font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12345B] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none group cursor-pointer rounded-full';
+      'inline-flex items-center justify-center font-sans font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#071A33] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none group cursor-pointer rounded-[14px]';
 
     const variants = {
       navy:
-        'bg-[#071A33] text-white hover:bg-[#12345B] shadow-pill hover:shadow-editorial',
+        'bg-[#071A33] text-white hover:bg-[#12345B] shadow-sm hover:shadow-md',
       primary:
-        'bg-[#2563EB] text-white hover:bg-[#1D4ED8] shadow-pill',
+        'bg-[#2563EB] text-white hover:bg-[#1D4ED8] shadow-sm hover:shadow-md',
       secondary:
-        'bg-transparent text-[#071A33] border border-[#12345B] hover:bg-[#071A33] hover:text-white',
+        'bg-[#FFFFFF] text-[#071A33] border border-[#071A33]/30 hover:border-[#071A33] hover:bg-[#F5F5F0]',
       outline:
-        'bg-transparent text-[#071A33] border border-[#12345B] hover:bg-[#071A33] hover:text-white',
+        'bg-transparent text-[#071A33] border border-[#071A33]/40 hover:border-[#071A33] hover:bg-[#071A33] hover:text-white',
       ghost:
-        'bg-transparent text-[#071A33] hover:bg-[#071A33]/8',
+        'bg-transparent text-[#071A33] hover:bg-[#071A33]/6',
       white:
-        'bg-white text-[#071A33] hover:bg-[#F8F8F6] border border-white/40 shadow-pill',
+        'bg-white text-[#071A33] hover:bg-[#F5F5F0] border border-[#D9DEE5] shadow-sm',
       danger:
         'bg-red-600 text-white hover:bg-red-700',
       // Fallback aliases:
       gold:
-        'bg-[#071A33] text-white hover:bg-[#12345B] shadow-pill',
+        'bg-[#071A33] text-white hover:bg-[#12345B]',
       'gold-luxury':
-        'bg-[#071A33] text-white hover:bg-[#12345B] shadow-pill',
+        'bg-[#071A33] text-white hover:bg-[#12345B]',
       'emerald-luxury':
-        'bg-[#12345B] text-white hover:bg-[#071A33] shadow-pill',
+        'bg-[#12345B] text-white hover:bg-[#071A33]',
     };
 
     const sizes = {
-      sm: 'text-xs px-5 py-2 gap-1.5 h-[38px] tracking-wider uppercase font-semibold',
-      md: 'text-xs sm:text-sm px-7 py-3 gap-2.5 h-[48px] sm:h-[52px] tracking-wider uppercase font-semibold',
-      lg: 'text-sm sm:text-base px-8 py-3.5 gap-3 h-[52px] sm:h-[56px] tracking-wider uppercase font-semibold',
+      sm: 'text-xs px-4 py-2 gap-2 h-[40px]',
+      md: 'text-sm px-6 py-2.5 gap-2.5 h-[48px]',
+      lg: 'text-[15px] px-7 py-3 gap-3 h-[52px]',
     };
 
     const classes = cn(baseStyles, variants[variant], sizes[size], className);
