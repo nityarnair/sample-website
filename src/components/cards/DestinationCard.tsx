@@ -14,7 +14,7 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({ attraction }) 
           src={attraction.imageUrl}
           alt={attraction.title}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute top-3 left-3 bg-[#071A33]/85 backdrop-blur-xs text-white border border-white/20 px-3.5 py-1 rounded-full text-[11px] font-sans font-medium flex items-center gap-1.5 shadow-sm">
           <MapPin className="w-3.5 h-3.5 text-[#93C5FD]" />

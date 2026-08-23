@@ -75,7 +75,16 @@ export const Gallery: React.FC = () => {
             <div
               key={photo.id}
               onClick={() => setSelectedPhotoIndex(index)}
-              className="group relative bg-white border border-[#D9DEE5] hover:border-[#2563EB]/40 rounded-[20px] overflow-hidden shadow-editorial transition-all duration-500 cursor-pointer h-80 flex flex-col justify-end"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedPhotoIndex(index);
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-label={`View photo: ${photo.title} (DYUTI ${photo.year})`}
+              className="group relative bg-white border border-[#D9DEE5] hover:border-[#2563EB]/40 rounded-[20px] overflow-hidden shadow-editorial transition-all duration-500 cursor-pointer h-80 flex flex-col justify-end focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
             >
               <img
                 src={photo.imageUrl}
