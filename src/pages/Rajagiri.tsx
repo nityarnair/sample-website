@@ -25,11 +25,8 @@ export const Rajagiri: React.FC = () => {
     <div className="py-20 sm:py-28 lg:py-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
-        {/* ── 01 / EDITORIAL PAGE HEADER ── */}
+        {/* ── EDITORIAL PAGE HEADER ── */}
         <PageHeader
-          number="01"
-          category="RAJAGIRI"
-          metaRight="Kalamassery, Kochi &middot; Autonomous &middot; Estd. 1955"
           eyebrow="Host Institution Profile"
           title={
             <>
