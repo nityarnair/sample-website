@@ -1,6 +1,6 @@
 # DYUTI 2027
 
-The official web platform for **DYUTI 2027**, the 26th Annual International Academic Conference hosted by the **Department of Social Work, Rajagiri College of Social Sciences (Autonomous)**, Kalamassery, Kochi, Kerala, India.
+The official web platform for **DYUTI 2027**, the 26th Annual International Academic Conference hosted by the  an institution.
 
 ---
 
@@ -16,7 +16,7 @@ This web application serves as the primary delegate portal, managing academic ca
 
 - **Single Page Application (SPA)**: Ultra-fast client-side navigation with scroll restoration.
 - **Responsive & Mobile-First Design**: Optimized across mobile (390px, 430px), tablet (768px, 1024px), and desktop (1280px, 1920px) screens.
-- **Conference Meta & Editorial Information**: Comprehensive details on institutional rankings, NIRF #12 standing, and NAAC A++ (3.83 CGPA) accreditation.
+- **Conference Meta & Editorial Information**: Comprehensive details on institutional rankings.
 - **Call for Papers & Guidelines**: Full submission criteria for Oral and Poster presentations, Scopus publication opportunities, and direct integration with Microsoft CMT.
 - **Registration Hub**: Clear fee structures, inclusion terms, and NEFT/RTGS bank transfer details.
 - **Accommodation & Hospitality Directory**: Curated stay zones (Kalamassery, Edappally, Kakkanad) with downloadable PDF contact directories.
@@ -56,7 +56,7 @@ sample website/
 │   │   ├── sections/      # Homepage & landing sections (HeroEditorial, ScheduleSection, etc.)
 │   │   └── ui/            # Shared UI components (Accordion, Button, Lightbox, PageHeader, etc.)
 │   ├── data/
-│   │   └── conference.ts  # Official DYUTI 2027 data models, stats, tracks, & links
+│   │   └── conference.ts  # Official  data models, stats, tracks, & links
 │   ├── lib/
 │   │   ├── api.ts         # Contact form API service layer & fallback handling
 │   │   └── utils.ts       # Tailwind class mergers and helper utilities
@@ -167,10 +167,3 @@ This application can be deployed to any static web hosting service (Vercel, Netl
 3. Add single-page application rewrite rule (`/*` -> `/index.html`) if routing manually on custom Nginx/Apache servers.
 
 ---
-
-## Credits
-
-- **Host Institution**: Rajagiri College of Social Sciences (Autonomous), Kalamassery, Kochi, Kerala, India.
-- **Organized By**: Department of Social Work, Rajagiri College of Social Sciences (Autonomous).
-- **Affiliation**: Mahatma Gandhi University, Kottayam, Kerala.
-- **Accreditations**: NAAC A++ (3.83 CGPA) · UGC Autonomous · NIRF #12 in India (2025).
