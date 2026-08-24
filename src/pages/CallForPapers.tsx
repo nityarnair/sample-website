@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
-import { Calendar, FileCheck, CheckCircle2, Download, CreditCard, ShieldCheck, Users, Info, ChevronDown, ChevronUp } from 'lucide-react';
+import { Download, ChevronDown, ChevronUp } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const CallForPapers: React.FC = () => {
@@ -41,7 +41,7 @@ export const CallForPapers: React.FC = () => {
         <div className="bg-[#071A33] border border-white/10 text-white rounded-[24px] p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28 shadow-editorial">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#93C5FD] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
+              <span className="inline-flex items-center text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#93C5FD] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
                 Microsoft CMT Portal Active &middot; Deadline: 25 Sept 2026
               </span>
               <h2 className="text-[2.25rem] sm:text-[2.85rem] font-heading font-extrabold text-white mb-3 leading-tight">
@@ -174,10 +174,10 @@ export const CallForPapers: React.FC = () => {
           
           {/* Submission Guidelines (6 cols) */}
           <div className="lg:col-span-6 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-                <FileCheck className="w-5 h-5" />
-              </div>
+            <div className="mb-6">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                Submission Protocol
+              </span>
               <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
                 Guidelines for Abstract
               </h3>
@@ -205,10 +205,10 @@ export const CallForPapers: React.FC = () => {
 
           {/* Publication Opportunities (6 cols) */}
           <div className="lg:col-span-6 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-5 h-5" />
-              </div>
+            <div className="mb-6">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                Peer Review &amp; Formats
+              </span>
               <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
                 Publication &amp; Presentation Formats
               </h3>
@@ -232,18 +232,16 @@ export const CallForPapers: React.FC = () => {
 
         {/* ── TYPES OF PARTICIPANTS ── */}
         <div className="mb-16 lg:mb-20 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-              <Users className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-                Eligible Participant Categories
-              </h3>
-              <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
-                Scholars and practitioners eligible to register and present papers
-              </p>
-            </div>
+          <div className="mb-6">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+              Delegates &amp; Attendees
+            </span>
+            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+              Eligible Participant Categories
+            </h3>
+            <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
+              Scholars and practitioners eligible to register and present papers
+            </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
             {participantTypes.map((type, idx) => (
@@ -257,18 +255,16 @@ export const CallForPapers: React.FC = () => {
         {/* ── 01. SUBMISSION DEADLINES & MILESTONES (FULL WIDTH CARDS) ── */}
         <div className="mb-16 lg:mb-20">
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#D9DEE5]">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-                <Calendar className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-                  Submission Deadlines &amp; Key Milestones
-                </h3>
-                <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
-                  Critical timeline for abstract review, author acceptance, and conference attendance
-                </p>
-              </div>
+            <div>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                Timeline &amp; Dates
+              </span>
+              <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+                Submission Deadlines &amp; Key Milestones
+              </h3>
+              <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
+                Critical timeline for abstract review, author acceptance, and conference attendance
+              </p>
             </div>
             <span className="hidden sm:inline-flex items-center text-[11px] font-mono uppercase tracking-wider text-[#2563EB] bg-[#E8F0F7] px-3 py-1 rounded-[6px] font-bold">
               IST (UTC+05:30)
@@ -368,18 +364,16 @@ export const CallForPapers: React.FC = () => {
         {/* ── 02. REGISTRATION FEES & INCLUSIONS (LUXURY CARDS) ── */}
         <div className="mb-16 lg:mb-20">
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#D9DEE5]">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-                <CreditCard className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-                  Registration Fees &amp; Delegate Passes
-                </h3>
-                <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
-                  Select your delegate category to participate in paper presentation tracks and plenaries
-                </p>
-              </div>
+            <div>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                Passes &amp; Pricing
+              </span>
+              <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+                Registration Fees &amp; Delegate Passes
+              </h3>
+              <p className="text-xs sm:text-sm text-[#667085] font-sans m-0 mt-0.5">
+                Select your delegate category to participate in paper presentation tracks and plenaries
+              </p>
             </div>
           </div>
 
@@ -410,15 +404,15 @@ export const CallForPapers: React.FC = () => {
                 </div>
                 <ul className="space-y-3 text-xs text-[#071A33] font-sans font-medium mb-8">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Access to all technical presentation tracks</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Author Certificate of Presentation</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Executive lunch &amp; refreshments on both days</span>
                   </li>
                 </ul>
@@ -461,15 +455,15 @@ export const CallForPapers: React.FC = () => {
                 </div>
                 <ul className="space-y-3 text-xs text-[#071A33] font-sans font-medium mb-8">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Access to all keynotes, plenaries &amp; paper tracks</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Official Conference Kit, badge &amp; certificate</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Executive lunch &amp; banquet tea on both days</span>
                   </li>
                 </ul>
@@ -509,15 +503,15 @@ export const CallForPapers: React.FC = () => {
                 </div>
                 <ul className="space-y-3 text-xs text-[#071A33] font-sans font-medium mb-8">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Access to plenaries, industry roundtables &amp; tracks</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Exclusive delegate folder, kit &amp; formal certificate</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 mt-1.5 shrink-0" />
                     <span>Executive buffet lunch on both conference days</span>
                   </li>
                 </ul>
@@ -534,31 +528,25 @@ export const CallForPapers: React.FC = () => {
           </div>
 
           {/* Unified Inclusions Banner */}
-          <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE] flex items-start sm:items-center gap-4 text-xs sm:text-sm text-[#071A33] font-sans leading-relaxed">
-            <div className="w-8 h-8 rounded-[8px] bg-[#2563EB] text-white flex items-center justify-center shrink-0">
-              <CheckCircle2 className="w-4 h-4" />
-            </div>
-            <div>
-              <strong className="font-bold text-[#071A33]">Every Registration Pass Includes:</strong> Conference kit, official delegate badge, verified certificate of participation/presentation, executive buffet lunch on both conference days (7 &amp; 8 January 2027), morning and evening tea/refreshments, and unrestricted entry to all plenaries and thematic paper tracks.
-            </div>
+          <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE] text-xs sm:text-sm text-[#071A33] font-sans leading-relaxed">
+            <strong className="font-bold text-[#071A33] block mb-1">Every Registration Pass Includes:</strong>
+            <span>Conference kit, official delegate badge, verified certificate of participation/presentation, executive buffet lunch on both conference days (7 &amp; 8 January 2027), morning and evening tea/refreshments, and unrestricted entry to all plenaries and thematic paper tracks.</span>
           </div>
         </div>
 
         {/* ── 03. MODE OF PAYMENT & OFFICIAL RCSS BANK DETAILS ── */}
         <div className="rounded-[24px] p-8 sm:p-12 bg-white border border-[#D9DEE5] shadow-editorial mb-16 lg:mb-20">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-[#D9DEE5]">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-[14px] bg-[#071A33] text-white flex items-center justify-center shrink-0 shadow-sm">
-                <ShieldCheck className="w-6 h-6 text-[#60A5FA]" />
-              </div>
-              <div>
-                <h4 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-                  Mode of Payment (NEFT / RTGS Bank Transfer)
-                </h4>
-                <span className="text-xs font-sans text-[#667085] uppercase tracking-wider font-semibold">
-                  Official RCSS Conference Bank Account &middot; Verified Gateway
-                </span>
-              </div>
+            <div>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                Banking Coordinates
+              </span>
+              <h4 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+                Mode of Payment (NEFT / RTGS Bank Transfer)
+              </h4>
+              <span className="text-xs font-sans text-[#667085] uppercase tracking-wider font-semibold">
+                Official RCSS Conference Bank Account &middot; Verified Gateway
+              </span>
             </div>
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#2563EB] bg-[#E8F0F7] border border-[#BFDBFE] px-3.5 py-1.5 rounded-[8px] font-bold self-start sm:self-auto">
               Direct Wire &middot; Instant Receipt
@@ -634,20 +622,14 @@ export const CallForPapers: React.FC = () => {
         </div>
 
         {/* ── MICROSOFT CMT ACKNOWLEDGEMENT ── */}
-        <div className="rounded-[16px] p-6 sm:p-8 bg-white/80 border border-[#D9DEE5] flex items-start gap-4 shadow-subtle">
-          <div className="w-9 h-9 rounded-[10px] bg-white border border-[#D9DEE5] text-[#667085] flex items-center justify-center shrink-0">
-            <Info className="w-4 h-4" />
-          </div>
-          <div>
-            <h4 className="font-heading text-lg text-[#071A33] mb-1 font-bold">Microsoft CMT Acknowledgement</h4>
-            <p className="text-xs text-[#667085] leading-relaxed font-sans font-normal m-0">
-              The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-            </p>
-          </div>
+        <div className="rounded-[16px] p-6 sm:p-8 bg-white border border-[#D9DEE5] shadow-subtle">
+          <h4 className="font-heading text-lg text-[#071A33] mb-1 font-bold">Microsoft CMT Acknowledgement</h4>
+          <p className="text-xs text-[#667085] leading-relaxed font-sans font-normal m-0">
+            The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+          </p>
         </div>
 
       </div>
     </div>
   );
 };
-

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Lightbox } from '@/components/ui/Lightbox';
-import { ZoomIn, Calendar } from 'lucide-react';
+import { ZoomIn } from 'lucide-react';
 import { CONFERENCE_DATA, GalleryItem } from '@/data/conference';
 import { cn } from '@/lib/utils';
 
@@ -95,9 +95,8 @@ export const Gallery: React.FC = () => {
               
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#071A33]/90 via-[#071A33]/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white z-10">
-                <span className="text-[10.5px] font-mono font-bold text-[#93C5FD] uppercase tracking-[0.16em] mb-1.5 flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5" />
-                  <span>DYUTI {photo.year} &middot; {photo.category}</span>
+                <span className="text-[10.5px] font-mono font-bold text-[#93C5FD] uppercase tracking-[0.16em] mb-1.5 block">
+                  DYUTI {photo.year} &middot; {photo.category}
                 </span>
                 <h4 className="font-heading text-base sm:text-[17px] leading-snug line-clamp-2 text-white font-bold m-0">
                   {photo.title}

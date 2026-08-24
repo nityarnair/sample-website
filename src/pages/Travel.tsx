@@ -1,7 +1,6 @@
 import React from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
-import { Plane, Train, Bus, Car, Navigation, MapPin } from 'lucide-react';
 
 export const Travel: React.FC = () => {
   return (
@@ -37,18 +36,13 @@ export const Travel: React.FC = () => {
 
         {/* ── ROUTE 01: FROM COCHIN INTERNATIONAL AIRPORT (COK) ── */}
         <div className="rounded-[20px] border border-[#D9DEE5] bg-white shadow-editorial p-8 sm:p-12 lg:p-14 mb-16 lg:mb-20">
-          <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#D9DEE5]">
-            <div className="w-12 h-12 rounded-[14px] bg-[#E8F0F7] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
-              <Plane className="w-6 h-6" />
-            </div>
-            <div>
-              <span className="text-[11.5px] font-mono font-bold text-[#2563EB] uppercase tracking-widest block">
-                Route 01
-              </span>
-              <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0 leading-tight">
-                From Cochin International Airport (COK) to Rajagiri
-              </h3>
-            </div>
+          <div className="mb-8 pb-6 border-b border-[#D9DEE5]">
+            <span className="text-[11.5px] font-mono font-bold text-[#2563EB] uppercase tracking-widest block mb-1">
+              Route 01
+            </span>
+            <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0 leading-tight">
+              From Cochin International Airport (COK) to Rajagiri
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -58,8 +52,7 @@ export const Travel: React.FC = () => {
               
               {/* Kochi Metro Recommended */}
               <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
-                  <Train className="w-5 h-5 text-[#2563EB]" />
+                <div className="mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <span>By Kochi Metro (Recommended)</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#071A33]/90 leading-relaxed m-0 font-sans font-normal">
@@ -69,8 +62,7 @@ export const Travel: React.FC = () => {
 
               {/* Taxi / Car */}
               <div className="p-6 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
-                  <Car className="w-5 h-5 text-[#2563EB]" />
+                <div className="mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <span>By Taxi / Prepaid Cab</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal">
@@ -80,8 +72,7 @@ export const Travel: React.FC = () => {
 
               {/* Public Bus */}
               <div className="p-6 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
-                  <Bus className="w-5 h-5 text-[#2563EB]" />
+                <div className="mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <span>By Public Bus &amp; Feeder</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal">
@@ -110,18 +101,13 @@ export const Travel: React.FC = () => {
 
         {/* ── ROUTE 02: FROM ERNAKULAM SOUTH / NORTH RAILWAY STATIONS ── */}
         <div className="rounded-[20px] border border-[#D9DEE5] bg-white shadow-editorial p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28">
-          <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#D9DEE5]">
-            <div className="w-12 h-12 rounded-[14px] bg-[#E8F0F7] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
-              <Train className="w-6 h-6" />
-            </div>
-            <div>
-              <span className="text-[11.5px] font-mono font-bold text-[#2563EB] uppercase tracking-widest block">
-                Route 02
-              </span>
-              <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0 leading-tight">
-                From Ernakulam South Railway Station to Rajagiri
-              </h3>
-            </div>
+          <div className="mb-8 pb-6 border-b border-[#D9DEE5]">
+            <span className="text-[11.5px] font-mono font-bold text-[#2563EB] uppercase tracking-widest block mb-1">
+              Route 02
+            </span>
+            <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0 leading-tight">
+              From Ernakulam South Railway Station to Rajagiri
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -131,8 +117,7 @@ export const Travel: React.FC = () => {
               
               {/* Kochi Metro */}
               <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
-                  <Train className="w-5 h-5 text-[#2563EB]" />
+                <div className="mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <span>By Kochi Metro (Direct)</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#071A33]/90 leading-relaxed m-0 font-sans font-normal">
@@ -142,8 +127,7 @@ export const Travel: React.FC = () => {
 
               {/* Taxi / Auto */}
               <div className="p-6 rounded-[16px] bg-[#F5F5F0] border border-[#D9DEE5]">
-                <div className="flex items-center gap-3 mb-2 text-[#071A33] font-bold text-sm font-sans">
-                  <Car className="w-5 h-5 text-[#2563EB]" />
+                <div className="mb-2 text-[#071A33] font-bold text-sm font-sans">
                   <span>By Taxi / Auto-Rickshaw</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#667085] leading-relaxed m-0 font-sans font-normal mb-3">
@@ -182,9 +166,8 @@ export const Travel: React.FC = () => {
             <h4 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white m-0 mb-3 font-extrabold">
               Rajagiri College of Social Sciences (Autonomous)
             </h4>
-            <p className="text-sm sm:text-base text-white/80 m-0 font-sans font-normal flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#93C5FD] shrink-0" />
-              <span>Rajagiri Road, South Kalamassery, Kalamassery, Kochi, Kerala 683104</span>
+            <p className="text-sm sm:text-base text-white/80 m-0 font-sans font-normal">
+              Rajagiri Road, South Kalamassery, Kalamassery, Kochi, Kerala 683104
             </p>
           </div>
 
@@ -196,7 +179,6 @@ export const Travel: React.FC = () => {
               href="https://maps.google.com/?q=Rajagiri+College+of+Social+Sciences+Kalamassery"
               target="_blank"
               rel="noopener noreferrer"
-              icon={<Navigation className="w-4 h-4 text-[#2563EB]" />}
               showArrow
             >
               Open in Google Maps

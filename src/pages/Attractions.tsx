@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
-import { ExternalLink, Compass, MapPin } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const Attractions: React.FC = () => {
@@ -80,9 +80,8 @@ export const Attractions: React.FC = () => {
                       Destination {String(idx + 1).padStart(2, '0')}
                     </span>
                     <span className="w-6 h-px bg-[#D9DEE5]" />
-                    <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#667085] flex items-center gap-1 font-semibold">
-                      <MapPin className="w-3.5 h-3.5 text-[#2563EB]" />
-                      <span>Kochi, Kerala</span>
+                    <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#667085] font-semibold">
+                      Kochi, Kerala
                     </span>
                   </div>
 
@@ -101,18 +100,16 @@ export const Attractions: React.FC = () => {
 
         {/* ── QUICK TOURISM GUIDES & EXTERNAL RESOURCES ── */}
         <div className="rounded-[20px] p-8 sm:p-12 lg:p-14 bg-white border border-[#D9DEE5] shadow-editorial">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-              <Compass className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-                Tourist Guides &amp; Official Travel Portals
-              </h3>
-              <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider font-semibold">
-                External State Tourism &amp; Sightseeing Resources
-              </span>
-            </div>
+          <div className="mb-8">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+              Kerala Tourism Portals
+            </span>
+            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
+              Tourist Guides &amp; Official Travel Portals
+            </h3>
+            <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider font-semibold">
+              External State Tourism &amp; Sightseeing Resources
+            </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
