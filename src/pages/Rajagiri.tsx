@@ -28,10 +28,12 @@ export const Rajagiri: React.FC = () => {
         {/* ── EDITORIAL PAGE HEADER ── */}
         <PageHeader
           eyebrow="Host Institution Profile"
+          titleClassName="text-[2.75rem] sm:text-[3.75rem] md:text-[4.25rem] lg:text-[4.85rem] font-extrabold leading-[1.04] tracking-tight"
+          subtitleClassName="text-[1.125rem] sm:text-[1.25rem] md:text-[1.35rem] lg:text-[1.45rem] leading-[1.6] text-[#475467] font-normal mt-7 max-w-4xl"
           title={
             <>
-              Rajagiri College
-              <span className="block font-heading text-[#667085] text-[1.85rem] sm:text-[2.5rem] font-bold mt-1">
+              <span className="block text-[#071A33]">Rajagiri College</span>
+              <span className="block font-heading text-[#667085] text-[2rem] sm:text-[2.65rem] md:text-[3.15rem] lg:text-[3.5rem] font-bold mt-2 leading-[1.1]">
                 of Social Sciences (Autonomous)
               </span>
             </>

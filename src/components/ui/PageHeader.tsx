@@ -10,6 +10,8 @@ export interface PageHeaderProps {
   metaRight?: React.ReactNode;
   rightContent?: React.ReactNode;
   className?: string;
+  titleClassName?: string;
+  subtitleClassName?: string;
   dark?: boolean;
 }
 
@@ -22,6 +24,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   metaRight,
   rightContent,
   className,
+  titleClassName,
+  subtitleClassName,
   dark = false,
 }) => {
   return (
@@ -101,7 +105,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           <h1
             className={cn(
               'text-[2.25rem] sm:text-[3.25rem] lg:text-[4rem] font-heading font-extrabold leading-[1.06] tracking-tight m-0',
-              dark ? 'text-white' : 'text-[#071A33]'
+              dark ? 'text-white' : 'text-[#071A33]',
+              titleClassName
             )}
           >
             {title}
@@ -111,7 +116,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
             <p
               className={cn(
                 'text-base sm:text-[1.0625rem] md:text-lg leading-relaxed font-sans font-normal mt-6 max-w-3xl',
-                dark ? 'text-white/80' : 'text-[#667085]'
+                dark ? 'text-white/80' : 'text-[#667085]',
+                subtitleClassName
               )}
             >
               {subtitle}
