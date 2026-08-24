@@ -140,7 +140,7 @@ export const CONFERENCE_DATA = {
     {
       id: 'climate',
       number: '04',
-      title: 'Climate Action, Environmental Sustainability & Disaster Resilience',
+      title: 'Climate Action, Environmental Sustainability and Disaster Resilience',
       topics: [
         'Climate Change and Community Resilience',
         'Disaster Risk Reduction and Humanitarian Social Work',
