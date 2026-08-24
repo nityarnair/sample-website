@@ -1,4 +1,4 @@
-# Contributing to DYUTI 2027
+# Contributing
 
 1. Branch naming convention: `feat/feature-name`, `fix/bug-fix`.
 2. Verify local builds with `npm run build` before submitting PRs.
