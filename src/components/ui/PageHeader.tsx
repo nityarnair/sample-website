@@ -81,19 +81,19 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       <div
         className={cn(
           rightContent
-            ? 'grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center'
+            ? 'grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center'
             : 'max-w-4xl'
         )}
       >
-        <div className={rightContent ? 'lg:col-span-7 xl:col-span-8' : ''}>
+        <div className={rightContent ? 'lg:col-span-8' : ''}>
           {eyebrow && (
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2.5 mb-3.5">
               <span
-                className={cn('w-5 h-px', dark ? 'bg-[#93C5FD]' : 'bg-[#2563EB]')}
+                className={cn('w-5 h-0.5', dark ? 'bg-[#93C5FD]' : 'bg-[#2563EB]')}
               />
               <span
                 className={cn(
-                  'text-[11px] font-sans uppercase tracking-[0.2em] font-bold',
+                  'text-[11px] sm:text-[12px] font-sans uppercase tracking-[0.2em] font-bold',
                   dark ? 'text-[#93C5FD]' : 'text-[#2563EB]'
                 )}
               >
@@ -104,7 +104,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
 
           <h1
             className={cn(
-              'text-[2.25rem] sm:text-[3.25rem] lg:text-[4rem] font-heading font-extrabold leading-[1.06] tracking-tight m-0',
+              'text-[2.25rem] sm:text-[3.25rem] lg:text-[4rem] font-heading font-extrabold leading-[1.08] tracking-tight m-0',
               dark ? 'text-white' : 'text-[#071A33]',
               titleClassName
             )}
@@ -115,8 +115,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           {subtitle && (
             <p
               className={cn(
-                'text-base sm:text-[1.0625rem] md:text-lg leading-relaxed font-sans font-normal mt-6 max-w-3xl',
-                dark ? 'text-white/80' : 'text-[#667085]',
+                'text-base sm:text-[1.0625rem] md:text-lg leading-relaxed font-sans font-normal mt-5 max-w-3xl',
+                dark ? 'text-white/80' : 'text-[#475467]',
                 subtitleClassName
               )}
             >
@@ -126,7 +126,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         </div>
 
         {rightContent && (
-          <div className="lg:col-span-5 xl:col-span-4 flex justify-start lg:justify-end items-center">
+          <div className="lg:col-span-4 flex justify-center lg:justify-end items-center">
             {rightContent}
           </div>
         )}
