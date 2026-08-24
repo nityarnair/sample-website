@@ -27,7 +27,7 @@ export const Gallery: React.FC = () => {
     selectedPhotoIndex !== null ? filteredPhotos[selectedPhotoIndex] : null;
 
   return (
-    <div className="py-20 sm:py-28 lg:py-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
+    <div className="pt-8 sm:pt-10 lg:pt-12 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── 06 / EDITORIAL PAGE HEADER ── */}

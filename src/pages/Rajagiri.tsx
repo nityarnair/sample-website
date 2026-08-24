@@ -1,5 +1,4 @@
 import React from 'react';
-import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
 import { CONFERENCE_DATA } from '@/data/conference';
 
@@ -22,41 +21,56 @@ export const Rajagiri: React.FC = () => {
   ];
 
   return (
-    <div className="py-20 sm:py-28 lg:py-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
+    <div className="pt-8 sm:pt-10 lg:pt-12 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── EDITORIAL PAGE HEADER ── */}
-        <PageHeader
-          eyebrow="Host Institution Profile"
-          titleClassName="text-[2.75rem] sm:text-[3.75rem] md:text-[4.25rem] lg:text-[4.85rem] font-extrabold leading-[1.04] tracking-tight"
-          subtitleClassName="text-[1.125rem] sm:text-[1.25rem] md:text-[1.35rem] lg:text-[1.45rem] leading-[1.6] text-[#475467] font-normal mt-7 max-w-4xl"
-          title={
-            <>
-              <span className="block text-[#071A33]">Rajagiri College</span>
-              <span className="block font-heading text-[#667085] text-[2rem] sm:text-[2.65rem] md:text-[3.15rem] lg:text-[3.5rem] font-bold mt-2 leading-[1.1]">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12 xl:gap-16 mb-16 sm:mb-20 lg:mb-24">
+          
+          {/* Left Large Typography */}
+          <div className="flex-1 max-w-4xl">
+            {/* Eyebrow Accent */}
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="w-6 h-0.5 bg-[#2563EB]" />
+              <span className="text-[12px] sm:text-[13px] font-sans uppercase tracking-[0.2em] font-bold text-[#2563EB]">
+                Host Institution Profile
+              </span>
+            </div>
+
+            {/* Main Grand Title */}
+            <h1 className="text-[2.85rem] sm:text-[3.85rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.25rem] font-heading font-extrabold text-[#071A33] leading-[1.03] tracking-tight m-0">
+              Rajagiri College
+              <span className="block font-heading text-[#667085] text-[2rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.65rem] font-bold mt-2 leading-[1.08]">
                 of Social Sciences (Autonomous)
               </span>
-            </>
-          }
-          subtitle="Relentlessly Towards Excellence — Established in 1955, NAAC A++ Accredited (3.83 CGPA), Ranked #12 in India (NIRF 2025) and #1 in Kerala (KIRF 2025)."
-          rightContent={
+            </h1>
+
+            {/* Subtitle Narrative */}
+            <p className="text-base sm:text-lg md:text-xl lg:text-[1.3rem] leading-relaxed font-sans text-[#475467] font-normal mt-6 max-w-3xl">
+              Relentlessly Towards Excellence — Established in 1955, NAAC A++ Accredited (3.83 CGPA), Ranked #12 in India (NIRF 2025) and #1 in Kerala (KIRF 2025).
+            </p>
+          </div>
+
+          {/* Right Large Blended Seal Logo */}
+          <div className="shrink-0 flex items-center justify-center lg:justify-end">
             <a
               href={CONFERENCE_DATA.links.rajagiriPortal}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded-2xl p-1"
+              className="inline-flex items-center justify-center p-2 rounded-2xl transition-all duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
               title="Visit Rajagiri College of Social Sciences Official Website"
               aria-label="Rajagiri College Official Website"
             >
               <img
                 src="/images/rcss_seal_logo.jpg"
                 alt="Rajagiri College of Social Sciences Official Seal & Logo"
-                className="w-48 sm:w-56 md:w-64 lg:w-72 max-w-full h-auto object-contain mix-blend-multiply select-none"
+                className="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 max-w-full h-auto object-contain mix-blend-multiply select-none"
                 loading="eager"
               />
             </a>
-          }
-        />
+          </div>
+
+        </div>
 
         {/* ── HERO INSTITUTIONAL COMPOSITION ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 lg:mb-28">
