@@ -1,34 +1,10 @@
 import React, { useState } from 'react';
-import {
-  Layers,
-  Search,
-  Target,
-  Users,
-  Lightbulb,
-  Leaf,
-  HeartPulse,
-  GraduationCap,
-  ShieldCheck,
-  Compass,
-  CheckCircle2,
-} from 'lucide-react';
+import { Search } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
-
-// Assign custom icons to the 8 official tracks
-const TRACK_ICONS = [
-  Target,        // 01 SDGs
-  Users,         // 02 Equity & Inclusive Communities
-  Lightbulb,     // 03 Innovation
-  Leaf,          // 04 Climate & Environment
-  HeartPulse,    // 05 Health & Well-being
-  GraduationCap, // 06 Education & Youth
-  ShieldCheck,   // 07 Governance & Policy
-  Compass,       // 08 Indigenous Knowledge & Global Perspectives
-];
 
 /**
  * MajorSubThemes Component
- * Upgraded premium template containing the exact 8 sub-themes and all topics from dyuti.in:
+ * Clean, modern template without decorative icons containing the exact 8 sub-themes and all topics from dyuti.in:
  * - Conference Tracks
  * - MAJOR SUB THEMES
  * - Tracks 01 to 08
@@ -56,8 +32,7 @@ export const MajorSubThemes: React.FC = () => {
         {/* ── SECTION TITLE & SEARCH BAR ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#E2E8F0]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F0F7] border border-[#CBD5E1] text-[#2563EB] text-xs font-sans font-bold uppercase tracking-[0.2em] mb-3 shadow-sm">
-              <Layers className="w-3.5 h-3.5 text-[#2563EB]" />
+            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#E8F0F7] border border-[#CBD5E1] text-[#2563EB] text-xs font-sans font-bold uppercase tracking-[0.2em] mb-3 shadow-sm">
               <span>Conference Tracks</span>
             </div>
 
@@ -79,11 +54,10 @@ export const MajorSubThemes: React.FC = () => {
           </div>
         </div>
 
-        {/* ── 8-TRACKS PREMIUM GRID ── */}
+        {/* ── 8-TRACKS CLEAN GRID ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
           {filteredThemes.map((theme, index) => {
             const originalIndex = CONFERENCE_DATA.subThemes.findIndex((t) => t.title === theme.title);
-            const IconComponent = TRACK_ICONS[originalIndex >= 0 ? originalIndex : index] || Layers;
             const trackNum = String((originalIndex >= 0 ? originalIndex : index) + 1).padStart(2, '0');
 
             return (
@@ -92,16 +66,11 @@ export const MajorSubThemes: React.FC = () => {
                 className="group relative bg-white border border-[#D9DEE5] hover:border-[#2563EB] rounded-[24px] p-7 sm:p-9 shadow-[0_4px_20px_rgba(7,26,51,0.03)] hover:shadow-[0_16px_36px_rgba(7,26,51,0.09)] transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  {/* Card Header: Number Badge, Icon, and Topic Count */}
+                  {/* Card Header: Number Badge and Topic Count */}
                   <div className="flex items-center justify-between gap-3 mb-5">
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono text-xs font-bold px-3 py-1.5 rounded-xl bg-[#071A33] text-white shadow-sm">
-                        {trackNum}
-                      </span>
-                      <div className="w-8 h-8 rounded-xl bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <IconComponent className="w-4 h-4" />
-                      </div>
-                    </div>
+                    <span className="font-mono text-xs font-bold px-3 py-1.5 rounded-xl bg-[#071A33] text-white shadow-sm">
+                      Track {trackNum}
+                    </span>
 
                     <span className="text-[11.5px] font-sans font-semibold text-[#64748B] bg-[#F1F5F9] px-2.5 py-1 rounded-full">
                       {theme.topics.length} Focus Topics
@@ -122,7 +91,7 @@ export const MajorSubThemes: React.FC = () => {
                         key={topicIdx}
                         className="flex items-start gap-3 text-[14px] sm:text-[14.5px] text-[#475467] leading-relaxed"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#071A33]/40 group-hover:bg-[#2563EB] mt-2 shrink-0 transition-colors" />
                         <span className="group-hover:text-[#0F172A] transition-colors">
                           {topic}
                         </span>

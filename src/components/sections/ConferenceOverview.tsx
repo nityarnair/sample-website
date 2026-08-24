@@ -1,9 +1,8 @@
 import React from 'react';
-import { Sparkles, Globe, Target, Compass, Award, Quote } from 'lucide-react';
 
 /**
  * ConferenceOverview Component
- * Upgraded premium template containing the exact contents from dyuti.in:
+ * Clean, typography-focused template containing the exact contents from dyuti.in:
  * - National Conference
  * - DYUTI 2027
  * - Conference Theme & Description
@@ -16,10 +15,6 @@ export const ConferenceOverview: React.FC = () => {
       className="py-16 sm:py-24 bg-white text-[#0B1220] border-b border-[#D9DEE5] relative overflow-hidden"
       aria-label="DYUTI 2027 National Conference Overview"
     >
-      {/* Subtle Background Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/60 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-slate-50/80 rounded-full blur-3xl pointer-events-none -z-10" />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-8 space-y-16 sm:space-y-20">
         
         {/* ── 01: HEADER & CONFERENCE THEME ── */}
@@ -27,8 +22,7 @@ export const ConferenceOverview: React.FC = () => {
           
           {/* Eyebrow and Main Title */}
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F0F7] border border-[#CBD5E1] text-[#2563EB] text-xs font-sans font-bold uppercase tracking-[0.2em] shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
+            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#E8F0F7] border border-[#CBD5E1] text-[#2563EB] text-xs font-sans font-bold uppercase tracking-[0.2em] shadow-sm">
               <span>National Conference</span>
             </div>
 
@@ -39,12 +33,8 @@ export const ConferenceOverview: React.FC = () => {
 
           {/* Theme Hero Showcase Card */}
           <div className="relative rounded-[28px] bg-gradient-to-br from-[#071A33] via-[#0D284D] to-[#12345B] text-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(7,26,51,0.15)] border border-white/10 overflow-hidden">
-            {/* Ambient Lighting & Quote Watermark */}
-            <div className="absolute -right-8 -bottom-8 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
-            <Quote className="absolute top-6 right-8 w-24 h-24 text-white/5 pointer-events-none rotate-180" />
-
             <div className="relative z-10 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#93C5FD] text-[11px] font-sans font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#93C5FD] text-[11px] font-sans font-bold uppercase tracking-wider">
                 <span>Conference Theme</span>
               </div>
 
@@ -66,8 +56,7 @@ export const ConferenceOverview: React.FC = () => {
         <div className="rounded-[28px] bg-[#F8FAFC] border border-[#D9DEE5] p-8 sm:p-12 shadow-sm relative overflow-hidden">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-[#E2E8F0] mb-8">
             <div>
-              <div className="flex items-center gap-2 text-xs font-sans font-bold uppercase tracking-wider text-[#2563EB] mb-2">
-                <Award className="w-4 h-4 text-[#2563EB]" />
+              <div className="text-xs font-sans font-bold uppercase tracking-wider text-[#2563EB] mb-2">
                 <span>Conference Heritage</span>
               </div>
               <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#071A33] tracking-tight">
@@ -105,15 +94,10 @@ export const ConferenceOverview: React.FC = () => {
 
         {/* ── 03: BACKGROUND — 3-PILLAR STRUCTURED LAYOUT ── */}
         <div className="space-y-8">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#E8F0F7] flex items-center justify-center text-[#2563EB]">
-              <Globe className="w-5 h-5" />
-            </div>
-            <div>
-              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#071A33] tracking-tight">
-                Background
-              </h2>
-            </div>
+          <div className="pb-2 border-b border-[#E2E8F0]">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#071A33] tracking-tight">
+              Background
+            </h2>
           </div>
 
           {/* 3 Pillar Cards for the 3 Paragraphs */}
@@ -122,9 +106,9 @@ export const ConferenceOverview: React.FC = () => {
             {/* Pillar 1: UN 2030 Agenda */}
             <div className="rounded-[24px] bg-[#F8FAFC] border border-[#D9DEE5] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
               <div className="space-y-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-[#CBD5E1] flex items-center justify-center text-[#2563EB] shadow-sm">
-                  <Target className="w-5 h-5" />
-                </div>
+                <span className="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-[#E8F0F7] text-[#2563EB]">
+                  01
+                </span>
                 <h3 className="font-heading font-bold text-lg text-[#071A33]">
                   The UN 2030 Agenda
                 </h3>
@@ -137,9 +121,9 @@ export const ConferenceOverview: React.FC = () => {
             {/* Pillar 2: The Indian Context */}
             <div className="rounded-[24px] bg-[#F8FAFC] border border-[#D9DEE5] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
               <div className="space-y-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-[#CBD5E1] flex items-center justify-center text-[#2563EB] shadow-sm">
-                  <Compass className="w-5 h-5" />
-                </div>
+                <span className="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-[#E8F0F7] text-[#2563EB]">
+                  02
+                </span>
                 <h3 className="font-heading font-bold text-lg text-[#071A33]">
                   The Indian Context
                 </h3>
@@ -152,9 +136,9 @@ export const ConferenceOverview: React.FC = () => {
             {/* Pillar 3: Role of Social Work */}
             <div className="rounded-[24px] bg-[#F8FAFC] border border-[#D9DEE5] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
               <div className="space-y-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-[#CBD5E1] flex items-center justify-center text-[#2563EB] shadow-sm">
-                  <Sparkles className="w-5 h-5" />
-                </div>
+                <span className="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-[#E8F0F7] text-[#2563EB]">
+                  03
+                </span>
                 <h3 className="font-heading font-bold text-lg text-[#071A33]">
                   Social Work&rsquo;s Mission
                 </h3>
