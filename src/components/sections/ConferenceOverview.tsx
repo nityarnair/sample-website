@@ -3,53 +3,36 @@ import React from 'react';
 /**
  * ConferenceOverview Component
  * Clean, typography-focused template containing the exact contents from dyuti.in:
- * - National Conference
- * - DYUTI 2027
- * - Conference Theme & Description
- * - About DYUTI
- * - Background (3 Pillars)
+ * - Theme Narrative
+ * - About DYUTI (History, Acronym Expansion, 26th series)
+ * - Background (3 Pillars: The UN 2030 Agenda, The Indian Context, Social Work's Mission)
  */
 export const ConferenceOverview: React.FC = () => {
   return (
     <section
+      id="overview"
       className="py-16 sm:py-24 bg-white text-[#0B1220] border-b border-[#D9DEE5] relative overflow-hidden"
-      aria-label="DYUTI 2027 National Conference Overview"
+      aria-label="DYUTI 2027 Conference Theme Narrative, About DYUTI and Background"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-8 space-y-16 sm:space-y-20">
         
-        {/* ── 01: HEADER & CONFERENCE THEME ── */}
-        <div className="space-y-8">
-          
-          {/* Eyebrow and Main Title */}
-          <div className="space-y-3">
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#E8F0F7] border border-[#CBD5E1] text-[#2563EB] text-xs font-sans font-bold uppercase tracking-[0.2em] shadow-sm">
-              <span>National Conference</span>
+        {/* ── 01: THEME NARRATIVE ── */}
+        <div className="rounded-[28px] bg-gradient-to-br from-[#071A33] via-[#0D284D] to-[#12345B] text-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(7,26,51,0.15)] border border-white/10 overflow-hidden">
+          <div className="space-y-6">
+            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#93C5FD] text-xs font-sans font-bold uppercase tracking-wider">
+              <span>About The Theme</span>
             </div>
 
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#071A33] tracking-tight leading-none">
-              DYUTI <span className="text-[#2563EB]">2027</span>
-            </h1>
+            <h2 className="font-heading font-bold text-2xl sm:text-3xl text-white leading-snug max-w-4xl">
+              Deliberating Innovative &amp; Collaborative Approaches for Sustainable Development
+            </h2>
+
+            <div className="w-16 h-1 bg-[#3B82F6] rounded-full" />
+
+            <p className="text-[15.5px] sm:text-[16.5px] text-white/85 leading-relaxed font-sans font-normal max-w-4xl pt-1">
+              The 2027 DYUTI National Conference, themed &ldquo;Social Work for Sustainable Development: Empowering Communities through Innovation, Inclusion, and Partnership,&rdquo; brings together academicians, researchers, practitioners, policymakers, students, and development professionals to deliberate on innovative and collaborative approaches for sustainable development. Aligned with the 2030 Agenda for Sustainable Development and its vision of &ldquo;Leaving No One Behind,&rdquo; the conference highlights the vital role of social work in promoting social justice, inclusive development, community empowerment, and sustainable solutions. Through scholarly dialogue and knowledge exchange, DYUTI 2027 aims to strengthen partnerships and advance resilient, equitable, and sustainable communities.
+            </p>
           </div>
-
-          {/* Theme Hero Showcase Card */}
-          <div className="relative rounded-[28px] bg-gradient-to-br from-[#071A33] via-[#0D284D] to-[#12345B] text-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(7,26,51,0.15)] border border-white/10 overflow-hidden">
-            <div className="relative z-10 space-y-6">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#93C5FD] text-[11px] font-sans font-bold uppercase tracking-wider">
-                <span>Conference Theme</span>
-              </div>
-
-              <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight max-w-4xl">
-                &ldquo;Social Work for Sustainable Development: Empowering Communities through Innovation, Inclusion, and Partnership&rdquo;
-              </h2>
-
-              <div className="w-16 h-1 bg-[#3B82F6] rounded-full" />
-
-              <p className="text-[15.5px] sm:text-[16.5px] text-white/85 leading-relaxed font-sans font-normal max-w-4xl pt-2">
-                The 2027 DYUTI National Conference, themed &ldquo;Social Work for Sustainable Development: Empowering Communities through Innovation, Inclusion, and Partnership,&rdquo; brings together academicians, researchers, practitioners, policymakers, students, and development professionals to deliberate on innovative and collaborative approaches for sustainable development. Aligned with the 2030 Agenda for Sustainable Development and its vision of &ldquo;Leaving No One Behind,&rdquo; the conference highlights the vital role of social work in promoting social justice, inclusive development, community empowerment, and sustainable solutions. Through scholarly dialogue and knowledge exchange, DYUTI 2027 aims to strengthen partnerships and advance resilient, equitable, and sustainable communities.
-              </p>
-            </div>
-          </div>
-
         </div>
 
         {/* ── 02: ABOUT DYUTI ── */}
