@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
-import { Download, MapPin, Info, Mail } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const Accommodation: React.FC = () => {
@@ -60,7 +60,7 @@ export const Accommodation: React.FC = () => {
         <div className="bg-[#071A33] border border-white/10 text-white rounded-[24px] p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28 shadow-editorial">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#93C5FD] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
+              <span className="inline-flex items-center text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#93C5FD] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
                 Delegate Accommodation Advisory
               </span>
               <h2 className="text-[2.25rem] sm:text-[2.85rem] font-heading font-extrabold text-white mb-3 leading-tight">
@@ -129,11 +129,10 @@ export const Accommodation: React.FC = () => {
                     </h4>
 
                     <div className="flex flex-wrap gap-2">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#071A33] bg-[#F5F5F0] border border-[#D9DEE5] px-3 py-1 rounded-[8px]">
-                        <MapPin className="w-3.5 h-3.5 text-[#2563EB]" />
+                      <span className="inline-flex items-center text-xs font-mono font-bold text-[#071A33] bg-[#F5F5F0] border border-[#D9DEE5] px-3 py-1 rounded-[8px]">
                         <span>{area.distance}</span>
                       </span>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#2563EB] bg-[#E8F0F7] border border-[#BFDBFE] px-3 py-1 rounded-[8px]">
+                      <span className="inline-flex items-center text-xs font-mono font-bold text-[#2563EB] bg-[#E8F0F7] border border-[#BFDBFE] px-3 py-1 rounded-[8px]">
                         <span>{area.duration}</span>
                       </span>
                     </div>
@@ -164,10 +163,10 @@ export const Accommodation: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-8">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-                  <Info className="w-5 h-5" />
-                </div>
+              <div className="mb-3">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                  Support &amp; Logistics
+                </span>
                 <h4 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
                   Hospitality Assistance Desk
                 </h4>
@@ -183,7 +182,6 @@ export const Accommodation: React.FC = () => {
                 size="md"
                 asLink
                 href="mailto:dyuti@rajagiri.edu"
-                icon={<Mail className="w-4 h-4 text-white" />}
               >
                 dyuti@rajagiri.edu
               </Button>

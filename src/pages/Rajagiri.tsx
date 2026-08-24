@@ -1,7 +1,6 @@
 import React from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
-import { Globe2, CheckCircle2, Award, BookOpen, HeartPulse, Building2 } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
 export const Rajagiri: React.FC = () => {
@@ -121,10 +120,10 @@ export const Rajagiri: React.FC = () => {
           
           {/* Recognitions List (6 cols) */}
           <div className="lg:col-span-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-[12px] bg-white border border-[#D9DEE5] flex items-center justify-center text-[#2563EB] shadow-subtle">
-                <Award className="w-5 h-5" />
-              </div>
+            <div className="mb-6">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                Accreditations &amp; Honours
+              </span>
               <h3 className="font-heading text-[1.65rem] sm:text-[1.95rem] font-bold text-[#071A33] m-0">
                 Institutional Recognitions
               </h3>
@@ -137,7 +136,7 @@ export const Rajagiri: React.FC = () => {
             <div className="space-y-3.5">
               {recognitions.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 p-4 rounded-[14px] bg-white border border-[#D9DEE5] shadow-subtle">
-                  <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#071A33] mt-2 shrink-0 opacity-60" />
                   <span className="text-[13.5px] font-sans font-medium text-[#071A33] leading-snug">
                     {item}
                   </span>
@@ -148,10 +147,10 @@ export const Rajagiri: React.FC = () => {
 
           {/* SDG Impact & Global Standing (6 cols) */}
           <div className="lg:col-span-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-[12px] bg-white border border-[#D9DEE5] flex items-center justify-center text-[#2563EB] shadow-subtle">
-                <HeartPulse className="w-5 h-5" />
-              </div>
+            <div className="mb-6">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                Global Standing
+              </span>
               <h3 className="font-heading text-[1.65rem] sm:text-[1.95rem] font-bold text-[#071A33] m-0">
                 SDG &amp; Global Impact
               </h3>
@@ -184,10 +183,10 @@ export const Rajagiri: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-6 p-8 sm:p-12 lg:p-14 flex flex-col justify-between order-2 lg:order-1">
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-                    <BookOpen className="w-5 h-5" />
-                  </div>
+                <div className="mb-4">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                    Host Department
+                  </span>
                   <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0">
                     Department of Social Work
                   </h3>
@@ -227,18 +226,13 @@ export const Rajagiri: React.FC = () => {
         {/* ── 28 YEARS OF INTERNATIONALISATION ── */}
         <div className="mb-20 lg:mb-28 rounded-[24px] p-8 sm:p-12 lg:p-14 border border-[#D9DEE5] bg-white shadow-editorial">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8 pb-6 border-b border-[#D9DEE5]">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-[14px] bg-[#E8F0F7] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
-                <Globe2 className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0">
-                  28 Years of Internationalisation @ Rajagiri
-                </h3>
-                <p className="text-xs text-[#2563EB] font-sans font-semibold uppercase tracking-wider m-0 mt-1">
-                  A Proud Milestone Towards Global Academic Excellence
-                </p>
-              </div>
+            <div>
+              <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0">
+                28 Years of Internationalisation @ Rajagiri
+              </h3>
+              <p className="text-xs text-[#2563EB] font-sans font-semibold uppercase tracking-wider m-0 mt-1">
+                A Proud Milestone Towards Global Academic Excellence
+              </p>
             </div>
             <img
               src="https://dyuti.in/assets/images/25.png"
@@ -253,19 +247,19 @@ export const Rajagiri: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[13px] sm:text-[13.5px] text-[#0B1220]">
             <div className="flex items-start gap-3 p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
-              <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#071A33] mt-2 shrink-0 opacity-60" />
               <span className="font-sans leading-relaxed">A global academic network spanning <strong>60+ partner universities across 30 countries</strong>.</span>
             </div>
             <div className="flex items-start gap-3 p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
-              <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#071A33] mt-2 shrink-0 opacity-60" />
               <span className="font-sans leading-relaxed">Student exchange programmes with study opportunities ranging from <strong>1 to 6 months</strong>.</span>
             </div>
             <div className="flex items-start gap-3 p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
-              <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#071A33] mt-2 shrink-0 opacity-60" />
               <span className="font-sans leading-relaxed">Hosting international students supported by the Government of India&apos;s <strong>Study in India (SII) Programme</strong>.</span>
             </div>
             <div className="flex items-start gap-3 p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5]">
-              <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#071A33] mt-2 shrink-0 opacity-60" />
               <span className="font-sans leading-relaxed">Collaborative research, dual-degree, twinning, and international internships for global exposure.</span>
             </div>
           </div>
@@ -286,9 +280,6 @@ export const Rajagiri: React.FC = () => {
           </div>
 
           <div className="relative z-10">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-[16px] bg-white/15 backdrop-blur-md text-white mb-5 border border-white/25 shadow-sm">
-              <Building2 className="w-7 h-7 text-[#93C5FD]" />
-            </div>
             <h3 className="font-heading text-[2rem] sm:text-[2.65rem] font-extrabold text-white mb-3 tracking-tight">
               Explore RCSS Official Portal
             </h3>

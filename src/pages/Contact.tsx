@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { FormField } from '@/components/ui/FormField';
 import { Button } from '@/components/ui/Button';
-import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 import { apiService } from '@/lib/api';
 
@@ -66,12 +65,12 @@ export const Contact: React.FC = () => {
             
             {/* Conference Coordinators */}
             <div className="rounded-[20px] p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-editorial">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#D9DEE5]">
-                <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
+              <div className="mb-6 pb-4 border-b border-[#D9DEE5]">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                  Coordinators
+                </span>
                 <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-                  Conference Coordinators
+                  Conference Secretariat
                 </h3>
               </div>
 
@@ -102,10 +101,10 @@ export const Contact: React.FC = () => {
 
             {/* Mailing & Direct Venue Address */}
             <div className="rounded-[20px] p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-editorial">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-[12px] bg-[#E8F0F7] text-[#2563EB] flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
+              <div className="mb-4">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
+                  Location &amp; Address
+                </span>
                 <h4 className="font-heading text-xl sm:text-2xl text-[#071A33] font-bold m-0">
                   Mailing &amp; Venue Address
                 </h4>
@@ -118,12 +117,10 @@ export const Contact: React.FC = () => {
               </p>
 
               <div className="space-y-2.5 pt-4 border-t border-[#D9DEE5] text-xs text-[#667085] font-sans">
-                <div className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 text-[#2563EB] shrink-0" />
+                <div>
                   <span>Phone: <strong className="text-[#071A33] font-mono font-semibold">+91 484-2911 346, 2911 321</strong></span>
                 </div>
-                <div className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-[#2563EB] shrink-0" />
+                <div>
                   <span>Email: <a href="mailto:dyuti@rajagiri.edu" className="text-[#2563EB] font-mono font-semibold hover:underline">dyuti@rajagiri.edu</a></span>
                 </div>
               </div>
@@ -152,18 +149,13 @@ export const Contact: React.FC = () => {
               {/* Feedback Alert */}
               {feedback && (
                 <div
-                  className={`p-4 rounded-[14px] mb-6 flex items-center gap-3 text-sm ${
+                  className={`p-4 rounded-[14px] mb-6 text-sm ${
                     feedback.type === 'success'
                       ? 'bg-emerald-50 text-emerald-900 border border-emerald-300'
                       : 'bg-red-50 text-red-900 border border-red-300'
                   }`}
                   role="alert"
                 >
-                  {feedback.type === 'success' ? (
-                    <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
-                  ) : (
-                    <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
-                  )}
                   <span className="font-sans text-xs sm:text-sm leading-relaxed">{feedback.text}</span>
                 </div>
               )}
@@ -228,7 +220,6 @@ export const Contact: React.FC = () => {
                     variant="navy"
                     size="lg"
                     disabled={isSubmitting}
-                    icon={<Send className="w-4 h-4 text-white" />}
                   >
                     {isSubmitting ? 'Sending Message...' : 'Submit Inquiry'}
                   </Button>
