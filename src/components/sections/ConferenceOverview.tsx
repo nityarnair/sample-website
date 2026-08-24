@@ -1,67 +1,94 @@
 import React from 'react';
-import { Sparkles, Globe } from 'lucide-react';
+import { Sparkles, Globe, Target, Compass, Award, Quote } from 'lucide-react';
 
 /**
  * ConferenceOverview Component
- * Contains the EXACT content from dyuti.in:
- * 1. DYUTI 2027 Theme & Introductory Statement
- * 2. About DYUTI (Acronym & Origins since 1998)
- * 3. Background (UN 2030 Agenda, Indian Context, Role of Social Work)
+ * Upgraded premium template containing the exact contents from dyuti.in:
+ * - National Conference
+ * - DYUTI 2027
+ * - Conference Theme & Description
+ * - About DYUTI
+ * - Background (3 Pillars)
  */
 export const ConferenceOverview: React.FC = () => {
   return (
     <section
-      className="py-16 sm:py-24 bg-white text-[#0B1220] border-b border-[#D9DEE5]"
-      aria-label="About DYUTI 2027 and Background"
+      className="py-16 sm:py-24 bg-white text-[#0B1220] border-b border-[#D9DEE5] relative overflow-hidden"
+      aria-label="DYUTI 2027 National Conference Overview"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-8">
+      {/* Subtle Background Glows */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/60 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-slate-50/80 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 space-y-16 sm:space-y-20">
         
-        {/* ── 01: DYUTI 2027 SECTION ── */}
-        <div className="mb-14 sm:mb-18">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="h-0.5 w-8 bg-[#2563EB]" />
-            <span className="text-xs font-sans uppercase tracking-[0.2em] text-[#2563EB] font-bold">
-              National Conference
-            </span>
+        {/* ── 01: HEADER & CONFERENCE THEME ── */}
+        <div className="space-y-8">
+          
+          {/* Eyebrow and Main Title */}
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F0F7] border border-[#CBD5E1] text-[#2563EB] text-xs font-sans font-bold uppercase tracking-[0.2em] shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
+              <span>National Conference</span>
+            </div>
+
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#071A33] tracking-tight leading-none">
+              DYUTI <span className="text-[#2563EB]">2027</span>
+            </h1>
           </div>
 
-          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#071A33] tracking-tight mb-4">
-            DYUTI 2027
-          </h1>
+          {/* Theme Hero Showcase Card */}
+          <div className="relative rounded-[28px] bg-gradient-to-br from-[#071A33] via-[#0D284D] to-[#12345B] text-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(7,26,51,0.15)] border border-white/10 overflow-hidden">
+            {/* Ambient Lighting & Quote Watermark */}
+            <div className="absolute -right-8 -bottom-8 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+            <Quote className="absolute top-6 right-8 w-24 h-24 text-white/5 pointer-events-none rotate-180" />
 
-          <div className="w-full h-px bg-[#D9DEE5] mb-8" />
+            <div className="relative z-10 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#93C5FD] text-[11px] font-sans font-bold uppercase tracking-wider">
+                <span>Conference Theme</span>
+              </div>
 
-          {/* Theme highlight card */}
-          <div className="p-6 sm:p-8 rounded-[20px] bg-[#F8FAFC] border border-[#E2E8F0] shadow-sm mb-8 relative overflow-hidden">
-            <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-[#2563EB]" />
-            <p className="text-xs font-sans uppercase tracking-[0.16em] text-[#2563EB] font-bold mb-2">
-              Conference Theme
-            </p>
-            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#071A33] leading-snug">
-              &ldquo;Social Work for Sustainable Development: Empowering Communities through Innovation, Inclusion, and Partnership&rdquo;
-            </h2>
+              <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight max-w-4xl">
+                &ldquo;Social Work for Sustainable Development: Empowering Communities through Innovation, Inclusion, and Partnership&rdquo;
+              </h2>
+
+              <div className="w-16 h-1 bg-[#3B82F6] rounded-full" />
+
+              <p className="text-[15.5px] sm:text-[16.5px] text-white/85 leading-relaxed font-sans font-normal max-w-4xl pt-2">
+                The 2027 DYUTI National Conference, themed &ldquo;Social Work for Sustainable Development: Empowering Communities through Innovation, Inclusion, and Partnership,&rdquo; brings together academicians, researchers, practitioners, policymakers, students, and development professionals to deliberate on innovative and collaborative approaches for sustainable development. Aligned with the 2030 Agenda for Sustainable Development and its vision of &ldquo;Leaving No One Behind,&rdquo; the conference highlights the vital role of social work in promoting social justice, inclusive development, community empowerment, and sustainable solutions. Through scholarly dialogue and knowledge exchange, DYUTI 2027 aims to strengthen partnerships and advance resilient, equitable, and sustainable communities.
+              </p>
+            </div>
           </div>
 
-          {/* Official DYUTI 2027 Description Paragraph */}
-          <p className="text-[16px] sm:text-[17px] text-[#334155] leading-[1.8] font-sans font-normal">
-            The 2027 DYUTI National Conference, themed &ldquo;Social Work for Sustainable Development: Empowering Communities through Innovation, Inclusion, and Partnership,&rdquo; brings together academicians, researchers, practitioners, policymakers, students, and development professionals to deliberate on innovative and collaborative approaches for sustainable development. Aligned with the 2030 Agenda for Sustainable Development and its vision of &ldquo;Leaving No One Behind,&rdquo; the conference highlights the vital role of social work in promoting social justice, inclusive development, community empowerment, and sustainable solutions. Through scholarly dialogue and knowledge exchange, DYUTI 2027 aims to strengthen partnerships and advance resilient, equitable, and sustainable communities.
-          </p>
         </div>
 
         {/* ── 02: ABOUT DYUTI ── */}
-        <div className="mb-14 sm:mb-18 p-8 sm:p-10 rounded-[24px] bg-[#F8FAFC] border border-[#D9DEE5] shadow-sm">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 rounded-full bg-[#E8F0F7] flex items-center justify-center text-[#2563EB]">
-              <Sparkles className="w-4 h-4" />
+        <div className="rounded-[28px] bg-[#F8FAFC] border border-[#D9DEE5] p-8 sm:p-12 shadow-sm relative overflow-hidden">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-[#E2E8F0] mb-8">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-sans font-bold uppercase tracking-wider text-[#2563EB] mb-2">
+                <Award className="w-4 h-4 text-[#2563EB]" />
+                <span>Conference Heritage</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#071A33] tracking-tight">
+                About DYUTI
+              </h2>
             </div>
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#071A33] tracking-tight">
-              About DYUTI
-            </h2>
+
+            <div className="flex items-center gap-3">
+              <span className="px-4 py-1.5 rounded-full bg-white border border-[#CBD5E1] text-[#071A33] text-xs font-semibold shadow-sm">
+                Founded in 1998
+              </span>
+              <span className="px-4 py-1.5 rounded-full bg-[#E8F0F7] border border-blue-200 text-[#2563EB] text-xs font-bold shadow-sm">
+                26th in its series
+              </span>
+            </div>
           </div>
 
-          <div className="mt-4 mb-6 pb-5 border-b border-[#E2E8F0]">
-            <p className="text-[17px] sm:text-[19px] font-sans font-bold text-[#071A33] leading-snug">
-              <span className="text-[#2563EB]">DYUTI</span> &mdash;{' '}
+          {/* Acronym Expansion Box */}
+          <div className="bg-white rounded-[20px] p-6 sm:p-7 border border-[#E2E8F0] shadow-sm mb-6">
+            <p className="text-lg sm:text-xl font-heading font-bold text-[#071A33] leading-snug">
+              <span className="text-[#2563EB] tracking-wide">DYUTI</span> &mdash;{' '}
               <span className="text-[#071A33]">D</span>evelopmental{' '}
               <span className="text-[#071A33]">Y</span>earnings for a{' '}
               <span className="text-[#071A33]">U</span>nited and{' '}
@@ -70,38 +97,74 @@ export const ConferenceOverview: React.FC = () => {
             </p>
           </div>
 
-          <p className="text-[15.5px] sm:text-[16.5px] text-[#475467] leading-[1.8] font-sans">
+          {/* Legacy Paragraph */}
+          <p className="text-[16px] sm:text-[17px] text-[#475467] leading-[1.8] font-sans">
             Rajagiri with its vision of &lsquo;becoming a centre of excellence in learning for enriching and fulfilling LIFE&rsquo; has been regularly providing an annual forum for deliberations on vital issues of development from a Rights perspective. This annual series of deliberation (started in 1998) is named DYUTI meaning &lsquo;Spark of Life&rsquo;. DYUTI 2027 is the 26th in its series.
           </p>
         </div>
 
-        {/* ── 03: BACKGROUND ── */}
-        <div className="space-y-6">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-8 h-8 rounded-full bg-[#E8F0F7] flex items-center justify-center text-[#2563EB]">
-              <Globe className="w-4 h-4" />
+        {/* ── 03: BACKGROUND — 3-PILLAR STRUCTURED LAYOUT ── */}
+        <div className="space-y-8">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-[#E8F0F7] flex items-center justify-center text-[#2563EB]">
+              <Globe className="w-5 h-5" />
             </div>
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#071A33] tracking-tight">
-              Background
-            </h2>
+            <div>
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#071A33] tracking-tight">
+                Background
+              </h2>
+            </div>
           </div>
 
-          <div className="w-full h-px bg-[#D9DEE5] mb-6" />
+          {/* 3 Pillar Cards for the 3 Paragraphs */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+            
+            {/* Pillar 1: UN 2030 Agenda */}
+            <div className="rounded-[24px] bg-[#F8FAFC] border border-[#D9DEE5] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-white border border-[#CBD5E1] flex items-center justify-center text-[#2563EB] shadow-sm">
+                  <Target className="w-5 h-5" />
+                </div>
+                <h3 className="font-heading font-bold text-lg text-[#071A33]">
+                  The UN 2030 Agenda
+                </h3>
+                <p className="text-[14.5px] text-[#475467] leading-[1.75] font-sans">
+                  The adoption of the 2030 Agenda for Sustainable Development by the United Nations marked a global commitment to achieving the 17 Sustainable Development Goals (SDGs) through integrated social, economic, and environmental action. However, recent global reports indicate that progress has slowed due to climate change, widening inequalities, economic uncertainties, conflicts, and public health challenges, emphasizing the need for renewed collaboration and innovative, community-driven solutions.
+                </p>
+              </div>
+            </div>
 
-          {/* Paragraph 1: 2030 Agenda */}
-          <p className="text-[15.5px] sm:text-[16.5px] text-[#334155] leading-[1.8] font-sans font-normal">
-            The adoption of the 2030 Agenda for Sustainable Development by the United Nations marked a global commitment to achieving the 17 Sustainable Development Goals (SDGs) through integrated social, economic, and environmental action. However, recent global reports indicate that progress has slowed due to climate change, widening inequalities, economic uncertainties, conflicts, and public health challenges, emphasizing the need for renewed collaboration and innovative, community-driven solutions.
-          </p>
+            {/* Pillar 2: The Indian Context */}
+            <div className="rounded-[24px] bg-[#F8FAFC] border border-[#D9DEE5] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-white border border-[#CBD5E1] flex items-center justify-center text-[#2563EB] shadow-sm">
+                  <Compass className="w-5 h-5" />
+                </div>
+                <h3 className="font-heading font-bold text-lg text-[#071A33]">
+                  The Indian Context
+                </h3>
+                <p className="text-[14.5px] text-[#475467] leading-[1.75] font-sans">
+                  In India, while notable progress has been made towards several SDGs, challenges such as poverty, inequality, unemployment, climate vulnerability, gender disparities, environmental degradation, and unequal access to quality education, healthcare, and social protection continue to hinder inclusive development. Addressing these complex issues requires coordinated efforts among governments, academia, civil society, communities, industry, development professionals and social entrepreneurs.
+                </p>
+              </div>
+            </div>
 
-          {/* Paragraph 2: India's context */}
-          <p className="text-[15.5px] sm:text-[16.5px] text-[#334155] leading-[1.8] font-sans font-normal">
-            In India, while notable progress has been made towards several SDGs, challenges such as poverty, inequality, unemployment, climate vulnerability, gender disparities, environmental degradation, and unequal access to quality education, healthcare, and social protection continue to hinder inclusive development. Addressing these complex issues requires coordinated efforts among governments, academia, civil society, communities, industry, development professionals and social entrepreneurs.
-          </p>
+            {/* Pillar 3: Role of Social Work */}
+            <div className="rounded-[24px] bg-[#F8FAFC] border border-[#D9DEE5] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-white border border-[#CBD5E1] flex items-center justify-center text-[#2563EB] shadow-sm">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <h3 className="font-heading font-bold text-lg text-[#071A33]">
+                  Social Work&rsquo;s Mission
+                </h3>
+                <p className="text-[14.5px] text-[#475467] leading-[1.75] font-sans">
+                  Social work plays a pivotal role in advancing sustainable development through advocacy, community engagement, policy action, interdisciplinary collaboration, and evidence-based practice. DYUTI 2027 seeks to provide a platform for sharing innovative practices, indigenous knowledge, research, and partnerships that contribute to achieving the Sustainable Development Goals while strengthening resilient, inclusive, and sustainable communities.
+                </p>
+              </div>
+            </div>
 
-          {/* Paragraph 3: Role of Social Work & DYUTI 2027 mission */}
-          <p className="text-[15.5px] sm:text-[16.5px] text-[#334155] leading-[1.8] font-sans font-normal">
-            Social work plays a pivotal role in advancing sustainable development through advocacy, community engagement, policy action, interdisciplinary collaboration, and evidence-based practice. DYUTI 2027 seeks to provide a platform for sharing innovative practices, indigenous knowledge, research, and partnerships that contribute to achieving the Sustainable Development Goals while strengthening resilient, inclusive, and sustainable communities.
-          </p>
+          </div>
         </div>
 
       </div>
