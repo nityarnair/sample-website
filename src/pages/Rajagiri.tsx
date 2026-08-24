@@ -40,6 +40,23 @@ export const Rajagiri: React.FC = () => {
             </>
           }
           subtitle="Relentlessly Towards Excellence — Established in 1955, NAAC A++ Accredited (3.83 CGPA), Ranked #12 in India (NIRF 2025) and #1 in Kerala (KIRF 2025)."
+          rightContent={
+            <a
+              href={CONFERENCE_DATA.links.rajagiriPortal}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded-2xl p-1"
+              title="Visit Rajagiri College of Social Sciences Official Website"
+              aria-label="Rajagiri College Official Website"
+            >
+              <img
+                src="/images/rcss_seal_logo.jpg"
+                alt="Rajagiri College of Social Sciences Official Seal & Logo"
+                className="w-48 sm:w-56 md:w-64 lg:w-72 max-w-full h-auto object-contain mix-blend-multiply select-none"
+                loading="eager"
+              />
+            </a>
+          }
         />
 
         {/* ── HERO INSTITUTIONAL COMPOSITION ── */}
