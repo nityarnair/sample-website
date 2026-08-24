@@ -1,17 +1,17 @@
 import React from 'react';
-import { BellRing } from 'lucide-react';
+
+const REGISTRATION_URL = 'https://forms.gle/XTZZmXS1tjkvfm9u6';
 
 /**
  * Official Registration Announcement Marquee Bar
- * Exact content from dyuti.in:
- * "Registration begins from 10th August 2026, at Rajagiri College Of Social Sciences(Autonomous) Kalamassery."
+ * Positioned under the navigation bar.
+ * Exact content & link from dyuti.in:
+ * "REGISTER NOW - CLICK HERE FOR ONLINE REGISTRATION Registration begins from 10th August 2026, at Rajagiri College Of Social Sciences(Autonomous) Kalamassery."
  */
 export const MarqueeAnnouncement: React.FC = () => {
-  const text = 'Registration begins from 10th August 2026, at Rajagiri College Of Social Sciences(Autonomous) Kalamassery.';
-
   return (
     <aside
-      className="bg-[#071A33] text-white border-y border-white/10 overflow-hidden py-3 sm:py-3.5 relative z-20 select-none shadow-sm"
+      className="bg-[#071A33] text-white border-y border-white/10 overflow-hidden py-2.5 sm:py-3 relative z-30 select-none shadow-sm"
       aria-label="Conference Announcement Ticker"
     >
       <div className="flex items-center">
@@ -22,7 +22,7 @@ export const MarqueeAnnouncement: React.FC = () => {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0EA5E9]" />
           </span>
           <span className="font-sans text-[11px] font-bold tracking-[0.16em] uppercase text-[#93C5FD]">
-            Latest Update
+            Announcement
           </span>
         </div>
 
@@ -32,9 +32,16 @@ export const MarqueeAnnouncement: React.FC = () => {
             {/* Duplicated for seamless infinite loop */}
             {[...Array(4)].map((_, i) => (
               <div key={i} className="flex items-center mx-6 sm:mx-8">
-                <BellRing className="w-4 h-4 text-[#F59E0B] mr-3 shrink-0 inline" />
+                <a
+                  href={REGISTRATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-xs sm:text-sm font-bold text-[#F59E0B] hover:text-[#FCD34D] uppercase tracking-wider underline mr-3 transition-colors shrink-0"
+                >
+                  REGISTER NOW - CLICK HERE FOR ONLINE REGISTRATION
+                </a>
                 <span className="font-sans text-xs sm:text-sm font-medium tracking-wide text-white/95">
-                  {text}
+                  Registration begins from 10th August 2026, at Rajagiri College Of Social Sciences(Autonomous) Kalamassery.
                 </span>
                 <span className="mx-6 sm:mx-8 text-white/30 font-bold">&bull;</span>
               </div>
@@ -47,9 +54,16 @@ export const MarqueeAnnouncement: React.FC = () => {
           >
             {[...Array(4)].map((_, i) => (
               <div key={i} className="flex items-center mx-6 sm:mx-8">
-                <BellRing className="w-4 h-4 text-[#F59E0B] mr-3 shrink-0 inline" />
+                <a
+                  href={REGISTRATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-xs sm:text-sm font-bold text-[#F59E0B] hover:text-[#FCD34D] uppercase tracking-wider underline mr-3 transition-colors shrink-0"
+                >
+                  REGISTER NOW - CLICK HERE FOR ONLINE REGISTRATION
+                </a>
                 <span className="font-sans text-xs sm:text-sm font-medium tracking-wide text-white/95">
-                  {text}
+                  Registration begins from 10th August 2026, at Rajagiri College Of Social Sciences(Autonomous) Kalamassery.
                 </span>
                 <span className="mx-6 sm:mx-8 text-white/30 font-bold">&bull;</span>
               </div>
