@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import { PageHeader } from '@/components/ui/PageHeader';
 import { Lightbox } from '@/components/ui/Lightbox';
 import { ZoomIn } from 'lucide-react';
 import { CONFERENCE_DATA, GalleryItem } from '@/data/conference';

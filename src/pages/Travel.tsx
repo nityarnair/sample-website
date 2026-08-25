@@ -1,5 +1,4 @@
 import React from 'react';
-import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
 
 export const Travel: React.FC = () => {
