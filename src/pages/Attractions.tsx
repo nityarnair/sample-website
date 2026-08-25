@@ -14,11 +14,11 @@ export const Attractions: React.FC = () => {
   ];
 
   return (
-    <div className="pt-8 sm:pt-10 lg:pt-12 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
+    <div className="pt-2 sm:pt-3 lg:pt-4 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── PAGE HEADER ── */}
-        <div className="text-center py-14 sm:py-20 mb-4">
+        <div className="text-center pt-4 sm:pt-6 pb-10 sm:pb-14 mb-4">
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-2.5 mb-6">
             <span className="w-6 h-0.5 bg-[#2563EB]" />

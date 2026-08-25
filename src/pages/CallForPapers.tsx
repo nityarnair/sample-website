@@ -17,25 +17,31 @@ export const CallForPapers: React.FC = () => {
   ];
 
   return (
-    <div className="pt-8 sm:pt-10 lg:pt-12 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
+    <div className="pt-2 sm:pt-3 lg:pt-4 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
-        {/* ── 02 / EDITORIAL PAGE HEADER ── */}
-        <PageHeader
-          number="02"
-          category="CALL FOR PAPERS"
-          metaRight="Oral &amp; Poster Submissions &middot; Scopus Indexing"
-          eyebrow="Scholarly Submissions &amp; Guidelines"
-          title={
-            <>
-              Call for Papers
-              <span className="block font-heading text-[#667085] text-[1.85rem] sm:text-[2.5rem] font-bold mt-1">
-                &amp; Submission Guidelines
-              </span>
-            </>
-          }
-          subtitle="Abstracts based on original empirical research, theoretical inquiries, and innovative practice models are invited for Oral and Poster Presentations across the 8 conference themes."
-        />
+        {/* ── PAGE HEADER ── */}
+        <div className="text-center pt-4 sm:pt-6 pb-10 sm:pb-14 mb-4">
+          <div className="flex items-center justify-center gap-2.5 mb-6">
+            <span className="w-6 h-0.5 bg-[#2563EB]" />
+            <span className="text-[12px] font-sans font-bold uppercase tracking-[0.22em] text-[#2563EB]">
+              Scholarly Submissions &amp; Guidelines
+            </span>
+            <span className="w-6 h-0.5 bg-[#2563EB]" />
+          </div>
+          <h1 className="font-heading font-extrabold text-[#071A33] leading-tight tracking-tight mb-4"
+            style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)' }}>
+            Call for Papers
+            <span className="block text-[#667085]"
+              style={{ fontSize: 'clamp(2.5rem, 7vw, 5.25rem)' }}>
+              &amp; Submission Guidelines
+            </span>
+          </h1>
+          <div className="w-16 h-1 bg-[#2563EB] rounded-full mx-auto mb-6" />
+          <p className="text-base sm:text-lg md:text-xl text-[#475467] leading-relaxed font-sans max-w-2xl mx-auto">
+            Abstracts based on original empirical research, theoretical inquiries, and innovative practice models are invited for Oral and Poster Presentations across the 8 conference themes.
+          </p>
+        </div>
 
         {/* ── MAIN SUBMISSION ACTION BANNER (Deep Navy #071A33) ── */}
         <div className="bg-[#071A33] border border-white/10 text-white rounded-[24px] p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28 shadow-editorial">
