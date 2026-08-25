@@ -1,5 +1,4 @@
 import React from 'react';
-import { PageHeader } from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/Button';
 import { Download } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
