@@ -45,17 +45,24 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className="sticky top-0 z-50 w-full pointer-events-none"
+      className="sticky top-0 z-50 w-full pointer-events-none transition-all duration-300"
       role="banner"
     >
-      {/* ── CURVED FLOATING WHITE NAVBAR CONTAINER ── */}
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 pointer-events-auto pt-3.5 sm:pt-4">
+      {/* ── NAVBAR CONTAINER ── */}
+      <div
+        className={cn(
+          'mx-auto pointer-events-auto transition-all duration-300',
+          isScrolled
+            ? 'max-w-[1440px] px-3 sm:px-6 pt-3.5 sm:pt-4'
+            : 'max-w-full px-0 pt-0'
+        )}
+      >
         <div
           className={cn(
-            'w-full rounded-full flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 bg-white text-[#0B1220] border border-[#D9DEE5] shadow-[0_8px_30px_rgba(7,26,51,0.08)] gap-4 lg:gap-6 2xl:gap-8',
+            'w-full flex items-center justify-between transition-all duration-300 bg-white text-[#0B1220] gap-4 lg:gap-6 2xl:gap-8',
             isScrolled
-              ? 'h-[64px] sm:h-[68px] bg-white/95 backdrop-blur-xl border-[#CBD5E1] shadow-[0_12px_36px_rgba(7,26,51,0.12)]'
-              : 'h-[70px] sm:h-[74px]'
+              ? 'rounded-full h-[64px] sm:h-[68px] px-4 sm:px-6 lg:px-8 bg-white/95 backdrop-blur-xl border border-[#CBD5E1] shadow-[0_12px_36px_rgba(7,26,51,0.12)]'
+              : 'rounded-none h-[70px] sm:h-[74px] px-4 sm:px-8 lg:px-12 bg-white border-b border-[#D9DEE5] shadow-sm'
           )}
           style={{ backgroundColor: '#FFFFFF' }}
         >
