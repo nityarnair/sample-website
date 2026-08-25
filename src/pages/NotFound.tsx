@@ -6,7 +6,7 @@ export const NotFound: React.FC = () => {
   return (
     <div className="py-24 sm:py-36 px-4 sm:px-8 bg-[#F5F5F0] text-[#0B1220] min-h-[75vh] flex items-center justify-center">
       <div className="max-w-3xl mx-auto text-center">
-        
+
         {/* Annotation */}
         <div className="inline-flex items-center gap-3 pb-3 mb-8 border-b border-[#D9DEE5]">
           <span className="font-mono text-xs font-bold text-[#2563EB] tabular-nums">404</span>

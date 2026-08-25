@@ -26,7 +26,7 @@ export const Rajagiri: React.FC = () => {
 
         {/* ── EDITORIAL PAGE HEADER ── */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12 xl:gap-16 mb-16 sm:mb-20 lg:mb-24">
-          
+
           {/* Left Large Typography */}
           <div className="flex-1 max-w-4xl">
             {/* Eyebrow Accent */}
@@ -74,7 +74,7 @@ export const Rajagiri: React.FC = () => {
 
         {/* ── HERO INSTITUTIONAL COMPOSITION ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 lg:mb-28">
-          
+
           {/* Left Narrative (6 cols) */}
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
@@ -147,7 +147,7 @@ export const Rajagiri: React.FC = () => {
 
         {/* ── INSTITUTIONAL RECOGNITIONS & SDG IMPACT ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-20 lg:mb-28 items-start">
-          
+
           {/* Recognitions List (6 cols) */}
           <div className="lg:col-span-6">
             <div className="mb-6">

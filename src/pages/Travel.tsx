@@ -46,10 +46,10 @@ export const Travel: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            
+
             {/* Transit Options (6 cols) */}
             <div className="lg:col-span-6 space-y-4">
-              
+
               {/* Kochi Metro Recommended */}
               <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE]">
                 <div className="mb-2 text-[#071A33] font-bold text-sm font-sans">
@@ -111,10 +111,10 @@ export const Travel: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            
+
             {/* Transit Options (6 cols) */}
             <div className="lg:col-span-6 space-y-4">
-              
+
               {/* Kochi Metro */}
               <div className="p-6 rounded-[16px] bg-[#E8F0F7] border border-[#BFDBFE]">
                 <div className="mb-2 text-[#071A33] font-bold text-sm font-sans">

@@ -59,10 +59,10 @@ export const Contact: React.FC = () => {
 
         {/* ── TWO-COLUMN SECRETARIAT & FORM COMPOSITION ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-20 lg:mb-28">
-          
+
           {/* Left Column: Secretariat Information (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             {/* Conference Coordinators */}
             <div className="rounded-[20px] p-8 sm:p-10 bg-white border border-[#D9DEE5] shadow-editorial">
               <div className="mb-6 pb-4 border-b border-[#D9DEE5]">
@@ -141,7 +141,7 @@ export const Contact: React.FC = () => {
               <h3 className="font-heading text-[1.85rem] sm:text-[2.35rem] text-[#071A33] font-extrabold mb-2 leading-snug">
                 Send an Inquiry Message
               </h3>
-              
+
               <p className="text-xs sm:text-sm text-[#667085] mb-8 font-sans font-normal leading-relaxed">
                 Submit your query below and our organizing committee will respond promptly within 24 to 48 hours.
               </p>
@@ -149,11 +149,10 @@ export const Contact: React.FC = () => {
               {/* Feedback Alert */}
               {feedback && (
                 <div
-                  className={`p-4 rounded-[14px] mb-6 text-sm ${
-                    feedback.type === 'success'
+                  className={`p-4 rounded-[14px] mb-6 text-sm ${feedback.type === 'success'
                       ? 'bg-emerald-50 text-emerald-900 border border-emerald-300'
                       : 'bg-red-50 text-red-900 border border-red-300'
-                  }`}
+                    }`}
                   role="alert"
                 >
                   <span className="font-sans text-xs sm:text-sm leading-relaxed">{feedback.text}</span>

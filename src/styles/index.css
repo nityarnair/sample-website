@@ -34,6 +34,10 @@
   100% { transform: translateX(0%); }
 }
 
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(212, 249, 51, 0.25); }
+  50% { box-shadow: 0 0 25px rgba(212, 249, 51, 0.5); }
+}
 
 @layer base {
   html {
@@ -149,4 +153,3 @@
     scroll-behavior: auto !important;
   }
 }
-
