@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageHeader } from '@/components/ui/PageHeader';
+
 import { ExternalLink } from 'lucide-react';
 import { CONFERENCE_DATA } from '@/data/conference';
 
@@ -17,22 +17,35 @@ export const Attractions: React.FC = () => {
     <div className="pt-8 sm:pt-10 lg:pt-12 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
-        {/* ── 04 / EDITORIAL PAGE HEADER ── */}
-        <PageHeader
-          number="04"
-          category="ATTRACTIONS"
-          metaRight="Queen of the Arabian Sea &middot; Kerala, India"
-          eyebrow="Explore Kerala"
-          title={
-            <>
-              Attractions in &amp;
-              <span className="block font-heading text-[#667085] text-[1.85rem] sm:text-[2.5rem] font-bold mt-1">
-                Around Historic Kochi
-              </span>
-            </>
-          }
-          subtitle="Acclaimed as the 'Queen of the Arabian Sea', Kochi weaves historic Portuguese and Dutch architecture with scenic palm backwaters, spice markets, and vibrant coastal culture."
-        />
+        {/* ── PAGE HEADER ── */}
+        <div className="text-center py-14 sm:py-20 mb-4">
+          {/* Eyebrow */}
+          <div className="flex items-center justify-center gap-2.5 mb-6">
+            <span className="w-6 h-0.5 bg-[#2563EB]" />
+            <span className="text-[12px] font-sans font-bold uppercase tracking-[0.22em] text-[#2563EB]">
+              Explore Kerala
+            </span>
+            <span className="w-6 h-0.5 bg-[#2563EB]" />
+          </div>
+
+          {/* Main Title */}
+          <h1 className="font-heading font-extrabold text-[#071A33] leading-tight tracking-tight mb-4"
+            style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)' }}>
+            Attractions in &amp;
+            <span className="block text-[#667085]"
+              style={{ fontSize: 'clamp(2.5rem, 7vw, 5.25rem)' }}>
+              Around Historic Kochi
+            </span>
+          </h1>
+
+          {/* Divider */}
+          <div className="w-16 h-1 bg-[#2563EB] rounded-full mx-auto mb-6" />
+
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg md:text-xl text-[#475467] leading-relaxed font-sans max-w-2xl mx-auto">
+            Acclaimed as the &lsquo;Queen of the Arabian Sea&rsquo;, Kochi weaves historic Portuguese and Dutch architecture with scenic palm backwaters, spice markets, and vibrant coastal culture.
+          </p>
+        </div>
 
         {/* ── SCENIC HERO BANNER ── */}
         <div className="rounded-[24px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial mb-20 lg:mb-28 group max-h-[480px]">
