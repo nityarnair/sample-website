@@ -44,48 +44,48 @@ export const ImportantDatesTimeline: React.FC = () => {
   return (
     <section
       id="important-dates"
-      className="bg-[#F5F5F0] text-[#0B1220] border-b border-[#D9DEE5] relative py-20 sm:py-28 lg:py-32"
+      className="bg-[#081113] text-white border-b border-[#1E353B] relative py-20 sm:py-28 lg:py-32"
       aria-labelledby="dates-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── TOP SECTION ANNOTATION BAR ── */}
-        <div className="flex items-center justify-between pb-5 mb-12 sm:mb-16 border-b border-[#D9DEE5]">
+        <div className="flex items-center justify-between pb-5 mb-12 sm:mb-16 border-b border-[#1E353B]">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-[11px] font-bold text-[#2563EB] tabular-nums">06</span>
-            <span className="w-6 h-px bg-[#D9DEE5]" />
-            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-[#071A33] font-bold">
+            <span className="font-mono text-[11px] font-bold text-[#D4F933] tabular-nums">06</span>
+            <span className="w-6 h-px bg-[#1E353B]" />
+            <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-white font-bold">
               Important Dates
             </span>
           </div>
-          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] font-semibold">
+          <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#94A3B8] font-semibold">
             Chronology of Key Deadlines &amp; Milestones
           </span>
         </div>
 
-        {/* ── SECTION EDITORIAL HEADER ── */}
+        {/* ── SECTION HEADER ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 lg:mb-20 items-end">
           <div className="lg:col-span-8">
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-5 h-0.5 bg-[#2563EB]" />
-              <span className="text-[11.5px] font-sans uppercase tracking-[0.18em] font-bold text-[#2563EB]">
+              <span className="w-5 h-0.5 bg-[#D4F933]" />
+              <span className="text-[11.5px] font-sans uppercase tracking-[0.18em] font-bold text-[#D4F933]">
                 Conference Schedule &amp; Milestones
               </span>
             </div>
             <h2
               id="dates-heading"
-              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-heading font-extrabold text-[#071A33] leading-[1.08] tracking-tight m-0"
+              className="text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] font-heading font-extrabold text-white leading-[1.08] tracking-tight m-0"
             >
               The road to DYUTI 2027.
             </h2>
-            <p className="text-sm sm:text-base text-[#667085] font-sans font-normal mt-4 max-w-[620px] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#94A3B8] font-sans font-normal mt-4 max-w-[620px] leading-relaxed">
               Track critical submission windows, peer review notifications, and registration commencement dates leading up to the 26th annual symposium.
             </p>
           </div>
           <div className="lg:col-span-4 lg:text-right">
             <Link
               to="/call_for_papers"
-              className="group inline-flex items-center gap-2 text-[12px] font-sans uppercase tracking-[0.14em] font-bold text-[#071A33] hover:text-[#2563EB] transition-colors"
+              className="group inline-flex items-center gap-2 text-[12px] font-sans uppercase tracking-[0.14em] font-bold text-[#D4F933] hover:text-[#E4FF66] transition-colors"
             >
               <span>View Extended Abstract Guidelines</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -93,60 +93,54 @@ export const ImportantDatesTimeline: React.FC = () => {
           </div>
         </div>
 
-        {/* ── DESKTOP HORIZONTAL EDITORIAL TIMELINE (lg and above) ── */}
+        {/* ── DESKTOP HORIZONTAL TIMELINE ── */}
         <div className="hidden lg:block relative pt-4 pb-4">
-          {/* Continuous Navy Connecting Line */}
-          <div className="absolute top-[28px] left-12 right-12 h-[2px] bg-[#071A33]/20 -z-0" />
+          <div className="absolute top-[28px] left-12 right-12 h-[2px] bg-[#1E353B] -z-0" />
 
           <div className="grid grid-cols-5 gap-5 relative z-10">
             {steps.map((step, idx) => (
               <div key={idx} className="flex flex-col group">
-                {/* Timeline Node & Number Marker */}
                 <div className="flex items-center gap-3 mb-6 pl-2">
                   <div
                     className={`w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono text-[11px] font-bold transition-all duration-300 group-hover:scale-110 ${
                       step.isHighlight
-                        ? 'bg-[#2563EB] text-white ring-4 ring-[#BFDBFE]'
-                        : 'bg-[#071A33] text-white ring-4 ring-[#F5F5F0] group-hover:bg-[#2563EB]'
+                        ? 'bg-[#D4F933] text-[#060D0E] ring-4 ring-[#D4F933]/20'
+                        : 'bg-[#0E1D21] text-white border border-[#1E353B] group-hover:border-[#D4F933]'
                     }`}
                   >
                     {step.number}
                   </div>
-                  <span className="font-mono text-[11px] font-bold text-[#667085] uppercase tracking-wider group-hover:text-[#2563EB] transition-colors">
+                  <span className="font-mono text-[11px] font-bold text-[#94A3B8] uppercase tracking-wider group-hover:text-[#D4F933] transition-colors">
                     Step {step.number}
                   </span>
                 </div>
 
-                {/* White Editorial Milestone Card */}
                 <div
-                  className={`bg-white border rounded-[20px] p-6 shadow-subtle hover:shadow-editorial transition-all duration-300 flex flex-col justify-between min-h-[220px] ${
+                  className={`bg-[#0C181B] border rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between min-h-[220px] ${
                     step.isHighlight
-                      ? 'border-[#2563EB]/40 ring-1 ring-[#2563EB]/20 bg-white'
-                      : 'border-[#D9DEE5] hover:border-[#2563EB]/40'
+                      ? 'border-[#D4F933]/50 ring-1 ring-[#D4F933]/20'
+                      : 'border-[#1E353B] hover:border-[#D4F933]/40'
                   }`}
                 >
                   <div>
-                    {/* Date Display */}
                     <div className="mb-2.5">
                       <span
                         className={`inline-block font-mono text-[12.5px] font-bold uppercase tracking-wider ${
                           step.isHighlight
-                            ? 'text-[#2563EB]'
-                            : 'text-[#071A33]'
+                            ? 'text-[#D4F933]'
+                            : 'text-[#38BDF8]'
                         }`}
                       >
                         {step.date}
                       </span>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="font-heading text-[1.2rem] text-[#071A33] font-bold leading-snug mb-2 group-hover:text-[#2563EB] transition-colors">
+                    <h3 className="font-heading text-[1.2rem] text-white font-bold leading-snug mb-2 group-hover:text-[#D4F933] transition-colors">
                       {step.title}
                     </h3>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-[12.5px] text-[#667085] font-sans font-normal leading-relaxed m-0 mt-3 pt-3 border-t border-[#D9DEE5]/60">
+                  <p className="text-[12.5px] text-[#94A3B8] font-sans font-normal leading-relaxed m-0 mt-3 pt-3 border-t border-[#1E353B]">
                     {step.desc}
                   </p>
                 </div>
@@ -155,52 +149,46 @@ export const ImportantDatesTimeline: React.FC = () => {
           </div>
         </div>
 
-        {/* ── MOBILE / TABLET VERTICAL TIMELINE (under lg) ── */}
+        {/* ── MOBILE VERTICAL TIMELINE ── */}
         <div className="lg:hidden relative pl-8 sm:pl-10 space-y-6 sm:space-y-8">
-          {/* Vertical Connecting Line */}
-          <div className="absolute left-[13px] sm:left-[17px] top-4 bottom-4 w-[2px] bg-[#071A33]/20" />
+          <div className="absolute left-[13px] sm:left-[17px] top-4 bottom-4 w-[2px] bg-[#1E353B]" />
 
           {steps.map((step, idx) => (
             <div key={idx} className="relative group">
-              {/* Vertical Numbered Marker */}
               <div
                 className={`absolute -left-[29px] sm:-left-[33px] top-4 w-7 h-7 rounded-[8px] flex items-center justify-center font-mono text-[10px] font-bold ${
                   step.isHighlight
-                    ? 'bg-[#2563EB] text-white ring-4 ring-[#BFDBFE]'
-                    : 'bg-[#071A33] text-white ring-4 ring-[#F5F5F0]'
+                    ? 'bg-[#D4F933] text-[#060D0E]'
+                    : 'bg-[#0E1D21] text-white border border-[#1E353B]'
                 }`}
               >
                 {step.number}
               </div>
 
-              {/* White Card container */}
               <div
-                className={`bg-white border rounded-[20px] p-5 sm:p-6 shadow-subtle transition-all duration-300 ${
+                className={`bg-[#0C181B] border rounded-[20px] p-5 sm:p-6 transition-all duration-300 ${
                   step.isHighlight
-                    ? 'border-[#2563EB]/40 ring-1 ring-[#2563EB]/20'
-                    : 'border-[#D9DEE5]'
+                    ? 'border-[#D4F933]/50'
+                    : 'border-[#1E353B]'
                 }`}
               >
-                {/* Date & Step */}
                 <div className="flex items-center gap-3 mb-1.5">
                   <span
                     className={`font-mono text-[12px] font-bold uppercase tracking-wider ${
                       step.isHighlight
-                        ? 'text-[#2563EB]'
-                        : 'text-[#071A33]'
+                        ? 'text-[#D4F933]'
+                        : 'text-[#38BDF8]'
                     }`}
                   >
                     {step.date}
                   </span>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-heading text-[1.3rem] sm:text-[1.45rem] text-[#071A33] font-bold leading-snug mb-1.5">
+                <h3 className="font-heading text-[1.3rem] sm:text-[1.45rem] text-white font-bold leading-snug mb-1.5">
                   {step.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-[13px] text-[#667085] font-sans font-normal leading-relaxed m-0">
+                <p className="text-[13px] text-[#94A3B8] font-sans font-normal leading-relaxed m-0">
                   {step.desc}
                 </p>
               </div>
@@ -208,14 +196,14 @@ export const ImportantDatesTimeline: React.FC = () => {
           ))}
         </div>
 
-        {/* ── BOTTOM NOTIFICATION FOOTER ── */}
-        <div className="mt-14 pt-8 border-t border-[#D9DEE5] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5 text-xs text-[#667085] font-sans">
-            <Clock className="w-4 h-4 text-[#2563EB] shrink-0" />
+        {/* ── FOOTER ── */}
+        <div className="mt-14 pt-8 border-t border-[#1E353B] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 text-xs text-[#94A3B8] font-sans">
+            <Clock className="w-4 h-4 text-[#D4F933] shrink-0" />
             <span>All submission deadlines are set to 23:59 IST (Indian Standard Time).</span>
           </div>
-          <div className="flex items-center gap-2 text-xs font-mono text-[#071A33] font-semibold">
-            <Calendar className="w-3.5 h-3.5 text-[#2563EB]" />
+          <div className="flex items-center gap-2 text-xs font-mono text-white font-semibold">
+            <Calendar className="w-3.5 h-3.5 text-[#D4F933]" />
             <span>Official Venue: Rajagiri College of Social Sciences, Kalamassery</span>
           </div>
         </div>

@@ -7,10 +7,13 @@ import { MajorSubThemes } from '@/components/sections/MajorSubThemes';
 
 /**
  * DYUTI 2027 Official Homepage
+ * Implemented with rich dark theme sampled directly from the Kochi Nightscape Hero image:
+ * Background tone: #060D0E (Kochi Night Sky & Water)
+ * Accents: Neon Lime (#D4F933) & Cyan Glow (#38BDF8)
  */
 export const Home: React.FC = () => {
   return (
-    <div className="space-y-0 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
+    <div className="space-y-0 bg-[#060D0E] text-[#F8FAFC] min-h-screen">
       {/* 01 — Full-screen centred nightscape hero */}
       <HeroBanner />
 
