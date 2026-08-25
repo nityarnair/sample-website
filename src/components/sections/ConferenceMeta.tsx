@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const ConferenceMeta: React.FC = () => {
-  // Editorial stats strip — values sourced from conference documentation
   const items = [
     {
       number: '26th',
@@ -27,29 +26,25 @@ export const ConferenceMeta: React.FC = () => {
 
   return (
     <section
-      className="bg-[#FFFFFF] text-[#0B1220] border-b border-[#D9DEE5]"
+      className="bg-[#081113] text-[#F8FAFC] border-b border-[#1E353B]"
       aria-label="Conference Key Statistics"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* ── Horizontal Modern Information Strip ── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#D9DEE5]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#1E353B]">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="py-10 sm:py-12 px-5 sm:px-8 first:pl-0 last:pr-0 group hover:bg-[#F5F5F0]/60 transition-colors duration-200"
+              className="py-10 sm:py-12 px-5 sm:px-8 first:pl-0 last:pr-0 group hover:bg-[#0E1E22]/60 transition-colors duration-200"
             >
-              {/* Large display number — DM Sans ExtraBold */}
-              <div className="font-heading text-[2.5rem] sm:text-[3rem] font-extrabold text-[#071A33] leading-none mb-2 tracking-tight tabular-nums group-hover:text-[#2563EB] transition-colors">
+              <div className="font-heading text-[2.5rem] sm:text-[3rem] font-extrabold text-[#D4F933] leading-none mb-2 tracking-tight tabular-nums group-hover:text-[#38BDF8] transition-colors">
                 {item.number}
               </div>
 
-              {/* Label — DM Sans bold */}
-              <div className="text-[13.5px] sm:text-[14px] font-sans font-bold text-[#0B1220] leading-tight mb-1">
+              <div className="text-[13.5px] sm:text-[14px] font-sans font-bold text-white leading-tight mb-1">
                 {item.label}
               </div>
 
-              {/* Sub — muted description */}
-              <div className="text-[12px] font-sans text-[#667085] leading-relaxed">
+              <div className="text-[12px] font-sans text-[#94A3B8] leading-relaxed">
                 {item.sub}
               </div>
             </div>
