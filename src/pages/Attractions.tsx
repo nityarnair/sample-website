@@ -55,9 +55,8 @@ export const Attractions: React.FC = () => {
               >
                 {/* Photo Column */}
                 <div
-                  className={`lg:col-span-6 ${
-                    isEven ? 'lg:order-2' : 'lg:order-1'
-                  }`}
+                  className={`lg:col-span-6 ${isEven ? 'lg:order-2' : 'lg:order-1'
+                    }`}
                 >
                   <div className="rounded-[20px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial group">
                     <img
@@ -71,9 +70,8 @@ export const Attractions: React.FC = () => {
 
                 {/* Content Narrative Column */}
                 <div
-                  className={`lg:col-span-6 flex flex-col justify-center ${
-                    isEven ? 'lg:order-1' : 'lg:order-2'
-                  }`}
+                  className={`lg:col-span-6 flex flex-col justify-center ${isEven ? 'lg:order-1' : 'lg:order-2'
+                    }`}
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="font-mono text-xs font-bold text-[#2563EB] uppercase tracking-widest">

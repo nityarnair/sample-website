@@ -171,7 +171,7 @@ export const CallForPapers: React.FC = () => {
 
         {/* ── GUIDELINES FOR ABSTRACT & PUBLICATION ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-20 lg:mb-28 items-start">
-          
+
           {/* Submission Guidelines (6 cols) */}
           <div className="lg:col-span-6 p-8 sm:p-10 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial">
             <div className="mb-6">

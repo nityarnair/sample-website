@@ -10,10 +10,10 @@ export const Footer: React.FC = () => {
       aria-label="Footer Navigation and Secretariat Contacts"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        
+
         {/* Main Footer Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-14 border-b border-white/10">
-          
+
           {/* Col 1: Pages Links (5 cols) */}
           <div className="md:col-span-4 lg:col-span-4 space-y-4">
             <h4 className="text-xs font-sans uppercase tracking-[0.2em] text-[#93C5FD] font-bold">

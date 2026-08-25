@@ -11,7 +11,7 @@ export const ConferenceOverview: React.FC = () => {
   return (
     <section
       id="overview"
-      className="py-16 sm:py-24 bg-white text-[#0B1220] border-b border-[#D9DEE5] relative overflow-hidden"
+      className="py-16 sm:py-24 bg-white text-[#0B1220] border-b border-[#D9DEE5]"
       aria-label="DYUTI 2027 Conference Theme Narrative, About DYUTI and Background"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-8 space-y-16 sm:space-y-20">

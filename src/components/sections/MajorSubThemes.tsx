@@ -28,7 +28,7 @@ export const MajorSubThemes: React.FC = () => {
       aria-label="Conference Major Sub-Themes"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
-        
+
         {/* ── SECTION TITLE & SEARCH BAR ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#E2E8F0]">
           <div>

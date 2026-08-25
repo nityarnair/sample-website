@@ -111,7 +111,7 @@ export const Accommodation: React.FC = () => {
                 className="p-8 sm:p-10 lg:p-12 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial transition-all hover:border-[#2563EB]/40 group"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                  
+
                   {/* Left Number & Area Title (5 cols) */}
                   <div className="lg:col-span-5">
                     <div className="flex items-center gap-3 mb-3">
@@ -161,7 +161,7 @@ export const Accommodation: React.FC = () => {
         {/* ── HOSPITALITY DESK SUPPORT FOOTER ── */}
         <div className="rounded-[20px] p-8 sm:p-12 lg:p-14 bg-white border border-[#D9DEE5] shadow-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
+
             <div className="lg:col-span-8">
               <div className="mb-3">
                 <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
