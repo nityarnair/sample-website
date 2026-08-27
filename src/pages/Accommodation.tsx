@@ -56,6 +56,7 @@ export const Accommodation: React.FC = () => {
             </span>
           </h1>
           <div className="w-16 h-1 bg-[#D4F933] rounded-full mx-auto mb-6" />
+          <div className="w-16 h-1 bg-[#2563EB] rounded-full mx-auto mb-6" />
           <p className="text-base sm:text-lg md:text-xl text-[#9CA3AF] leading-relaxed font-sans max-w-2xl mx-auto">
             A curated selection of luxury, executive, and budget hotels conveniently accessible from the Rajagiri Valley and Hill campuses in Kochi.
           </p>
