@@ -14,7 +14,7 @@ export const Attractions: React.FC = () => {
   ];
 
   return (
-    <div className="pt-2 sm:pt-3 lg:pt-4 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
+    <div className="pt-2 sm:pt-3 lg:pt-4 pb-20 sm:pb-28 lg:pb-32 bg-[#060D0E] text-[#F8FAFC] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── PAGE HEADER ── */}
@@ -29,10 +29,10 @@ export const Attractions: React.FC = () => {
           </div>
 
           {/* Main Title */}
-          <h1 className="font-heading font-extrabold text-[#071A33] leading-tight tracking-tight mb-4"
+          <h1 className="font-heading font-extrabold text-[#F8FAFC] leading-tight tracking-tight mb-4"
             style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)' }}>
             Attractions in &amp;
-            <span className="block text-[#667085]"
+            <span className="block text-[#F8FAFC]"
               style={{ fontSize: 'clamp(2.5rem, 7vw, 5.25rem)' }}>
               Around Historic Kochi
             </span>
@@ -42,7 +42,7 @@ export const Attractions: React.FC = () => {
           <div className="w-16 h-1 bg-[#2563EB] rounded-full mx-auto mb-6" />
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-[#475467] leading-relaxed font-sans max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-[#9CA3AF] leading-relaxed font-sans max-w-2xl mx-auto">
             Acclaimed as the &lsquo;Queen of the Arabian Sea&rsquo;, Kochi weaves historic Portuguese and Dutch architecture with scenic palm backwaters, spice markets, and vibrant coastal culture.
           </p>
         </div>
@@ -57,90 +57,91 @@ export const Attractions: React.FC = () => {
           />
         </div>
 
-        {/* ── DETAILED ATTRACTIONS (Alternating Layouts) ── */}
-        <div className="space-y-16 lg:space-y-24 mb-20 lg:mb-28">
-          {CONFERENCE_DATA.attractions.map((attraction, idx) => {
-            const isEven = idx % 2 === 1;
-            return (
-              <div
-                key={attraction.id}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
-              >
-                {/* Photo Column */}
-                <div
-                  className={`lg:col-span-6 ${isEven ? 'lg:order-2' : 'lg:order-1'
-                    }`}
-                >
-                  <div className="rounded-[20px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial group">
-                    <img
-                      src={attraction.imageUrl}
-                      alt={attraction.title}
-                      className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-
-                {/* Content Narrative Column */}
-                <div
-                  className={`lg:col-span-6 flex flex-col justify-center ${isEven ? 'lg:order-1' : 'lg:order-2'
-                    }`}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="font-mono text-xs font-bold text-[#2563EB] uppercase tracking-widest">
-                      Destination {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    <span className="w-6 h-px bg-[#D9DEE5]" />
-                    <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#667085] font-semibold">
-                      Kochi, Kerala
-                    </span>
-                  </div>
-
-                  <h3 className="text-[2rem] sm:text-[2.5rem] font-heading font-extrabold text-[#071A33] leading-[1.1] mb-5">
-                    {attraction.title}
-                  </h3>
-
-                  <p className="text-[15px] sm:text-[16px] text-[#667085] leading-relaxed font-sans font-normal m-0">
-                    {attraction.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+       {/* ── DETAILED ATTRACTIONS (Alternating Layouts) ── */}
+<div className="space-y-16 lg:space-y-24 mb-20 lg:mb-28">
+  {CONFERENCE_DATA.attractions.map((attraction, idx) => {
+    const isEven = idx % 2 === 1;
+    return (
+      <div
+        key={attraction.id}
+        className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
+      >
+        {/* Photo Column */}
+        <div
+          className={`lg:col-span-6 ${
+            isEven ? 'lg:order-2' : 'lg:order-1'
+          }`}
+        >
+          <div className="rounded-[20px] overflow-hidden border border-[#D9DEE5] bg-[#E8EDF2] shadow-editorial group">
+            <img
+              src={attraction.imageUrl}
+              alt={attraction.title}
+              className="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
         </div>
+
+        {/* Content Narrative Column */}
+        <div
+          className={`lg:col-span-6 flex flex-col justify-center ${
+            isEven ? 'lg:order-1' : 'lg:order-2'
+          }`}
+        >
+          <div className="flex items-center gap-3 mb-3">
+            <span className="font-mono text-xs font-bold text-[#D4F933] uppercase tracking-widest">
+              Destination {String(idx + 1).padStart(2, '0')}
+            </span>
+            <span className="w-6 h-px bg-white/20" />
+            <span className="text-xs font-sans uppercase tracking-[0.16em] text-slate-300 font-semibold">
+              Kochi, Kerala
+            </span>
+          </div>
+
+          <h3 className="text-[2rem] sm:text-[2.5rem] font-heading font-extrabold text-white leading-[1.1] mb-5">
+            {attraction.title}
+          </h3>
+
+          <p className="text-[15px] sm:text-[16px] text-slate-300 leading-relaxed font-sans font-normal m-0">
+            {attraction.description}
+          </p>
+        </div>
+      </div>
+    );
+  })}
+</div>
 
         {/* ── QUICK TOURISM GUIDES & EXTERNAL RESOURCES ── */}
-        <div className="rounded-[20px] p-8 sm:p-12 lg:p-14 bg-white border border-[#D9DEE5] shadow-editorial">
-          <div className="mb-8">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
-              Kerala Tourism Portals
-            </span>
-            <h3 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-              Tourist Guides &amp; Official Travel Portals
-            </h3>
-            <span className="text-[11px] font-sans text-[#667085] uppercase tracking-wider font-semibold">
-              External State Tourism &amp; Sightseeing Resources
-            </span>
-          </div>
+<div className="rounded-[20px] p-8 sm:p-12 lg:p-14 bg-white/5 backdrop-blur-md border border-white/15 shadow-2xl">
+  <div className="mb-8">
+    <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#D4F933] block mb-1">
+      Kerala Tourism Portals
+    </span>
+    <h3 className="font-heading text-2xl sm:text-3xl text-white font-bold m-0">
+      Tourist Guides &amp; Official Travel Portals
+    </h3>
+    <span className="text-[11px] font-sans text-slate-300 uppercase tracking-wider font-semibold">
+      External State Tourism &amp; Sightseeing Resources
+    </span>
+  </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {tourismLinks.map((link, idx) => (
-              <a
-                key={idx}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-5 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5] hover:border-[#2563EB]/40 hover:bg-white transition-all flex items-center justify-between group shadow-subtle"
-              >
-                <span className="text-xs sm:text-sm font-sans font-semibold text-[#071A33] group-hover:text-[#2563EB] transition-colors leading-snug">
-                  {link.label}
-                </span>
-                <ExternalLink className="w-4 h-4 text-[#667085] group-hover:text-[#2563EB] shrink-0 ml-3 transition-colors" />
-              </a>
-            ))}
-          </div>
-        </div>
-
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {tourismLinks.map((link, idx) => (
+      <a
+        key={idx}
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-5 rounded-[14px] bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all flex items-center justify-between group shadow-lg"
+      >
+        <span className="text-xs sm:text-sm font-sans font-semibold text-slate-200 group-hover:text-[#D4F933] transition-colors leading-snug">
+          {link.label}
+        </span>
+        <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#D4F933] shrink-0 ml-3 transition-colors" />
+      </a>
+    ))}
+  </div>
+</div>
       </div>
     </div>
   );
