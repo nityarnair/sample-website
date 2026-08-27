@@ -26,53 +26,53 @@ export const Gallery: React.FC = () => {
     selectedPhotoIndex !== null ? filteredPhotos[selectedPhotoIndex] : null;
 
   return (
-    <div className="pt-2 sm:pt-3 lg:pt-4 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
+    <div className="pt-2 sm:pt-3 lg:pt-4 pb-20 sm:pb-28 lg:pb-32 bg-[#060D0E] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── PAGE HEADER ── */}
         <div className="text-center pt-4 sm:pt-6 pb-10 sm:pb-14 mb-4">
           <div className="flex items-center justify-center gap-2.5 mb-6">
-            <span className="w-6 h-0.5 bg-[#2563EB]" />
-            <span className="text-[12px] font-sans font-bold uppercase tracking-[0.22em] text-[#2563EB]">
+            <span className="w-6 h-0.5 bg-[#D4F933]" />
+            <span className="text-[12px] font-sans font-bold uppercase tracking-[0.22em] text-[#F8FAFC]">
               Conference Historical Archive
             </span>
-            <span className="w-6 h-0.5 bg-[#2563EB]" />
+            <span className="w-6 h-0.5 bg-[#D4F933]" />
           </div>
-          <h1 className="font-heading font-extrabold text-[#071A33] leading-tight tracking-tight mb-4"
+          <h1 className="font-heading font-extrabold text-[#F8FAFC] leading-tight tracking-tight mb-4"
             style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)' }}>
             Historical Conference
-            <span className="block text-[#667085]"
+            <span className="block text-[#F8FAFC]"
               style={{ fontSize: 'clamp(2.5rem, 7vw, 5.25rem)' }}>
               Gallery &amp; Retrospective
             </span>
           </h1>
-          <div className="w-16 h-1 bg-[#2563EB] rounded-full mx-auto mb-6" />
-          <p className="text-base sm:text-lg md:text-xl text-[#475467] leading-relaxed font-sans max-w-2xl mx-auto">
+          <div className="w-16 h-1 bg-[#D4F933] rounded-full mx-auto mb-6" />
+          <p className="text-base sm:text-lg md:text-xl text-[#9CA3AF] leading-relaxed font-sans max-w-2xl mx-auto">
             Glimpses of keynote addresses, book release ceremonies, academic dialogues, and cultural exchanges over 25+ historic editions of the DYUTI international conference.
           </p>
         </div>
 
         {/* ── FILTER CONTROLS ── */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14 lg:mb-18">
-          {categories.map((cat) => {
-            const isActive = activeFilter === cat;
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveFilter(cat)}
-                className={cn(
-                  'px-5 py-2.5 rounded-[10px] text-[12px] font-sans font-bold uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer border',
-                  isActive
-                    ? 'bg-[#071A33] text-white border-[#071A33] shadow-sm'
-                    : 'bg-white border-[#D9DEE5] text-[#667085] hover:text-[#071A33] hover:border-[#071A33]/40 shadow-subtle'
-                )}
-              >
-                {cat === 'All' ? 'All Editions' : `DYUTI ${cat}`}
-              </button>
-            );
-          })}
-        </div>
+<div className="flex flex-wrap items-center justify-center gap-2.5 mb-14 lg:mb-18">
+  {categories.map((cat) => {
+    const isActive = activeFilter === cat;
+    return (
+      <button
+        key={cat}
+        type="button"
+        onClick={() => setActiveFilter(cat)}
+        className={cn(
+          'px-5 py-2.5 rounded-[10px] text-[12px] font-sans font-bold uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer border backdrop-blur-md',
+          isActive
+            ? 'bg-blue-600/30 text-white border-blue-400/50 shadow-lg shadow-blue-500/10'
+            : 'bg-white/5 border-white/10 text-slate-300 hover:text-white hover:bg-white/10 hover:border-white/20 shadow-sm'
+        )}
+      >
+        {cat === 'All' ? 'All Editions' : `DYUTI ${cat}`}
+      </button>
+    );
+  })}
+</div>
 
         {/* ── IMAGE GRID ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 mb-20 lg:mb-28">
