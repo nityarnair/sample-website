@@ -21,12 +21,10 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu on navigation
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  // Scroll-aware shadow/blur enhancement
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 16);
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -34,7 +32,6 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Escape key closes drawer
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsMobileMenuOpen(false);
@@ -59,16 +56,15 @@ export const Header: React.FC = () => {
       >
         <div
           className={cn(
-            'w-full flex items-center justify-between transition-all duration-300 bg-white text-[#0B1220] gap-4 lg:gap-6 2xl:gap-8',
+            'w-full flex items-center justify-between transition-all duration-300 text-white gap-4 lg:gap-6 2xl:gap-8 bg-[#0b1329]',
             isScrolled
-              ? 'rounded-full h-[64px] sm:h-[68px] px-4 sm:px-6 lg:px-8 bg-white/95 backdrop-blur-xl border border-[#CBD5E1] shadow-[0_12px_36px_rgba(7,26,51,0.12)]'
-              : 'rounded-none h-[70px] sm:h-[74px] px-4 sm:px-8 lg:px-12 bg-white border-b border-[#D9DEE5] shadow-sm'
+              ? 'rounded-full h-[64px] sm:h-[68px] px-4 sm:px-6 lg:px-8 border border-slate-700/60 shadow-[0_12px_36px_rgba(0,0,0,0.4)]'
+              : 'rounded-none h-[70px] sm:h-[74px] px-4 sm:px-8 lg:px-12 border-b border-slate-800 shadow-md'
           )}
-          style={{ backgroundColor: '#FFFFFF' }}
         >
-          {/* ── LEFT SECTION: BRANDING & 2 BANNERS/LOGOS ── */}
+          {/* ── LEFT SECTION: BRANDING & LOGOS ── */}
           <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
-            {/* DYUTI Emblem + Title Link */}
+            {/* DYUTI Emblem + Text (Left - untouched) */}
             <Link
               to="/"
               className="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none shrink-0"
@@ -77,36 +73,36 @@ export const Header: React.FC = () => {
               <img
                 src="https://dyuti.in/assets/images/dyutilogoog.jpg"
                 alt="DYUTI Conference Emblem"
-                className="h-8 w-8 sm:h-9 sm:w-9 object-contain rounded-full border border-[#D9DEE5] shadow-sm transition-transform duration-200 group-hover:scale-105"
+                className="h-8 w-8 sm:h-9 sm:w-9 object-contain rounded-full border border-slate-700 shadow-sm transition-transform duration-200 group-hover:scale-105"
               />
               <div className="flex flex-col leading-none">
-                <span className="font-heading font-extrabold text-[#071A33] text-[1.2rem] sm:text-[1.35rem] tracking-tight leading-none group-hover:text-[#2563EB] transition-colors">
+                <span className="font-heading font-extrabold text-white text-[1.2rem] sm:text-[1.35rem] tracking-tight leading-none group-hover:text-blue-400 transition-colors">
                   DYUTI
                 </span>
-                <span className="font-sans text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#2563EB] font-bold leading-none mt-1">
+                <span className="font-sans text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-blue-400 font-bold leading-none mt-1">
                   2027 &middot; Kochi
                 </span>
               </div>
             </Link>
 
             {/* Vertical Divider */}
-            <div className="hidden sm:block w-px h-7 bg-[#D9DEE5] mx-0.5" />
+            <div className="hidden sm:block w-px h-7 bg-slate-700/70 mx-0.5" />
 
-            {/* Official DYUTI 2027 Conference Banner Logo */}
+            {/* Official DYUTI 2027 Banner (Right logo - WHITE PILL ADDED HERE) */}
             <Link
               to="/"
-              className="hidden sm:flex items-center focus-visible:outline-none transition-transform duration-200 hover:scale-105"
+              className="hidden sm:flex items-center focus-visible:outline-none transition-transform duration-200 hover:scale-105 bg-white px-2.5 py-1 rounded-full shadow-sm"
               aria-label="DYUTI 2027 Official Theme Logo"
             >
               <img
                 src="https://dyuti.in/assets/images/dyuti_2027_logo_new-removebg-preview.png"
                 alt="DYUTI 2027 Official Logo Banner"
-                className="h-8 sm:h-9 w-auto max-w-[130px] lg:max-w-[160px] object-contain drop-shadow-sm"
+                className="h-7 sm:h-8 w-auto max-w-[130px] lg:max-w-[160px] object-contain"
               />
             </Link>
           </div>
 
-          {/* ── CENTER SECTION: DESKTOP NAVIGATION WITH EXTRA SPACING ── */}
+          {/* ── CENTER SECTION: DESKTOP NAVIGATION ── */}
           <nav
             aria-label="Main Navigation"
             className="hidden xl:flex items-center justify-center flex-1 mx-2 2xl:mx-4"
@@ -119,10 +115,10 @@ export const Header: React.FC = () => {
                     end={item.exact}
                     className={({ isActive }) =>
                       cn(
-                        'relative px-3.5 2xl:px-4.5 py-2.5 rounded-full text-[13.5px] 2xl:text-[14px] font-sans font-medium transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]',
+                        'relative px-3.5 2xl:px-4.5 py-2.5 rounded-full text-[13.5px] 2xl:text-[14px] font-sans font-medium transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400',
                         isActive
-                          ? 'text-[#2563EB] font-bold bg-[#E8F0F7] shadow-sm'
-                          : 'text-[#475467] hover:text-[#071A33] hover:bg-[#F1F5F9]'
+                          ? 'text-white font-bold bg-blue-600 shadow-sm'
+                          : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
                       )
                     }
                   >
@@ -133,14 +129,13 @@ export const Header: React.FC = () => {
             </ul>
           </nav>
 
-          {/* ── RIGHT SECTION: RAJAGIRI LOGO & CTA REGISTER BUTTON ── */}
+          {/* ── RIGHT SECTION: RAJAGIRI LOGO & REGISTER CTA ── */}
           <div className="hidden sm:flex items-center gap-3 lg:gap-3.5 shrink-0">
-            {/* Official Rajagiri College Logo Banner */}
             <a
               href={CONFERENCE_DATA.links.rajagiriPortal}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#F8FAFC] hover:bg-[#F1F5F9] px-3 sm:px-3.5 py-1.5 rounded-full border border-[#E2E8F0] shadow-sm transition-all duration-200 hover:scale-105 flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+              className="bg-white hover:bg-slate-100 px-3 sm:px-3.5 py-1.5 rounded-full border border-slate-200 shadow-sm transition-all duration-200 hover:scale-105 flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
               title="Rajagiri College of Social Sciences (Autonomous)"
               aria-label="Rajagiri College of Social Sciences Website"
             >
@@ -151,12 +146,11 @@ export const Header: React.FC = () => {
               />
             </a>
 
-            {/* Desktop Register CTA Button */}
             <a
               href={REGISTRATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group h-[42px] px-5 sm:px-6 inline-flex items-center gap-2 text-[13px] font-sans font-semibold bg-[#2563EB] text-white hover:bg-[#1D4ED8] rounded-full transition-all duration-200 shadow-md shadow-blue-600/25 hover:shadow-blue-600/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+              className="group h-[42px] px-5 sm:px-6 inline-flex items-center gap-2 text-[13px] font-sans font-semibold bg-blue-600 text-white hover:bg-blue-500 rounded-full transition-all duration-200 shadow-md shadow-blue-600/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
             >
               <span>Register</span>
               <span className="text-[14px] transition-transform duration-200 group-hover:translate-x-1 inline-block">
@@ -165,13 +159,13 @@ export const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* ── MOBILE: RAJAGIRI LOGO + REGISTER + HAMBURGER ── */}
+          {/* ── MOBILE ACTIONS ── */}
           <div className="flex sm:hidden items-center gap-2 shrink-0">
             <a
               href={CONFERENCE_DATA.links.rajagiriPortal}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#F8FAFC] px-2 py-1 rounded-full border border-[#E2E8F0] shadow-sm flex items-center"
+              className="bg-white px-2 py-1 rounded-full border border-slate-200 shadow-sm flex items-center"
               title="Rajagiri College"
             >
               <img
@@ -184,7 +178,7 @@ export const Header: React.FC = () => {
               href={REGISTRATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 h-8 inline-flex items-center text-[11.5px] font-sans font-semibold bg-[#2563EB] text-white hover:bg-[#1D4ED8] rounded-full focus-visible:outline-none shadow-sm"
+              className="px-3 h-8 inline-flex items-center text-[11.5px] font-sans font-semibold bg-blue-600 text-white hover:bg-blue-500 rounded-full focus-visible:outline-none shadow-sm"
             >
               Register
             </a>
@@ -193,50 +187,50 @@ export const Header: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              className="w-8 h-8 flex items-center justify-center text-[#071A33] border border-[#D9DEE5] rounded-full bg-[#F8FAFC] shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] transition-colors hover:bg-[#F1F5F9]"
+              className="w-8 h-8 flex items-center justify-center text-white border border-slate-700 rounded-full bg-slate-800 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors hover:bg-slate-700"
             >
               {isMobileMenuOpen ? (
-                <X className="w-4 h-4 text-[#071A33]" />
+                <X className="w-4 h-4 text-white" />
               ) : (
-                <Menu className="w-4 h-4 text-[#071A33]" />
+                <Menu className="w-4 h-4 text-white" />
               )}
             </button>
           </div>
         </div>
 
-        {/* ── MOBILE DRAWER (White Theme with Curved Edges) ── */}
+        {/* ── MOBILE DRAWER ── */}
         {isMobileMenuOpen && (
           <div
-            className="xl:hidden mt-2.5 bg-white border border-[#D9DEE5] text-[#0B1220] rounded-[28px] overflow-hidden shadow-[0_16px_45px_rgba(7,26,51,0.14)] animate-slideDown"
+            className="xl:hidden mt-2.5 bg-[#0b1329] border border-slate-700 text-white rounded-[28px] overflow-hidden shadow-2xl animate-slideDown"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
           >
-            {/* Drawer header with Logos */}
-            <div className="px-5 pt-4 pb-3 border-b border-[#E2E8F0] flex items-center justify-between">
+            <div className="px-5 pt-4 pb-3 border-b border-slate-800 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <img
                   src="https://dyuti.in/assets/images/dyutilogoog.jpg"
                   alt="DYUTI Logo"
-                  className="h-7 w-7 rounded-full border border-[#D9DEE5]"
+                  className="h-7 w-7 rounded-full border border-slate-700"
                 />
-                <img
-                  src="https://dyuti.in/assets/images/dyuti_2027_logo_new-removebg-preview.png"
-                  alt="DYUTI 2027 Banner"
-                  className="h-6 w-auto object-contain"
-                />
+                <div className="bg-white px-2 py-0.5 rounded-full shadow-sm">
+                  <img
+                    src="https://dyuti.in/assets/images/dyuti_2027_logo_new-removebg-preview.png"
+                    alt="DYUTI 2027 Banner"
+                    className="h-6 w-auto object-contain"
+                  />
+                </div>
               </div>
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[#667085] hover:text-[#071A33] transition-colors p-1"
+                className="text-slate-400 hover:text-white transition-colors p-1"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Nav links */}
             <nav className="px-3.5 py-4 space-y-1.5">
               {navLinks.map((item) => (
                 <NavLink
@@ -248,8 +242,8 @@ export const Header: React.FC = () => {
                     cn(
                       'flex items-center px-4 py-3 rounded-full text-[14.5px] font-sans font-medium transition-colors',
                       isActive
-                        ? 'text-[#2563EB] font-bold bg-[#E8F0F7] shadow-sm'
-                        : 'text-[#475467] hover:text-[#071A33] hover:bg-[#F1F5F9]'
+                        ? 'text-white font-bold bg-blue-600 shadow-sm'
+                        : 'text-slate-300 hover:text-white hover:bg-slate-800'
                     )
                   }
                 >
@@ -258,13 +252,12 @@ export const Header: React.FC = () => {
               ))}
             </nav>
 
-            {/* Rajagiri Banner Link + Register CTA in Drawer */}
             <div className="px-4 pb-5 pt-2 space-y-3">
               <a
                 href={CONFERENCE_DATA.links.rajagiriPortal}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-full bg-[#F8FAFC] hover:bg-[#F1F5F9] border border-[#E2E8F0] flex items-center justify-between text-[#071A33] text-xs font-semibold shadow-sm transition-colors"
+                className="w-full py-2.5 px-4 rounded-full bg-white text-slate-900 border border-slate-200 flex items-center justify-between text-xs font-semibold shadow-sm transition-colors"
               >
                 <div className="flex items-center gap-2">
                   <img
@@ -274,14 +267,14 @@ export const Header: React.FC = () => {
                   />
                   <span>Rajagiri College (Autonomous)</span>
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-[#071A33]/70" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-700" />
               </a>
 
               <a
                 href={REGISTRATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full h-[48px] flex items-center justify-center gap-2 text-[13px] font-sans font-semibold bg-[#2563EB] text-white rounded-full shadow-md shadow-blue-600/25 hover:bg-[#1D4ED8] transition-colors focus-visible:outline-none"
+                className="group w-full h-[48px] flex items-center justify-center gap-2 text-[13px] font-sans font-semibold bg-blue-600 text-white rounded-full shadow-md shadow-blue-600/30 hover:bg-blue-500 transition-colors focus-visible:outline-none"
               >
                 <span>Register for Conference</span>
                 <span className="text-[14px] transition-transform duration-200 group-hover:translate-x-1 inline-block">
@@ -295,4 +288,3 @@ export const Header: React.FC = () => {
     </header>
   );
 };
-
