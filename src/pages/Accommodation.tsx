@@ -41,11 +41,11 @@ export const Accommodation: React.FC = () => {
         {/* ── PAGE HEADER ── */}
         <div className="text-center pt-4 sm:pt-6 pb-10 sm:pb-14 mb-4">
           <div className="flex items-center justify-center gap-2.5 mb-6">
-            <span className="w-6 h-0.5 bg-[#2563EB]" />
+            <span className="w-6 h-0.5 bg-[#D4F933]" />
             <span className="text-[12px] font-sans font-bold uppercase tracking-[0.22em] text-[#F8FAFC]">
               Delegate Hospitality
             </span>
-            <span className="w-6 h-0.5 bg-[#2563EB]" />
+            <span className="w-6 h-0.5 bg-[#D4F933]" />
           </div>
           <h1 className="font-heading font-extrabold text-[#F8FAFC] leading-tight tracking-tight mb-4"
             style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)' }}>
@@ -55,6 +55,7 @@ export const Accommodation: React.FC = () => {
               &amp; Hotels Near Rajagiri
             </span>
           </h1>
+          <div className="w-16 h-1 bg-[#D4F933] rounded-full mx-auto mb-6" />
           <div className="w-16 h-1 bg-[#2563EB] rounded-full mx-auto mb-6" />
           <p className="text-base sm:text-lg md:text-xl text-[#9CA3AF] leading-relaxed font-sans max-w-2xl mx-auto">
             A curated selection of luxury, executive, and budget hotels conveniently accessible from the Rajagiri Valley and Hill campuses in Kochi.
@@ -65,7 +66,7 @@ export const Accommodation: React.FC = () => {
         <div className="bg-[#071A33] border border-white/10 text-white rounded-[24px] p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28 shadow-editorial">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="inline-flex items-center text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#93C5FD] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
+              <span className="inline-flex items-center text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#D4F933] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
                 Delegate Accommodation Advisory
               </span>
               <h2 className="text-[2.25rem] sm:text-[2.85rem] font-heading font-extrabold text-white mb-3 leading-tight">
@@ -97,7 +98,7 @@ export const Accommodation: React.FC = () => {
 <div className="mb-20 lg:mb-28">
   <div className="flex items-center justify-between pb-4 mb-10 border-b border-white/10">
     <div>
-      <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.2em] text-blue-400 block mb-1">
+      <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.2em] text-[#D4F933] block mb-1">
         Stay Locations
       </span>
       <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-white m-0">
@@ -113,14 +114,14 @@ export const Accommodation: React.FC = () => {
     {areas.map((area, idx) => (
       <div
         key={idx}
-        className="p-8 sm:p-10 lg:p-12 rounded-[20px] bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-blue-400/40 hover:bg-white/[0.07] group"
+        className="p-8 sm:p-10 lg:p-12 rounded-[20px] bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-[#D4F933]/40 hover:bg-white/[0.07] group"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
           {/* Left Number & Area Title (5 cols) */}
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-mono text-xs sm:text-sm font-bold text-blue-400 tabular-nums">
+              <span className="font-mono text-xs sm:text-sm font-bold text-[#D4F933] tabular-nums">
                 {area.number}
               </span>
               <span className="w-6 h-px bg-white/10" />
@@ -129,7 +130,7 @@ export const Accommodation: React.FC = () => {
               </span>
             </div>
 
-            <h4 className="text-[1.85rem] sm:text-[2.2rem] font-heading font-bold text-white leading-snug group-hover:text-blue-400 transition-colors mb-4">
+            <h4 className="text-[1.85rem] sm:text-[2.2rem] font-heading font-bold text-white leading-snug group-hover:text-[#D4F933] transition-colors mb-4">
               {area.name}
             </h4>
 
@@ -137,7 +138,7 @@ export const Accommodation: React.FC = () => {
               <span className="inline-flex items-center text-xs font-mono font-bold text-slate-200 bg-white/5 border border-white/10 px-3 py-1 rounded-[8px] backdrop-blur-md">
                 <span>{area.distance}</span>
               </span>
-              <span className="inline-flex items-center text-xs font-mono font-bold text-blue-200 bg-blue-500/10 border border-blue-400/30 px-3 py-1 rounded-[8px] backdrop-blur-md">
+              <span className="inline-flex items-center text-xs font-mono font-bold text-[#D4F933] bg-[#D4F933]/10 border border-[#D4F933]/30 px-3 py-1 rounded-[8px] backdrop-blur-md">
                 <span>{area.duration}</span>
               </span>
             </div>
@@ -150,7 +151,7 @@ export const Accommodation: React.FC = () => {
             </p>
 
             <div className="p-4 rounded-[14px] bg-white/5 border border-white/10 text-xs sm:text-sm text-slate-200 font-sans backdrop-blur-md">
-              <strong className="text-blue-400 block font-mono text-[11px] uppercase tracking-wider mb-0.5 font-bold">
+              <strong className="text-[#D4F933] block font-mono text-[11px] uppercase tracking-wider mb-0.5 font-bold">
                 Transit Recommendations
               </strong>
               <span>{area.transit}</span>
@@ -169,7 +170,7 @@ export const Accommodation: React.FC = () => {
 
     <div className="lg:col-span-8">
       <div className="mb-3">
-        <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-blue-400 block mb-1">
+        <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#D4F933] block mb-1">
           Support &amp; Logistics
         </span>
         <h4 className="font-heading text-2xl sm:text-3xl text-white font-bold m-0">
