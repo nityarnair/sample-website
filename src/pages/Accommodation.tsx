@@ -35,28 +35,29 @@ export const Accommodation: React.FC = () => {
   ];
 
   return (
-    <div className="pt-2 sm:pt-3 lg:pt-4 pb-20 sm:pb-28 lg:pb-32 bg-[#F5F5F0] text-[#0B1220] min-h-screen">
+    <div className="pt-2 sm:pt-3 lg:pt-4 pb-20 sm:pb-28 lg:pb-32 bg-[#060D0E] text-[#0B1220] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
         {/* ── PAGE HEADER ── */}
         <div className="text-center pt-4 sm:pt-6 pb-10 sm:pb-14 mb-4">
           <div className="flex items-center justify-center gap-2.5 mb-6">
-            <span className="w-6 h-0.5 bg-[#2563EB]" />
-            <span className="text-[12px] font-sans font-bold uppercase tracking-[0.22em] text-[#2563EB]">
+            <span className="w-6 h-0.5 bg-[#D4F933]" />
+            <span className="text-[12px] font-sans font-bold uppercase tracking-[0.22em] text-[#F8FAFC]">
               Delegate Hospitality
             </span>
-            <span className="w-6 h-0.5 bg-[#2563EB]" />
+            <span className="w-6 h-0.5 bg-[#D4F933]" />
           </div>
-          <h1 className="font-heading font-extrabold text-[#071A33] leading-tight tracking-tight mb-4"
+          <h1 className="font-heading font-extrabold text-[#F8FAFC] leading-tight tracking-tight mb-4"
             style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)' }}>
             Accommodation
-            <span className="block text-[#667085]"
+            <span className="block text-[#F8FAFC]"
               style={{ fontSize: 'clamp(2.5rem, 7vw, 5.25rem)' }}>
               &amp; Hotels Near Rajagiri
             </span>
           </h1>
+          <div className="w-16 h-1 bg-[#D4F933] rounded-full mx-auto mb-6" />
           <div className="w-16 h-1 bg-[#2563EB] rounded-full mx-auto mb-6" />
-          <p className="text-base sm:text-lg md:text-xl text-[#475467] leading-relaxed font-sans max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-[#9CA3AF] leading-relaxed font-sans max-w-2xl mx-auto">
             A curated selection of luxury, executive, and budget hotels conveniently accessible from the Rajagiri Valley and Hill campuses in Kochi.
           </p>
         </div>
@@ -65,7 +66,7 @@ export const Accommodation: React.FC = () => {
         <div className="bg-[#071A33] border border-white/10 text-white rounded-[24px] p-8 sm:p-12 lg:p-14 mb-20 lg:mb-28 shadow-editorial">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="inline-flex items-center text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#93C5FD] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
+              <span className="inline-flex items-center text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#D4F933] bg-white/10 px-3.5 py-1.5 rounded-[8px] mb-4 border border-white/15">
                 Delegate Accommodation Advisory
               </span>
               <h2 className="text-[2.25rem] sm:text-[2.85rem] font-heading font-extrabold text-white mb-3 leading-tight">
@@ -93,107 +94,108 @@ export const Accommodation: React.FC = () => {
           </div>
         </div>
 
-        {/* ── AREA INFORMATION ── */}
-        <div className="mb-20 lg:mb-28">
-          <div className="flex items-center justify-between pb-4 mb-10 border-b border-[#D9DEE5]">
-            <div>
-              <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.2em] text-[#2563EB] block mb-1">
-                Stay Locations
+{/* ── AREA INFORMATION ── */}
+<div className="mb-20 lg:mb-28">
+  <div className="flex items-center justify-between pb-4 mb-10 border-b border-white/10">
+    <div>
+      <span className="text-[11.5px] font-mono font-bold uppercase tracking-[0.2em] text-[#D4F933] block mb-1">
+        Stay Locations
+      </span>
+      <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-white m-0">
+        Recommended Accommodation Zones
+      </h3>
+    </div>
+    <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-slate-400 hidden sm:inline font-semibold">
+      Within 10–20 mins of Rajagiri Campus
+    </span>
+  </div>
+
+  <div className="space-y-6">
+    {areas.map((area, idx) => (
+      <div
+        key={idx}
+        className="p-8 sm:p-10 lg:p-12 rounded-[20px] bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-[#D4F933]/40 hover:bg-white/[0.07] group"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+          {/* Left Number & Area Title (5 cols) */}
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="font-mono text-xs sm:text-sm font-bold text-[#D4F933] tabular-nums">
+                {area.number}
               </span>
-              <h3 className="font-heading text-[1.75rem] sm:text-[2.1rem] font-bold text-[#071A33] m-0">
-                Recommended Accommodation Zones
-              </h3>
+              <span className="w-6 h-px bg-white/10" />
+              <span className="text-xs font-sans uppercase tracking-[0.16em] text-slate-400 font-semibold">
+                {area.subtitle}
+              </span>
             </div>
-            <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-[#667085] hidden sm:inline font-semibold">
-              Within 10–20 mins of Rajagiri Campus
-            </span>
+
+            <h4 className="text-[1.85rem] sm:text-[2.2rem] font-heading font-bold text-white leading-snug group-hover:text-[#D4F933] transition-colors mb-4">
+              {area.name}
+            </h4>
+
+            <div className="flex flex-wrap gap-2">
+              <span className="inline-flex items-center text-xs font-mono font-bold text-slate-200 bg-white/5 border border-white/10 px-3 py-1 rounded-[8px] backdrop-blur-md">
+                <span>{area.distance}</span>
+              </span>
+              <span className="inline-flex items-center text-xs font-mono font-bold text-[#D4F933] bg-[#D4F933]/10 border border-[#D4F933]/30 px-3 py-1 rounded-[8px] backdrop-blur-md">
+                <span>{area.duration}</span>
+              </span>
+            </div>
           </div>
 
-          <div className="space-y-6">
-            {areas.map((area, idx) => (
-              <div
-                key={idx}
-                className="p-8 sm:p-10 lg:p-12 rounded-[20px] bg-white border border-[#D9DEE5] shadow-editorial transition-all hover:border-[#2563EB]/40 group"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Right Description & Transit Information (7 cols) */}
+          <div className="lg:col-span-7 flex flex-col justify-between h-full pt-2 lg:pt-0 lg:border-l lg:border-white/10 lg:pl-10">
+            <p className="text-[14.5px] sm:text-[15.5px] text-slate-300 leading-relaxed font-sans font-normal mb-5">
+              {area.description}
+            </p>
 
-                  {/* Left Number & Area Title (5 cols) */}
-                  <div className="lg:col-span-5">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="font-mono text-xs sm:text-sm font-bold text-[#2563EB] tabular-nums">
-                        {area.number}
-                      </span>
-                      <span className="w-6 h-px bg-[#D9DEE5]" />
-                      <span className="text-xs font-sans uppercase tracking-[0.16em] text-[#667085] font-semibold">
-                        {area.subtitle}
-                      </span>
-                    </div>
-
-                    <h4 className="text-[1.85rem] sm:text-[2.2rem] font-heading font-bold text-[#071A33] leading-snug group-hover:text-[#2563EB] transition-colors mb-4">
-                      {area.name}
-                    </h4>
-
-                    <div className="flex flex-wrap gap-2">
-                      <span className="inline-flex items-center text-xs font-mono font-bold text-[#071A33] bg-[#F5F5F0] border border-[#D9DEE5] px-3 py-1 rounded-[8px]">
-                        <span>{area.distance}</span>
-                      </span>
-                      <span className="inline-flex items-center text-xs font-mono font-bold text-[#2563EB] bg-[#E8F0F7] border border-[#BFDBFE] px-3 py-1 rounded-[8px]">
-                        <span>{area.duration}</span>
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Right Description & Transit Information (7 cols) */}
-                  <div className="lg:col-span-7 flex flex-col justify-between h-full pt-2 lg:pt-0 lg:border-l lg:border-[#D9DEE5] lg:pl-10">
-                    <p className="text-[14.5px] sm:text-[15.5px] text-[#667085] leading-relaxed font-sans font-normal mb-5">
-                      {area.description}
-                    </p>
-
-                    <div className="p-4 rounded-[14px] bg-[#F5F5F0] border border-[#D9DEE5] text-xs sm:text-sm text-[#071A33] font-sans">
-                      <strong className="text-[#2563EB] block font-mono text-[11px] uppercase tracking-wider mb-0.5 font-bold">
-                        Transit Recommendations
-                      </strong>
-                      <span>{area.transit}</span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            ))}
+            <div className="p-4 rounded-[14px] bg-white/5 border border-white/10 text-xs sm:text-sm text-slate-200 font-sans backdrop-blur-md">
+              <strong className="text-[#D4F933] block font-mono text-[11px] uppercase tracking-wider mb-0.5 font-bold">
+                Transit Recommendations
+              </strong>
+              <span>{area.transit}</span>
+            </div>
           </div>
+
         </div>
+      </div>
+    ))}
+  </div>
+</div>
 
-        {/* ── HOSPITALITY DESK SUPPORT FOOTER ── */}
-        <div className="rounded-[20px] p-8 sm:p-12 lg:p-14 bg-white border border-[#D9DEE5] shadow-editorial">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+{/* ── HOSPITALITY DESK SUPPORT FOOTER ── */}
+<div className="rounded-[20px] p-8 sm:p-12 lg:p-14 bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl">
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-            <div className="lg:col-span-8">
-              <div className="mb-3">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#2563EB] block mb-1">
-                  Support &amp; Logistics
-                </span>
-                <h4 className="font-heading text-2xl sm:text-3xl text-[#071A33] font-bold m-0">
-                  Hospitality Assistance Desk
-                </h4>
-              </div>
-              <p className="text-[14.5px] sm:text-[15.5px] text-[#667085] m-0 font-sans font-normal leading-relaxed">
-                Our student volunteer hospitality desk is available to assist outstation and international delegates with local bookings, directions, and special accessibility requirements.
-              </p>
-            </div>
+    <div className="lg:col-span-8">
+      <div className="mb-3">
+        <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#D4F933] block mb-1">
+          Support &amp; Logistics
+        </span>
+        <h4 className="font-heading text-2xl sm:text-3xl text-white font-bold m-0">
+          Hospitality Assistance Desk
+        </h4>
+      </div>
+      <p className="text-[14.5px] sm:text-[15.5px] text-slate-300 m-0 font-sans font-normal leading-relaxed">
+        Our student volunteer hospitality desk is available to assist outstation and international delegates with local bookings, directions, and special accessibility requirements.
+      </p>
+    </div>
 
-            <div className="lg:col-span-4 flex lg:justify-end">
-              <Button
-                variant="navy"
-                size="md"
-                asLink
-                href="mailto:dyuti@rajagiri.edu"
-              >
-                dyuti@rajagiri.edu
-              </Button>
-            </div>
+    <div className="lg:col-span-4 flex lg:justify-end">
+      <Button
+        variant="navy"
+        size="md"
+        asLink
+        href="mailto:dyuti@rajagiri.edu"
+        className="bg-blue-600/30 hover:bg-blue-600/40 text-white border border-blue-400/30 backdrop-blur-md transition-all shadow-lg"
+      >
+        dyuti@rajagiri.edu
+      </Button>
+    </div>
 
-          </div>
-        </div>
+  </div>
+</div>
 
       </div>
     </div>
